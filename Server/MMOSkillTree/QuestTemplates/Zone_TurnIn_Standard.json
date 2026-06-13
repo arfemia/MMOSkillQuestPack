@@ -7,9 +7,15 @@
     "autoClaimRewards": true,
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
-      { "id": "main", "type": "TURN_IN", "target": "{{target}}", "amount": 1,
-        "matchMode": "EXACT", "turnInNpcId": "{{giver}}",
-        "textKey": "objective.text.turn_in" }
+      {
+        "id": "main",
+        "type": "TURN_IN",
+        "target": "{{target}}",
+        "amount": 1,
+        "matchMode": "EXACT",
+        "turnInNpcId": "{{giver}}",
+        "textKey": "objective.text.turn_in"
+      }
     ]
   }
 }

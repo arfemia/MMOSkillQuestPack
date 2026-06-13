@@ -7,8 +7,13 @@
     "autoClaimRewards": true,
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
-      { "id": "main", "type": "KILL_ENTITY", "target": "{{target}}", "amount": 1,
-        "textKey": "objective.text.quest.slay" }
+      {
+        "id": "main",
+        "type": "KILL_ENTITY",
+        "target": "{{target}}",
+        "amount": 1,
+        "textKey": "objective.text.quest.slay"
+      }
     ]
   }
 }
