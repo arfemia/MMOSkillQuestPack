@@ -1,0 +1,102 @@
+
+# MMOSkillQuestPack - zone questline titles/flavor, dialogue trees, quest-family
+# objective templates, and pack achievement keys. Hytale's I18nModule prepends the
+# filename, so each key loads as mmoskilltree.<key>. Values are data-free flavor:
+# amounts/objectives render through the mod's localized templates, never here.
+
+# ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
+objective.text.quest.meet_wren = Mutatkozz be Vadőr Wrennek
+objective.text.quest.meet_ashkar = Beszélj Dűnejáró Ashkarral
+objective.text.quest.find_ashkar = Keresd fel Dűnejáró Ashkart a Howling Sands területén
+objective.text.quest.eat_food = Egyél meg egy kiadós ételt
+objective.text.quest.slay_in_sands = Teríts le {0} {1} a Howling Sands területén
+
+# ---- Emerald Wilds questline ----
+quest.wilds_meet_the_guide.title = Pár szó a Vadőrrel
+quest.wilds_meet_the_guide.flavor = Egy zöld köpenyes ranger int feléd, hogy menj a táborához az újraéledési tüzeknél.
+quest.wilds_first_camp.title = Első tábor
+quest.wilds_first_camp.flavor = Wren ragaszkodik hozzá, hogy minden vándor megtanuljon tábort verni, mielőtt leszáll az éj.
+quest.wilds_hearty_meal.title = Egy kiadós étkezés
+quest.wilds_hearty_meal.flavor = Vadászd le a vacsorádat, és süsd meg a saját tüzeden. A Vadon megjutalmazza a jóllakottakat.
+quest.wilds_tools_of_the_trade.title = A mesterség eszközei
+quest.wilds_tools_of_the_trade.flavor = Bramble tisztességes árat fizet kőért és rézért, és cserébe jó vasat ad kölcsön.
+quest.wilds_line_and_lure.title = Zsineg és csali
+quest.wilds_line_and_lure.flavor = A furér esküszik rá, hogy az itteni folyókban úszik a legkövérebb harcsa egész Orbison.
+quest.wilds_quartermasters_ledger.title = A furér számadáskönyve
+quest.wilds_quartermasters_ledger.flavor = Könnyű bőröket a készletkönyvbe. Bramble mindegyiket kétszer számolja meg.
+quest.wilds_trork_trouble.title = Trork-galiba
+quest.wilds_trork_trouble.flavor = A hadinépek minden éjjel közelebb kúsznak a táborokhoz. Wren vissza akarja szorítani őket.
+quest.wilds_graveyard_watch.title = Temetői őrség
+quest.wilds_graveyard_watch.flavor = A régi csontok nem maradnak elásva a Vadonban. Állj éjszakai őrségbe.
+quest.wilds_proving_day.title = A megmérettetés napja
+quest.wilds_proving_day.flavor = Wren csak azoknak mutatja meg a délre vezető utat, akik bizonyították, hogy készen állnak.
+quest.wilds_call_of_the_dunes.title = A dűnék hívása
+quest.wilds_call_of_the_dunes.flavor = A fák szélén túl a fű homoknak adja át a helyét. Egy dűnejáró várakozik ott, ahol a sivatag kezdődik.
+quest.wilds_friend_of_beasts.title = A vadak barátja
+quest.wilds_friend_of_beasts.flavor = Bramble szerint egy jól táplált állat felér három igásöszvérrel.
+
+# ---- Howling Sands questline ----
+quest.sands_walker_of_the_wastes.title = A pusztaság vándora
+quest.sands_walker_of_the_wastes.flavor = A dűnejáró a gerinc óta figyel, ahogy átkelsz a dűnéken. Kevesen érnek ide a saját lábukon.
+quest.sands_thorns_and_stings.title = Tövisek és tüskék
+quest.sands_thorns_and_stings.flavor = Ebben a sivatagban minden harap, csíp vagy felrobban. Ritkítsd meg őket a megállóhelyek körül.
+quest.sands_quarry_of_kings.title = Királyok bányája
+quest.sands_quarry_of_kings.flavor = A régi királyság homokkőből épített, és vasat temetett a földbe. Mindkettő a tiéd, ha ásol.
+quest.sands_hardwood_of_the_dunes.title = A dűnék keményfája
+quest.sands_hardwood_of_the_dunes.flavor = A gumboab és a pálma az egyetlen faanyag száz mérföldes körzetben. Tisztelettel vágd ki.
+quest.sands_oasis_angler.title = Oázis-horgász
+quest.sands_oasis_angler.flavor = A rejtett oázisokban élesebb halak laknak, mint az északi folyókban.
+quest.sands_hive_incursion.title = Kaptárbetörés
+quest.sands_hive_incursion.flavor = A Scarak kaptárak ébredeznek. Ashkar le akarja gyéríteni a fosztogatóikat, mielőtt rajzani kezdenének.
+quest.sands_bones_of_the_old_kingdom.title = A régi királyság csontjai
+quest.sands_bones_of_the_old_kingdom.flavor = Homokfehérre fakult katonák még mindig járőröznek a romok között. Vidd el Ashkarnak az eszenciát, amit őriznek.
+quest.sands_apex_of_the_sands.title = A homok csúcsragadozója
+quest.sands_apex_of_the_sands.flavor = Kardfogú, krokodil, hiéna. Bizonyítsd be, hogy nincs nálad vadabb vadász a Howling Sands területén.
+
+# ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
+dialogue.guide_wilds.greet.text = Nyugalom, vándor. Olyan a tekinteted, mint aki épp most jött az útról. Wren vagyok - én vigyázok a Vadon eme szakaszára. Maradj a tüzek közelében, amíg lábra nem kapsz.
+dialogue.guide_wilds.greet.opt.intro = Új vagyok errefelé. Ki vagy te?
+dialogue.guide_wilds.greet.opt.work = Van valami munka számomra?
+dialogue.guide_wilds.greet_midway.text = Megint itt vagy? Jó. A Vadonnak megvan a maga módja, hogy próbára tegye a jövevényeket, te pedig még mindig állsz a lábadon.
+dialogue.guide_wilds.greet_midway.opt.lore = Mesélj az Emerald Wildsről.
+dialogue.guide_wilds.greet_done.text = A délre vezető út immár a tiéd, leendő dűnejáró. Ashkar megtanít arra, amire én nem tudlak. Gyere vissza meglátogatni minket, amikor a homok kikészít.
+dialogue.guide_wilds.camp_talk.text = Egy vadőr, egy furér és egy tűz, amely sosem alszik ki - ennyi az egész tábor. Bramble ott a készleteket intézi. Én meg mindent, aminek foga van. Tessék, éhesnek tűnsz.
+dialogue.guide_wilds.camp_talk.opt.bread = Egy falatra nem mondanék nemet.
+dialogue.guide_wilds.camp_talk.opt.lore = Mi ez a hely?
+dialogue.guide_wilds.lore_wilds.text = Az Emerald Wilds: kweebec ligetek, trork hadinépek, és több zöld, mint amennyit valaha is látsz majd, ha egyszer délnek indulsz. Tanulj meg itt vadászni, horgászni és építeni - a sivatag semmit sem bocsát meg.
+dialogue.guide_wilds.lore_wilds.opt.back = Jó tudni.
+
+# ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
+dialogue.quartermaster_wilds.greet.text = Készlet és ellátmány, utazó - ha meg lehet számolni, én már megszámoltam. Bramble vagyok, a tábor furérja. Te hozol nekem anyagot, én pedig gondoskodom róla, hogy megérje.
+dialogue.quartermaster_wilds.greet.opt.work = Mit kell összegyűjteni?
+dialogue.quartermaster_wilds.greet.opt.trade = Mesélj a mesterségedről.
+dialogue.quartermaster_wilds.greet_ledger.text = Á, hát itt vagy. A számadáskönyv szerint bőrökkel tartozol nekem - a könyv sosem téved. Add ide őket, és rendezzük a számlát.
+dialogue.quartermaster_wilds.greet_ledger.opt.turnin = Tessék, amit összegyűjtöttem.
+dialogue.quartermaster_wilds.trade_talk.text = Kő, érc, hal, bőr - a táborok abból élnek, amit a hozzád hasonló vándorok behordanak. Tartsd tele a polcaimat, és soha többé nem kell tompa pengét élesítened.
+
+# ---- Dialogue: Dunewalker Ashkar (guide_sands_dialogue) ----
+dialogue.guide_sands.greet.text = Szóval a zöld vidék végre küldött valakit, aki tud járni. Ashkar vagyok. Régebb óta járom ezeket a homokokat, mint amióta te azt a pengét forgatod. Figyelj jól, és a sivatag talán megengedi, hogy megtartsd.
+dialogue.guide_sands.greet.opt.intro = Wren küldött. Készen állok a tanulásra.
+dialogue.guide_sands.greet.opt.work = Mit kell elvégezni idekint?
+dialogue.guide_sands.greet_known.text = Még élsz, vándor. A dűnék vándorolnak, a kaptárak nyüzsögnek, a régi királyság pedig őrzi a titkait. Bőven akad munka a szorgalmasaknak.
+dialogue.guide_sands.greet_known.opt.lore = Mesélj megint a homokról.
+dialogue.guide_sands.desert_lore.text = A Howling Sands akkor szolgál rá a nevére, amikor az éjszakai szél átsüvít a kanyonokon. Scarakok odalent, kardfogúak odafent, és homokkő romok közöttük - mindent itt olyasvalaki épített, akit a sivatag túlélt.
+dialogue.guide_sands.desert_lore.opt.more = Mi történt a régi királysággal?
+dialogue.guide_sands.desert_lore_deep.text = A királyok bányákat és hadseregeket emeltek, és a homok mindkettőt elnyelte. A katonáik még mindig a romok közt járnak, üres szemekkel. Bármi is tartja össze őket, azt akarom, hogy ELTŰNJÖN a dűnéimről.
+dialogue.guide_sands.desert_lore_deep.opt.back = Gondoskodom róla.
+
+# ---- Pack achievements ----
+achievement.emerald_wilds_campaign.title = A Vadon őrzője
+achievement.emerald_wilds_campaign.desc = Teljesítsd az Emerald Wilds hadjáratot.
+achievement.howling_sands_campaign.title = A dűnék koronája
+achievement.howling_sands_campaign.desc = Teljesítsd a Howling Sands hadjáratot.
+achievement.orbis_campaigner.title = Orbis hadjárója
+achievement.orbis_campaigner.desc = Teljesítsd az összes zóna hadjáratát.
+achievement.well_met.title = Örvendek
+achievement.well_met.desc = Mutatkozz be Orbis minden küldetésadójának.
+achievement.wilds_hunter_t1.title = A Vadon cserkésze
+achievement.wilds_hunter_t2.title = A Vadon csúcsragadozója
+achievement.wilds_hunter.desc = Győzz le {0} lényt az Emerald Wilds területén.
+achievement.sands_hunter_t1.title = A dűnék cserkésze
+achievement.sands_hunter_t2.title = A dűnék csúcsragadozója
+achievement.sands_hunter.desc = Győzz le {0} lényt a Howling Sands területén.

@@ -1,0 +1,102 @@
+
+# MMOSkillQuestPack - zone questline titles/flavor, dialogue trees, quest-family
+# objective templates, and pack achievement keys. Hytale's I18nModule prepends the
+# filename, so each key loads as mmoskilltree.<key>. Values are data-free flavor:
+# amounts/objectives render through the mod's localized templates, never here.
+
+# ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
+objective.text.quest.meet_wren = Korucu Wren ile tanış
+objective.text.quest.meet_ashkar = Kumgezer Ashkar ile konuş
+objective.text.quest.find_ashkar = Howling Sands'te Kumgezer Ashkar'ı bul
+objective.text.quest.eat_food = Doyurucu bir öğün ye
+objective.text.quest.slay_in_sands = Howling Sands'te {0} {1} öldür
+
+# ---- Emerald Wilds questline ----
+quest.wilds_meet_the_guide.title = Korucu ile Bir Konuşma
+quest.wilds_meet_the_guide.flavor = Yeşil pelerinli bir korucu, başlangıç ateşlerinin yanındaki kampına seni çağırıyor.
+quest.wilds_first_camp.title = İlk Kamp
+quest.wilds_first_camp.flavor = Wren, her gezginin gece çökmeden önce bir kamp kurmayı öğrenmesinde ısrar ediyor.
+quest.wilds_hearty_meal.title = Doyurucu Bir Öğün
+quest.wilds_hearty_meal.flavor = Akşam yemeğini avla ve kendi ateşinde pişir. Yabanlar karnı tok olanı ödüllendirir.
+quest.wilds_tools_of_the_trade.title = Mesleğin Aletleri
+quest.wilds_tools_of_the_trade.flavor = Bramble taş ve bakır için dürüst fiyat öder, karşılığında da iyi demir verir.
+quest.wilds_line_and_lure.title = Olta ve Yem
+quest.wilds_line_and_lure.flavor = Levazımcı, buradaki nehirlerin Orbis'in en semiz yayın balıklarını taşıdığına yemin ediyor.
+quest.wilds_quartermasters_ledger.title = Levazımcının Defteri
+quest.wilds_quartermasters_ledger.flavor = İkmal defteri için ince postlar. Bramble her birini iki kez sayar.
+quest.wilds_trork_trouble.title = Trork Belası
+quest.wilds_trork_trouble.flavor = Savaş bölükleri her gece kamplara biraz daha sokuluyor. Wren onların geri püskürtülmesini istiyor.
+quest.wilds_graveyard_watch.title = Mezarlık Nöbeti
+quest.wilds_graveyard_watch.flavor = Eski kemikler Yabanlarda gömülü kalmaz. Gece nöbetini tut.
+quest.wilds_proving_day.title = Kanıt Günü
+quest.wilds_proving_day.flavor = Wren, güney yolunu yalnızca hazır olduğunu kanıtlayanlara gösterir.
+quest.wilds_call_of_the_dunes.title = Kumulların Çağrısı
+quest.wilds_call_of_the_dunes.flavor = Ağaç sınırının ötesinde çimen yerini kuma bırakır. Çölün başladığı yerde bir kumgezer bekliyor.
+quest.wilds_friend_of_beasts.title = Hayvanların Dostu
+quest.wilds_friend_of_beasts.flavor = Bramble, iyi beslenmiş bir hayvanın üç yük katırına bedel olduğuna inanır.
+
+# ---- Howling Sands questline ----
+quest.sands_walker_of_the_wastes.title = Çorak Toprakların Yürüyücüsü
+quest.sands_walker_of_the_wastes.flavor = Kumgezer seni sırttan beri kumulları geçerken izliyor. Pek azı buraya ayakta varır.
+quest.sands_thorns_and_stings.title = Dikenler ve İğneler
+quest.sands_thorns_and_stings.flavor = Bu çöldeki her şey ısırır, sokar ya da patlar. Konak istasyonlarının çevresini seyrelt.
+quest.sands_quarry_of_kings.title = Kralların Ocağı
+quest.sands_quarry_of_kings.flavor = Eski krallık kumtaşından inşa etti ve demirini gömdü. Kazarsan ikisi de senindir.
+quest.sands_hardwood_of_the_dunes.title = Kumulların Sert Ahşabı
+quest.sands_hardwood_of_the_dunes.flavor = Gumboab ve palmiye yüz mil boyunca tek kerestedir. Saygıyla kes.
+quest.sands_oasis_angler.title = Vaha Balıkçısı
+quest.sands_oasis_angler.flavor = Gizli vahalar, kuzeydeki nehirlerden daha keskin balıklar saklar.
+quest.sands_hive_incursion.title = Kovan Akını
+quest.sands_hive_incursion.flavor = Scarak kovanları uyanıyor. Ashkar, sürü oluşturmadan önce akıncılarının kırılmasını istiyor.
+quest.sands_bones_of_the_old_kingdom.title = Eski Krallığın Kemikleri
+quest.sands_bones_of_the_old_kingdom.flavor = Kumdan ağarmış askerler hâlâ harabelerde devriye geziyor. Koruduğu özü Ashkar'a getir.
+quest.sands_apex_of_the_sands.title = Kumların Zirvesi
+quest.sands_apex_of_the_sands.flavor = Kılıç dişli, timsah, sırtlan. Howling Sands'te senden daha vahşi bir avcı olmadığını kanıtla.
+
+# ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
+dialogue.guide_wilds.greet.text = Sakin ol, gezgin. Yola yeni düşmüş birinin hali var üstünde. Ben Wren - Yabanların bu kesimine göz kulak olurum. Ayaklarının üstünde durmayı öğrenene kadar ateşlerin yakınında kal.
+dialogue.guide_wilds.greet.opt.intro = Buralarda yeniyim. Sen kimsin?
+dialogue.guide_wilds.greet.opt.work = Bana iş var mı?
+dialogue.guide_wilds.greet_midway.text = Yine mi geldin? Güzel. Yabanların yeni gelenleri sınamak gibi bir huyu vardır ve sen hâlâ ayaktasın.
+dialogue.guide_wilds.greet_midway.opt.lore = Bana Emerald Wilds'ten bahset.
+dialogue.guide_wilds.greet_done.text = Güney yolu artık senin, olacak kumgezer. Ashkar sana benim öğretemeyeceklerimi öğretecek. Kum seni yıprattığında gelip bizi gör.
+dialogue.guide_wilds.camp_talk.text = Bir korucu, bir levazımcı ve hiç sönmeyen bir ateş - kampın tamamı bu kadar. Şuradaki Bramble erzakla ilgilenir. Bense dişi olan her şeyle ilgilenirim. Al bakalım, aç görünüyorsun.
+dialogue.guide_wilds.camp_talk.opt.bread = Bir lokmaya hayır demem.
+dialogue.guide_wilds.camp_talk.opt.lore = Burası neresi?
+dialogue.guide_wilds.lore_wilds.text = Emerald Wilds: kweebec koruları, trork savaş bölükleri ve güneye indiğinde bir daha asla göremeyeceğin kadar çok yeşil. Burada avlanmayı, balık tutmayı ve inşa etmeyi öğren - çöl hiçbir şeyi bağışlamaz.
+dialogue.guide_wilds.lore_wilds.opt.back = Bilmek iyi oldu.
+
+# ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
+dialogue.quartermaster_wilds.greet.text = Stok ve ikmal, yolcu - sayılabiliyorsa onu saymışımdır. Bramble, kamp levazımcısı. Sen bana malzeme getir, ben de bunun karşılığını veririm.
+dialogue.quartermaster_wilds.greet.opt.work = Ne toplanmasını istiyorsun?
+dialogue.quartermaster_wilds.greet.opt.trade = Bana mesleğinden bahset.
+dialogue.quartermaster_wilds.greet_ledger.text = Ah, işte buradasın. Defter, bana post borçlu olduğunu söylüyor - defter asla yanılmaz. Onları teslim et de hesabı kapatalım.
+dialogue.quartermaster_wilds.greet_ledger.opt.turnin = İşte topladıklarım.
+dialogue.quartermaster_wilds.trade_talk.text = Taş, cevher, balık, post - kamplar senin gibi gezginlerin getirdikleriyle ayakta durur. Raflarımı dolu tut, bir daha asla kör bir bıçak bilemezsin.
+
+# ---- Dialogue: Dunewalker Ashkar (guide_sands_dialogue) ----
+dialogue.guide_sands.greet.text = Demek yeşil diyar sonunda yürüyebilen birini gönderdi. Ben Ashkar. Bu kumları sen o bıçağı sallamaya başlamadan çok daha uzun süre önce aştım. İyi dinle de çöl onu sende bırakabilir.
+dialogue.guide_sands.greet.opt.intro = Wren gönderdi. Öğrenmeye hazırım.
+dialogue.guide_sands.greet.opt.work = Burada yapılması gereken ne?
+dialogue.guide_sands.greet_known.text = Hâlâ hayattasın, yürüyücü. Kumullar yer değiştirir, kovanlar kıpırdar ve eski krallık sırlarını saklar. İstekliler için bol bol iş var.
+dialogue.guide_sands.greet_known.opt.lore = Bana kumlardan tekrar anlat.
+dialogue.guide_sands.desert_lore.text = Howling Sands adını gece rüzgârı kanyonlardan geçtiğinde hak eder. Aşağıda scaraklar, yukarıda kılıç dişliler ve arada kumtaşı harabeler - buradaki her şey, çölün ömrünü geçtiği biri tarafından inşa edildi.
+dialogue.guide_sands.desert_lore.opt.more = Eski krallığa ne oldu?
+dialogue.guide_sands.desert_lore_deep.text = Krallar ocaklar ve ordular kurdu, kum ikisini de aldı. Askerleri hâlâ boş gözlerle harabelerde dolaşıyor. Onları bir arada tutan her ne ise, onu kumullarımdan UZAK istiyorum.
+dialogue.guide_sands.desert_lore_deep.opt.back = İcabına bakacağım.
+
+# ---- Pack achievements ----
+achievement.emerald_wilds_campaign.title = Yabanların Muhafızı
+achievement.emerald_wilds_campaign.desc = Emerald Wilds seferini tamamla.
+achievement.howling_sands_campaign.title = Kumulların Tacı
+achievement.howling_sands_campaign.desc = Howling Sands seferini tamamla.
+achievement.orbis_campaigner.title = Orbis Seferberi
+achievement.orbis_campaigner.desc = Her bölge seferini tamamla.
+achievement.well_met.title = İyi Karşılaşma
+achievement.well_met.desc = Orbis'teki her görev verene kendini tanıt.
+achievement.wilds_hunter_t1.title = Yaban Avcısı
+achievement.wilds_hunter_t2.title = Yaban Zirvesi
+achievement.wilds_hunter.desc = Emerald Wilds'te {0} yaratık alt et.
+achievement.sands_hunter_t1.title = Kumul Avcısı
+achievement.sands_hunter_t2.title = Kumul Zirvesi
+achievement.sands_hunter.desc = Howling Sands'te {0} yaratık alt et.

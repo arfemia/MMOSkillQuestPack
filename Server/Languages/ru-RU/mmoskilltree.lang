@@ -1,0 +1,102 @@
+
+# MMOSkillQuestPack - zone questline titles/flavor, dialogue trees, quest-family
+# objective templates, and pack achievement keys. Hytale's I18nModule prepends the
+# filename, so each key loads as mmoskilltree.<key>. Values are data-free flavor:
+# amounts/objectives render through the mod's localized templates, never here.
+
+# ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
+objective.text.quest.meet_wren = Представьтесь следопыту Wren
+objective.text.quest.meet_ashkar = Поговорите с песчаным странником Ashkar
+objective.text.quest.find_ashkar = Разыщите песчаного странника Ashkar в Howling Sands
+objective.text.quest.eat_food = Съешьте сытную трапезу
+objective.text.quest.slay_in_sands = Сразите {0} {1} в Howling Sands
+
+# ---- Emerald Wilds questline ----
+quest.wilds_meet_the_guide.title = Слово со следопытом
+quest.wilds_meet_the_guide.flavor = Следопыт в зелёном плаще машет вам, приглашая к своему лагерю у костров возрождения.
+quest.wilds_first_camp.title = Первый лагерь
+quest.wilds_first_camp.flavor = Wren настаивает, чтобы каждый странник научился разбивать лагерь до наступления ночи.
+quest.wilds_hearty_meal.title = Сытная трапеза
+quest.wilds_hearty_meal.flavor = Добудьте себе ужин и приготовьте его на собственном костре. Дикие земли вознаграждают сытых.
+quest.wilds_tools_of_the_trade.title = Орудия ремесла
+quest.wilds_tools_of_the_trade.flavor = Bramble платит честную цену за камень и медь, а взамен одалживает доброе железо.
+quest.wilds_line_and_lure.title = Леска и наживка
+quest.wilds_line_and_lure.flavor = Квартирмейстер клянётся, что здешние реки таят самых жирных сомов на Orbis.
+quest.wilds_quartermasters_ledger.title = Гроссбух квартирмейстера
+quest.wilds_quartermasters_ledger.flavor = Лёгкие шкуры для учётной книги снабжения. Bramble пересчитывает каждую дважды.
+quest.wilds_trork_trouble.title = Беда с трорками
+quest.wilds_trork_trouble.flavor = Боевые отряды каждую ночь подбираются всё ближе к лагерям. Wren хочет отбросить их назад.
+quest.wilds_graveyard_watch.title = Кладбищенский дозор
+quest.wilds_graveyard_watch.flavor = Старые кости не лежат в земле спокойно в этих диких краях. Отстойте ночной дозор.
+quest.wilds_proving_day.title = День испытания
+quest.wilds_proving_day.flavor = Wren указывает дорогу на юг лишь тем, кто доказал свою готовность.
+quest.wilds_call_of_the_dunes.title = Зов дюн
+quest.wilds_call_of_the_dunes.flavor = За кромкой леса трава уступает место песку. Песчаный странник ждёт там, где начинается пустыня.
+quest.wilds_friend_of_beasts.title = Друг зверей
+quest.wilds_friend_of_beasts.flavor = Bramble считает, что сытое животное стоит трёх вьючных мулов.
+
+# ---- Howling Sands questline ----
+quest.sands_walker_of_the_wastes.title = Странник пустошей
+quest.sands_walker_of_the_wastes.flavor = Песчаный странник следил за вашим переходом через дюны ещё с гребня. Немногие добираются на своих ногах.
+quest.sands_thorns_and_stings.title = Шипы и жала
+quest.sands_thorns_and_stings.flavor = Всё в этой пустыне кусает, жалит или взрывается. Проредите эту живность вокруг придорожных станций.
+quest.sands_quarry_of_kings.title = Каменоломня королей
+quest.sands_quarry_of_kings.flavor = Древнее королевство строило из песчаника и хоронило своё железо. И то, и другое ваше, если будете копать.
+quest.sands_hardwood_of_the_dunes.title = Древесина дюн
+quest.sands_hardwood_of_the_dunes.flavor = Гумбоаб и пальма - единственный лес на сотню миль. Рубите с уважением.
+quest.sands_oasis_angler.title = Рыбак оазиса
+quest.sands_oasis_angler.flavor = Скрытые оазисы прячут рыбу зубастее, чем реки на севере.
+quest.sands_hive_incursion.title = Вторжение в улей
+quest.sands_hive_incursion.flavor = Ульи скараков пробуждаются. Ashkar хочет, чтобы их налётчиков извели, пока они не хлынули роем.
+quest.sands_bones_of_the_old_kingdom.title = Кости древнего королевства
+quest.sands_bones_of_the_old_kingdom.flavor = Выбеленные песком солдаты всё ещё патрулируют руины. Принесите Ashkar эссенцию, которую они стерегут.
+quest.sands_apex_of_the_sands.title = Вершина песков
+quest.sands_apex_of_the_sands.flavor = Саблезуб, крокодил, гиена. Докажите, что нет в Howling Sands охотника свирепее вас.
+
+# ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
+dialogue.guide_wilds.greet.text = Полегче, странник. У тебя вид того, кто только-только сошёл с дороги. Я Wren, приглядываю за этим уголком диких земель. Держись поближе к кострам, пока не освоишься.
+dialogue.guide_wilds.greet.opt.intro = Я здесь впервые. Кто ты?
+dialogue.guide_wilds.greet.opt.work = Найдётся работа для меня?
+dialogue.guide_wilds.greet_midway.text = Снова здесь? Хорошо. Дикие земли любят испытывать новичков, а ты всё ещё на ногах.
+dialogue.guide_wilds.greet_midway.opt.lore = Расскажи мне об Emerald Wilds.
+dialogue.guide_wilds.greet_done.text = Дорога на юг теперь твоя, будущий песчаный странник. Ashkar научит тебя тому, чему я не могу. Возвращайся повидаться, когда пески тебя измотают.
+dialogue.guide_wilds.camp_talk.text = Следопыт, квартирмейстер и костёр, что никогда не гаснет - вот и весь лагерь. Bramble вон там заведует припасами. А я заведую всем, у чего есть зубы. Вот, ты выглядишь голодным.
+dialogue.guide_wilds.camp_talk.opt.bread = Не откажусь от кусочка.
+dialogue.guide_wilds.camp_talk.opt.lore = Что это за место?
+dialogue.guide_wilds.lore_wilds.text = Emerald Wilds: рощи квибеков, боевые отряды трорков и больше зелени, чем ты когда-либо увидишь снова, стоит податься на юг. Научись охотиться, рыбачить и строить здесь, пустыня не прощает ничего.
+dialogue.guide_wilds.lore_wilds.opt.back = Полезно знать.
+
+# ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
+dialogue.quartermaster_wilds.greet.text = Запасы и снабжение, путник, если это можно сосчитать, я это сосчитал. Bramble, квартирмейстер лагеря. Ты приносишь мне материалы, я делаю так, чтобы это того стоило.
+dialogue.quartermaster_wilds.greet.opt.work = Что нужно собрать?
+dialogue.quartermaster_wilds.greet.opt.trade = Расскажи о своём ремесле.
+dialogue.quartermaster_wilds.greet_ledger.text = А, вот и ты. Гроссбух говорит, что ты должен мне шкуры, а гроссбух никогда не ошибается. Сдавай их, и сведём счёты.
+dialogue.quartermaster_wilds.greet_ledger.opt.turnin = Вот что я собрал.
+dialogue.quartermaster_wilds.trade_talk.text = Камень, руда, рыба, шкуры - лагеря держатся на том, что притаскивают такие странники, как ты. Держи мои полки полными, и тебе больше не придётся точить тупой клинок.
+
+# ---- Dialogue: Dunewalker Ashkar (guide_sands_dialogue) ----
+dialogue.guide_sands.greet.text = Значит, зелёный край наконец прислал того, кто умеет ходить. Я Ashkar. Я брожу по этим пескам дольше, чем ты машешь этим клинком. Слушай внимательно, и пустыня, может, позволит тебе его оставить.
+dialogue.guide_sands.greet.opt.intro = Меня прислала Wren. Я готов учиться.
+dialogue.guide_sands.greet.opt.work = Что нужно сделать здесь?
+dialogue.guide_sands.greet_known.text = Всё ещё жив, странник. Дюны смещаются, ульи шевелятся, а древнее королевство хранит свои тайны. Работы для готовых хватает.
+dialogue.guide_sands.greet_known.opt.lore = Расскажи мне о песках ещё раз.
+dialogue.guide_sands.desert_lore.text = Howling Sands оправдывают своё имя, когда ночной ветер проносится через каньоны. Скараки внизу, саблезубы наверху, а руины из песчаника между ними - всё здесь построено теми, кого пустыня пережила.
+dialogue.guide_sands.desert_lore.opt.more = Что случилось с древним королевством?
+dialogue.guide_sands.desert_lore_deep.text = Короли возводили каменоломни и армии, а песок забрал и то, и другое. Их солдаты всё ещё бродят по руинам с пустыми глазами. Что бы ни держало их вместе, я хочу, чтобы этого НЕ БЫЛО на моих дюнах.
+dialogue.guide_sands.desert_lore_deep.opt.back = Я этим займусь.
+
+# ---- Pack achievements ----
+achievement.emerald_wilds_campaign.title = Страж диких земель
+achievement.emerald_wilds_campaign.desc = Завершите кампанию Emerald Wilds.
+achievement.howling_sands_campaign.title = Венец дюн
+achievement.howling_sands_campaign.desc = Завершите кампанию Howling Sands.
+achievement.orbis_campaigner.title = Покоритель Orbis
+achievement.orbis_campaigner.desc = Завершите кампанию каждой зоны.
+achievement.well_met.title = Рад знакомству
+achievement.well_met.desc = Представьтесь каждому давателю заданий на Orbis.
+achievement.wilds_hunter_t1.title = Преследователь диких земель
+achievement.wilds_hunter_t2.title = Вершина диких земель
+achievement.wilds_hunter.desc = Победите {0} существ в Emerald Wilds.
+achievement.sands_hunter_t1.title = Преследователь дюн
+achievement.sands_hunter_t2.title = Вершина дюн
+achievement.sands_hunter.desc = Победите {0} существ в Howling Sands.

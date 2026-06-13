@@ -1,0 +1,17 @@
+
+# MMOSkillQuestPack - quest-giver NPC display names + F-interact hints.
+# Hytale's I18nModule prepends the filename, so each key loads as npcs.<key>;
+# the role JSONs reference the prefixed form (npcs.MMO_Quest_Wilds.name).
+
+MMO_Quest_Wilds.name = Montaraz Wren
+MMO_Quest_Wilds.hint = Pulsa [{key}] para hablar
+MMO_Quest_Wilds_Supply.name = Intendente Bramble
+MMO_Quest_Wilds_Supply.hint = Pulsa [{key}] para hablar
+MMO_Quest_Sands.name = Caminante de Dunas Ashkar
+MMO_Quest_Sands.hint = Pulsa [{key}] para hablar
+
+# Objective-target display names for the giver npc ids (TargetNameResolver's
+# npcs.<id>.name namespace), so talk objectives read with character names.
+guide_wilds.name = Montaraz Wren
+quartermaster_wilds.name = Intendente Bramble
+guide_sands.name = Caminante de Dunas Ashkar

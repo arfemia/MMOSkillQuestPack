@@ -1,0 +1,102 @@
+
+# MMOSkillQuestPack - zone questline titles/flavor, dialogue trees, quest-family
+# objective templates, and pack achievement keys. Hytale's I18nModule prepends the
+# filename, so each key loads as mmoskilltree.<key>. Values are data-free flavor:
+# amounts/objectives render through the mod's localized templates, never here.
+
+# ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
+objective.text.quest.meet_wren = Stell dich Waldläufer Wren vor
+objective.text.quest.meet_ashkar = Sprich mit Dünenwanderer Ashkar
+objective.text.quest.find_ashkar = Suche Dünenwanderer Ashkar in den Howling Sands
+objective.text.quest.eat_food = Iss eine herzhafte Mahlzeit
+objective.text.quest.slay_in_sands = Erlege {0} {1} in den Howling Sands
+
+# ---- Emerald Wilds questline ----
+quest.wilds_meet_the_guide.title = Ein Wort mit der Waldläuferin
+quest.wilds_meet_the_guide.flavor = Eine grün gekleidete Waldläuferin winkt dich zu ihrem Lager bei den Spawn-Feuern.
+quest.wilds_first_camp.title = Erstes Lager
+quest.wilds_first_camp.flavor = Wren besteht darauf, dass jeder Wanderer lernt, vor Einbruch der Nacht ein Lager aufzuschlagen.
+quest.wilds_hearty_meal.title = Eine herzhafte Mahlzeit
+quest.wilds_hearty_meal.flavor = Jage dir dein Abendessen und gar es über dem eigenen Feuer. Die Wildnis belohnt die Gesättigten.
+quest.wilds_tools_of_the_trade.title = Werkzeug des Handwerks
+quest.wilds_tools_of_the_trade.flavor = Bramble zahlt faire Preise für Stein und Kupfer und leiht dafür gutes Eisen aus.
+quest.wilds_line_and_lure.title = Schnur und Köder
+quest.wilds_line_and_lure.flavor = Der Quartiermeister schwört, die Flüsse hier tragen die fettesten Welse auf ganz Orbis.
+quest.wilds_quartermasters_ledger.title = Das Buch des Quartiermeisters
+quest.wilds_quartermasters_ledger.flavor = Leichte Häute für das Nachschubbuch. Bramble zählt jede einzelne doppelt.
+quest.wilds_trork_trouble.title = Trork-Ärger
+quest.wilds_trork_trouble.flavor = Jede Nacht rücken die Kriegsrotten näher an die Lager heran. Wren will sie zurückgedrängt sehen.
+quest.wilds_graveyard_watch.title = Friedhofswache
+quest.wilds_graveyard_watch.flavor = Alte Knochen bleiben in der Wildnis nicht begraben. Halt die Nachtwache.
+quest.wilds_proving_day.title = Tag der Bewährung
+quest.wilds_proving_day.flavor = Wren weist nur jenen den Weg nach Süden, die sich als bereit erwiesen haben.
+quest.wilds_call_of_the_dunes.title = Der Ruf der Dünen
+quest.wilds_call_of_the_dunes.flavor = Jenseits des Waldrands weicht das Gras dem Sand. Ein Dünenwanderer wartet, wo die Wüste beginnt.
+quest.wilds_friend_of_beasts.title = Freund der Tiere
+quest.wilds_friend_of_beasts.flavor = Bramble ist überzeugt, dass ein gut gefüttertes Tier drei Packmaultiere wert ist.
+
+# ---- Howling Sands questline ----
+quest.sands_walker_of_the_wastes.title = Wanderer der Öden
+quest.sands_walker_of_the_wastes.flavor = Der Dünenwanderer beobachtet dich seit dem Grat, wie du die Dünen durchquerst. Wenige kommen auf den Beinen an.
+quest.sands_thorns_and_stings.title = Dornen und Stiche
+quest.sands_thorns_and_stings.flavor = Alles in dieser Wüste beisst, sticht oder zerplatzt. Dünn es rund um die Raststationen aus.
+quest.sands_quarry_of_kings.title = Steinbruch der Könige
+quest.sands_quarry_of_kings.flavor = Das alte Königreich baute in Sandstein und begrub sein Eisen. Beides gehört dir, wenn du gräbst.
+quest.sands_hardwood_of_the_dunes.title = Hartholz der Dünen
+quest.sands_hardwood_of_the_dunes.flavor = Gumboab und Palme sind das einzige Holz auf hundert Meilen. Fälle mit Respekt.
+quest.sands_oasis_angler.title = Oasen-Angler
+quest.sands_oasis_angler.flavor = Die verborgenen Oasen bergen schärfere Fische als die Flüsse im Norden.
+quest.sands_hive_incursion.title = Einfall in den Bau
+quest.sands_hive_incursion.flavor = Die Scarak-Baue erwachen. Ashkar will ihre Räuber erlegt sehen, bevor sie ausschwärmen.
+quest.sands_bones_of_the_old_kingdom.title = Knochen des alten Königreichs
+quest.sands_bones_of_the_old_kingdom.flavor = Sandgebleichte Soldaten patrouillieren noch immer die Ruinen. Bring Ashkar die Essenz, die sie bewachen.
+quest.sands_apex_of_the_sands.title = Spitze der Sande
+quest.sands_apex_of_the_sands.flavor = Säbelzahn, Krokodil, Hyäne. Beweise, dass es in den Howling Sands keinen wilderen Jäger gibt als dich.
+
+# ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
+dialogue.guide_wilds.greet.text = Ganz ruhig, Wanderer. Du siehst aus wie jemand, der frisch von der Strasse kommt. Ich bin Wren - ich halte über diesen Teil der Wildnis Wache. Bleib nah bei den Feuern, bis du Fuss gefasst hast.
+dialogue.guide_wilds.greet.opt.intro = Ich bin neu hier. Wer bist du?
+dialogue.guide_wilds.greet.opt.work = Gibt es Arbeit für mich?
+dialogue.guide_wilds.greet_midway.text = Schon wieder da? Gut. Die Wildnis hat so ihre Art, Neulinge zu prüfen, und du stehst noch.
+dialogue.guide_wilds.greet_midway.opt.lore = Erzähl mir von den Emerald Wilds.
+dialogue.guide_wilds.greet_done.text = Die Strasse nach Süden gehört jetzt dir, künftiger Dünenwanderer. Ashkar wird dich lehren, was ich nicht kann. Komm uns besuchen, wenn der Sand dich mürbe macht.
+dialogue.guide_wilds.camp_talk.text = Eine Waldläuferin, ein Quartiermeister und ein Feuer, das nie ausgeht - das ist das ganze Lager. Bramble dort drüben kümmert sich um den Nachschub. Ich, ich kümmere mich um alles mit Zähnen. Hier, du siehst hungrig aus.
+dialogue.guide_wilds.camp_talk.opt.bread = Zu einem Bissen sage ich nicht nein.
+dialogue.guide_wilds.camp_talk.opt.lore = Was ist das für ein Ort?
+dialogue.guide_wilds.lore_wilds.text = Die Emerald Wilds: Kweebec-Haine, Trork-Kriegsrotten und mehr Grün, als du je wieder sehen wirst, sobald du nach Süden ziehst. Lern hier zu jagen, zu fischen und zu bauen - die Wüste verzeiht nichts.
+dialogue.guide_wilds.lore_wilds.opt.back = Gut zu wissen.
+
+# ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
+dialogue.quartermaster_wilds.greet.text = Vorrat und Nachschub, Reisender - wenn es sich zählen lässt, habe ich es gezählt. Bramble, Lager-Quartiermeister. Du bringst mir Material, ich mach es dir lohnend.
+dialogue.quartermaster_wilds.greet.opt.work = Was soll gesammelt werden?
+dialogue.quartermaster_wilds.greet.opt.trade = Erzähl mir von deinem Handwerk.
+dialogue.quartermaster_wilds.greet_ledger.text = Ah, da bist du ja. Das Buch sagt, du schuldest mir Häute - das Buch irrt sich nie. Gib sie her und wir gleichen die Rechnung aus.
+dialogue.quartermaster_wilds.greet_ledger.opt.turnin = Hier ist, was ich gesammelt habe.
+dialogue.quartermaster_wilds.trade_talk.text = Stein, Erz, Fisch, Häute - die Lager leben von dem, was Wanderer wie du heranschaffen. Halt meine Regale voll und du wirst nie wieder eine stumpfe Klinge schärfen.
+
+# ---- Dialogue: Dunewalker Ashkar (guide_sands_dialogue) ----
+dialogue.guide_sands.greet.text = Also hat das grüne Land endlich jemanden geschickt, der laufen kann. Ich bin Ashkar. Ich durchquere diese Sande länger, als du diese Klinge schwingst. Hör gut zu, und die Wüste lässt sie dir vielleicht.
+dialogue.guide_sands.greet.opt.intro = Wren hat mich geschickt. Ich bin bereit zu lernen.
+dialogue.guide_sands.greet.opt.work = Was muss hier draussen getan werden?
+dialogue.guide_sands.greet_known.text = Noch am Leben, Wanderer. Die Dünen verschieben sich, die Baue regen sich, und das alte Königreich hütet seine Geheimnisse. Arbeit genug für die Willigen.
+dialogue.guide_sands.greet_known.opt.lore = Erzähl mir noch einmal von den Sanden.
+dialogue.guide_sands.desert_lore.text = Die Howling Sands machen ihrem Namen alle Ehre, wenn der Nachtwind durch die Schluchten fährt. Scaraks unten, Säbelzähne oben und Sandsteinruinen dazwischen - alles hier wurde von jemandem erbaut, den die Wüste überdauert hat.
+dialogue.guide_sands.desert_lore.opt.more = Was geschah mit dem alten Königreich?
+dialogue.guide_sands.desert_lore_deep.text = Könige hoben Steinbrüche und Heere aus, und der Sand nahm beide. Ihre Soldaten gehen noch immer mit leeren Augen durch die Ruinen. Was auch immer sie zusammenhält, ich will es WEG von meinen Dünen.
+dialogue.guide_sands.desert_lore_deep.opt.back = Ich kümmere mich darum.
+
+# ---- Pack achievements ----
+achievement.emerald_wilds_campaign.title = Wächter der Wildnis
+achievement.emerald_wilds_campaign.desc = Schliesse den Feldzug der Emerald Wilds ab.
+achievement.howling_sands_campaign.title = Krone der Dünen
+achievement.howling_sands_campaign.desc = Schliesse den Feldzug der Howling Sands ab.
+achievement.orbis_campaigner.title = Feldzügler von Orbis
+achievement.orbis_campaigner.desc = Schliesse jeden Zonen-Feldzug ab.
+achievement.well_met.title = Gut getroffen
+achievement.well_met.desc = Stell dich jedem Questgeber auf Orbis vor.
+achievement.wilds_hunter_t1.title = Pirschjäger der Wildnis
+achievement.wilds_hunter_t2.title = Spitze der Wildnis
+achievement.wilds_hunter.desc = Besiege {0} Kreaturen in den Emerald Wilds.
+achievement.sands_hunter_t1.title = Dünen-Pirschjäger
+achievement.sands_hunter_t2.title = Spitze der Dünen
+achievement.sands_hunter.desc = Besiege {0} Kreaturen in den Howling Sands.

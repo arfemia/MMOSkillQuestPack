@@ -1,0 +1,102 @@
+
+# MMOSkillQuestPack - zone questline titles/flavor, dialogue trees, quest-family
+# objective templates, and pack achievement keys. Hytale's I18nModule prepends the
+# filename, so each key loads as mmoskilltree.<key>. Values are data-free flavor:
+# amounts/objectives render through the mod's localized templates, never here.
+
+# ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
+objective.text.quest.meet_wren = Apresente-se à Patrulheira Wren
+objective.text.quest.meet_ashkar = Fale com o Andarilho das Dunas Ashkar
+objective.text.quest.find_ashkar = Procure o Andarilho das Dunas Ashkar em Howling Sands
+objective.text.quest.eat_food = Coma uma refeição reforçada
+objective.text.quest.slay_in_sands = Mate {0} {1} em Howling Sands
+
+# ---- Emerald Wilds questline ----
+quest.wilds_meet_the_guide.title = Uma Conversa com a Patrulheira
+quest.wilds_meet_the_guide.flavor = Uma patrulheira de capa verde acena para você se aproximar do acampamento dela, perto das fogueiras de nascimento.
+quest.wilds_first_camp.title = Primeiro Acampamento
+quest.wilds_first_camp.flavor = Wren faz questão de que todo andarilho aprenda a montar um acampamento antes de anoitecer.
+quest.wilds_hearty_meal.title = Uma Refeição Reforçada
+quest.wilds_hearty_meal.flavor = Cace o seu jantar e cozinhe-o sobre a sua própria fogueira. As Matas recompensam quem está bem alimentado.
+quest.wilds_tools_of_the_trade.title = Ferramentas do Ofício
+quest.wilds_tools_of_the_trade.flavor = Bramble paga preços justos por pedra e cobre, e empresta bom ferro em troca.
+quest.wilds_line_and_lure.title = Linha e Isca
+quest.wilds_line_and_lure.flavor = O intendente jura que os rios daqui têm os bagres mais gordos de Orbis.
+quest.wilds_quartermasters_ledger.title = O Livro-Razão do Intendente
+quest.wilds_quartermasters_ledger.flavor = Couros leves para o livro-razão de suprimentos. Bramble conta cada um deles duas vezes.
+quest.wilds_trork_trouble.title = Problemas com Trorks
+quest.wilds_trork_trouble.flavor = Os bandos de guerra se aproximam dos acampamentos a cada noite. Wren quer que sejam repelidos.
+quest.wilds_graveyard_watch.title = Vigília no Cemitério
+quest.wilds_graveyard_watch.flavor = Ossos velhos não ficam enterrados nas Matas. Faça a guarda noturna.
+quest.wilds_proving_day.title = Dia da Prova
+quest.wilds_proving_day.flavor = Wren só aponta a estrada para o sul a quem provou estar pronto.
+quest.wilds_call_of_the_dunes.title = O Chamado das Dunas
+quest.wilds_call_of_the_dunes.flavor = Além da orla da floresta, a grama dá lugar à areia. Um andarilho das dunas espera onde o deserto começa.
+quest.wilds_friend_of_beasts.title = Amigo dos Animais
+quest.wilds_friend_of_beasts.flavor = Bramble acredita que um animal bem alimentado vale por três mulas de carga.
+
+# ---- Howling Sands questline ----
+quest.sands_walker_of_the_wastes.title = Andarilho do Ermo
+quest.sands_walker_of_the_wastes.flavor = O andarilho das dunas observa você cruzar as dunas desde a crista. Poucos chegam de pé.
+quest.sands_thorns_and_stings.title = Espinhos e Ferroadas
+quest.sands_thorns_and_stings.flavor = Tudo neste deserto morde, ferroa ou explode. Reduza essa população ao redor das estações de descanso.
+quest.sands_quarry_of_kings.title = Pedreira dos Reis
+quest.sands_quarry_of_kings.flavor = O antigo reino construiu em arenito e enterrou o seu ferro. Ambos são seus se você cavar.
+quest.sands_hardwood_of_the_dunes.title = Madeira de Lei das Dunas
+quest.sands_hardwood_of_the_dunes.flavor = Gumboab e palmeira são a única madeira por centenas de quilômetros. Corte com respeito.
+quest.sands_oasis_angler.title = Pescador do Oásis
+quest.sands_oasis_angler.flavor = Os oásis escondidos abrigam peixes mais afiados do que os rios lá do norte.
+quest.sands_hive_incursion.title = Incursão na Colmeia
+quest.sands_hive_incursion.flavor = As colmeias dos Scarak estão despertando. Ashkar quer os saqueadores abatidos antes que enxameiem.
+quest.sands_bones_of_the_old_kingdom.title = Ossos do Antigo Reino
+quest.sands_bones_of_the_old_kingdom.flavor = Soldados branqueados pela areia ainda patrulham as ruínas. Traga a Ashkar a essência que eles guardam.
+quest.sands_apex_of_the_sands.title = Ápice das Areias
+quest.sands_apex_of_the_sands.flavor = Dente-de-sabre, crocodilo, hiena. Prove que não há caçador mais feroz em Howling Sands do que você.
+
+# ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
+dialogue.guide_wilds.greet.text = Calma aí, andarilho. Você tem a cara de quem acabou de chegar da estrada. Eu sou a Wren - faço a vigia deste trecho das Matas. Fique perto das fogueiras até se firmar.
+dialogue.guide_wilds.greet.opt.intro = Sou novo por aqui. Quem é você?
+dialogue.guide_wilds.greet.opt.work = Tem algum trabalho para mim?
+dialogue.guide_wilds.greet_midway.text = De volta de novo? Ótimo. As Matas têm um jeito de testar os recém-chegados, e você ainda está de pé.
+dialogue.guide_wilds.greet_midway.opt.lore = Fale-me sobre Emerald Wilds.
+dialogue.guide_wilds.greet_done.text = A estrada para o sul é sua agora, futuro andarilho das dunas. Ashkar vai te ensinar o que eu não posso. Volte para nos ver quando a areia te desgastar.
+dialogue.guide_wilds.camp_talk.text = Uma patrulheira, um intendente e uma fogueira que nunca se apaga - é todo o acampamento. O Bramble ali cuida dos suprimentos. Eu cuido de tudo que tem dentes. Tome, você parece com fome.
+dialogue.guide_wilds.camp_talk.opt.bread = Eu não diria não a uma mordida.
+dialogue.guide_wilds.camp_talk.opt.lore = Que lugar é este?
+dialogue.guide_wilds.lore_wilds.text = Emerald Wilds: bosques de kweebecs, bandos de guerra de trorks, e mais verde do que você verá de novo depois de seguir para o sul. Aprenda a caçar, pescar e construir aqui - o deserto não perdoa nada.
+dialogue.guide_wilds.lore_wilds.opt.back = Bom saber.
+
+# ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
+dialogue.quartermaster_wilds.greet.text = Estoque e suprimento, viajante - se dá para contar, eu já contei. Bramble, intendente do acampamento. Você me traz materiais, eu faço valer a pena.
+dialogue.quartermaster_wilds.greet.opt.work = O que você precisa que seja coletado?
+dialogue.quartermaster_wilds.greet.opt.trade = Fale-me do seu ofício.
+dialogue.quartermaster_wilds.greet_ledger.text = Ah, aí está você. O livro-razão diz que você me deve couros - o livro-razão nunca erra. Entregue-os e acertamos as contas.
+dialogue.quartermaster_wilds.greet_ledger.opt.turnin = Aqui está o que eu coletei.
+dialogue.quartermaster_wilds.trade_talk.text = Pedra, minério, peixe, couros - os acampamentos funcionam com o que andarilhos como você trazem. Mantenha minhas prateleiras cheias e você nunca mais vai afiar uma lâmina cega.
+
+# ---- Dialogue: Dunewalker Ashkar (guide_sands_dialogue) ----
+dialogue.guide_sands.greet.text = Então a terra verde finalmente mandou alguém que sabe andar. Eu sou Ashkar. Cruzo estas areias há mais tempo do que você empunha essa lâmina. Ouça bem e o deserto talvez deixe você ficar com ela.
+dialogue.guide_sands.greet.opt.intro = A Wren me mandou. Estou pronto para aprender.
+dialogue.guide_sands.greet.opt.work = O que precisa ser feito por aqui?
+dialogue.guide_sands.greet_known.text = Ainda vivo, andarilho. As dunas se movem, as colmeias se agitam, e o antigo reino guarda seus segredos. Há trabalho de sobra para os dispostos.
+dialogue.guide_sands.greet_known.opt.lore = Fale-me das areias de novo.
+dialogue.guide_sands.desert_lore.text = Howling Sands merece o nome quando o vento da noite atravessa os desfiladeiros. Scaraks embaixo, dentes-de-sabre em cima, e ruínas de arenito no meio - tudo aqui foi construído por alguém a quem o deserto sobreviveu.
+dialogue.guide_sands.desert_lore.opt.more = O que aconteceu com o antigo reino?
+dialogue.guide_sands.desert_lore_deep.text = Reis ergueram pedreiras e exércitos, e a areia levou ambos. Seus soldados ainda andam pelas ruínas com olhos vazios. Seja lá o que os mantém unidos, eu quero isso FORA das minhas dunas.
+dialogue.guide_sands.desert_lore_deep.opt.back = Vou cuidar disso.
+
+# ---- Pack achievements ----
+achievement.emerald_wilds_campaign.title = Guardião das Matas
+achievement.emerald_wilds_campaign.desc = Conclua a campanha de Emerald Wilds.
+achievement.howling_sands_campaign.title = Coroa das Dunas
+achievement.howling_sands_campaign.desc = Conclua a campanha de Howling Sands.
+achievement.orbis_campaigner.title = Combatente de Orbis
+achievement.orbis_campaigner.desc = Conclua todas as campanhas de zona.
+achievement.well_met.title = Muito Prazer
+achievement.well_met.desc = Apresente-se a todos os doadores de missões de Orbis.
+achievement.wilds_hunter_t1.title = Espreitador das Matas
+achievement.wilds_hunter_t2.title = Ápice das Matas
+achievement.wilds_hunter.desc = Derrote {0} criaturas em Emerald Wilds.
+achievement.sands_hunter_t1.title = Espreitador das Dunas
+achievement.sands_hunter_t2.title = Ápice das Dunas
+achievement.sands_hunter.desc = Derrote {0} criaturas em Howling Sands.
