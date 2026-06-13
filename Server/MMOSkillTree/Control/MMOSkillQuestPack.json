@@ -1,0 +1,8 @@
+{
+  "Name": "MMOSkillQuestPack",
+  "Quests": "add",
+  "QuestTemplates": "add",
+  "Achievements": "add",
+  "Dialogues": "add",
+  "QuestGivers": "add"
+}

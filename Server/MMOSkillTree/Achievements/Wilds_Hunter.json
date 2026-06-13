@@ -1,0 +1,19 @@
+{
+  "Name": "Wilds_Hunter",
+  "Payload": {
+    "id": "wilds_hunter_t1",
+    "triggerType": "KILL_ENTITY",
+    "target": "",
+    "requiredAmount": 50,
+    "matchMode": "CONTAINS",
+    "zone": "Emerald_Wilds",
+    "category": "combat",
+    "subcategory": "melee",
+    "sortOrder": 80,
+    "points": 10,
+    "chainId": "wilds_hunter",
+    "tier": 1,
+    "descriptionKey": "achievement.wilds_hunter.desc",
+    "descriptionArgs": ["@amount"]
+  }
+}

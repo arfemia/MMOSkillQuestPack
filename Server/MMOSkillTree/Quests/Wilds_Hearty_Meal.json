@@ -1,0 +1,24 @@
+{
+  "Name": "Wilds_Hearty_Meal",
+  "Payload": {
+    "id": "wilds_hearty_meal",
+    "category": "main",
+    "sortOrder": 2,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_wilds",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["wilds_first_camp"],
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "hunt", "type": "KILL_ENTITY", "target": "Boar", "amount": 3,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay", "order": 1 },
+      { "id": "gather", "type": "PICKUP_ITEM", "target": "Food_Wildmeat_Raw", "amount": 3,
+        "order": 1 },
+      { "id": "eat", "type": "CONSUME_ITEM", "target": "Food_", "amount": 1,
+        "textKey": "objective.text.quest.eat_food", "order": 2 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "DEFENSE", "amount": 500 }
+    ]
+  }
+}

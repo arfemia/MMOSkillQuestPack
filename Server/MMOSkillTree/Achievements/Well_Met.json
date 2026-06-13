@@ -1,0 +1,18 @@
+{
+  "Name": "Well_Met",
+  "Payload": {
+    "id": "well_met",
+    "triggerType": "TALK_TO_NPC",
+    "target": "guide_wilds",
+    "requiredAmount": 1,
+    "category": "quests",
+    "subcategory": "any",
+    "sortOrder": 63,
+    "points": 15,
+    "criteria": [
+      { "type": "TALK_TO_NPC", "target": "guide_wilds", "amount": 1 },
+      { "type": "TALK_TO_NPC", "target": "quartermaster_wilds", "amount": 1 },
+      { "type": "TALK_TO_NPC", "target": "guide_sands", "amount": 1 }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Name": "Wilds_Trork_Trouble",
+  "Payload": {
+    "extends": "zone_slay_standard",
+    "id": "wilds_trork_trouble",
+    "params": { "giver": "guide_wilds", "target": "Trork" },
+    "sortOrder": 3,
+    "prerequisites": ["wilds_hearty_meal"],
+    "objectiveOverrides": {
+      "main": { "amount": 8 }
+    },
+    "rewards": [
+      { "type": "COMMAND", "command": "/give {player} Weapon_Longsword_Iron --quantity=1", "runAs": "CONSOLE" },
+      { "type": "XP", "skill": "SWORDS", "amount": 800 }
+    ]
+  }
+}

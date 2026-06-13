@@ -1,0 +1,19 @@
+{
+  "Name": "Sands_Hunter",
+  "Payload": {
+    "id": "sands_hunter_t1",
+    "triggerType": "KILL_ENTITY",
+    "target": "",
+    "requiredAmount": 50,
+    "matchMode": "CONTAINS",
+    "zone": "Howling_Sands",
+    "category": "combat",
+    "subcategory": "melee",
+    "sortOrder": 82,
+    "points": 15,
+    "chainId": "sands_hunter",
+    "tier": 1,
+    "descriptionKey": "achievement.sands_hunter.desc",
+    "descriptionArgs": ["@amount"]
+  }
+}

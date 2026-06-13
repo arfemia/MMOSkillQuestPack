@@ -1,0 +1,17 @@
+{
+  "Name": "Emerald_Wilds_Campaign",
+  "Payload": {
+    "id": "emerald_wilds_campaign",
+    "triggerType": "COMPLETE_QUEST",
+    "target": "wilds_call_of_the_dunes",
+    "requiredAmount": 1,
+    "category": "quests",
+    "subcategory": "any",
+    "sortOrder": 60,
+    "points": 50,
+    "icon": "Mmo_Menu_Scroll",
+    "manualClaimRewards": [
+      { "type": "XP", "skill": "ALL", "amount": 2500 }
+    ]
+  }
+}

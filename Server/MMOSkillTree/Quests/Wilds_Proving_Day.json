@@ -1,0 +1,21 @@
+{
+  "Name": "Wilds_Proving_Day",
+  "Payload": {
+    "id": "wilds_proving_day",
+    "category": "main",
+    "sortOrder": 5,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_wilds",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["wilds_graveyard_watch", "wilds_quartermasters_ledger"],
+    "requirements": { "minLevel": 20 },
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "xp", "type": "GAIN_XP", "target": "TOTAL", "amount": 10000 },
+      { "id": "level", "type": "REACH_LEVEL", "target": "", "amount": 15 }
+    ],
+    "rewards": [
+      { "type": "BOOST_TOKEN", "skill": "ALL", "multiplier": 2.0, "durationMinutes": 30 }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Name": "Guide_Wilds",
+  "Payload": {
+    "role": "MMO_Quest_Wilds",
+    "npcId": "guide_wilds",
+    "dialogue": "guide_wilds_dialogue",
+    "placement": "spawn",
+    "worlds": ["default"],
+    "offset": { "x": -2.5, "y": 0.0, "z": 0.0 },
+    "yaw": 180.0
+  }
+}

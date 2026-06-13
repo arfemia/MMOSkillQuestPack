@@ -1,0 +1,21 @@
+{
+  "Name": "Sands_Quarry_Of_Kings",
+  "Payload": {
+    "extends": "zone_gather_standard",
+    "id": "sands_quarry_of_kings",
+    "params": { "giver": "guide_sands", "target": "Rock_Sandstone" },
+    "sortOrder": 22,
+    "prerequisites": ["sands_walker_of_the_wastes"],
+    "requirements": { "minSkill": "MINING", "minSkillLevel": 15 },
+    "objectiveOverrides": {
+      "main": { "amount": 150, "matchMode": "EXACT", "textKey": "objective.text.quest.mine" }
+    },
+    "extraObjectives": [
+      { "id": "iron", "type": "BREAK_BLOCK", "target": "Ore_Iron_Sandstone", "amount": 20,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.mine" }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "MINING", "amount": 2000 }
+    ]
+  }
+}

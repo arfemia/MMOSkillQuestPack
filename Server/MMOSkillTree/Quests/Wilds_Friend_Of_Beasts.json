@@ -1,0 +1,21 @@
+{
+  "Name": "Wilds_Friend_Of_Beasts",
+  "Payload": {
+    "id": "wilds_friend_of_beasts",
+    "category": "main",
+    "sortOrder": 13,
+    "autoClaimRewards": true,
+    "npcViewId": "quartermaster_wilds",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["wilds_meet_the_guide"],
+    "requiresFeatures": ["taming"],
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "feed", "type": "FEED_ANIMAL", "target": "", "amount": 3 },
+      { "id": "breed", "type": "BREED_ANIMAL", "target": "", "amount": 1 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "TAMING", "amount": 800 }
+    ]
+  }
+}

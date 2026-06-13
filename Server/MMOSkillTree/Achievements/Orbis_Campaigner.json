@@ -1,0 +1,17 @@
+{
+  "Name": "Orbis_Campaigner",
+  "Payload": {
+    "id": "orbis_campaigner",
+    "metaChildren": ["emerald_wilds_campaign", "howling_sands_campaign"],
+    "category": "quests",
+    "subcategory": "any",
+    "sortOrder": 62,
+    "points": 100,
+    "serverFirst": true,
+    "icon": "Rock_Crystal_Iridescent_Small",
+    "announcementCommand": "eventtitle --title=\"Campaigner of Orbis!\" --secondary=\"{player} finished every zone campaign\"",
+    "manualClaimRewards": [
+      { "type": "BOOST_TOKEN", "skill": "ALL", "multiplier": 3.0, "durationMinutes": 60 }
+    ]
+  }
+}

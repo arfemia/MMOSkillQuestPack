@@ -1,0 +1,13 @@
+{
+  "Name": "Guide_Sands",
+  "Payload": {
+    "role": "MMO_Quest_Sands",
+    "npcId": "guide_sands",
+    "dialogue": "guide_sands_dialogue",
+    "placement": "zone_discovery",
+    "zone": "Howling_Sands",
+    "worlds": ["default"],
+    "offset": { "x": 1.5, "y": 0.0, "z": 1.5 },
+    "yaw": 180.0
+  }
+}

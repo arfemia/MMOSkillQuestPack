@@ -1,0 +1,22 @@
+{
+  "Name": "Sands_Hunter_T2",
+  "Payload": {
+    "id": "sands_hunter_t2",
+    "triggerType": "KILL_ENTITY",
+    "target": "",
+    "requiredAmount": 500,
+    "matchMode": "CONTAINS",
+    "zone": "Howling_Sands",
+    "category": "combat",
+    "subcategory": "melee",
+    "sortOrder": 83,
+    "points": 40,
+    "chainId": "sands_hunter",
+    "tier": 2,
+    "descriptionKey": "achievement.sands_hunter.desc",
+    "descriptionArgs": ["@amount"],
+    "manualClaimRewards": [
+      { "type": "XP", "skill": "SWORDS", "amount": 5000 }
+    ]
+  }
+}

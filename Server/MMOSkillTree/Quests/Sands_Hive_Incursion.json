@@ -1,0 +1,18 @@
+{
+  "Name": "Sands_Hive_Incursion",
+  "Payload": {
+    "extends": "zone_slay_standard",
+    "id": "sands_hive_incursion",
+    "params": { "giver": "guide_sands", "target": "Scarak" },
+    "sortOrder": 25,
+    "prerequisites": ["sands_thorns_and_stings"],
+    "requirements": { "minLevel": 60 },
+    "objectiveOverrides": {
+      "main": { "amount": 15 }
+    },
+    "rewards": [
+      { "type": "XP", "skill": "SWORDS", "amount": 2500 },
+      { "type": "COMMAND", "command": "/give {player} Potion_Health --quantity=3", "runAs": "CONSOLE" }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "Name": "Sands_Apex_Of_The_Sands",
+  "Payload": {
+    "id": "sands_apex_of_the_sands",
+    "category": "main",
+    "sortOrder": 27,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_sands",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["sands_bones_of_the_old_kingdom"],
+    "requirements": { "minLevel": 100 },
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "tigers", "type": "KILL_ENTITY", "target": "Tiger_Sabertooth", "amount": 5,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+      { "id": "crocs", "type": "KILL_ENTITY", "target": "Crocodile", "amount": 5,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+      { "id": "hyenas", "type": "KILL_ENTITY", "target": "Hyena", "amount": 10,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" }
+    ],
+    "rewards": [
+      { "type": "BOOST_TOKEN", "skill": "ALL", "multiplier": 2.5, "durationMinutes": 60 },
+      { "type": "COMMAND", "command": "/give {player} Potion_Health_Greater --quantity=3", "runAs": "CONSOLE" }
+    ]
+  }
+}

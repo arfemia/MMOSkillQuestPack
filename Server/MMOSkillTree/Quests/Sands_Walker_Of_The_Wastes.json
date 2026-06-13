@@ -1,0 +1,19 @@
+{
+  "Name": "Sands_Walker_Of_The_Wastes",
+  "Payload": {
+    "id": "sands_walker_of_the_wastes",
+    "category": "main",
+    "sortOrder": 20,
+    "autoAccept": true,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_sands",
+    "tags": ["Chapter_3"],
+    "objectives": [
+      { "id": "talk", "type": "TALK_TO_NPC", "target": "guide_sands", "amount": 1,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.meet_ashkar" }
+    ],
+    "rewards": [
+      { "type": "COMMAND", "command": "/give {player} Potion_Health_Small --quantity=2", "runAs": "CONSOLE" }
+    ]
+  }
+}

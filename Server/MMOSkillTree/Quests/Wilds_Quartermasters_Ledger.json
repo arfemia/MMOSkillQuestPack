@@ -1,0 +1,17 @@
+{
+  "Name": "Wilds_Quartermasters_Ledger",
+  "Payload": {
+    "extends": "zone_turnin_standard",
+    "id": "wilds_quartermasters_ledger",
+    "params": { "giver": "quartermaster_wilds", "target": "Ingredient_Hide_Light" },
+    "sortOrder": 12,
+    "prerequisites": ["wilds_line_and_lure"],
+    "objectiveOverrides": {
+      "main": { "amount": 10 }
+    },
+    "rewards": [
+      { "type": "XP", "skill": "DEFENSE", "amount": 600 },
+      { "type": "XP", "skill": "HARVESTING", "amount": 600 }
+    ]
+  }
+}

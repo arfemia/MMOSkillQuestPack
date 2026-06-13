@@ -1,0 +1,22 @@
+{
+  "Name": "Wilds_Hunter_T2",
+  "Payload": {
+    "id": "wilds_hunter_t2",
+    "triggerType": "KILL_ENTITY",
+    "target": "",
+    "requiredAmount": 500,
+    "matchMode": "CONTAINS",
+    "zone": "Emerald_Wilds",
+    "category": "combat",
+    "subcategory": "melee",
+    "sortOrder": 81,
+    "points": 30,
+    "chainId": "wilds_hunter",
+    "tier": 2,
+    "descriptionKey": "achievement.wilds_hunter.desc",
+    "descriptionArgs": ["@amount"],
+    "manualClaimRewards": [
+      { "type": "XP", "skill": "SWORDS", "amount": 2500 }
+    ]
+  }
+}

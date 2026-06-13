@@ -1,0 +1,17 @@
+{
+  "Name": "Howling_Sands_Campaign",
+  "Payload": {
+    "id": "howling_sands_campaign",
+    "triggerType": "COMPLETE_QUEST",
+    "target": "sands_apex_of_the_sands",
+    "requiredAmount": 1,
+    "category": "quests",
+    "subcategory": "any",
+    "sortOrder": 61,
+    "points": 75,
+    "icon": "Rock_Sandstone",
+    "manualClaimRewards": [
+      { "type": "XP", "skill": "ALL", "amount": 5000 }
+    ]
+  }
+}

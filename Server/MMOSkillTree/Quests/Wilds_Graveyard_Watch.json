@@ -1,0 +1,18 @@
+{
+  "Name": "Wilds_Graveyard_Watch",
+  "Payload": {
+    "extends": "zone_slay_standard",
+    "id": "wilds_graveyard_watch",
+    "params": { "giver": "guide_wilds", "target": "Skeleton" },
+    "sortOrder": 4,
+    "prerequisites": ["wilds_trork_trouble"],
+    "requirements": { "minLevel": 10 },
+    "objectiveOverrides": {
+      "main": { "amount": 15 }
+    },
+    "rewards": [
+      { "type": "XP", "skill": "ARCHERY", "amount": 700 },
+      { "type": "XP", "skill": "DEFENSE", "amount": 700 }
+    ]
+  }
+}

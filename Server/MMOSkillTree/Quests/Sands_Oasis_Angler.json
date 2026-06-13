@@ -1,0 +1,21 @@
+{
+  "Name": "Sands_Oasis_Angler",
+  "Payload": {
+    "id": "sands_oasis_angler",
+    "category": "main",
+    "sortOrder": 24,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_sands",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["sands_walker_of_the_wastes"],
+    "requirements": { "minSkill": "FISHING", "minSkillLevel": 15 },
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "catfish", "type": "CATCH_FISH", "target": "Catfish", "amount": 5 },
+      { "id": "piranha", "type": "CATCH_FISH", "target": "Piranha", "amount": 3 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "FISHING", "amount": 2000 }
+    ]
+  }
+}

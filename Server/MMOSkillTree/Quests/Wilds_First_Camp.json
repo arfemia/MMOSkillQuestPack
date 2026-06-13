@@ -1,0 +1,25 @@
+{
+  "Name": "Wilds_First_Camp",
+  "Payload": {
+    "id": "wilds_first_camp",
+    "category": "main",
+    "sortOrder": 1,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_wilds",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["wilds_meet_the_guide"],
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "chop", "type": "BREAK_BLOCK", "target": "Wood", "amount": 15,
+        "textKey": "objective.text.quest.chop_logs", "order": 1 },
+      { "id": "build", "type": "PLACE_BLOCK", "target": "", "amount": 20,
+        "textKey": "objective.text.quest.place_blocks", "order": 1 },
+      { "id": "campfire", "type": "PLACE_BLOCK", "target": "Bench_Campfire", "amount": 1,
+        "matchMode": "EXACT", "order": 2 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "WOODCUTTING", "amount": 400 },
+      { "type": "XP", "skill": "BUILDING", "amount": 400 }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "Name": "Wilds_Line_And_Lure",
+  "Payload": {
+    "id": "wilds_line_and_lure",
+    "category": "main",
+    "sortOrder": 11,
+    "autoClaimRewards": true,
+    "npcViewId": "quartermaster_wilds",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["wilds_tools_of_the_trade"],
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "any", "type": "CATCH_FISH", "target": "", "amount": 5,
+        "textKey": "objective.text.quest.catch_fish_any", "order": 1 },
+      { "id": "catfish", "type": "CATCH_FISH", "target": "Catfish", "amount": 3, "order": 1 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "FISHING", "amount": 700 }
+    ]
+  }
+}

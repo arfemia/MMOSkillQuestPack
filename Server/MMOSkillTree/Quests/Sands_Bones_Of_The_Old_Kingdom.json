@@ -1,0 +1,34 @@
+{
+  "Name": "Sands_Bones_Of_The_Old_Kingdom",
+  "Payload": {
+    "id": "sands_bones_of_the_old_kingdom",
+    "category": "main",
+    "sortOrder": 26,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_sands",
+    "npcRequiredToAccept": true,
+    "prerequisites": {
+      "mode": "AND",
+      "quests": ["sands_hive_incursion"],
+      "groups": [
+        {
+          "mode": "OR",
+          "quests": ["sands_quarry_of_kings", "sands_hardwood_of_the_dunes", "sands_oasis_angler"]
+        }
+      ]
+    },
+    "requirements": { "minLevel": 80 },
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "skeletons", "type": "KILL_ENTITY", "target": "Skeleton_Sand", "amount": 12,
+        "textKey": "objective.text.quest.slay", "order": 1 },
+      { "id": "essence", "type": "TURN_IN", "target": "Ingredient_Life_Essence", "amount": 50,
+        "matchMode": "EXACT", "turnInNpcId": "guide_sands",
+        "textKey": "objective.text.turn_in", "order": 2 }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "MAGIC", "amount": 3000 },
+      { "type": "XP", "skill": "DEFENSE", "amount": 3000 }
+    ]
+  }
+}

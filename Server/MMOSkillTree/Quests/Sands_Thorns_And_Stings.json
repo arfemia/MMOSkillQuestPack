@@ -1,0 +1,26 @@
+{
+  "Name": "Sands_Thorns_And_Stings",
+  "Payload": {
+    "id": "sands_thorns_and_stings",
+    "category": "main",
+    "sortOrder": 21,
+    "autoClaimRewards": true,
+    "npcViewId": "guide_sands",
+    "npcRequiredToAccept": true,
+    "prerequisites": ["sands_walker_of_the_wastes"],
+    "requirements": { "minLevel": 40 },
+    "visibility": { "hidden": true, "requirePrerequisites": true },
+    "objectives": [
+      { "id": "cactee", "type": "KILL_ENTITY", "target": "Cactee", "amount": 8,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+      { "id": "scorpions", "type": "KILL_ENTITY", "target": "Scorpion", "amount": 10,
+        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+      { "id": "snakes", "type": "KILL_ENTITY", "target": "Snake", "amount": 6,
+        "zone": "Howling_Sands", "textKey": "objective.text.quest.slay_in_sands" }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "SWORDS", "amount": 1200 },
+      { "type": "XP", "skill": "DEFENSE", "amount": 1200 }
+    ]
+  }
+}

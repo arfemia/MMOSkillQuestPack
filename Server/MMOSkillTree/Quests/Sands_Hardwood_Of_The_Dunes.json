@@ -1,0 +1,21 @@
+{
+  "Name": "Sands_Hardwood_Of_The_Dunes",
+  "Payload": {
+    "extends": "zone_gather_standard",
+    "id": "sands_hardwood_of_the_dunes",
+    "params": { "giver": "guide_sands", "target": "Wood_Gumboab" },
+    "sortOrder": 23,
+    "prerequisites": ["sands_walker_of_the_wastes"],
+    "requirements": { "minSkill": "WOODCUTTING", "minSkillLevel": 15 },
+    "objectiveOverrides": {
+      "main": { "amount": 60, "textKey": "objective.text.quest.chop" }
+    },
+    "extraObjectives": [
+      { "id": "palm", "type": "BREAK_BLOCK", "target": "Wood_Palm", "amount": 30,
+        "textKey": "objective.text.quest.chop" }
+    ],
+    "rewards": [
+      { "type": "XP", "skill": "WOODCUTTING", "amount": 2000 }
+    ]
+  }
+}

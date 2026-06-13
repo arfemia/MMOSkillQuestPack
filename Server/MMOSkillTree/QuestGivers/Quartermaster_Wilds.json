@@ -1,0 +1,12 @@
+{
+  "Name": "Quartermaster_Wilds",
+  "Payload": {
+    "role": "MMO_Quest_Wilds_Supply",
+    "npcId": "quartermaster_wilds",
+    "dialogue": "quartermaster_wilds_dialogue",
+    "placement": "spawn",
+    "worlds": ["default"],
+    "offset": { "x": -5.0, "y": 0.0, "z": 0.0 },
+    "yaw": 180.0
+  }
+}
