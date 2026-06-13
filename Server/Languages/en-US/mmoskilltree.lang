@@ -84,6 +84,12 @@ dialogue.guide_sands.desert_lore.opt.more = What happened to the old kingdom?
 dialogue.guide_sands.desert_lore_deep.text = Kings raised quarries and armies, and the sand took both. Their soldiers still walk the ruins with empty eyes. Whatever held them together, I want it OFF my dunes.
 dialogue.guide_sands.desert_lore_deep.opt.back = I will see to it.
 
+# ---- Dialogue: Adventurer's Guide hub (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Welcome to the camp, traveler. I am the Adventurer's Guide - I keep the bounties, the token shop, and your skill records all in one place. New around here?
+dialogue.guide_hub.greet.opt.wren = Where should I start?
+dialogue.guide_hub.greet.opt.menu = Show me the adventurer's menu.
+dialogue.guide_hub.directions.text = Head to the campfire just west and introduce yourself to Ranger Wren. She looks after newcomers and will set you on the right path. Come back to me whenever you need the menu.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Warden of the Wilds
 achievement.emerald_wilds_campaign.desc = Complete the Emerald Wilds campaign.

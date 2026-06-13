@@ -1,58 +1,35 @@
 {
   "Name": "Quartermaster_Wilds_Dialogue",
-  "Start": [
-    {
-      "Node": "greet_ledger",
-      "Conditions": {
-        "QuestState": {
-          "Quest": "wilds_quartermasters_ledger",
-          "State": "ACTIVE"
-        }
+  "Payload": {
+    "extends": "questgiver_standard",
+    "params": {
+      "npc": "quartermaster_wilds",
+      "questList": "npcquests:@self",
+      "introQuest": "",
+      "turnInQuest": "wilds_quartermasters_ledger"
+    },
+    "nodeOverrides": {
+      "greet": {
+        "Options!": [
+          { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "npcquests:@self" },
+          { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
+            "Do": [ { "Talk": "" }, { "Goto": "trade_talk" } ] }
+        ]
+      },
+      "greet_active": {
+        "TextKey": "dialogue.quartermaster_wilds.greet_ledger.text",
+        "Options": [
+          { "LabelKey": "dialogue.quartermaster_wilds.greet_ledger.opt.turnin" }
+        ]
       }
     },
-    { "Node": "greet" }
-  ],
-  "Nodes": {
-    "greet": {
-      "TextKey": "dialogue.quartermaster_wilds.greet.text",
-      "Options": [
-        {
-          "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work",
-          "Actions": [{ "Type": "OpenPage", "Target": "npcquests:@self" }]
-        },
-        {
-          "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
-          "Actions": [
-            { "Type": "Talk" },
-            { "Type": "Goto", "Node": "trade_talk" }
-          ]
-        }
-      ]
-    },
-    "greet_ledger": {
-      "TextKey": "dialogue.quartermaster_wilds.greet_ledger.text",
-      "Options": [
-        {
-          "LabelKey": "dialogue.quartermaster_wilds.greet_ledger.opt.turnin",
-          "Actions": [
-            { "Type": "TurnInQuest", "Quest": "wilds_quartermasters_ledger" },
-            { "Type": "OpenPage", "Target": "npcquests:@self" }
-          ]
-        },
-        {
-          "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work",
-          "Actions": [{ "Type": "OpenPage", "Target": "npcquests:@self" }]
-        }
-      ]
-    },
-    "trade_talk": {
-      "TextKey": "dialogue.quartermaster_wilds.trade_talk.text",
-      "Options": [
-        {
-          "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work",
-          "Actions": [{ "Type": "OpenPage", "Target": "npcquests:@self" }]
-        }
-      ]
+    "extraNodes": {
+      "trade_talk": {
+        "TextKey": "dialogue.quartermaster_wilds.trade_talk.text",
+        "Options": [
+          { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "npcquests:@self" }
+        ]
+      }
     }
   }
 }

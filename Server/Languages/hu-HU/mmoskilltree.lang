@@ -85,6 +85,12 @@ dialogue.guide_sands.desert_lore.opt.more = Mi történt a régi királysággal?
 dialogue.guide_sands.desert_lore_deep.text = A királyok bányákat és hadseregeket emeltek, és a homok mindkettőt elnyelte. A katonáik még mindig a romok közt járnak, üres szemekkel. Bármi is tartja össze őket, azt akarom, hogy ELTŰNJÖN a dűnéimről.
 dialogue.guide_sands.desert_lore_deep.opt.back = Gondoskodom róla.
 
+# ---- Dialogue: Adventurer's Guide (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Üdv a táborban, vándor. A Kalandorok Kalauza vagyok - nálam fut össze a megbízások, a zsetonbolt és a képességeid feljegyzése, mind egy helyen. Új vagy errefelé?
+dialogue.guide_hub.greet.opt.wren = Hol kezdjem?
+dialogue.guide_hub.greet.opt.menu = Mutasd a kalandormenüt.
+dialogue.guide_hub.directions.text = Indulj a tábortűzhöz, épp nyugatra, és mutatkozz be Vadőr Wrennek. Ő gondját viseli a jövevényeknek, és jó útra terel. Hozzám bármikor visszajöhetsz, ha a menü kell.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = A Vadon őrzője
 achievement.emerald_wilds_campaign.desc = Teljesítsd az Emerald Wilds hadjáratot.

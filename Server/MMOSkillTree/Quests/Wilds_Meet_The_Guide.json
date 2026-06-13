@@ -1,17 +1,15 @@
 {
   "Name": "Wilds_Meet_The_Guide",
   "Payload": {
+    "extends": "zone_talk_standard",
     "id": "wilds_meet_the_guide",
-    "category": "main",
     "sortOrder": 0,
     "autoAccept": true,
-    "autoClaimRewards": true,
-    "npcViewId": "guide_wilds",
     "tags": ["Tutorial", "Chapter_2"],
-    "objectives": [
-      { "id": "talk", "type": "TALK_TO_NPC", "target": "guide_wilds", "amount": 1,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.meet_wren" }
-    ],
+    "params": { "giver": "guide_wilds", "target": "guide_wilds" },
+    "objectiveOverrides": {
+      "talk": { "textKey": "objective.text.quest.meet_wren" }
+    },
     "rewards": [
       { "type": "COMMAND", "command": "/give {player} Food_Bread --quantity=3", "runAs": "CONSOLE" },
       { "type": "COMMAND", "command": "/give {player} Bench_Campfire --quantity=1", "runAs": "CONSOLE" }

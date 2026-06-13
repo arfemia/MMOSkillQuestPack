@@ -85,6 +85,12 @@ dialogue.guide_sands.desert_lore.opt.more = Cos'è successo all'antico regno?
 dialogue.guide_sands.desert_lore_deep.text = I re innalzarono cave ed eserciti, e la sabbia si prese entrambi. I loro soldati camminano ancora tra le rovine con occhi vuoti. Qualunque cosa li tenga insieme, la voglio LONTANA dalle mie dune.
 dialogue.guide_sands.desert_lore_deep.opt.back = Me ne occuperò.
 
+# ---- Dialogue: Adventurer's Guide (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Benvenuto all'accampamento, viandante. Sono la Guida degli Avventurieri - tengo insieme le taglie, l'emporio dei gettoni e i tuoi registri delle abilità, tutto in un solo posto. Sei nuovo da queste parti?
+dialogue.guide_hub.greet.opt.wren = Da dove dovrei cominciare?
+dialogue.guide_hub.greet.opt.menu = Mostrami il menù dell'avventuriero.
+dialogue.guide_hub.directions.text = Raggiungi il fuoco da campo poco a ovest e presentati alla ranger Wren. Lei si prende cura dei nuovi arrivati e ti metterà sulla strada giusta. Torna da me ogni volta che ti serve il menù.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Guardiano delle Terre Selvagge
 achievement.emerald_wilds_campaign.desc = Completa la campagna delle Emerald Wilds.

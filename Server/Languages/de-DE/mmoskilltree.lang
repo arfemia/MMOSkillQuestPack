@@ -85,6 +85,12 @@ dialogue.guide_sands.desert_lore.opt.more = Was geschah mit dem alten Königreic
 dialogue.guide_sands.desert_lore_deep.text = Könige hoben Steinbrüche und Heere aus, und der Sand nahm beide. Ihre Soldaten gehen noch immer mit leeren Augen durch die Ruinen. Was auch immer sie zusammenhält, ich will es WEG von meinen Dünen.
 dialogue.guide_sands.desert_lore_deep.opt.back = Ich kümmere mich darum.
 
+# ---- Dialogue: Adventurer's Guide hub (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Willkommen im Lager, Reisender. Ich bin der Abenteurerführer - ich verwalte die Kopfgelder, den Token-Shop und deine Fähigkeitsaufzeichnungen an einem Ort. Neu hier in der Gegend?
+dialogue.guide_hub.greet.opt.wren = Wo soll ich anfangen?
+dialogue.guide_hub.greet.opt.menu = Zeig mir das Abenteurermenü.
+dialogue.guide_hub.directions.text = Geh zum Lagerfeuer gleich im Westen und stell dich Waldläufer Wren vor. Sie kümmert sich um Neuankömmlinge und bringt dich auf den rechten Weg. Komm zu mir zurück, wann immer du das Menü brauchst.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Wächter der Wildnis
 achievement.emerald_wilds_campaign.desc = Schliesse den Feldzug der Emerald Wilds ab.

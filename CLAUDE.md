@@ -16,9 +16,12 @@ Server/
     QuestGivers/                3 givers: guide_wilds + quartermaster_wilds (placement
                                 spawn, beside the hub Guide), guide_sands (zone_discovery
                                 Howling_Sands - spawns once per world on first discovery)
-    Dialogues/                  3 STRUCTURED dialogue trees (Start/Nodes directly, NOT
-                                Payload-wrapped - the only structured MMO asset type)
-    QuestTemplates/             Zone_{Slay,Gather,TurnIn}_Standard (extends/params DSL)
+    Dialogues/                  4 Payload-wrapped dialogue trees ({Name, Payload:{Start,
+                                Nodes}}): guide_wilds + guide_sands (explicit + sugar),
+                                quartermaster_wilds (extends questgiver_standard),
+                                guide_hub (hub welcome + directs to Wren)
+    DialogueTemplates/          QuestGiver_Standard (extends/params/nodeOverrides/extraNodes)
+    QuestTemplates/             Zone_{Slay,Gather,TurnIn,Talk}_Standard (extends/params DSL)
     Quests/                     11 Emerald Wilds + 8 Howling Sands (raw Payload quests)
     Achievements/               campaigns + orbis_campaigner meta + well_met + zone hunts
   NPC/Roles/Passive/            MMO_Quest_Wilds (Ranger Wren, Feran_Windwalker),
@@ -34,16 +37,28 @@ Server/
 - **Givers** spawn via the jar's QuestGiverSpawnService and record routing target
   `giver:<id>`; pressing F resolves LIVE: dialogue when configured, else the npc
   quest list. `/mmonpc givers` shows spawn state; `/mmonpc reset` respawns.
-- **Dialogues** are id-keyed standalone trees. Intro options fire `Talk` (the ONLY
-  native TALK_TO_NPC source besides the MmoQuestTalk action) gated on one-shot
-  flags (`NotFlag` + `SetFlag`), so auto-accept intro quests cannot deadlock on a
-  quest-state condition. The bread handout is `Reward Once:true` and its option
-  hides via the implicit flag `reward:guide_wilds_dialogue:camp_talk:0`.
-- **Campaign flow**: wilds_meet_the_guide (autoAccept, completes on Wren's intro
-  option) -> camp/meal/combat arc (Wren) + supply arc (Bramble) -> proving_day ->
-  call_of_the_dunes (TALK_TO_NPC guide_sands - Ashkar spawns at first Howling
-  Sands discovery; his intro option completes the bridge AND auto-accepts
-  sands_walker_of_the_wastes in the same fire) -> the desert arc.
+- **Dialogues** are id-keyed standalone Payload-wrapped trees. Intro options fire
+  `Talk` (the ONLY native TALK_TO_NPC source besides the MmoQuestTalk action)
+  **gated on `QuestState <introQuest> ACTIVE`, NOT a story flag** (1.4.0 self-heal:
+  a `SetFlag`/`NotFlag` survives a quest reset and soft-locks the intro - derive
+  visibility from quest state, which resets with the quest). The bread handout is
+  `Reward Once:true`; its option hides via the implicit, reset-clearable flag
+  `reward:guide_wilds_dialogue:camp_talk:0`. Options use the [sugar shorthand]
+  (`Open`/`Goto`/`Talk`/`TurnIn`/`Reward`/`Do`); quartermaster_wilds `extends`
+  `questgiver_standard` (turn-in giver) as the live template example. See
+  CONTENT_PACKS.md "Dialogue authoring".
+- **Hub dialogue**: `guide_hub_dialogue` welcomes the player and points them to
+  Ranger Wren, then opens the hub menu (`Open: hub`). It is wired by setting
+  `mods/mmoskilltree/spawn-hub.json` `"dialogue": "guide_hub_dialogue"` (the jar's
+  generic SpawnHubConfig hook; default null = hub menu, so it is an opt-in). The
+  meet-the-guide quest still `autoAccept`s, so the campaign starts with or without
+  this opt-in.
+- **Campaign flow**: wilds_meet_the_guide (autoAccept; the hub Guide directs you to
+  Wren, whose `QuestState ACTIVE`-gated intro option completes it) -> camp/meal/
+  combat arc (Wren) + supply arc (Bramble) -> proving_day -> call_of_the_dunes
+  (TALK_TO_NPC guide_sands - Ashkar spawns at first Howling Sands discovery; his
+  intro, gated on the autoAccept sands_walker_of_the_wastes ACTIVE, completes the
+  bridge AND sands_walker in the same Talk) -> the desert arc.
 - **Zone scoping**: `"zone": "Howling_Sands"` on objectives/criteria matches the
   engine's zoneName OR region folder names case-insensitively. The Snake contract
   needs it (snakes spawn in zones 1, 2 and 3); the hunter achievement chains are
@@ -66,6 +81,8 @@ Verify: server log shows the Dialogue/Quest-giver/Quest layer-applied lines and
 ## Conventions
 
 PascalCase filenames; raw types use `{"Name": ..., "Payload": {...}}`, dialogues
-are structured (PascalCase codec keys; node ids/map keys stay lowercase). Lang
+too (PascalCase codec keys inside `Payload.Start`/`Payload.Nodes`; node ids/map
+keys + sugar values stay lowercase). Quest-driven option visibility derives from
+`QuestState`, never a parallel `SetFlag`/`NotFlag` (self-heal convention). Lang
 values are data-free flavor (no digits, no reward restating). Commit + push HERE
 first, then bump the gitlink in the root repo.

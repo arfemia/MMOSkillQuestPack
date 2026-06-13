@@ -1,0 +1,21 @@
+{
+  "Name": "Guide_Hub_Dialogue",
+  "Payload": {
+    "Start": [ { "Node": "greet" } ],
+    "Nodes": {
+      "greet": {
+        "TextKey": "dialogue.guide_hub.greet.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_hub.greet.opt.wren", "Goto": "directions" },
+          { "LabelKey": "dialogue.guide_hub.greet.opt.menu", "Open": "hub" }
+        ]
+      },
+      "directions": {
+        "TextKey": "dialogue.guide_hub.directions.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_hub.greet.opt.menu", "Open": "hub" }
+        ]
+      }
+    }
+  }
+}

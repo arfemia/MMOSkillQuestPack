@@ -85,6 +85,12 @@ dialogue.guide_sands.desert_lore.opt.more = Eski krallığa ne oldu?
 dialogue.guide_sands.desert_lore_deep.text = Krallar ocaklar ve ordular kurdu, kum ikisini de aldı. Askerleri hâlâ boş gözlerle harabelerde dolaşıyor. Onları bir arada tutan her ne ise, onu kumullarımdan UZAK istiyorum.
 dialogue.guide_sands.desert_lore_deep.opt.back = İcabına bakacağım.
 
+# ---- Dialogue: Adventurer's Guide (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Kampa hoş geldin, gezgin. Ben Maceracı Rehberi - ödülleri, jeton dükkânını ve yetenek kayıtlarını hep bir arada tutarım. Buralarda yeni misin?
+dialogue.guide_hub.greet.opt.wren = Nereden başlamalıyım?
+dialogue.guide_hub.greet.opt.menu = Bana maceracı menüsünü göster.
+dialogue.guide_hub.directions.text = Hemen batıdaki kamp ateşine git ve Korucu Wren'e kendini tanıt. O, yeni gelenlerle ilgilenir ve seni doğru yola koyar. Menüye ihtiyacın olduğunda yanıma dön.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Yabanların Muhafızı
 achievement.emerald_wilds_campaign.desc = Emerald Wilds seferini tamamla.

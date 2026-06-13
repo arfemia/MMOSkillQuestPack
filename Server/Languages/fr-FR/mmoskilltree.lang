@@ -85,6 +85,12 @@ dialogue.guide_sands.desert_lore.opt.more = Qu'est-il arrivé à l'ancien royaum
 dialogue.guide_sands.desert_lore_deep.text = Les rois ont creusé des carrières et levé des armées, et le sable a pris les deux. Leurs soldats arpentent encore les ruines, les yeux vides. Quoi qui les retienne ensemble, je le veux LOIN de mes dunes.
 dialogue.guide_sands.desert_lore_deep.opt.back = Je m'en occupe.
 
+# ---- Dialogue: Adventurer's Guide (guide_hub_dialogue) ----
+dialogue.guide_hub.greet.text = Bienvenue au camp, voyageur. Je suis le Guide de l'aventurier - je tiens les contrats, l'échoppe de jetons et tes registres de compétences au même endroit. Nouveau dans le coin ?
+dialogue.guide_hub.greet.opt.wren = Par où devrais-je commencer ?
+dialogue.guide_hub.greet.opt.menu = Montre-moi le menu de l'aventurier.
+dialogue.guide_hub.directions.text = Rejoins le feu de camp juste à l'ouest et présente-toi à la Patrouilleuse Wren. Elle veille sur les nouveaux venus et te mettra sur la bonne voie. Reviens me voir dès que tu as besoin du menu.
+
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Gardien des Wilds
 achievement.emerald_wilds_campaign.desc = Terminez la campagne des Emerald Wilds.

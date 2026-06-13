@@ -1,0 +1,44 @@
+{
+  "Name": "QuestGiver_Standard",
+  "Payload": {
+    "Start": [
+      { "Node": "greet_active",
+        "Conditions": { "QuestState": { "Quest": "{{turnInQuest}}", "State": "ACTIVE" } } },
+      { "Node": "greet_done",
+        "Conditions": { "QuestState": { "Quest": "{{introQuest}}", "State": "COMPLETED" } } },
+      { "Node": "greet" }
+    ],
+    "Nodes": {
+      "greet": {
+        "TextKey": "dialogue.{{npc}}.greet.text",
+        "Options": [
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.intro",
+            "Conditions": { "QuestState": { "Quest": "{{introQuest}}", "State": "ACTIVE" } },
+            "Do": [ { "Talk": "" }, { "Goto": "lore" } ] },
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.work", "Open": "{{questList}}" }
+        ]
+      },
+      "greet_done": {
+        "TextKey": "dialogue.{{npc}}.greet_done.text",
+        "Options": [
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.work", "Open": "{{questList}}" },
+          { "LabelKey": "dialogue.{{npc}}.greet_done.opt.lore", "Goto": "lore" }
+        ]
+      },
+      "greet_active": {
+        "TextKey": "dialogue.{{npc}}.greet_active.text",
+        "Options": [
+          { "LabelKey": "dialogue.{{npc}}.greet_active.opt.turnin",
+            "Do": [ { "TurnIn": "{{turnInQuest}}" }, { "Open": "{{questList}}" } ] },
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.work", "Open": "{{questList}}" }
+        ]
+      },
+      "lore": {
+        "TextKey": "dialogue.{{npc}}.lore.text",
+        "Options": [
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.work", "Open": "{{questList}}" }
+        ]
+      }
+    }
+  }
+}

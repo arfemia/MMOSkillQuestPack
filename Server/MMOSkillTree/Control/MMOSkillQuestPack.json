@@ -4,5 +4,6 @@
   "QuestTemplates": "add",
   "Achievements": "add",
   "Dialogues": "add",
+  "DialogueTemplates": "add",
   "QuestGivers": "add"
 }

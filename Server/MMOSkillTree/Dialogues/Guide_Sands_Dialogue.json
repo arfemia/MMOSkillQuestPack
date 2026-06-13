@@ -1,46 +1,41 @@
 {
   "Name": "Guide_Sands_Dialogue",
-  "Start": [
-    { "Node": "greet_known",
-      "Conditions": { "QuestState": { "Quest": "sands_walker_of_the_wastes", "State": "COMPLETED" } } },
-    { "Node": "greet" }
-  ],
-  "Nodes": {
-    "greet": {
-      "TextKey": "dialogue.guide_sands.greet.text",
-      "Options": [
-        { "LabelKey": "dialogue.guide_sands.greet.opt.intro",
-          "Conditions": { "NotFlag": "ashkar_intro_done" },
-          "Actions": [ { "Type": "Talk" }, { "Type": "SetFlag", "Flag": "ashkar_intro_done" },
-                       { "Type": "Goto", "Node": "desert_lore" } ] },
-        { "LabelKey": "dialogue.guide_sands.greet.opt.work",
-          "Actions": [ { "Type": "OpenPage", "Target": "npcquests:@self" } ] }
-      ]
-    },
-    "greet_known": {
-      "TextKey": "dialogue.guide_sands.greet_known.text",
-      "Options": [
-        { "LabelKey": "dialogue.guide_sands.greet.opt.work",
-          "Actions": [ { "Type": "OpenPage", "Target": "npcquests:@self" } ] },
-        { "LabelKey": "dialogue.guide_sands.greet_known.opt.lore",
-          "Actions": [ { "Type": "Goto", "Node": "desert_lore" } ] }
-      ]
-    },
-    "desert_lore": {
-      "TextKey": "dialogue.guide_sands.desert_lore.text",
-      "Options": [
-        { "LabelKey": "dialogue.guide_sands.desert_lore.opt.more",
-          "Actions": [ { "Type": "Goto", "Node": "desert_lore_deep" } ] },
-        { "LabelKey": "dialogue.guide_sands.greet.opt.work",
-          "Actions": [ { "Type": "OpenPage", "Target": "npcquests:@self" } ] }
-      ]
-    },
-    "desert_lore_deep": {
-      "TextKey": "dialogue.guide_sands.desert_lore_deep.text",
-      "Options": [
-        { "LabelKey": "dialogue.guide_sands.greet.opt.work",
-          "Actions": [ { "Type": "OpenPage", "Target": "npcquests:@self" } ] }
-      ]
+  "Payload": {
+    "Start": [
+      { "Node": "greet_known",
+        "Conditions": { "QuestState": { "Quest": "sands_walker_of_the_wastes", "State": "COMPLETED" } } },
+      { "Node": "greet" }
+    ],
+    "Nodes": {
+      "greet": {
+        "TextKey": "dialogue.guide_sands.greet.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_sands.greet.opt.intro",
+            "Conditions": { "QuestState": { "Quest": "sands_walker_of_the_wastes", "State": "ACTIVE" } },
+            "Do": [ { "Talk": "" }, { "Goto": "desert_lore" } ] },
+          { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" }
+        ]
+      },
+      "greet_known": {
+        "TextKey": "dialogue.guide_sands.greet_known.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" },
+          { "LabelKey": "dialogue.guide_sands.greet_known.opt.lore", "Goto": "desert_lore" }
+        ]
+      },
+      "desert_lore": {
+        "TextKey": "dialogue.guide_sands.desert_lore.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_sands.desert_lore.opt.more", "Goto": "desert_lore_deep" },
+          { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" }
+        ]
+      },
+      "desert_lore_deep": {
+        "TextKey": "dialogue.guide_sands.desert_lore_deep.text",
+        "Options": [
+          { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" }
+        ]
+      }
     }
   }
 }
