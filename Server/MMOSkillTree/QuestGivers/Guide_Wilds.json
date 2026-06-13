@@ -4,9 +4,12 @@
     "role": "MMO_Quest_Wilds",
     "npcId": "guide_wilds",
     "dialogue": "guide_wilds_dialogue",
-    "placement": "spawn",
+    "placement": "structure",
     "worlds": ["default"],
-    "offset": { "x": -2.5, "y": 0.0, "z": 0.0 },
+    "match": { "markerIds": ["Kweebec"] },
+    "spawnChance": 1.0,
+    "maxPerWorld": 1,
+    "offset": { "x": 2.0, "y": 0.0, "z": 1.5 },
     "yaw": 180.0
   }
 }

@@ -89,7 +89,7 @@ dialogue.guide_sands.desert_lore_deep.opt.back = Me ne occuperò.
 dialogue.guide_hub.greet.text = Benvenuto all'accampamento, viandante. Sono la Guida degli Avventurieri - tengo insieme le taglie, l'emporio dei gettoni e i tuoi registri delle abilità, tutto in un solo posto. Sei nuovo da queste parti?
 dialogue.guide_hub.greet.opt.wren = Da dove dovrei cominciare?
 dialogue.guide_hub.greet.opt.menu = Mostrami il menù dell'avventuriero.
-dialogue.guide_hub.directions.text = Raggiungi il fuoco da campo poco a ovest e presentati alla ranger Wren. Lei si prende cura dei nuovi arrivati e ti metterà sulla strada giusta. Torna da me ogni volta che ti serve il menù.
+dialogue.guide_hub.directions.text = La ranger Wren sorveglia un villaggio Kweebec là fuori, nelle terre selvagge; va' a cercarla e presentati. Lei si prende cura dei nuovi arrivati e ti metterà sulla strada giusta. Torna da me ogni volta che ti serve il menù.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Guardiano delle Terre Selvagge

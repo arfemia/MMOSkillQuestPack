@@ -89,7 +89,7 @@ dialogue.guide_sands.desert_lore_deep.opt.back = Gondoskodom róla.
 dialogue.guide_hub.greet.text = Üdv a táborban, vándor. A Kalandorok Kalauza vagyok - nálam fut össze a megbízások, a zsetonbolt és a képességeid feljegyzése, mind egy helyen. Új vagy errefelé?
 dialogue.guide_hub.greet.opt.wren = Hol kezdjem?
 dialogue.guide_hub.greet.opt.menu = Mutasd a kalandormenüt.
-dialogue.guide_hub.directions.text = Indulj a tábortűzhöz, épp nyugatra, és mutatkozz be Vadőr Wrennek. Ő gondját viseli a jövevényeknek, és jó útra terel. Hozzám bármikor visszajöhetsz, ha a menü kell.
+dialogue.guide_hub.directions.text = Vadőr Wren egy Kweebec falut őriz kint a vadonban - keresd fel, és mutatkozz be neki. Ő gondját viseli a jövevényeknek, és jó útra terel. Hozzám bármikor visszajöhetsz, ha a menü kell.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = A Vadon őrzője

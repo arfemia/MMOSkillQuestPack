@@ -13,9 +13,11 @@ build.ps1                      zips MMOSkillQuestPack-<Version>.zip (fwd-slash +
 Server/
   MMOSkillTree/
     Control/MMOSkillQuestPack.json   add-mode for every shipped type (NEVER omit a type)
-    QuestGivers/                3 givers: guide_wilds + quartermaster_wilds (placement
-                                spawn, beside the hub Guide), guide_sands (zone_discovery
-                                Howling_Sands - spawns once per world on first discovery)
+    QuestGivers/                3 givers, all placement=structure (1.4.0 A3: anchored
+                                beside a worldgen SpawnMarker, spawnChance 1.0 + maxPerWorld
+                                1 = one unique each): guide_wilds @ Kweebec village,
+                                quartermaster_wilds @ Kweebec_Merchant, guide_sands @
+                                Outlander_Hunter camp
     Dialogues/                  4 Payload-wrapped dialogue trees ({Name, Payload:{Start,
                                 Nodes}}): guide_wilds + guide_sands (explicit + sugar),
                                 quartermaster_wilds (extends questgiver_standard),
@@ -34,9 +36,12 @@ Server/
 
 ## How it fits together
 
-- **Givers** spawn via the jar's QuestGiverSpawnService and record routing target
-  `giver:<id>`; pressing F resolves LIVE: dialogue when configured, else the npc
-  quest list. `/mmonpc givers` shows spawn state; `/mmonpc reset` respawns.
+- **Givers** use `placement: structure` (1.4.0 A3): the jar's StructureGiverSpawnSystem
+  spawns each beside a matching base-game worldgen SpawnMarker (`match.markerIds`), once
+  per structure instance (persistent seen-set), via QuestGiverSpawnService; they record
+  routing target `giver:<id>`. Pressing F resolves LIVE: dialogue when configured, else
+  the npc quest list. `/mmonpc givers` shows match + spawn state, `/mmonpc structures`
+  lists seen markerIds to author `match`, `/mmonpc reset` clears the structure seen-set.
 - **Dialogues** are id-keyed standalone Payload-wrapped trees. Intro options fire
   `Talk` (the ONLY native TALK_TO_NPC source besides the MmoQuestTalk action)
   **gated on `QuestState <introQuest> ACTIVE`, NOT a story flag** (1.4.0 self-heal:
@@ -56,9 +61,10 @@ Server/
 - **Campaign flow**: wilds_meet_the_guide (autoAccept; the hub Guide directs you to
   Wren, whose `QuestState ACTIVE`-gated intro option completes it) -> camp/meal/
   combat arc (Wren) + supply arc (Bramble) -> proving_day -> call_of_the_dunes
-  (TALK_TO_NPC guide_sands - Ashkar spawns at first Howling Sands discovery; his
-  intro, gated on the autoAccept sands_walker_of_the_wastes ACTIVE, completes the
-  bridge AND sands_walker in the same Talk) -> the desert arc.
+  (TALK_TO_NPC guide_sands - Ashkar spawns at the first Outlander camp loaded, beside
+  its Outlander_Hunter marker; his intro, gated on the autoAccept
+  sands_walker_of_the_wastes ACTIVE, completes the bridge AND sands_walker in the same
+  Talk) -> the desert arc.
 - **Zone scoping**: `"zone": "Howling_Sands"` on objectives/criteria matches the
   engine's zoneName OR region folder names case-insensitively. The Snake contract
   needs it (snakes spawn in zones 1, 2 and 3); the hunter achievement chains are

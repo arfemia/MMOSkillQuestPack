@@ -89,7 +89,7 @@ dialogue.guide_sands.desert_lore_deep.opt.back = Vou cuidar disso.
 dialogue.guide_hub.greet.text = Bem-vindo ao acampamento, viajante. Eu sou o Guia de Aventureiros - mantenho as recompensas, a loja de fichas e os seus registros de habilidade tudo num só lugar. Novo por estas bandas?
 dialogue.guide_hub.greet.opt.wren = Por onde devo começar?
 dialogue.guide_hub.greet.opt.menu = Mostre-me o menu do aventureiro.
-dialogue.guide_hub.directions.text = Vá até a fogueira logo a oeste e apresente-se à Patrulheira Wren. Ela cuida dos recém-chegados e vai colocá-lo no rumo certo. Volte a mim sempre que precisar do menu.
+dialogue.guide_hub.directions.text = A Patrulheira Wren vigia uma aldeia Kweebec lá nas terras selvagens; procure-a e apresente-se. Ela cuida dos recém-chegados e vai colocá-lo no rumo certo. Volte a mim sempre que precisar do menu.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Guardião das Matas

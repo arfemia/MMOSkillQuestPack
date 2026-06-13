@@ -89,7 +89,7 @@ dialogue.guide_sands.desert_lore_deep.opt.back = Yo me encargo.
 dialogue.guide_hub.greet.text = Bienvenido al campamento, viajero. Soy la Guía de Aventureros - aquí reúno las recompensas, la tienda de fichas y tu historial de habilidades, todo en un mismo sitio. ¿Nuevo por la zona?
 dialogue.guide_hub.greet.opt.wren = ¿Por dónde debería empezar?
 dialogue.guide_hub.greet.opt.menu = Muéstrame el menú del aventurero.
-dialogue.guide_hub.directions.text = Acércate a la hoguera, justo al oeste, y preséntate a la montaraz Wren. Ella cuida de los recién llegados y te pondrá en el buen camino. Vuelve a verme siempre que necesites el menú.
+dialogue.guide_hub.directions.text = La montaraz Wren vela por una aldea Kweebec en las tierras salvajes; ve a buscarla y preséntate. Ella cuida de los recién llegados y te pondrá en el buen camino. Vuelve a verme siempre que necesites el menú.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Guardián de las Tierras

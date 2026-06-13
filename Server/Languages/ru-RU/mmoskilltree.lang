@@ -89,7 +89,7 @@ dialogue.guide_sands.desert_lore_deep.opt.back = Я этим займусь.
 dialogue.guide_hub.greet.text = Добро пожаловать в лагерь, странник. Я Проводник искателей приключений: храню контракты, лавку токенов и записи о твоих навыках - всё в одном месте. Впервые в этих краях?
 dialogue.guide_hub.greet.opt.wren = С чего мне начать?
 dialogue.guide_hub.greet.opt.menu = Покажи меню искателя приключений.
-dialogue.guide_hub.directions.text = Ступай к костру чуть западнее и представься следопыту Wren. Она опекает новичков и направит тебя на верный путь. А за меню возвращайся ко мне в любой момент.
+dialogue.guide_hub.directions.text = Следопыт Wren несёт дозор в деревне Kweebec посреди дикого края - разыщи её и представься. Она опекает новичков и направит тебя на верный путь. А за меню возвращайся ко мне в любой момент.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Страж диких земель
