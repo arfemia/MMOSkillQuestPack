@@ -11,7 +11,7 @@
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
       { "id": "find", "type": "TALK_TO_NPC", "target": "guide_sands", "amount": 1,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.find_ashkar" }
+        "matchMode": "EXACT" }
     ],
     "rewards": [
       { "type": "XP", "skill": "ACROBATICS", "amount": 1000 }

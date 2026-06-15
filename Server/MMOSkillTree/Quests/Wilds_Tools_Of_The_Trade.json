@@ -7,11 +7,10 @@
     "sortOrder": 10,
     "prerequisites": ["wilds_meet_the_guide"],
     "objectiveOverrides": {
-      "main": { "amount": 100, "textKey": "objective.text.quest.mine" }
+      "main": { "amount": 100 }
     },
     "extraObjectives": [
-      { "id": "copper", "type": "BREAK_BLOCK", "target": "Ore_Copper", "amount": 15,
-        "textKey": "objective.text.quest.mine" }
+      { "id": "copper", "type": "BREAK_BLOCK", "target": "Ore_Copper", "amount": 15 }
     ],
     "rewards": [
       { "type": "COMMAND", "command": "/give {player} Tool_Pickaxe_Iron --quantity=1", "runAs": "CONSOLE" },

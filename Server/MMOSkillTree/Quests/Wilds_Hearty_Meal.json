@@ -11,7 +11,7 @@
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
       { "id": "hunt", "type": "KILL_ENTITY", "target": "Boar", "amount": 3,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay", "order": 1 },
+        "matchMode": "EXACT", "order": 1 },
       { "id": "gather", "type": "PICKUP_ITEM", "target": "Food_Wildmeat_Raw", "amount": 3,
         "order": 1 },
       { "id": "eat", "type": "CONSUME_ITEM", "target": "Food_", "amount": 1,

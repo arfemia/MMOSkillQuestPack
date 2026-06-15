@@ -4,11 +4,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Introduce yourself to Ranger Wren
-objective.text.quest.meet_ashkar = Speak with Dunewalker Ashkar
-objective.text.quest.find_ashkar = Seek out Dunewalker Ashkar in the Howling Sands
 objective.text.quest.eat_food = Eat a hearty meal
-objective.text.quest.slay_in_sands = Slay {0} {1} in the Howling Sands
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = A Word with the Ranger

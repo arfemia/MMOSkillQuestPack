@@ -5,11 +5,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Presentati alla Ranger Wren
-objective.text.quest.meet_ashkar = Parla con la Camminatrice delle Dune Ashkar
-objective.text.quest.find_ashkar = Cerca la Camminatrice delle Dune Ashkar nelle Howling Sands
 objective.text.quest.eat_food = Consuma un pasto sostanzioso
-objective.text.quest.slay_in_sands = Uccidi {0} {1} nelle Howling Sands
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Due Parole con la Ranger

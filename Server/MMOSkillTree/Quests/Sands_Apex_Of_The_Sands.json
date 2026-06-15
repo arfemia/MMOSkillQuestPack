@@ -12,11 +12,11 @@
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
       { "id": "tigers", "type": "KILL_ENTITY", "target": "Tiger_Sabertooth", "amount": 5,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+        "matchMode": "EXACT" },
       { "id": "crocs", "type": "KILL_ENTITY", "target": "Crocodile", "amount": 5,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+        "matchMode": "EXACT" },
       { "id": "hyenas", "type": "KILL_ENTITY", "target": "Hyena", "amount": 10,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" }
+        "matchMode": "EXACT" }
     ],
     "rewards": [
       { "type": "BOOST_TOKEN", "skill": "ALL", "multiplier": 2.5, "durationMinutes": 60 },

@@ -12,11 +12,11 @@
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
       { "id": "cactee", "type": "KILL_ENTITY", "target": "Cactee", "amount": 8,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+        "matchMode": "EXACT" },
       { "id": "scorpions", "type": "KILL_ENTITY", "target": "Scorpion", "amount": 10,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.slay" },
+        "matchMode": "EXACT" },
       { "id": "snakes", "type": "KILL_ENTITY", "target": "Snake", "amount": 6,
-        "zone": "Howling_Sands", "textKey": "objective.text.quest.slay_in_sands" }
+        "zone": "Howling_Sands" }
     ],
     "rewards": [
       { "type": "XP", "skill": "SWORDS", "amount": 1200 },

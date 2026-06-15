@@ -10,8 +10,7 @@
     "prerequisites": ["wilds_tools_of_the_trade"],
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
-      { "id": "any", "type": "CATCH_FISH", "target": "", "amount": 5,
-        "textKey": "objective.text.quest.catch_fish_any", "order": 1 },
+      { "id": "any", "type": "CATCH_FISH", "target": "", "amount": 5, "order": 1 },
       { "id": "catfish", "type": "CATCH_FISH", "target": "Catfish", "amount": 3, "order": 1 }
     ],
     "rewards": [

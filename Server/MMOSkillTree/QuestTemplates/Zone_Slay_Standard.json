@@ -11,8 +11,7 @@
         "id": "main",
         "type": "KILL_ENTITY",
         "target": "{{target}}",
-        "amount": 1,
-        "textKey": "objective.text.quest.slay"
+        "amount": 1
       }
     ]
   }

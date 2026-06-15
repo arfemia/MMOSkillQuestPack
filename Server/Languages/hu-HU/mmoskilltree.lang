@@ -5,11 +5,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Mutatkozz be Vadőr Wrennek
-objective.text.quest.meet_ashkar = Beszélj Dűnejáró Ashkarral
-objective.text.quest.find_ashkar = Keresd fel Dűnejáró Ashkart a Howling Sands területén
 objective.text.quest.eat_food = Egyél meg egy kiadós ételt
-objective.text.quest.slay_in_sands = Teríts le {0} {1} a Howling Sands területén
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Pár szó a Vadőrrel

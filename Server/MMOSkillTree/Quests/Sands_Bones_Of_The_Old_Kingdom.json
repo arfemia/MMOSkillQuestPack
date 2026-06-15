@@ -20,8 +20,7 @@
     "requirements": { "minLevel": 80 },
     "visibility": { "hidden": true, "requirePrerequisites": true },
     "objectives": [
-      { "id": "skeletons", "type": "KILL_ENTITY", "target": "Skeleton_Sand", "amount": 12,
-        "textKey": "objective.text.quest.slay", "order": 1 },
+      { "id": "skeletons", "type": "KILL_ENTITY", "target": "Skeleton_Sand", "amount": 12, "order": 1 },
       { "id": "essence", "type": "TURN_IN", "target": "Ingredient_Life_Essence", "amount": 50,
         "matchMode": "EXACT", "turnInNpcId": "guide_sands",
         "order": 2 }

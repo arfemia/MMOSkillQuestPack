@@ -5,11 +5,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Preséntate a la Montaraz Wren
-objective.text.quest.meet_ashkar = Habla con el Caminante de Dunas Ashkar
-objective.text.quest.find_ashkar = Busca al Caminante de Dunas Ashkar en las Howling Sands
 objective.text.quest.eat_food = Come una comida abundante
-objective.text.quest.slay_in_sands = Mata {0} {1} en las Howling Sands
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Unas Palabras con la Montaraz

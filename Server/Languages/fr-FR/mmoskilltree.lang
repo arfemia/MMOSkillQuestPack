@@ -5,11 +5,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Présentez-vous à la Patrouilleuse Wren
-objective.text.quest.meet_ashkar = Parlez avec l'Arpenteur des dunes Ashkar
-objective.text.quest.find_ashkar = Retrouvez l'Arpenteur des dunes Ashkar dans les Howling Sands
 objective.text.quest.eat_food = Mangez un repas copieux
-objective.text.quest.slay_in_sands = Tuez {0} {1} dans les Howling Sands
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Un mot avec la patrouilleuse

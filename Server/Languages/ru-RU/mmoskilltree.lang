@@ -5,11 +5,7 @@
 # amounts/objectives render through the mod's localized templates, never here.
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
-objective.text.quest.meet_wren = Представьтесь следопыту Wren
-objective.text.quest.meet_ashkar = Поговорите с песчаным странником Ashkar
-objective.text.quest.find_ashkar = Разыщите песчаного странника Ashkar в Howling Sands
 objective.text.quest.eat_food = Съешьте сытную трапезу
-objective.text.quest.slay_in_sands = Сразите {0} {1} в Howling Sands
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Слово со следопытом

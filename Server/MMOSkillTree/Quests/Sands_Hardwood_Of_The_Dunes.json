@@ -8,11 +8,10 @@
     "prerequisites": ["sands_walker_of_the_wastes"],
     "requirements": { "minSkill": "WOODCUTTING", "minSkillLevel": 15 },
     "objectiveOverrides": {
-      "main": { "amount": 60, "textKey": "objective.text.quest.chop" }
+      "main": { "amount": 60 }
     },
     "extraObjectives": [
-      { "id": "palm", "type": "BREAK_BLOCK", "target": "Wood_Palm", "amount": 30,
-        "textKey": "objective.text.quest.chop" }
+      { "id": "palm", "type": "BREAK_BLOCK", "target": "Wood_Palm", "amount": 30 }
     ],
     "rewards": [
       { "type": "XP", "skill": "WOODCUTTING", "amount": 2000 }

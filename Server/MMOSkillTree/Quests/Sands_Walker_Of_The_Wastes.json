@@ -10,7 +10,7 @@
     "tags": ["Chapter_3"],
     "objectives": [
       { "id": "talk", "type": "TALK_TO_NPC", "target": "guide_sands", "amount": 1,
-        "matchMode": "EXACT", "textKey": "objective.text.quest.meet_ashkar" }
+        "matchMode": "EXACT" }
     ],
     "rewards": [
       { "type": "COMMAND", "command": "/give {player} Potion_Health_Small --quantity=2", "runAs": "CONSOLE" }
