@@ -38,7 +38,7 @@
           { "LabelKey": "dialogue.guide_wilds.camp_talk.opt.bread",
             "Conditions": { "NotFlag": "reward:guide_wilds_dialogue:camp_talk:0" },
             "Do": [
-              { "Reward": { "type": "COMMAND", "command": "/give {player} Food_Bread --quantity=3" }, "Once": true },
+              { "Reward": { "Type": "COMMAND", "Command": "/give {player} Food_Bread --quantity=3" }, "Once": true },
               { "Close": true }
             ] },
           { "LabelKey": "dialogue.guide_wilds.camp_talk.opt.lore", "Goto": "lore_wilds" }

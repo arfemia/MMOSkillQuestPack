@@ -88,7 +88,12 @@ Verify: server log shows the Dialogue/Quest-giver/Quest layer-applied lines and
 
 PascalCase filenames; raw types use `{"Name": ..., "Payload": {...}}`, dialogues
 too (PascalCase codec keys inside `Payload.Start`/`Payload.Nodes`; node ids/map
-keys + sugar values stay lowercase). Quest-driven option visibility derives from
+keys + sugar values stay lowercase). **QuestGivers are the exception - a 1.4.0
+Pattern A full structured asset: NO `Payload` wrapper, flat PascalCase fields
+(`Role`/`NpcId`/`Dialogue`/`Placement`/`Worlds`/`Match`:{`MarkerIds`...}/`Offset`:
+{`X`/`Y`/`Z`}/`SpawnChance`/`MaxPerWorld`/`Yaw`), decoded directly by the engine
+(editor-native). The old flat-key / lowercase tolerance is gone.** Quest-driven
+option visibility derives from
 `QuestState`, never a parallel `SetFlag`/`NotFlag` (self-heal convention). Lang
 values are data-free flavor (no digits, no reward restating). Commit + push HERE
 first, then bump the gitlink in the root repo.

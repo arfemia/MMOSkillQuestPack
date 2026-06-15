@@ -1,15 +1,13 @@
 {
   "Name": "Guide_Sands",
-  "Payload": {
-    "role": "MMO_Quest_Sands",
-    "npcId": "guide_sands",
-    "dialogue": "guide_sands_dialogue",
-    "placement": "structure",
-    "worlds": ["default"],
-    "match": { "markerIds": ["Outlander_Hunter"] },
-    "spawnChance": 1.0,
-    "maxPerWorld": 1,
-    "offset": { "x": 2.5, "y": 0.0, "z": 2.5 },
-    "yaw": 180.0
-  }
+  "Role": "MMO_Quest_Sands",
+  "NpcId": "guide_sands",
+  "Dialogue": "guide_sands_dialogue",
+  "Placement": "structure",
+  "Worlds": ["default"],
+  "Match": { "MarkerIds": ["Outlander_Hunter"] },
+  "SpawnChance": 1.0,
+  "MaxPerWorld": 1,
+  "Offset": { "X": 2.5, "Y": 0.0, "Z": 2.5 },
+  "Yaw": 180.0
 }
