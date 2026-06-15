@@ -24,7 +24,7 @@
         "textKey": "objective.text.quest.slay", "order": 1 },
       { "id": "essence", "type": "TURN_IN", "target": "Ingredient_Life_Essence", "amount": 50,
         "matchMode": "EXACT", "turnInNpcId": "guide_sands",
-        "textKey": "objective.text.turn_in", "order": 2 }
+        "order": 2 }
     ],
     "rewards": [
       { "type": "XP", "skill": "MAGIC", "amount": 3000 },
