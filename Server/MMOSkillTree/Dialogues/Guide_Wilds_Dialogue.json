@@ -3,9 +3,9 @@
   "Payload": {
     "Start": [
       { "Node": "greet_done",
-        "Conditions": { "QuestState": { "Quest": "wilds_call_of_the_dunes", "State": "COMPLETED" } } },
+        "Conditions": [ { "Type": "QuestState", "Quest": "wilds_call_of_the_dunes", "State": "COMPLETED" } ] },
       { "Node": "greet_midway",
-        "Conditions": { "QuestState": { "Quest": "wilds_meet_the_guide", "State": "COMPLETED" } } },
+        "Conditions": [ { "Type": "QuestState", "Quest": "wilds_meet_the_guide", "State": "COMPLETED" } ] },
       { "Node": "greet" }
     ],
     "Nodes": {
@@ -13,7 +13,7 @@
         "TextKey": "dialogue.guide_wilds.greet.text",
         "Options": [
           { "LabelKey": "dialogue.guide_wilds.greet.opt.intro",
-            "Conditions": { "QuestState": { "Quest": "wilds_meet_the_guide", "State": "ACTIVE" } },
+            "Conditions": [ { "Type": "QuestState", "Quest": "wilds_meet_the_guide", "State": "ACTIVE" } ],
             "Do": [ { "Talk": "" }, { "Goto": "camp_talk" } ] },
           { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "npcquests:@self" }
         ]
@@ -36,7 +36,7 @@
         "TextKey": "dialogue.guide_wilds.camp_talk.text",
         "Options": [
           { "LabelKey": "dialogue.guide_wilds.camp_talk.opt.bread",
-            "Conditions": { "NotFlag": "reward:guide_wilds_dialogue:camp_talk:0" },
+            "Conditions": [ { "Type": "NotFlag", "Flag": "reward:guide_wilds_dialogue:camp_talk:0" } ],
             "Do": [
               { "Reward": { "Type": "COMMAND", "Command": "/give {player} Food_Bread --quantity=3" }, "Once": true },
               { "Close": true }

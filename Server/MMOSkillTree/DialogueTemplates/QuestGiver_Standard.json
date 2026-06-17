@@ -2,18 +2,18 @@
   "Name": "QuestGiver_Standard",
   "Payload": {
     "Start": [
-      { "Node": "greet_active",
-        "Conditions": { "QuestState": { "Quest": "{{turnInQuest}}", "State": "ACTIVE" } } },
-      { "Node": "greet_done",
-        "Conditions": { "QuestState": { "Quest": "{{introQuest}}", "State": "COMPLETED" } } },
+      { "Node": "greet_active", "PruneIfEmpty": "turnInQuest",
+        "Conditions": [ { "Type": "QuestState", "Quest": "{{turnInQuest}}", "State": "ACTIVE" } ] },
+      { "Node": "greet_done", "PruneIfEmpty": "introQuest",
+        "Conditions": [ { "Type": "QuestState", "Quest": "{{introQuest}}", "State": "COMPLETED" } ] },
       { "Node": "greet" }
     ],
     "Nodes": {
       "greet": {
         "TextKey": "dialogue.{{npc}}.greet.text",
         "Options": [
-          { "LabelKey": "dialogue.{{npc}}.greet.opt.intro",
-            "Conditions": { "QuestState": { "Quest": "{{introQuest}}", "State": "ACTIVE" } },
+          { "LabelKey": "dialogue.{{npc}}.greet.opt.intro", "PruneIfEmpty": "introQuest",
+            "Conditions": [ { "Type": "QuestState", "Quest": "{{introQuest}}", "State": "ACTIVE" } ],
             "Do": [ { "Talk": "" }, { "Goto": "lore" } ] },
           { "LabelKey": "dialogue.{{npc}}.greet.opt.work", "Open": "{{questList}}" }
         ]

@@ -3,7 +3,7 @@
   "Payload": {
     "Start": [
       { "Node": "greet_known",
-        "Conditions": { "QuestState": { "Quest": "sands_walker_of_the_wastes", "State": "COMPLETED" } } },
+        "Conditions": [ { "Type": "QuestState", "Quest": "sands_walker_of_the_wastes", "State": "COMPLETED" } ] },
       { "Node": "greet" }
     ],
     "Nodes": {
@@ -11,7 +11,7 @@
         "TextKey": "dialogue.guide_sands.greet.text",
         "Options": [
           { "LabelKey": "dialogue.guide_sands.greet.opt.intro",
-            "Conditions": { "QuestState": { "Quest": "sands_walker_of_the_wastes", "State": "ACTIVE" } },
+            "Conditions": [ { "Type": "QuestState", "Quest": "sands_walker_of_the_wastes", "State": "ACTIVE" } ],
             "Do": [ { "Talk": "" }, { "Goto": "desert_lore" } ] },
           { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" }
         ]
