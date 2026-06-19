@@ -6,6 +6,7 @@
     "sortOrder": 0,
     "autoAccept": true,
     "tags": ["Tutorial", "Chapter_2"],
+    "prerequisites": ["getting_started"],
     "params": { "giver": "guide_wilds", "target": "guide_wilds" },
     "rewards": [
       { "type": "COMMAND", "command": "/give {player} Food_Bread --quantity=3", "runAs": "CONSOLE" },
