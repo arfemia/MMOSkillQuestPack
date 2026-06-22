@@ -71,7 +71,7 @@ Server/
   fully zone-scoped kill counters.
 - **minLevel is the SUMMED total of all skill levels** (not highest skill). Ramp:
   wilds 10/20 -> sands 40/60/80/100.
-- **Verified-id notes** (hytale-resources): wood targets are CONTAINS substrings
+- **Verified-id notes** (ids re-verify against `hytale-shared-source/HytaleAssets/Server/**`, id = filename; `hytale-resources/{items,mobs}-index.json` for a fast id->name lookup): wood targets are CONTAINS substrings
   (`Wood_Gumboab`, `Wood_Palm` - the items are `Wood_<Species>_Trunk*`); fish are
   CONTAINS bare names (matches both the role id and `Fish_<Name>_Item`); Salmon
   does NOT spawn in zones 1-2 (use Catfish); bare Zombie has no vanilla overworld
