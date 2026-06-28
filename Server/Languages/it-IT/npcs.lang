@@ -1,17 +1,14 @@
-
 # MMOSkillQuestPack - quest-giver NPC display names + F-interact hints.
 # Hytale's I18nModule prepends the filename, so each key loads as npcs.<key>;
-# the role JSONs reference the prefixed form (npcs.MMO_Quest_Wilds.name).
+# the runtime-generated giver roles reference the prefixed form (npcs.guide_wilds.name,
+# npcs.questgiver.hint) - see QuestGiverRoleGenerator.
 
-MMO_Quest_Wilds.name = Ranger Wren
-MMO_Quest_Wilds.hint = Premi [{key}] per parlare
-MMO_Quest_Wilds_Supply.name = Quartiermastro Bramble
-MMO_Quest_Wilds_Supply.hint = Premi [{key}] per parlare
-MMO_Quest_Sands.name = Camminatrice delle Dune Ashkar
-MMO_Quest_Sands.hint = Premi [{key}] per parlare
+# Shared press-F hint for every generated quest-giver role (the default HintKey).
+# {key} is the client's interact keybind.
+questgiver.hint = Premi [{key}] per parlare
 
-# Objective-target display names for the giver npc ids (TargetNameResolver's
-# npcs.<id>.name namespace), so talk objectives read with character names.
+# Quest-giver display names (the generated role's nameplate AND the TargetNameResolver
+# npcs.<id>.name namespace, so "Go to {NPC}" objectives read with character names).
 guide_wilds.name = Ranger Wren
 quartermaster_wilds.name = Quartiermastro Bramble
 guide_sands.name = Camminatrice delle Dune Ashkar

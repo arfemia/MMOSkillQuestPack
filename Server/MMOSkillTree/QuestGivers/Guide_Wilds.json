@@ -1,8 +1,10 @@
 {
   "Name": "Guide_Wilds",
-  "Role": "MMO_Quest_Wilds",
   "NpcId": "guide_wilds",
   "Dialogue": "guide_wilds_dialogue",
+  "Appearance": "Feran_Windwalker",
+  "NameKey": "npcs.guide_wilds.name",
+  "HintKey": "npcs.questgiver.hint",
   "Placement": "structure",
   "Worlds": ["default"],
   "Match": { "MarkerIds": ["Kweebec"] },

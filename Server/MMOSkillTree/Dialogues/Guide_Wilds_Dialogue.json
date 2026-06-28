@@ -14,7 +14,7 @@
         "Options": [
           { "LabelKey": "dialogue.guide_wilds.greet.opt.intro",
             "Conditions": [ { "Type": "QuestState", "Quest": "wilds_meet_the_guide", "State": "ACTIVE" } ],
-            "Do": [ { "Talk": "" }, { "Goto": "camp_talk" } ] },
+            "Do": [ { "TurnIn": "wilds_meet_the_guide" }, { "Goto": "camp_talk" } ] },
           { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "npcquests:@self" }
         ]
       },

@@ -1,13 +1,14 @@
 {
   "Name": "Wilds_Meet_The_Guide",
   "Payload": {
-    "extends": "zone_talk_standard",
     "id": "wilds_meet_the_guide",
+    "category": "main",
     "sortOrder": 0,
     "autoAccept": true,
+    "autoClaimRewards": true,
     "tags": ["Tutorial", "Chapter_2"],
-    "prerequisites": ["getting_started"],
-    "params": { "giver": "guide_wilds", "target": "guide_wilds" },
+    "prerequisites": ["gather_the_basics"],
+    "turnInNpcId": "guide_wilds",
     "rewards": [
       { "type": "COMMAND", "command": "/give {player} Food_Bread --quantity=3", "runAs": "CONSOLE" },
       { "type": "COMMAND", "command": "/give {player} Bench_Campfire --quantity=1", "runAs": "CONSOLE" }

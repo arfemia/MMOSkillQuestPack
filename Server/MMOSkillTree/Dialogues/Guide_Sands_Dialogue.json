@@ -12,14 +12,15 @@
         "Options": [
           { "LabelKey": "dialogue.guide_sands.greet.opt.intro",
             "Conditions": [ { "Type": "QuestState", "Quest": "sands_walker_of_the_wastes", "State": "ACTIVE" } ],
-            "Do": [ { "Talk": "" }, { "Goto": "desert_lore" } ] },
+            "Do": [ { "Talk": "" }, { "TurnIn": "wilds_call_of_the_dunes" }, { "Goto": "desert_lore" } ] },
           { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" }
         ]
       },
       "greet_known": {
         "TextKey": "dialogue.guide_sands.greet_known.text",
         "Options": [
-          { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "npcquests:@self" },
+          { "LabelKey": "dialogue.guide_sands.greet.opt.work",
+            "Do": [ { "TurnIn": "wilds_call_of_the_dunes" }, { "Open": "npcquests:@self" } ] },
           { "LabelKey": "dialogue.guide_sands.greet_known.opt.lore", "Goto": "desert_lore" }
         ]
       },

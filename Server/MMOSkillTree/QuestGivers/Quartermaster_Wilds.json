@@ -1,8 +1,10 @@
 {
   "Name": "Quartermaster_Wilds",
-  "Role": "MMO_Quest_Wilds_Supply",
   "NpcId": "quartermaster_wilds",
   "Dialogue": "quartermaster_wilds_dialogue",
+  "Appearance": "Klops_Merchant",
+  "NameKey": "npcs.quartermaster_wilds.name",
+  "HintKey": "npcs.questgiver.hint",
   "Placement": "structure",
   "Worlds": ["default"],
   "Match": { "MarkerIds": ["Kweebec_Merchant"] },

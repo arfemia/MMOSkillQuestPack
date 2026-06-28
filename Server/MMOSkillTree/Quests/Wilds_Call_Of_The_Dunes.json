@@ -9,10 +9,7 @@
     "npcRequiredToAccept": true,
     "prerequisites": ["wilds_proving_day"],
     "visibility": { "hidden": true, "requirePrerequisites": true },
-    "objectives": [
-      { "id": "find", "type": "TALK_TO_NPC", "target": "guide_sands", "amount": 1,
-        "matchMode": "EXACT" }
-    ],
+    "turnInNpcId": "guide_sands",
     "rewards": [
       { "type": "XP", "skill": "ACROBATICS", "amount": 1000 }
     ]

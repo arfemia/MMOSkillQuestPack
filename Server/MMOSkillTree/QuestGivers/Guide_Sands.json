@@ -1,8 +1,10 @@
 {
   "Name": "Guide_Sands",
-  "Role": "MMO_Quest_Sands",
   "NpcId": "guide_sands",
   "Dialogue": "guide_sands_dialogue",
+  "Appearance": "Outlander_Hunter",
+  "NameKey": "npcs.guide_sands.name",
+  "HintKey": "npcs.questgiver.hint",
   "Placement": "structure",
   "Worlds": ["default"],
   "Match": { "MarkerIds": ["Outlander_Hunter"] },
