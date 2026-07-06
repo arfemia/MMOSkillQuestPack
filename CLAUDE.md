@@ -25,10 +25,14 @@ Server/
                                 npcs.lang); the jar GENERATES the native role at runtime (NO
                                 hand-authored role JSON ships here - see below).
     Dialogues/                  4 Payload-wrapped dialogue trees ({Name, Payload:{Start,
-                                Nodes}}): guide_wilds + guide_sands (explicit + sugar),
-                                quartermaster_wilds (extends questgiver_standard),
-                                guide_hub (hub welcome + directs to Wren)
-    DialogueTemplates/          QuestGiver_Standard (extends/params/nodeOverrides/extraNodes)
+                                Nodes}}): guide_wilds + guide_sands + quartermaster_wilds
+                                (all standalone, explicit + sugar), guide_hub (hub welcome
+                                + directs to Wren). 1.5.0: quartermaster is now standalone
+                                (the extends/params template DSL was removed); shared giver
+                                skeletons use native "Parent":"<id>" inheritance instead.
+    DialogueTemplates/          (empty) native Parent BASES go here (a base dialogue others
+                                inherit by "Parent":"<id>"); the old QuestGiver_Standard
+                                params template was removed with the DSL
     QuestTemplates/             Zone_{Slay,Gather,TurnIn}_Standard (extends/params DSL)
     Quests/                     11 Emerald Wilds + 8 Howling Sands (raw Payload quests)
     Achievements/               campaigns + orbis_campaigner meta + well_met + zone hunts
@@ -65,9 +69,11 @@ Server/
   visibility from quest state, which resets with the quest). The bread handout is
   `Reward Once:true`; its option hides via the implicit, reset-clearable flag
   `reward:guide_wilds_dialogue:camp_talk:0`. Options use the [sugar shorthand]
-  (`Open`/`Goto`/`Talk`/`TurnIn`/`Reward`/`Do`); quartermaster_wilds `extends`
-  `questgiver_standard` (turn-in giver) as the live template example. See
-  CONTENT_PACKS.md "Dialogue authoring".
+  (`Open`/`Goto`/`Talk`/`TurnIn`/`Reward`/`Do`). 1.5.0 removed the dialogue template
+  DSL (`extends`/`params`/`nodeOverrides`/prune): quartermaster_wilds is now a
+  standalone turn-in-giver tree; a set of givers that share a skeleton should use
+  native `"Parent":"<id>"` inheritance (per-node keyed merge, convention loc-keys)
+  instead. See CONTENT_PACKS.md "Dialogue authoring".
 - **Hub dialogue**: `guide_hub_dialogue` welcomes the player and points them to
   Ranger Wren, then opens the hub menu (`Open: hub`). It is wired by setting
   `mods/mmoskilltree/spawn-hub.json` `"dialogue": "guide_hub_dialogue"` (the jar's

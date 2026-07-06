@@ -1,29 +1,37 @@
 {
   "Name": "Quartermaster_Wilds_Dialogue",
+  "$Comment": "Wilds quartermaster (turn-in giver for wilds_quartermasters_ledger). Native schema (1.5.0): the old 'extends questgiver_standard' template DSL was removed; this is the fully-resolved standalone tree. greet_active shows while the ledger quest is ACTIVE (turn it in here + browse quests); otherwise greet offers browse-quests + a trade flavor beat. A future set of givers that share a skeleton should use native 'Parent' inheritance (a base dialogue in Dialogues/ or DialogueTemplates/, inherited by 'Parent':'<id>' with node-keyed merge), not a params template.",
   "Payload": {
-    "extends": "questgiver_standard",
-    "params": {
-      "npc": "quartermaster_wilds",
-      "questList": "npcquests:@self",
-      "introQuest": "",
-      "turnInQuest": "wilds_quartermasters_ledger"
-    },
-    "nodeOverrides": {
+    "Start": [
+      {
+        "Node": "greet_active",
+        "Conditions": [
+          { "Type": "QuestState", "Quest": "wilds_quartermasters_ledger", "State": "ACTIVE" }
+        ]
+      },
+      { "Node": "greet" }
+    ],
+    "Nodes": {
       "greet": {
-        "Options!": [
+        "TextKey": "dialogue.quartermaster_wilds.greet.text",
+        "Options": [
           { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "npcquests:@self" },
-          { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
-            "Do": [ { "Talk": "" }, { "Goto": "trade_talk" } ] }
+          {
+            "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
+            "Do": [ { "Talk": "" }, { "Goto": "trade_talk" } ]
+          }
         ]
       },
       "greet_active": {
         "TextKey": "dialogue.quartermaster_wilds.greet_ledger.text",
         "Options": [
-          { "LabelKey": "dialogue.quartermaster_wilds.greet_ledger.opt.turnin" }
+          {
+            "LabelKey": "dialogue.quartermaster_wilds.greet_ledger.opt.turnin",
+            "Do": [ { "TurnIn": "wilds_quartermasters_ledger" }, { "Open": "npcquests:@self" } ]
+          },
+          { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "npcquests:@self" }
         ]
-      }
-    },
-    "extraNodes": {
+      },
       "trade_talk": {
         "TextKey": "dialogue.quartermaster_wilds.trade_talk.text",
         "Options": [
