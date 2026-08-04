@@ -1,6 +1,6 @@
 # CLAUDE.md - MMOSkillQuestPack
 
-Zone questlines for MMO Skill Tree **1.4.0+** (hard dependency in `manifest.json`).
+Zone questlines for MMO Skill Tree **1.6.0+** (hard dependency in `manifest.json`).
 The jar ships only the engine (quest givers, dialogues, zone scoping) plus the five-quest
 onboarding chain (getting_started -> craft_starter_tools -> gather_the_basics ->
 into_the_fray -> climbing_the_ranks); this pack ships the actual Orbis campaign content.
@@ -9,7 +9,7 @@ Without it the quest log is minimal by design (the bounty-pack philosophy).
 ## Layout
 
 ```
-manifest.json                  Group Ziggfreed, hard-dep Ziggfreed:MMOSkillTree ^1.4.0
+manifest.json                  Group Ziggfreed, hard-dep Ziggfreed:MMOSkillTree ^1.6.0
 build.ps1                      zips MMOSkillQuestPack-<Version>.zip (fwd-slash + dir entries)
 Server/
   MMOSkillTree/
