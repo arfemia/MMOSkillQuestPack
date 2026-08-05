@@ -3,7 +3,7 @@
   "Payload": {
     "extends": "zone_gather_standard",
     "id": "wilds_tools_of_the_trade",
-    "params": { "giver": "quartermaster_wilds", "target": "Stone" },
+    "params": { "giver": "quartermaster_wilds", "target": "Rock_" },
     "sortOrder": 10,
     "prerequisites": ["wilds_meet_the_guide"],
     "objectiveOverrides": {
