@@ -81,11 +81,6 @@ dialogue.guide_sands.desert_lore.opt.more = Что случилось с дре�
 dialogue.guide_sands.desert_lore_deep.text = Короли возводили каменоломни и армии, а песок забрал и то, и другое. Их солдаты всё ещё бродят по руинам с пустыми глазами. Что бы ни держало их вместе, я хочу, чтобы этого НЕ БЫЛО на моих дюнах.
 dialogue.guide_sands.desert_lore_deep.opt.back = Я этим займусь.
 
-# ---- Dialogue: Adventurer's Guide (guide_hub_dialogue) ----
-dialogue.guide_hub.greet.text = Добро пожаловать в лагерь, странник. Я Проводник искателей приключений: храню контракты, лавку токенов и записи о твоих навыках - всё в одном месте. Впервые в этих краях?
-dialogue.guide_hub.greet.opt.wren = С чего мне начать?
-dialogue.guide_hub.greet.opt.menu = Покажи меню искателя приключений.
-dialogue.guide_hub.directions.text = Следопыт Wren несёт дозор в деревне Kweebec посреди дикого края - разыщи её и представься. Она опекает новичков и направит тебя на верный путь. А за меню возвращайся ко мне в любой момент.
 
 # ---- Pack achievements ----
 achievement.emerald_wilds_campaign.title = Страж диких земель

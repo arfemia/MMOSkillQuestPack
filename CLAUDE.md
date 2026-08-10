@@ -16,10 +16,9 @@ Server/
     Control/MMOSkillQuestPack.json   add-mode for every MMOSkillTree type shipped here (NEVER
                                 omit one). NpcPlacements are NOT listed: that store belongs to
                                 ziggfreed-common and has no add/replace control gate.
-    Dialogues/                  4 Payload-wrapped dialogue trees ({Name, Payload:{Start,
+    Dialogues/                  3 Payload-wrapped dialogue trees ({Name, Payload:{Start,
                                 Nodes}}): guide_wilds + guide_sands + quartermaster_wilds
-                                (all standalone, explicit + sugar), guide_hub (hub welcome
-                                + directs to Wren). 1.5.0: quartermaster is now standalone
+                                (all standalone, explicit + sugar). 1.5.0: quartermaster is now standalone
                                 (the extends/params template DSL was removed); shared giver
                                 skeletons use native "Parent":"<id>" inheritance instead.
     DialogueTemplates/          (empty) native Parent BASES go here (a base dialogue others
@@ -86,14 +85,12 @@ Server/
   standalone turn-in-giver tree; a set of givers that share a skeleton should use
   native `"Parent":"<id>"` inheritance (per-node keyed merge, convention loc-keys)
   instead. See CONTENT_PACKS.md "Dialogue authoring".
-- **Hub dialogue**: `guide_hub_dialogue` welcomes the player and points them to
-  Ranger Wren, then opens the hub menu (`Open: hub`). It is OPT-IN and nothing here
-  wires it: to use it, override the jar's hub placement by dropping your own
-  `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
-  `mmoskilltree:ui_target` reads `dialogue:guide_hub_dialogue:mmo_hub`. Until something
-  points at it, `/mmoconfig validate` reports it as a dialogue no placement opens, which
-  is accurate rather than a defect. The meet-the-guide quest `autoAccept`s either way, so
-  the campaign starts with or without the opt-in.
+- **Hub dialogue**: the jar owns it (`mmo_hub_intro`), and the hub placement points at it.
+  To give the guide a different greeting, override the jar's hub placement by dropping your
+  own `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
+  `mmoskilltree:ui_target` reads `dialogue:<your dialogue id>:mmo_hub`. Keep the third
+  segment: it is what carries the NPC's name into the dialogue header and makes `@self`
+  resolve, which the giver trees here rely on.
 - **Campaign flow**: wilds_meet_the_guide (autoAccept, gated on the jar `gather_the_basics`
   tutorial; a quest-level `turnInNpcId: guide_wilds` and NO npcViewId, so the engine
   auto-appends a "Go to Ranger Wren" report-back turn-in + fires the map marker; Wren's
