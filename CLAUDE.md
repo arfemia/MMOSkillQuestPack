@@ -13,17 +13,9 @@ manifest.json                  Group Ziggfreed, hard-dep Ziggfreed:MMOSkillTree 
 build.ps1                      zips MMOSkillQuestPack-<Version>.zip (fwd-slash + dir entries)
 Server/
   MMOSkillTree/
-    Control/MMOSkillQuestPack.json   add-mode for every shipped type (NEVER omit a type)
-    QuestGivers/                3 givers, all placement=structure (1.4.0 A3: anchored
-                                beside a worldgen SpawnMarker, spawnChance 1.0 + maxPerWorld
-                                1 = one unique each): guide_wilds @ Kweebec village
-                                (Feran_Windwalker), quartermaster_wilds @ Kweebec_Merchant
-                                (Klops_Merchant), guide_sands @ Outlander_Hunter camp
-                                (Outlander_Hunter). Each bundle authors Appearance (NameKey +
-                                HintKey are OPTIONAL overrides - they default to npcs.<npcId>.name
-                                and the shared npcs.questgiver.hint, both already shipped in
-                                npcs.lang); the jar GENERATES the native role at runtime (NO
-                                hand-authored role JSON ships here - see below).
+    Control/MMOSkillQuestPack.json   add-mode for every MMOSkillTree type shipped here (NEVER
+                                omit one). NpcPlacements are NOT listed: that store belongs to
+                                ziggfreed-common and has no add/replace control gate.
     Dialogues/                  4 Payload-wrapped dialogue trees ({Name, Payload:{Start,
                                 Nodes}}): guide_wilds + guide_sands + quartermaster_wilds
                                 (all standalone, explicit + sugar), guide_hub (hub welcome
@@ -36,32 +28,52 @@ Server/
     QuestTemplates/             Zone_{Slay,Gather,TurnIn}_Standard (extends/params DSL)
     Quests/                     11 Emerald Wilds + 8 Howling Sands (raw Payload quests)
     Achievements/               campaigns + orbis_campaigner meta + well_met + zone hunts
+  ZiggfreedCommon/
+    NpcPlacements/              3 givers, all anchored to a worldgen SpawnMarker
+                                (Anchor.Structure, SpawnChance 1.0 + MaxPerWorld 1 = one
+                                unique each): guide_wilds @ Kweebec village
+                                (Feran_Windwalker), quartermaster_wilds @ Kweebec_Merchant
+                                (Klops_Merchant), guide_sands @ Outlander_Hunter camp
+                                (Outlander_Hunter). Each file authors Identity.BaseRole
+                                mmo_questgiver + Appearance + NameKey + HintKey (all
+                                explicit - the placement schema has no per-field defaults);
+                                the jar GENERATES the native role at runtime (NO
+                                hand-authored role JSON ships here - see below).
   Languages/<bcp47>/            mmoskilltree.lang (quest/dialogue/achievement keys) +
                                 npcs.lang (giver names + shared questgiver.hint) x9
 
-  (No NPC/Roles/ here: the jar's QuestGiverRoleGenerator clones the base MMO_QuestGiver
-   role per giver at runtime - MMO_Giver_<id> with the giver's Appearance + NameKey
-   nameplate + HintKey - and registers them as a RUNTIME asset pack on plugin start(),
-   so all three OpenMmoUi Target=auto -> giver:<id> roles exist with ZERO role JSON.)
+  (No NPC/Roles/ here: an Identity with an Appearance and no explicit Role opts into a
+   GENERATED role - the engine clones the jar's mmo_questgiver base per placement with that
+   Appearance + NameKey nameplate + HintKey and registers them as a runtime asset pack on
+   plugin start(), so all three givers exist with ZERO role JSON.)
 ```
 
 ## How it fits together
 
-- **Givers** use `placement: structure` (1.4.0 A3): the jar's StructureGiverSpawnSystem
-  spawns each beside a matching base-game worldgen SpawnMarker (`match.markerIds`), once
-  per structure instance (persistent seen-set), via QuestGiverSpawnService; they record
-  routing target `giver:<id>`. Pressing F resolves LIVE: dialogue when configured, else
-  the npc quest list. `/mmonpc givers` shows match + spawn state, `/mmonpc structures`
-  lists seen markerIds to author `match`, `/mmonpc reset` clears the structure seen-set.
-- **Giver appearance + nameplate ship as ONE bundle file, no role JSON.** A giver authors
-  `Appearance` (a vanilla appearance id) in its `QuestGivers/*.json` - `NameKey` + `HintKey` are
-  OPTIONAL (default to `npcs.<npcId>.name` and the shared `npcs.questgiver.hint`, both shipped in
-  npcs.lang), so the practical minimum is `Appearance` + the `npcs.<id>.name` value it reuses for
-  objective text. The jar's `QuestGiverRoleGenerator` clones the base `MMO_QuestGiver` role into `MMO_Giver_<id>`
-  with those substituted and registers a RUNTIME asset pack on `start()` (before worldgen
-  streams, so no spawn race). `Role` is omitted (resolves to the generated `MMO_Giver_<id>`);
-  set an explicit non-default `Role` only to ship a custom hand-authored role instead. A new
-  giver = one bundle file (+ the `npcs.<id>.name` it reuses for objective text).
+- **Givers are NPC PLACEMENTS** (`Server/ZiggfreedCommon/NpcPlacements/*.json`), read by the
+  placement engine in ziggfreed-common. Each uses `Anchor.Structure` so it stands beside a
+  matching base-game worldgen SpawnMarker (`MarkerIds`, an exact case-insensitive allow-list
+  that is FAIL-CLOSED: no entry, or a typo, anchors to nothing). `Where` names the `primary`
+  world selector, so givers appear in the ordinary world and in no instance.
+  `/mmonpc list` shows what targets a world and what is standing, `/mmonpc structures` lists
+  seen markerIds to author `MarkerIds`, `/mmonpc reconcile [world]` forces a sweep, and
+  `/mmonpc disable <id>` despawns one immediately.
+- **Press F is routed by `Interact.Bindings`, not by the role.** Each giver binds
+  `mmoskilltree:ui_target` to `dialogue:<dialogueId>:<npcId>` and `mmoskilltree:npc_id` to its
+  own id. **Use the `ui_target` form, NOT `Interact.Dialogue`**: only `ui_target` carries the npc
+  id into the dialogue, which is what these trees' own `npcquests:@self` options resolve against
+  and what puts the character's name in the header. Authoring both leaves the `ui_target` unused
+  and is a validator finding. `mmoskilltree:npc_id` is the same id the pack's quests bind as
+  `npcViewId` / turn in against, so the two must agree.
+- **Giver appearance + nameplate ship in that one placement file, no role JSON.** `Identity`
+  authors `BaseRole: "mmo_questgiver"` + `Appearance` (a vanilla appearance id) + `NameKey` +
+  `HintKey`. The placement schema carries NO per-field defaults, so author all four explicitly;
+  the shared hint is `npcs.questgiver.hint` and the name convention is `npcs.<npcId>.name`, both
+  shipped in npcs.lang. Omitting `Identity.Role` is what opts into role generation: the jar's
+  base role is cloned per placement with those substituted and registered as a RUNTIME asset pack
+  on `start()` (before worldgen streams, so no spawn race). Set an explicit `Identity.Role` only
+  to ship a custom hand-authored role instead. A new giver = one placement file (+ the
+  `npcs.<id>.name` it reuses for objective text).
 - **Dialogues** are id-keyed standalone Payload-wrapped trees. Intro options fire
   `Talk` (the ONLY native TALK_TO_NPC source besides the MmoQuestTalk action)
   **gated on `QuestState <introQuest> ACTIVE`, NOT a story flag** (1.4.0 self-heal:
@@ -75,11 +87,13 @@ Server/
   native `"Parent":"<id>"` inheritance (per-node keyed merge, convention loc-keys)
   instead. See CONTENT_PACKS.md "Dialogue authoring".
 - **Hub dialogue**: `guide_hub_dialogue` welcomes the player and points them to
-  Ranger Wren, then opens the hub menu (`Open: hub`). It is wired by setting
-  `mods/mmoskilltree/spawn-hub.json` `"dialogue": "guide_hub_dialogue"` (the jar's
-  generic SpawnHubConfig hook; default null = hub menu, so it is an opt-in). The
-  meet-the-guide quest still `autoAccept`s, so the campaign starts with or without
-  this opt-in.
+  Ranger Wren, then opens the hub menu (`Open: hub`). It is OPT-IN and nothing here
+  wires it: to use it, override the jar's hub placement by dropping your own
+  `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
+  `mmoskilltree:ui_target` reads `dialogue:guide_hub_dialogue:mmo_hub`. Until something
+  points at it, `/mmoconfig validate` reports it as a dialogue no placement opens, which
+  is accurate rather than a defect. The meet-the-guide quest `autoAccept`s either way, so
+  the campaign starts with or without the opt-in.
 - **Campaign flow**: wilds_meet_the_guide (autoAccept, gated on the jar `gather_the_basics`
   tutorial; a quest-level `turnInNpcId: guide_wilds` and NO npcViewId, so the engine
   auto-appends a "Go to Ranger Wren" report-back turn-in + fires the map marker; Wren's
@@ -106,21 +120,27 @@ Server/
 ## Build & deploy
 
 `.\build.ps1` inside the pack (auto-installs when `HYTALE_MODS_DIR` is set).
-Verify: server log shows the Dialogue/Quest-giver/Quest layer-applied lines and
-`/mmoconfig validate` reports the dialogue + questgiver domains clean.
+Verify: server log shows the Dialogue/Quest layer-applied lines plus the NpcPlacements
+merge, `/mmonpc list` shows the three givers targeting the world, and
+`/mmoconfig validate` reports the dialogue + placement domains clean.
 
 ## Conventions
 
 PascalCase filenames; raw types use `{"Name": ..., "Payload": {...}}`, dialogues
 too (PascalCase codec keys inside `Payload.Start`/`Payload.Nodes`; node ids/map
-keys + sugar values stay lowercase). **QuestGivers are the exception - a 1.4.0
-Pattern A full structured asset: NO `Payload` wrapper, flat PascalCase fields
-(`Appearance`/`NameKey`/`HintKey`/`Role`/`NpcId`/`Dialogue`/`Placement`/`Worlds`/
-`Match`:{`MarkerIds`...}/`Offset`:{`X`/`Y`/`Z`}/`SpawnChance`/`MaxPerWorld`/`Yaw`),
-decoded directly by the engine (editor-native). `Appearance` set + `Role` omitted =>
-the jar generates `MMO_Giver_<id>` (NameKey nameplate + HintKey hint); set a non-default
-`Role` only to ship a custom hand-authored role. The old flat-key / lowercase tolerance
-is gone.** Quest-driven option visibility derives from `QuestState`, never a parallel
+keys + sugar values stay lowercase). **NpcPlacements are the exception - a Pattern A
+full structured asset: NO `Payload` wrapper, NESTED PascalCase groups
+(`Identity`:{`Role`/`BaseRole`/`Appearance`/`NameKey`/`HintKey`}, `Where` (a world
+selector, `Names`/`Match`/`GameplayConfig`/`ExcludeNames`),
+`Anchor`:{`WorldSpawn`/`Coords`/`Structure`/`Zone`/`Custom`},
+`Limits`:{`SpawnChance`/`MaxPerWorld`/`OncePerWorld`}, `Lifecycle`,
+`Interact`:{`Dialogue`/`Bindings`}), decoded directly by the engine (editor-native).
+`Appearance` set + `Identity.Role` omitted => the engine generates a role from
+`Identity.BaseRole` (NameKey nameplate + HintKey hint); set `Identity.Role` only to ship a
+custom hand-authored role. Every leaf inherits, so a variant of an existing placement is a
+file carrying `"Parent": "<id>"` plus only the leaves that differ, and `Interact.Bindings`
+is a MAP keyed by channel that merges per key, so a child replaces one channel and keeps the
+rest.** Quest-driven option visibility derives from `QuestState`, never a parallel
 `SetFlag`/`NotFlag` (self-heal convention); "go meet NPC X" steps use a quest-level
 `turnInNpcId` (report-back turn-in) completed by the giver's `TurnIn` dialogue option
 (or the NpcQuestPage Complete button), never a TALK objective. Lang values are data-free

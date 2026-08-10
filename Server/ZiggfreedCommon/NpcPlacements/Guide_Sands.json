@@ -1,0 +1,44 @@
+{
+  "$Comment": [
+    "Dunewalker Ashkar, the Howling Sands quest giver, standing beside an Outlander hunter camp.",
+    "",
+    "Anchor.Structure attaches the placement to a worldgen spawn marker, so Ashkar lands at the first",
+    "camp the world generates and streams in rather than at fixed coordinates. MarkerIds is an exact,",
+    "case-insensitive allow-list; run /mmonpc structures in game to see the marker ids a world has",
+    "actually loaded before authoring one. The allow-list is FAIL-CLOSED, so a typo leaves Ashkar",
+    "absent rather than standing beside every marker in the world.",
+    "",
+    "Limits: one per world, and every matching marker is used. Raise MaxPerWorld to stand one at",
+    "every matching camp instead.",
+    "",
+    "Identity carries no Role, which opts the placement into a generated one: the base role is cloned",
+    "with the Appearance, nameplate key and press-F hint key below, so the pack ships no role JSON.",
+    "",
+    "Press F opens Ashkar's dialogue, authored as a ui_target rather than as Interact.Dialogue so the",
+    "npc id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
+    "against and what puts the character's name in the header; it is also what the pack's quests bind",
+    "as their npcViewId, and what the campaign's earlier 'go and meet Ashkar' step reports back to."
+  ],
+  "Name": "Guide_Sands",
+  "Identity": {
+    "BaseRole": "mmo_questgiver",
+    "Appearance": "Outlander_Hunter",
+    "NameKey": "npcs.guide_sands.name",
+    "HintKey": "npcs.questgiver.hint"
+  },
+  "Where": { "Names": ["primary"] },
+  "Anchor": {
+    "Structure": {
+      "MarkerIds": ["Outlander_Hunter"],
+      "Offset": { "X": 2.5, "Z": 2.5 },
+      "Yaw": 180.0
+    }
+  },
+  "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
+  "Interact": {
+    "Bindings": {
+      "mmoskilltree:ui_target": { "Value": "dialogue:guide_sands_dialogue:guide_sands" },
+      "mmoskilltree:npc_id": { "Value": "guide_sands" }
+    }
+  }
+}

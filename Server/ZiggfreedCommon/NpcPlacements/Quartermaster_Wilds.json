@@ -1,0 +1,45 @@
+{
+  "$Comment": [
+    "Quartermaster Bramble, the Emerald Wilds supply giver, standing beside a Kweebec merchant post.",
+    "",
+    "Anchor.Structure attaches the placement to a worldgen spawn marker, so Bramble lands at a post",
+    "the world actually generated. MarkerIds is an exact, case-insensitive allow-list; run",
+    "/mmonpc structures in game to see the marker ids a world has loaded before authoring one, and",
+    "note that the allow-list is FAIL-CLOSED, so a typo means Bramble never appears at all.",
+    "",
+    "Limits: one per world, and every matching marker is used. Raise MaxPerWorld to stand one at",
+    "every matching post instead.",
+    "",
+    "Identity carries no Role, which opts the placement into a generated one: the base role is cloned",
+    "with the Appearance, nameplate key and press-F hint key below, so the pack ships no role JSON.",
+    "",
+    "Press F opens Bramble's dialogue, authored as a ui_target rather than as Interact.Dialogue so",
+    "the npc id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
+    "against and what puts the character's name in the header; it is also what the pack's quests bind",
+    "as their npcViewId."
+  ],
+  "Name": "Quartermaster_Wilds",
+  "Identity": {
+    "BaseRole": "mmo_questgiver",
+    "Appearance": "Klops_Merchant",
+    "NameKey": "npcs.quartermaster_wilds.name",
+    "HintKey": "npcs.questgiver.hint"
+  },
+  "Where": { "Names": ["primary"] },
+  "Anchor": {
+    "Structure": {
+      "MarkerIds": ["Kweebec_Merchant"],
+      "Offset": { "X": 1.5, "Z": 1.5 },
+      "Yaw": 180.0
+    }
+  },
+  "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
+  "Interact": {
+    "Bindings": {
+      "mmoskilltree:ui_target": {
+        "Value": "dialogue:quartermaster_wilds_dialogue:quartermaster_wilds"
+      },
+      "mmoskilltree:npc_id": { "Value": "quartermaster_wilds" }
+    }
+  }
+}
