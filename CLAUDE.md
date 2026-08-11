@@ -75,11 +75,11 @@ Server/
   `npcs.<id>.name` it reuses for objective text).
 - **Dialogues** are id-keyed standalone Payload-wrapped trees. Intro options fire
   `Talk` (the ONLY native TALK_TO_NPC source besides the MmoQuestTalk action)
-  **gated on `QuestState <introQuest> ACTIVE`, NOT a story flag** (1.4.0 self-heal:
-  a `SetFlag`/`NotFlag` survives a quest reset and soft-locks the intro - derive
-  visibility from quest state, which resets with the quest). The bread handout is
-  `Reward Once:true`; its option hides via the implicit, reset-clearable flag
-  `reward:guide_wilds_dialogue:camp_talk:0`. Options use the [sugar shorthand]
+  **gated on `QuestState <introQuest> ACTIVE`, NOT on remembered state** (self-heal:
+  a memory that outlives a quest reset soft-locks the intro - derive visibility from
+  quest state, which resets with the quest). The bread handout is a one-time option
+  (`"Once": true`), so it is offered until it is taken; the `Reward` keeps its own
+  inner once-guard. Options use the [sugar shorthand]
   (`Open`/`Goto`/`Talk`/`TurnIn`/`Reward`/`Do`). 1.5.0 removed the dialogue template
   DSL (`extends`/`params`/`nodeOverrides`/prune): quartermaster_wilds is now a
   standalone turn-in-giver tree; a set of givers that share a skeleton should use
@@ -138,7 +138,7 @@ custom hand-authored role. Every leaf inherits, so a variant of an existing plac
 file carrying `"Parent": "<id>"` plus only the leaves that differ, and `Interact.Bindings`
 is a MAP keyed by channel that merges per key, so a child replaces one channel and keeps the
 rest.** Quest-driven option visibility derives from `QuestState`, never a parallel
-`SetFlag`/`NotFlag` (self-heal convention); "go meet NPC X" steps use a quest-level
+remembered memory (self-heal convention); "go meet NPC X" steps use a quest-level
 `turnInNpcId` (report-back turn-in) completed by the giver's `TurnIn` dialogue option
 (or the NpcQuestPage Complete button), never a TALK objective. Lang values are data-free
 flavor (no digits, no reward restating). Commit + push HERE first, then bump the gitlink
