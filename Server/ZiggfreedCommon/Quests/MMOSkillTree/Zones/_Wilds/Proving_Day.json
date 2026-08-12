@@ -1,0 +1,63 @@
+{
+  "$Comment": [
+    "The chapter gate: the road south opens only once a player has put real hours in.",
+    "",
+    "Two different measurements on purpose. The XP step counts what is earned while the quest is",
+    "carried, so it always takes some doing; the level step reads a standing value (the best single",
+    "skill a player has), so it can already be satisfied the moment the quest is taken.",
+    "",
+    "REACH_LEVEL with a blank Target means 'any one skill'. Write a skill name for that skill, or",
+    "TOTAL for every skill added together. The Requires floor below is the summed total, which is a",
+    "different number again."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_proving_day.title",
+    "FlavorKey": "quest.wilds_proving_day.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 5
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_graveyard_watch",
+      "wilds_quartermasters_ledger"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:stat",
+        "Param": "MMO_TotalLevel",
+        "Min": 20
+      }
+    ]
+  },
+  "Objectives": {
+    "xp": {
+      "Kind": "GAIN_XP",
+      "Target": "TOTAL",
+      "Amount": 10000
+    },
+    "level": {
+      "Kind": "REACH_LEVEL",
+      "Target": "",
+      "Amount": 15
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "boost_token",
+      "Params": {
+        "Skill": "ALL",
+        "Multiplier": "2.0",
+        "DurationMinutes": "30"
+      }
+    }
+  ]
+}

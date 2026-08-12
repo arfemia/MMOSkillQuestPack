@@ -15,6 +15,10 @@
     "cloned with the Appearance, the nameplate key and the press-F hint key below, so the pack ships",
     "no role JSON of its own.",
     "",
+    "Identity.NpcId is the character id everything else binds to: the pack's quests name it as",
+    "their npcViewId, the dialogue destination below carries it, and a talk step credits against",
+    "it. Omit it and the placement answers to its own file id instead.",
+    "",
     "Press F opens Wren's dialogue. It is authored as a ui_target rather than as Interact.Dialogue",
     "because that form carries the npc id into the dialogue, which is what Wren's own",
     "'npcquests:@self' options resolve against and what puts the character's name in the header.",
@@ -23,10 +27,11 @@
   ],
   "Name": "Guide_Wilds",
   "Identity": {
-    "BaseRole": "mmo_questgiver",
+    "BaseRole": "Template_Mmo_QuestGiver",
     "Appearance": "Feran_Windwalker",
     "NameKey": "npcs.guide_wilds.name",
-    "HintKey": "npcs.questgiver.hint"
+    "HintKey": "npcs.questgiver.hint",
+    "NpcId": "guide_wilds"
   },
   "Where": { "Names": ["primary"] },
   "Anchor": {
@@ -39,8 +44,7 @@
   "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
   "Interact": {
     "Bindings": {
-      "mmoskilltree:ui_target": { "Value": "dialogue:guide_wilds_dialogue:guide_wilds" },
-      "mmoskilltree:npc_id": { "Value": "guide_wilds" }
+      "mmoskilltree:ui_target": { "Value": "dialogue:guide_wilds_dialogue:guide_wilds" }
     }
   }
 }

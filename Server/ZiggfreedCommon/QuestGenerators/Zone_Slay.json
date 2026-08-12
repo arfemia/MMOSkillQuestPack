@@ -1,0 +1,144 @@
+{
+  "$Comment": [
+    "Writes the pack's hunting contracts, one per row below. Each row is one real quest, and every",
+    "child it writes is an ordinary quest file carrying Parent: zone_slay_base - so a generated",
+    "contract behaves exactly like a hand-written one, and any member that later needs to be special",
+    "can simply be written out as its own file under the same id.",
+    "",
+    "HOW TO ADD A CONTRACT: copy a row, give it a fresh quest id, and write the matching",
+    "quest.<id>.title and quest.<id>.flavor lines into the pack's mmoskilltree.lang. Nothing else",
+    "needs touching. The id a row binds is the id the quest is saved under, so changing it starts",
+    "anyone mid-contract over.",
+    "",
+    "THE ROW VOCABULARY, in the order it is used below:",
+    "  quest        the quest id, which is also half of its two localization keys",
+    "  giver        the character who offers it (an npc id from a placement's Identity.NpcId)",
+    "  sort         where it sits in the quest log, low first",
+    "  after        the quest that must be finished before this one is offered",
+    "  gate_stat    the stat channel the level floor reads: MMO_TotalLevel is every skill summed,",
+    "               MMO_Level_<SKILL> is one skill, MMO_CombatLevel is the best combat skill",
+    "  gate_min     the floor itself; a contract with no level requirement binds 0, which everyone",
+    "               already meets",
+    "  target       the creature family to hunt, matched loosely so variants count",
+    "  amount       how many",
+    "  gift/gift_item/gift_count   an item handed over on completion; a contract that gives no",
+    "               item leaves gift empty, and an empty Kind pays nothing out at all",
+    "  xp1_*/xp2_*  up to two skill XP payouts, the second left empty when only one is wanted"
+  ],
+  "Base": "zone_slay_base",
+  "IdPattern": "{quest}",
+  "ForEach": [
+    {
+      "Token": "quest",
+      "Values": [
+        {
+          "quest": "wilds_trork_trouble",
+          "giver": "guide_wilds",
+          "sort": 3,
+          "after": "wilds_hearty_meal",
+          "gate_stat": "MMO_TotalLevel",
+          "gate_min": 0,
+          "target": "Trork",
+          "amount": 8,
+          "gift": "item",
+          "gift_item": "Weapon_Longsword_Iron",
+          "gift_count": "1",
+          "xp1_skill": "SWORDS",
+          "xp1_amount": "800",
+          "xp2": "",
+          "xp2_skill": "",
+          "xp2_amount": "0"
+        },
+        {
+          "quest": "wilds_graveyard_watch",
+          "giver": "guide_wilds",
+          "sort": 4,
+          "after": "wilds_trork_trouble",
+          "gate_stat": "MMO_TotalLevel",
+          "gate_min": 10,
+          "target": "Skeleton",
+          "amount": 15,
+          "gift": "",
+          "gift_item": "",
+          "gift_count": "0",
+          "xp1_skill": "ARCHERY",
+          "xp1_amount": "700",
+          "xp2": "xp",
+          "xp2_skill": "DEFENSE",
+          "xp2_amount": "700"
+        },
+        {
+          "quest": "sands_hive_incursion",
+          "giver": "guide_sands",
+          "sort": 25,
+          "after": "sands_thorns_and_stings",
+          "gate_stat": "MMO_TotalLevel",
+          "gate_min": 60,
+          "target": "Scarak",
+          "amount": 15,
+          "gift": "item",
+          "gift_item": "Potion_Health",
+          "gift_count": "3",
+          "xp1_skill": "SWORDS",
+          "xp1_amount": "2500",
+          "xp2": "",
+          "xp2_skill": "",
+          "xp2_amount": "0"
+        }
+      ]
+    }
+  ],
+  "Child": {
+    "Text": {
+      "TitleKey": "quest.{quest}.title",
+      "FlavorKey": "quest.{quest}.flavor"
+    },
+    "Listing": {
+      "SortOrder": "{sort}"
+    },
+    "Npc": {
+      "ViewId": "{giver}"
+    },
+    "Requires": {
+      "Quests": [
+        "{after}"
+      ],
+      "Factors": [
+        {
+          "Factor": "hytale:stat",
+          "Param": "{gate_stat}",
+          "Min": "{gate_min}"
+        }
+      ]
+    },
+    "Objectives": {
+      "main": {
+        "Target": "{target}",
+        "Amount": "{amount}"
+      }
+    },
+    "Rewards": [
+      {
+        "Kind": "{gift}",
+        "Params": {
+          "Item": "{gift_item}",
+          "Count": "{gift_count}"
+        }
+      },
+      {
+        "Kind": "xp",
+        "Params": {
+          "Skill": "{xp1_skill}",
+          "Amount": "{xp1_amount}"
+        }
+      },
+      {
+        "Kind": "{xp2}",
+        "Params": {
+          "Skill": "{xp2_skill}",
+          "Amount": "{xp2_amount}"
+        }
+      }
+    ]
+  }
+}

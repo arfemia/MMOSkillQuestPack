@@ -1,0 +1,63 @@
+{
+  "$Comment": [
+    "Hunt, collect, cook, eat - the food loop in one quest.",
+    "",
+    "The hunt step is PREFIX so every boar variant counts while nothing else does. The eat step is a",
+    "CONTAINS match on the Food_ family, so any meal closes it; it carries its own TextKey because",
+    "'eat 1 Food_' is not a sentence anyone wants to read.",
+    "",
+    "Hunting and gathering share Order 1 and the meal waits at Order 2, so a player who already has",
+    "meat in the bag is not blocked from eating first."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_hearty_meal.title",
+    "FlavorKey": "quest.wilds_hearty_meal.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 2
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_first_camp"
+    ]
+  },
+  "Objectives": {
+    "hunt": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Boar",
+      "Amount": 3,
+      "MatchMode": "PREFIX",
+      "Order": 1
+    },
+    "gather": {
+      "Kind": "PICKUP_ITEM",
+      "Target": "Food_Wildmeat_Raw",
+      "Amount": 3,
+      "Order": 1
+    },
+    "eat": {
+      "Kind": "CONSUME_ITEM",
+      "Target": "Food_",
+      "Amount": 1,
+      "Order": 2,
+      "TextKey": "objective.text.quest.eat_food"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "500"
+      }
+    }
+  ]
+}

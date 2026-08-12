@@ -1,6 +1,19 @@
 {
   "Name": "Quartermaster_Wilds_Dialogue",
-  "$Comment": "Wilds quartermaster (turn-in giver for wilds_quartermasters_ledger). Native schema (1.5.0): a fully-resolved standalone tree, with no template inheritance to chase. greet_active shows while the ledger quest is ACTIVE (turn it in here + browse quests); otherwise greet offers browse-quests + a trade flavor beat. A future set of givers that share a skeleton should use native 'Parent' inheritance (a base dialogue in Dialogues/ or DialogueTemplates/, inherited by 'Parent':'<id>' with node-keyed merge), not a params template.",
+  "$Comment": [
+    "The Emerald Wilds quartermaster, and the character the ledger quest is handed in to.",
+    "",
+    "The Start list is read top to bottom and the first entry whose Conditions pass wins, so",
+    "greet_active greets a player mid-ledger with the hand-in line and everyone else falls through to",
+    "greet. Which greeting shows is derived from the quest's own state rather than from anything",
+    "remembered, so resetting the quest also resets the conversation instead of soft-locking it.",
+    "",
+    "MarkTalked on the trade option is the only thing that credits a talk step or a met-the-giver",
+    "achievement here; nothing counts a character as spoken to on its own.",
+    "",
+    "A set of givers that share a skeleton can be written once as a file marked Abstract and inherited",
+    "by 'Parent': '<that id>', which merges node by node so a child restates only the beats it changes."
+  ],
   "Payload": {
     "Start": [
       {
@@ -18,7 +31,8 @@
           { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "npcquests:@self" },
           {
             "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
-            "Do": [ { "Talk": "" }, { "Goto": "trade_talk" } ]
+            "Actions": [ { "Type": "MarkTalked" } ],
+            "Goto": "trade_talk"
           }
         ]
       },

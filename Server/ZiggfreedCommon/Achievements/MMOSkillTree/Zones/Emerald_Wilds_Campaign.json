@@ -1,0 +1,40 @@
+{
+  "$Comment": [
+    "Earned by finishing the Emerald Wilds questline's last quest.",
+    "",
+    "The payout is a ClaimReward rather than a Reward, so it waits in the achievements menu to be",
+    "collected instead of landing silently at the moment the last quest is turned in.",
+    "Criteria is an ORDERED list and the order is permanent: progress is filed per criterion by its",
+    "POSITION, so adding one to the end is safe while inserting, removing or reordering moves every",
+    "player's progress onto a different line."
+  ],
+  "Text": {
+    "TitleKey": "achievement.emerald_wilds_campaign.title",
+    "FlavorKey": "achievement.emerald_wilds_campaign.desc"
+  },
+  "Listing": {
+    "Category": "quests",
+    "Subcategory": "any",
+    "SortOrder": 60,
+    "Icon": "Mmo_Menu_Scroll"
+  },
+  "Scoring": {
+    "Points": 50
+  },
+  "Criteria": [
+    {
+      "Kind": "COMPLETE_QUEST",
+      "Target": "wilds_call_of_the_dunes",
+      "Amount": 1
+    }
+  ],
+  "ClaimRewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "ALL",
+        "Amount": "2500"
+      }
+    }
+  ]
+}

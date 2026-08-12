@@ -1,0 +1,54 @@
+{
+  "$Comment": [
+    "The fishing beat of the quartermaster's supply arc.",
+    "",
+    "Both steps share Order 1, so the five-of-anything counter and the catfish counter fill together",
+    "and a catfish counts towards both. Fish targets are CONTAINS on the bare name, which matches the",
+    "fish entity and its item alike.",
+    "",
+    "Salmon does not swim this far north on Orbis; catfish is the reliable catch here."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_line_and_lure.title",
+    "FlavorKey": "quest.wilds_line_and_lure.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 11
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "quartermaster_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_tools_of_the_trade"
+    ]
+  },
+  "Objectives": {
+    "any": {
+      "Kind": "CATCH_FISH",
+      "Target": "",
+      "Amount": 5,
+      "Order": 1
+    },
+    "catfish": {
+      "Kind": "CATCH_FISH",
+      "Target": "Catfish",
+      "Amount": 3,
+      "Order": 1
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "FISHING",
+        "Amount": "700"
+      }
+    }
+  ]
+}

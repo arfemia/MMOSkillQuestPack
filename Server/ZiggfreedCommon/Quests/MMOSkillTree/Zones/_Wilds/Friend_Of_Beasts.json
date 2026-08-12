@@ -1,0 +1,57 @@
+{
+  "$Comment": [
+    "The taming side quest. It only appears on a server that has the taming feature switched on:",
+    "the mmoskilltree:feature factor answers 1 when the feature is live and cannot be answered at",
+    "all when it is not, and a requirement that cannot be answered stays shut.",
+    "",
+    "Both steps name no Target, so any animal a player can feed or breed counts."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_friend_of_beasts.title",
+    "FlavorKey": "quest.wilds_friend_of_beasts.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 13
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "quartermaster_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_meet_the_guide"
+    ],
+    "Factors": [
+      {
+        "Factor": "mmoskilltree:feature",
+        "Param": "taming",
+        "Min": 1
+      }
+    ]
+  },
+  "Objectives": {
+    "feed": {
+      "Kind": "FEED_ANIMAL",
+      "Target": "",
+      "Amount": 3
+    },
+    "breed": {
+      "Kind": "BREED_ANIMAL",
+      "Target": "",
+      "Amount": 1
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "TAMING",
+        "Amount": "800"
+      }
+    }
+  ]
+}

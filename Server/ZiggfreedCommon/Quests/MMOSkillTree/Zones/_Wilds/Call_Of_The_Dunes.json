@@ -1,0 +1,49 @@
+{
+  "$Comment": [
+    "The handover between chapters: offered by the ranger in the Wilds, finished by the dunewalker",
+    "in the desert.",
+    "",
+    "Npc.ViewId and the hand-in are deliberately two different characters, which is what makes this",
+    "read as 'go and find them'. The single step is a TURN_IN with a blank Target, so nothing has to",
+    "be carried; arriving and speaking is the whole task, and the dunewalker's own greeting closes it."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_call_of_the_dunes.title",
+    "FlavorKey": "quest.wilds_call_of_the_dunes.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 6
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_wilds",
+    "TurnInId": "guide_sands"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_proving_day"
+    ]
+  },
+  "Objectives": {
+    "turn_in": {
+      "Kind": "TURN_IN",
+      "Target": "",
+      "Amount": 1,
+      "TurnInNpcId": "guide_sands",
+      "TextKey": "objective.text.turn_in.find"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "ACROBATICS",
+        "Amount": "1000"
+      }
+    }
+  ]
+}

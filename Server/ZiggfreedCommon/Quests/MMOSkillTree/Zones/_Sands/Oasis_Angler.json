@@ -1,0 +1,57 @@
+{
+  "$Comment": [
+    "The desert fishing beat, gated on the Fishing skill itself rather than on overall progress:",
+    "the factor reads the MMO_Level_FISHING stat channel, and every skill has a channel of that",
+    "shape. Swap the skill name to gate on a different one.",
+    "",
+    "Fish targets are CONTAINS on the bare name, which matches the fish and its item alike."
+  ],
+  "Text": {
+    "TitleKey": "quest.sands_oasis_angler.title",
+    "FlavorKey": "quest.sands_oasis_angler.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 24
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_sands"
+  },
+  "Requires": {
+    "Quests": [
+      "sands_walker_of_the_wastes"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:stat",
+        "Param": "MMO_Level_FISHING",
+        "Min": 15
+      }
+    ]
+  },
+  "Objectives": {
+    "catfish": {
+      "Kind": "CATCH_FISH",
+      "Target": "Catfish",
+      "Amount": 5
+    },
+    "piranha": {
+      "Kind": "CATCH_FISH",
+      "Target": "Piranha",
+      "Amount": 3
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "FISHING",
+        "Amount": "2000"
+      }
+    }
+  ]
+}

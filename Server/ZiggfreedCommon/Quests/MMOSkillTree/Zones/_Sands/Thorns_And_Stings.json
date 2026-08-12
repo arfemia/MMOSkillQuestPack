@@ -1,0 +1,75 @@
+{
+  "$Comment": [
+    "The desert's welcome: three of everything that bites.",
+    "",
+    "Cactee and scorpion are EXACT because each is one creature. The snake step is a CONTAINS family",
+    "match scoped to the Howling Sands, since snakes live in several zones and only desert ones should",
+    "count here. A Zone is matched against the engine's own zone name or the region folder it came",
+    "from, case-insensitively.",
+    "",
+    "The floor is on the summed total of every skill, not on any single one."
+  ],
+  "Text": {
+    "TitleKey": "quest.sands_thorns_and_stings.title",
+    "FlavorKey": "quest.sands_thorns_and_stings.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 21
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_sands"
+  },
+  "Requires": {
+    "Quests": [
+      "sands_walker_of_the_wastes"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:stat",
+        "Param": "MMO_TotalLevel",
+        "Min": 40
+      }
+    ]
+  },
+  "Objectives": {
+    "cactee": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Cactee",
+      "Amount": 8,
+      "MatchMode": "EXACT"
+    },
+    "scorpions": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Scorpion",
+      "Amount": 10,
+      "MatchMode": "EXACT"
+    },
+    "snakes": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Snake",
+      "Amount": 6,
+      "Zone": "Howling_Sands"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "SWORDS",
+        "Amount": "1200"
+      }
+    },
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "1200"
+      }
+    }
+  ]
+}

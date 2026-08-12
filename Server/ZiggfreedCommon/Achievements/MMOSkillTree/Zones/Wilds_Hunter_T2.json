@@ -1,0 +1,57 @@
+{
+  "$Comment": [
+    "One rung of the Emerald Wilds kill counter.",
+    "",
+    "A blank Target with CONTAINS counts ANY creature; Zone is what narrows it to one region. A Zone",
+    "is matched against the engine's own zone name or the region folder a kill came from, case",
+    "insensitively, so either spelling works.",
+    "",
+    "Listing.Chains is what makes the two rungs read as one climb on the page rather than as two",
+    "near-identical entries. An achievement may be a rung of several ladders at once.",
+    "",
+    "Both rungs share ONE description key and differ only in how many kills they ask for.",
+    "Text.TextArgs.Flavor supplies the number that fills {0} in that line, straight from the",
+    "criterion's own Amount, so a balance pass changes one number and no translation at all."
+  ],
+  "Text": {
+    "TitleKey": "achievement.wilds_hunter_t2.title",
+    "FlavorKey": "achievement.wilds_hunter.desc",
+    "TextArgs": {
+      "Flavor": [
+        "@amount"
+      ]
+    }
+  },
+  "Listing": {
+    "Category": "combat",
+    "Subcategory": "melee",
+    "SortOrder": 81,
+    "Chains": [
+      {
+        "Id": "wilds_hunter",
+        "Tier": 2
+      }
+    ]
+  },
+  "Scoring": {
+    "Points": 30
+  },
+  "Criteria": [
+    {
+      "Kind": "KILL_ENTITY",
+      "Target": "",
+      "MatchMode": "CONTAINS",
+      "Zone": "Emerald_Wilds",
+      "Amount": 500
+    }
+  ],
+  "ClaimRewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "SWORDS",
+        "Amount": "2500"
+      }
+    }
+  ]
+}

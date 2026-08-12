@@ -1,0 +1,68 @@
+{
+  "$Comment": [
+    "Teaches the three motions a camp needs: fell timber, place anything, then place the campfire.",
+    "",
+    "Order groups the steps rather than Flow.Sequential, so chopping and building run side by side",
+    "(both Order 1) and only the campfire waits for them (Order 2). The build step names no Target,",
+    "which means any block counts - it is about the habit, not about a particular wall.",
+    "",
+    "The campfire step is EXACT so a decorative fire bench of another kind does not close it."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_first_camp.title",
+    "FlavorKey": "quest.wilds_first_camp.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 1
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_meet_the_guide"
+    ]
+  },
+  "Objectives": {
+    "chop": {
+      "Kind": "BREAK_BLOCK",
+      "Target": "Wood",
+      "Amount": 15,
+      "Order": 1
+    },
+    "build": {
+      "Kind": "PLACE_BLOCK",
+      "Target": "",
+      "Amount": 20,
+      "Order": 1
+    },
+    "campfire": {
+      "Kind": "PLACE_BLOCK",
+      "Target": "Bench_Campfire",
+      "Amount": 1,
+      "MatchMode": "EXACT",
+      "Order": 2
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "WOODCUTTING",
+        "Amount": "400"
+      }
+    },
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "BUILDING",
+        "Amount": "400"
+      }
+    }
+  ]
+}

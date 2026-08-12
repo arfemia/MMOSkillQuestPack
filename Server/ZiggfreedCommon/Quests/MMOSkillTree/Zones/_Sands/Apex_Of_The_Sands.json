@@ -1,0 +1,75 @@
+{
+  "$Comment": [
+    "The campaign finale: the three apex predators of the Howling Sands, each named EXACTly so a",
+    "lesser cousin cannot stand in for one.",
+    "",
+    "No Order, so all three hunts run at once and a player takes them in whatever order the desert",
+    "offers them.",
+    "",
+    "Finishing this is what earns the Howling Sands campaign achievement."
+  ],
+  "Text": {
+    "TitleKey": "quest.sands_apex_of_the_sands.title",
+    "FlavorKey": "quest.sands_apex_of_the_sands.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 27
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_sands"
+  },
+  "Requires": {
+    "Quests": [
+      "sands_bones_of_the_old_kingdom"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:stat",
+        "Param": "MMO_TotalLevel",
+        "Min": 100
+      }
+    ]
+  },
+  "Objectives": {
+    "tigers": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Tiger_Sabertooth",
+      "Amount": 5,
+      "MatchMode": "EXACT"
+    },
+    "crocs": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Crocodile",
+      "Amount": 5,
+      "MatchMode": "EXACT"
+    },
+    "hyenas": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Hyena",
+      "Amount": 10,
+      "MatchMode": "EXACT"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "boost_token",
+      "Params": {
+        "Skill": "ALL",
+        "Multiplier": "2.5",
+        "DurationMinutes": "60"
+      }
+    },
+    {
+      "Kind": "item",
+      "Params": {
+        "Item": "Potion_Health_Greater",
+        "Count": "3"
+      }
+    }
+  ]
+}

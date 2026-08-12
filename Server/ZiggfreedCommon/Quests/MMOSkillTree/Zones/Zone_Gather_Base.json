@@ -1,0 +1,27 @@
+{
+  "$Comment": [
+    "The skeleton every 'bring back raw material' quest in this pack shares. It is Abstract, so it",
+    "is never offered and needs no title, giver or reward of its own: it exists to be named as a",
+    "Parent.",
+    "",
+    "Retune the whole family here - the hidden-until-unlocked treatment, the category, the harvest",
+    "step's default matching - and every member that did not state its own value follows.",
+    "",
+    "Members add a second harvest step of their own on top of this one. An inherited step can be",
+    "retuned by id but never removed, so keep anything optional out of this file."
+  ],
+  "Abstract": true,
+  "Listing": {
+    "Category": "main"
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Objectives": {
+    "main": {
+      "Kind": "BREAK_BLOCK",
+      "Amount": 1
+    }
+  }
+}

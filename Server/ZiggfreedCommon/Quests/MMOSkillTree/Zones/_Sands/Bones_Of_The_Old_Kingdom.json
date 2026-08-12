@@ -1,0 +1,87 @@
+{
+  "$Comment": [
+    "The late-campaign convergence, and the one quest that asks for a route rather than a checklist.",
+    "",
+    "Requires reads as: the hive quest must be done, AND at least one of the three trade quests must",
+    "be done, AND the level floor must be met. AnyOf is how 'either road into this will do' is",
+    "written - a player who took the mining road is not sent back for the fishing one.",
+    "",
+    "The steps run in order: clear the ruins first, then deliver the essence to the dunewalker."
+  ],
+  "Text": {
+    "TitleKey": "quest.sands_bones_of_the_old_kingdom.title",
+    "FlavorKey": "quest.sands_bones_of_the_old_kingdom.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 26
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "guide_sands"
+  },
+  "Requires": {
+    "Quests": [
+      "sands_hive_incursion"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:stat",
+        "Param": "MMO_TotalLevel",
+        "Min": 80
+      }
+    ],
+    "AnyOf": [
+      {
+        "Quests": [
+          "sands_quarry_of_kings"
+        ]
+      },
+      {
+        "Quests": [
+          "sands_hardwood_of_the_dunes"
+        ]
+      },
+      {
+        "Quests": [
+          "sands_oasis_angler"
+        ]
+      }
+    ]
+  },
+  "Objectives": {
+    "skeletons": {
+      "Kind": "KILL_ENTITY",
+      "Target": "Skeleton_Sand",
+      "Amount": 12,
+      "Order": 1
+    },
+    "essence": {
+      "Kind": "TURN_IN",
+      "Target": "Ingredient_Life_Essence",
+      "Amount": 50,
+      "MatchMode": "EXACT",
+      "TurnInNpcId": "guide_sands",
+      "Order": 2
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "MAGIC",
+        "Amount": "3000"
+      }
+    },
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "3000"
+      }
+    }
+  ]
+}

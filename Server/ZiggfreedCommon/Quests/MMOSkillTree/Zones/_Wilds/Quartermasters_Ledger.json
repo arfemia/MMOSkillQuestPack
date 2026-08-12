@@ -1,0 +1,56 @@
+{
+  "$Comment": [
+    "A delivery quest: gather the hides anywhere, then hand them over in person.",
+    "",
+    "TurnInNpcId locks the hand-in to the quartermaster, so the items leave the bag at his counter",
+    "and nowhere else. His conversation offers the hand-in while the quest is running.",
+    "",
+    "EXACT on the hide id keeps a heavier hide from being spent by accident."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_quartermasters_ledger.title",
+    "FlavorKey": "quest.wilds_quartermasters_ledger.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 12
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "quartermaster_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_line_and_lure"
+    ]
+  },
+  "Objectives": {
+    "main": {
+      "Kind": "TURN_IN",
+      "Target": "Ingredient_Hide_Light",
+      "Amount": 10,
+      "MatchMode": "EXACT",
+      "TurnInNpcId": "giver",
+      "TextKey": "objective.text.turn_in"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "600"
+      }
+    },
+    {
+      "Kind": "xp",
+      "Params": {
+        "Skill": "HARVESTING",
+        "Amount": "600"
+      }
+    }
+  ]
+}

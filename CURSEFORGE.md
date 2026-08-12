@@ -40,18 +40,18 @@ The quest givers spawn through the same system as the mod's Adventurer's Guide, 
 ## Install
 
 1. Install the MMO Skill Tree mod (1.6.0 or newer).
-2. Drop `MMOSkillQuestPack-1.0.0.zip` into your server's `Mods/` folder, alongside the mod.
+2. Drop `MMOSkillQuestPack-1.1.0.zip` into your server's `Mods/` folder, alongside the mod.
 3. Start the server. The questlines and their givers are on by default.
 
 ## Make your own quests and dialogue
 
-The questlines are plain pack files built on the mod's template system: a new quest is a few lines (extends a skeleton, names a target and amount), a new quest giver is one small file, and dialogue trees are readable JSON. The pack's repository has the authoring notes, including how to wire a new giver, branch a conversation, and scope an objective to a zone.
+The questlines are plain pack files. A new quest is one small file that names a target, an amount and who hands it out; a whole family of similar quests is a single file with one row per member; a new quest giver is one more file; and dialogue trees are readable JSON. The pack's repository has the authoring notes, including how to wire a new giver, branch a conversation, and scope an objective to a zone.
 
 ## Versions
 
 | Pack  | Plugin | Notes                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0.0 | 1.6.0+ | First release. The Emerald Wilds (eleven quests) and Howling Sands (eight quests) campaigns with three quest-giver NPCs, branching dialogue for each, zone-scoped objectives and hunts, campaign and server-first achievements plus per-zone hunter ladders, and full 9-language translations. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at world spawn, Ashkar on first Howling Sands discovery); the Emerald Wilds campaign gates on finishing the plugin's own intro tutorial first. |
+| 1.1.0 | 1.6.0+ | First release. The Emerald Wilds (eleven quests) and Howling Sands (eight quests) campaigns with three quest-giver NPCs, branching dialogue for each, zone-scoped objectives and hunts, campaign and server-first achievements plus per-zone hunter ladders, and full 9-language translations. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at world spawn, Ashkar on first Howling Sands discovery); the Emerald Wilds campaign gates on finishing the plugin's own intro tutorial first. |
 
 ---
 

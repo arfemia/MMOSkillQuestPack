@@ -1,0 +1,33 @@
+{
+  "$Comment": [
+    "The skeleton every 'cull the local menace' quest in this pack shares. It is Abstract, so it is",
+    "never offered to anybody and needs no title, giver or reward of its own: it exists to be named",
+    "as a Parent.",
+    "",
+    "Retune the whole family here. Anything authored below reaches every member that did not state",
+    "its own value, so switching MatchMode to EXACT or lifting the hidden flag is a one-line change",
+    "across the set.",
+    "",
+    "CONTAINS on the kill step is what lets a member name a creature FAMILY (every Trork, every",
+    "Skeleton) rather than listing each variant. Author EXACT on a member that must count one",
+    "creature only.",
+    "",
+    "It sits in an unmarked folder, so its id is just the filename: the _-marked folders beside it",
+    "are the ones that push a prefix onto an id."
+  ],
+  "Abstract": true,
+  "Listing": {
+    "Category": "main"
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Objectives": {
+    "main": {
+      "Kind": "KILL_ENTITY",
+      "MatchMode": "CONTAINS",
+      "Amount": 1
+    }
+  }
+}

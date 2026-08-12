@@ -1,0 +1,147 @@
+{
+  "$Comment": [
+    "Writes the pack's harvest contracts, one per row below. Each row is one real quest, and every",
+    "child it writes is an ordinary quest file carrying Parent: zone_gather_base - so a generated",
+    "contract behaves exactly like a hand-written one.",
+    "",
+    "HOW TO ADD A CONTRACT: copy a row, give it a fresh quest id, and write the matching",
+    "quest.<id>.title and quest.<id>.flavor lines into the pack's mmoskilltree.lang.",
+    "",
+    "Each contract has two harvest steps: a bulk one (main) and a named second one whose step id is",
+    "itself a row value, so the log reads 'copper' or 'palm' rather than 'extra'.",
+    "",
+    "THE ROW VOCABULARY, in the order it is used below:",
+    "  quest        the quest id, which is also half of its two localization keys",
+    "  giver        the character who offers it (an npc id from a placement's Identity.NpcId)",
+    "  sort         where it sits in the quest log, low first",
+    "  after        the quest that must be finished before this one is offered",
+    "  gate_stat    the stat channel the requirement reads: MMO_Level_<SKILL> gates on one skill,",
+    "               MMO_TotalLevel on every skill summed",
+    "  gate_min     the floor itself; a contract with no requirement binds 0, which everyone meets",
+    "  target/amount/match         the bulk harvest step; CONTAINS counts a whole family of blocks,",
+    "               EXACT counts one block id only",
+    "  extra*       the second step: its id, what it harvests, how many, and how it is matched"
+  ],
+  "Base": "zone_gather_base",
+  "IdPattern": "{quest}",
+  "ForEach": [
+    {
+      "Token": "quest",
+      "Values": [
+        {
+          "quest": "wilds_tools_of_the_trade",
+          "giver": "quartermaster_wilds",
+          "sort": 10,
+          "after": "wilds_meet_the_guide",
+          "gate_stat": "MMO_TotalLevel",
+          "gate_min": 0,
+          "target": "Rock_",
+          "amount": 100,
+          "match": "CONTAINS",
+          "extra": "copper",
+          "extra_target": "Ore_Copper",
+          "extra_amount": 15,
+          "extra_match": "CONTAINS",
+          "gift": "item",
+          "gift_item": "Tool_Pickaxe_Iron",
+          "gift_count": "1",
+          "xp_skill": "MINING",
+          "xp_amount": "600"
+        },
+        {
+          "quest": "sands_quarry_of_kings",
+          "giver": "guide_sands",
+          "sort": 22,
+          "after": "sands_walker_of_the_wastes",
+          "gate_stat": "MMO_Level_MINING",
+          "gate_min": 15,
+          "target": "Rock_Sandstone",
+          "amount": 150,
+          "match": "EXACT",
+          "extra": "iron",
+          "extra_target": "Ore_Iron_Sandstone",
+          "extra_amount": 20,
+          "extra_match": "EXACT",
+          "gift": "",
+          "gift_item": "",
+          "gift_count": "0",
+          "xp_skill": "MINING",
+          "xp_amount": "2000"
+        },
+        {
+          "quest": "sands_hardwood_of_the_dunes",
+          "giver": "guide_sands",
+          "sort": 23,
+          "after": "sands_walker_of_the_wastes",
+          "gate_stat": "MMO_Level_WOODCUTTING",
+          "gate_min": 15,
+          "target": "Wood_Gumboab",
+          "amount": 60,
+          "match": "CONTAINS",
+          "extra": "palm",
+          "extra_target": "Wood_Palm",
+          "extra_amount": 30,
+          "extra_match": "CONTAINS",
+          "gift": "",
+          "gift_item": "",
+          "gift_count": "0",
+          "xp_skill": "WOODCUTTING",
+          "xp_amount": "2000"
+        }
+      ]
+    }
+  ],
+  "Child": {
+    "Text": {
+      "TitleKey": "quest.{quest}.title",
+      "FlavorKey": "quest.{quest}.flavor"
+    },
+    "Listing": {
+      "SortOrder": "{sort}"
+    },
+    "Npc": {
+      "ViewId": "{giver}"
+    },
+    "Requires": {
+      "Quests": [
+        "{after}"
+      ],
+      "Factors": [
+        {
+          "Factor": "hytale:stat",
+          "Param": "{gate_stat}",
+          "Min": "{gate_min}"
+        }
+      ]
+    },
+    "Objectives": {
+      "main": {
+        "Target": "{target}",
+        "Amount": "{amount}",
+        "MatchMode": "{match}"
+      },
+      "{extra}": {
+        "Kind": "BREAK_BLOCK",
+        "Target": "{extra_target}",
+        "Amount": "{extra_amount}",
+        "MatchMode": "{extra_match}"
+      }
+    },
+    "Rewards": [
+      {
+        "Kind": "{gift}",
+        "Params": {
+          "Item": "{gift_item}",
+          "Count": "{gift_count}"
+        }
+      },
+      {
+        "Kind": "xp",
+        "Params": {
+          "Skill": "{xp_skill}",
+          "Amount": "{xp_amount}"
+        }
+      }
+    ]
+  }
+}

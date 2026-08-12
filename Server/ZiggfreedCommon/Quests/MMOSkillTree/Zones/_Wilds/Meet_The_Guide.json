@@ -1,0 +1,65 @@
+{
+  "$Comment": [
+    "The Emerald Wilds campaign's front door, and the first quest a new player is handed.",
+    "",
+    "AutoAccept starts it the moment the onboarding chain's gather_the_basics is finished, so a",
+    "player never has to find it. It has one step, the report-back hand-in below: a TURN_IN with a",
+    "blank Target asks for no items, only that the player stands in front of Ranger Wren and says",
+    "hello. Wren's own conversation completes it from her intro line.",
+    "",
+    "The _Wilds folder is what puts the wilds_ in front of this file's id, so the file can be named",
+    "for the beat rather than for the questline. Rename the folder and every id under it changes,",
+    "which starts anyone mid-campaign over.",
+    "",
+    "The starter kit is granted as item rewards rather than as /give commands, so a full bag holds",
+    "the payout back instead of dropping it on the floor."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_meet_the_guide.title",
+    "FlavorKey": "quest.wilds_meet_the_guide.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 0,
+    "Tags": [
+      "Tutorial",
+      "Chapter_2"
+    ]
+  },
+  "Flow": {
+    "AutoAccept": true
+  },
+  "Npc": {
+    "TurnInId": "guide_wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "gather_the_basics"
+    ]
+  },
+  "Objectives": {
+    "turn_in": {
+      "Kind": "TURN_IN",
+      "Target": "",
+      "Amount": 1,
+      "TurnInNpcId": "guide_wilds",
+      "TextKey": "objective.text.turn_in.find"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "item",
+      "Params": {
+        "Item": "Food_Bread",
+        "Count": "3"
+      }
+    },
+    {
+      "Kind": "item",
+      "Params": {
+        "Item": "Bench_Campfire",
+        "Count": "1"
+      }
+    }
+  ]
+}

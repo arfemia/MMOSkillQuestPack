@@ -1,0 +1,49 @@
+{
+  "$Comment": [
+    "The capstone over both campaign achievements. MetaChildren is what makes it one: it has no",
+    "criteria of its own and earns itself the moment every achievement it names is earned, so",
+    "adding a third campaign here is the only edit a third zone needs.",
+    "",
+    "ServerFirst makes it a race only one player on the server can win. Everybody else keeps their",
+    "progress and is told, once, that they were beaten, and Announce is the broadcast the winner",
+    "sets off - which is why it is safe here and would be noise on an achievement everyone earns.",
+    "",
+    "The payout waits in the achievements menu to be collected."
+  ],
+  "Text": {
+    "TitleKey": "achievement.orbis_campaigner.title",
+    "FlavorKey": "achievement.orbis_campaigner.desc"
+  },
+  "Listing": {
+    "Category": "quests",
+    "Subcategory": "any",
+    "SortOrder": 62,
+    "Icon": "Rock_Crystal_Iridescent_Small"
+  },
+  "Scoring": {
+    "Points": 100
+  },
+  "MetaChildren": [
+    "emerald_wilds_campaign",
+    "howling_sands_campaign"
+  ],
+  "ClaimRewards": [
+    {
+      "Kind": "boost_token",
+      "Params": {
+        "Skill": "ALL",
+        "Multiplier": "3.0",
+        "DurationMinutes": "60"
+      }
+    }
+  ],
+  "Meta": {
+    "mmoskilltree": {
+      "ServerFirst": true,
+      "Announce": {
+        "Title": "Campaigner of Orbis!",
+        "Body": "{player} finished every zone campaign"
+      }
+    }
+  }
+}
