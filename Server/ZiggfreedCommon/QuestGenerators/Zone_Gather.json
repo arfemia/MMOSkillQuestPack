@@ -42,7 +42,7 @@
           "extra_target": "Ore_Copper",
           "extra_amount": 15,
           "extra_match": "CONTAINS",
-          "gift": "item",
+          "gift": "Item",
           "gift_item": "Tool_Pickaxe_Iron",
           "gift_count": "1",
           "xp_skill": "MINING",
@@ -136,7 +136,7 @@
         }
       },
       {
-        "Kind": "xp",
+        "Kind": "Mmo_Xp",
         "Params": {
           "Skill": "{xp_skill}",
           "Amount": "{xp_amount}"

@@ -57,7 +57,7 @@
   },
   "Rewards": [
     {
-      "Kind": "boost_token",
+      "Kind": "Mmo_Boost_Token",
       "Params": {
         "Skill": "ALL",
         "Multiplier": "2.5",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "Kind": "item",
+      "Kind": "Item",
       "Params": {
         "Item": "Potion_Health_Greater",
         "Count": "3"

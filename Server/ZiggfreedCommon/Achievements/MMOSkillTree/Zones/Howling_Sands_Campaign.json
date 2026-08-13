@@ -30,7 +30,7 @@
   ],
   "ClaimRewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "ALL",
         "Amount": "5000"

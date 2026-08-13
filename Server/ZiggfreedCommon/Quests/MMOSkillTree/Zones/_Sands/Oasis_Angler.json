@@ -47,7 +47,7 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "FISHING",
         "Amount": "2000"

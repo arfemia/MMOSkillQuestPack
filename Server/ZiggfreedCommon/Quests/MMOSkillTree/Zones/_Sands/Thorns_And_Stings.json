@@ -58,14 +58,14 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "SWORDS",
         "Amount": "1200"
       }
     },
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "DEFENSE",
         "Amount": "1200"

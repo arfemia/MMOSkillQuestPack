@@ -39,14 +39,14 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "DEFENSE",
         "Amount": "600"
       }
     },
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "HARVESTING",
         "Amount": "600"

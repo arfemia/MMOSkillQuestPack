@@ -97,3 +97,7 @@ achievement.wilds_hunter.desc = Emerald Wilds'te {0} yaratık alt et.
 achievement.sands_hunter_t1.title = Kumul Avcısı
 achievement.sands_hunter_t2.title = Kumul Zirvesi
 achievement.sands_hunter.desc = Howling Sands'te {0} yaratık alt et.
+
+# ---- Başarı Duyuruları (sohbet bildirimleri) ----
+achievement.announce.orbis_campaigner.title = Orbis Seferberi!
+achievement.announce.orbis_campaigner.body = {0} tüm bölge seferlerini bitirdi

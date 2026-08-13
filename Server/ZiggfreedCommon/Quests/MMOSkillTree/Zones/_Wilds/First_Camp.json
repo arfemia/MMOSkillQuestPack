@@ -51,14 +51,14 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "WOODCUTTING",
         "Amount": "400"
       }
     },
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "BUILDING",
         "Amount": "400"

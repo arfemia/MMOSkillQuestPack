@@ -70,14 +70,14 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "MAGIC",
         "Amount": "3000"
       }
     },
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "DEFENSE",
         "Amount": "3000"

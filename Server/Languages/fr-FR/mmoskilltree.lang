@@ -97,3 +97,7 @@ achievement.wilds_hunter.desc = Vainquez {0} créatures dans les Emerald Wilds.
 achievement.sands_hunter_t1.title = Traqueur des dunes
 achievement.sands_hunter_t2.title = Prédateur des dunes
 achievement.sands_hunter.desc = Vainquez {0} créatures dans les Howling Sands.
+
+# Achievement announcements
+achievement.announce.orbis_campaigner.title = Héros d'Orbis!
+achievement.announce.orbis_campaigner.body = {0} a terminé toutes les campagnes de zone

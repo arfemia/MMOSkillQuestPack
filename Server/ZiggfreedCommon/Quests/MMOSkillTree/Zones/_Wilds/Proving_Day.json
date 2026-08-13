@@ -52,7 +52,7 @@
   },
   "Rewards": [
     {
-      "Kind": "boost_token",
+      "Kind": "Mmo_Boost_Token",
       "Params": {
         "Skill": "ALL",
         "Multiplier": "2.0",

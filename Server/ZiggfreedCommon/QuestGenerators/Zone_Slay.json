@@ -40,7 +40,7 @@
           "gate_min": 0,
           "target": "Trork",
           "amount": 8,
-          "gift": "item",
+          "gift": "Item",
           "gift_item": "Weapon_Longsword_Iron",
           "gift_count": "1",
           "xp1_skill": "SWORDS",
@@ -63,7 +63,7 @@
           "gift_count": "0",
           "xp1_skill": "ARCHERY",
           "xp1_amount": "700",
-          "xp2": "xp",
+          "xp2": "Mmo_Xp",
           "xp2_skill": "DEFENSE",
           "xp2_amount": "700"
         },
@@ -76,7 +76,7 @@
           "gate_min": 60,
           "target": "Scarak",
           "amount": 15,
-          "gift": "item",
+          "gift": "Item",
           "gift_item": "Potion_Health",
           "gift_count": "3",
           "xp1_skill": "SWORDS",
@@ -126,7 +126,7 @@
         }
       },
       {
-        "Kind": "xp",
+        "Kind": "Mmo_Xp",
         "Params": {
           "Skill": "{xp1_skill}",
           "Amount": "{xp1_amount}"

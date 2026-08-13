@@ -35,7 +35,7 @@
   },
   "Rewards": [
     {
-      "Kind": "item",
+      "Kind": "Item",
       "Params": {
         "Item": "Potion_Health_Small",
         "Count": "2"

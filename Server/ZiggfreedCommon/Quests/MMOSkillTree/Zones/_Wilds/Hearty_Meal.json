@@ -53,7 +53,7 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "DEFENSE",
         "Amount": "500"

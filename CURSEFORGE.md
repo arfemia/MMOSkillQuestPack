@@ -31,11 +31,10 @@ Requires the MMO Skill Tree mod (1.6.0+). The pack supplies the content; the mod
 
 ## Don't want the spawn NPCs?
 
-The quest givers spawn through the same system as the mod's Adventurer's Guide, so the same controls apply:
+The quest givers place through the same system as the mod's Adventurer's Guide, so the same controls apply:
 
-- **Before anyone joins:** turn quest givers off in the mod's config and they will never spawn.
-- **Already in your world?** Run `/mmonpc givers` to see them, then remove the ones you don't want; `/mmonpc reset` lets them spawn again later if you change your mind.
-- **Or use the in-game editor:** with creative/builder access, the native entity tool deletes any of them in the world like any other entity.
+- **Before anyone joins:** set `"enabled": false` for `guide_wilds`, `quartermaster_wilds`, and/or `guide_sands` in `mods/ziggfreedcommon/npc-placements.json` and the ones you list will never spawn.
+- **Already in your world?** Run `/mmonpc list` to see their ids, then `/mmonpc disable --arg1=<id>` - it despawns right away and stays gone. Changed your mind? `/mmonpc enable --arg1=<id>` brings it back.
 
 ## Install
 

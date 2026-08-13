@@ -39,7 +39,7 @@
   },
   "Rewards": [
     {
-      "Kind": "xp",
+      "Kind": "Mmo_Xp",
       "Params": {
         "Skill": "ACROBATICS",
         "Amount": "1000"

@@ -97,3 +97,7 @@ achievement.wilds_hunter.desc = Besiege {0} Kreaturen in den Emerald Wilds.
 achievement.sands_hunter_t1.title = Dünen-Pirschjäger
 achievement.sands_hunter_t2.title = Spitze der Dünen
 achievement.sands_hunter.desc = Besiege {0} Kreaturen in den Howling Sands.
+
+# ---- Achievement announcements ----
+achievement.announce.orbis_campaigner.title = Feldzügler von Orbis!
+achievement.announce.orbis_campaigner.body = {0} hat alle Zonen-Feldzüge abgeschlossen

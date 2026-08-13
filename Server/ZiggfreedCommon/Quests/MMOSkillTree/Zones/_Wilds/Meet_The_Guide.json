@@ -48,14 +48,14 @@
   },
   "Rewards": [
     {
-      "Kind": "item",
+      "Kind": "Item",
       "Params": {
         "Item": "Food_Bread",
         "Count": "3"
       }
     },
     {
-      "Kind": "item",
+      "Kind": "Item",
       "Params": {
         "Item": "Bench_Campfire",
         "Count": "1"

@@ -29,7 +29,7 @@
   ],
   "ClaimRewards": [
     {
-      "Kind": "boost_token",
+      "Kind": "Mmo_Boost_Token",
       "Params": {
         "Skill": "ALL",
         "Multiplier": "3.0",
@@ -41,8 +41,8 @@
     "mmoskilltree": {
       "ServerFirst": true,
       "Announce": {
-        "Title": "Campaigner of Orbis!",
-        "Body": "{player} finished every zone campaign"
+        "TitleKey": "achievement.announce.orbis_campaigner.title",
+        "BodyKey": "achievement.announce.orbis_campaigner.body"
       }
     }
   }

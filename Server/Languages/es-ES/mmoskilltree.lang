@@ -97,3 +97,5 @@ achievement.wilds_hunter.desc = Derrota a {0} criaturas en las Emerald Wilds.
 achievement.sands_hunter_t1.title = Acechador de las Dunas
 achievement.sands_hunter_t2.title = Cúspide de las Dunas
 achievement.sands_hunter.desc = Derrota a {0} criaturas en las Howling Sands.
+achievement.announce.orbis_campaigner.title = ¡Campeón de Orbis!
+achievement.announce.orbis_campaigner.body = {0} completó todas las campañas de zona
