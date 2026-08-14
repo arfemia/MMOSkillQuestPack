@@ -30,7 +30,7 @@
       "Values": [
         {
           "quest": "wilds_tools_of_the_trade",
-          "giver": "quartermaster_wilds",
+          "giver": "Quartermaster_Wilds",
           "sort": 10,
           "after": "wilds_meet_the_guide",
           "gate_stat": "MMO_TotalLevel",
@@ -50,7 +50,7 @@
         },
         {
           "quest": "sands_quarry_of_kings",
-          "giver": "guide_sands",
+          "giver": "Guide_Sands",
           "sort": 22,
           "after": "sands_walker_of_the_wastes",
           "gate_stat": "MMO_Level_MINING",
@@ -70,7 +70,7 @@
         },
         {
           "quest": "sands_hardwood_of_the_dunes",
-          "giver": "guide_sands",
+          "giver": "Guide_Sands",
           "sort": 23,
           "after": "sands_walker_of_the_wastes",
           "gate_stat": "MMO_Level_WOODCUTTING",

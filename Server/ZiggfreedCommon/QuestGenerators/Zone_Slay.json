@@ -33,7 +33,7 @@
       "Values": [
         {
           "quest": "wilds_trork_trouble",
-          "giver": "guide_wilds",
+          "giver": "Guide_Wilds",
           "sort": 3,
           "after": "wilds_hearty_meal",
           "gate_stat": "MMO_TotalLevel",
@@ -51,7 +51,7 @@
         },
         {
           "quest": "wilds_graveyard_watch",
-          "giver": "guide_wilds",
+          "giver": "Guide_Wilds",
           "sort": 4,
           "after": "wilds_trork_trouble",
           "gate_stat": "MMO_TotalLevel",
@@ -69,7 +69,7 @@
         },
         {
           "quest": "sands_hive_incursion",
-          "giver": "guide_sands",
+          "giver": "Guide_Sands",
           "sort": 25,
           "after": "sands_thorns_and_stings",
           "gate_stat": "MMO_TotalLevel",

@@ -21,7 +21,7 @@
     "RequirePrerequisites": true
   },
   "Npc": {
-    "ViewId": "guide_sands"
+    "ViewId": "Guide_Sands"
   },
   "Requires": {
     "Quests": [
@@ -64,7 +64,7 @@
       "Target": "Ingredient_Life_Essence",
       "Amount": 50,
       "MatchMode": "EXACT",
-      "TurnInNpcId": "guide_sands",
+      "TurnInNpcId": "Guide_Sands",
       "Order": 2
     }
   },

@@ -21,7 +21,7 @@
     "RequirePrerequisites": true
   },
   "Npc": {
-    "ViewId": "guide_sands"
+    "ViewId": "Guide_Sands"
   },
   "Requires": {
     "Quests": [

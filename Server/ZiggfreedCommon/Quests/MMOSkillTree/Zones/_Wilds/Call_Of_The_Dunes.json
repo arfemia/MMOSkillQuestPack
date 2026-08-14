@@ -20,8 +20,8 @@
     "RequirePrerequisites": true
   },
   "Npc": {
-    "ViewId": "guide_wilds",
-    "TurnInId": "guide_sands"
+    "ViewId": "Guide_Wilds",
+    "TurnInId": "Guide_Sands"
   },
   "Requires": {
     "Quests": [
@@ -33,7 +33,7 @@
       "Kind": "TURN_IN",
       "Target": "",
       "Amount": 1,
-      "TurnInNpcId": "guide_sands",
+      "TurnInNpcId": "Guide_Sands",
       "TextKey": "objective.text.turn_in.find"
     }
   },

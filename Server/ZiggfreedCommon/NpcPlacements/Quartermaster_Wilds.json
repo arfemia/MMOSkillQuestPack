@@ -2,6 +2,10 @@
   "$Comment": [
     "Quartermaster Bramble, the Emerald Wilds supply giver, standing beside a Kweebec merchant post.",
     "",
+    "Where: the world named 'default', which is the persistent world players log into, never an",
+    "instance - a bare word under Match is an exact name. If your server's main world has another",
+    "name, change it here (or override this placement by id from your own pack).",
+    "",
     "Anchor.Structure attaches the placement to a worldgen spawn marker, so Bramble lands at a post",
     "the world actually generated. MarkerIds is an exact, case-insensitive allow-list; run",
     "/mmonpc structures in game to see the marker ids a world has loaded before authoring one, and",
@@ -10,27 +14,26 @@
     "Limits: one per world, and every matching marker is used. Raise MaxPerWorld to stand one at",
     "every matching post instead.",
     "",
-    "Identity carries no Role, which opts the placement into a generated one: the base role is cloned",
-    "with the Appearance, nameplate key and press-F hint key below, so the pack ships no role JSON.",
+    "Identity.Role names the NPC role this placement spawns. Bramble's look and nameplate live in",
+    "that role file (Server/NPC/Roles/Passive/Quartermaster_Wilds.json), which this pack ships, so",
+    "re-dress him there rather than here. Point Role at a different role id to stand somebody else",
+    "at the posts.",
     "",
-    "Identity.NpcId is the character id everything else binds to: the pack's quests name it as",
-    "their npcViewId, the dialogue destination below carries it, and a talk step credits against",
-    "it. Omit it and the placement answers to its own file id instead.",
+    "This placement authors no Identity.NpcId, so the character IS its role: the pack's quests",
+    "name Quartermaster_Wilds as their npcViewId, the dialogue destination below carries it, and a talk step",
+    "credits against it. Author an NpcId to make this standing a character of its own that",
+    "nothing else answers to.",
     "",
     "Press F opens Bramble's dialogue, authored as a ui_target rather than as Interact.Dialogue so",
-    "the npc id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
+    "the character id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
     "against and what puts the character's name in the header; it is also what the pack's quests bind",
     "as their npcViewId."
   ],
   "Name": "Quartermaster_Wilds",
   "Identity": {
-    "BaseRole": "Template_Mmo_QuestGiver",
-    "Appearance": "Klops_Merchant",
-    "NameKey": "npcs.quartermaster_wilds.name",
-    "HintKey": "npcs.questgiver.hint",
-    "NpcId": "quartermaster_wilds"
+    "Role": "Quartermaster_Wilds"
   },
-  "Where": { "Names": ["primary"] },
+  "Where": { "Match": ["default"] },
   "Anchor": {
     "Structure": {
       "MarkerIds": ["Kweebec_Merchant"],
@@ -42,7 +45,7 @@
   "Interact": {
     "Bindings": {
       "mmoskilltree:ui_target": {
-        "Value": "dialogue:quartermaster_wilds_dialogue:quartermaster_wilds"
+        "Value": "dialogue:Quartermaster_Wilds_Dialogue:Quartermaster_Wilds"
       }
     }
   }

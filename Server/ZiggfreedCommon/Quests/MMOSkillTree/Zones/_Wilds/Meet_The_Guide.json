@@ -30,7 +30,7 @@
     "AutoAccept": true
   },
   "Npc": {
-    "TurnInId": "guide_wilds"
+    "TurnInId": "Guide_Wilds"
   },
   "Requires": {
     "Quests": [
@@ -42,7 +42,7 @@
       "Kind": "TURN_IN",
       "Target": "",
       "Amount": 1,
-      "TurnInNpcId": "guide_wilds",
+      "TurnInNpcId": "Guide_Wilds",
       "TextKey": "objective.text.turn_in.find"
     }
   },

@@ -23,17 +23,17 @@
   "Criteria": [
     {
       "Kind": "TALK_TO_NPC",
-      "Target": "guide_wilds",
+      "Target": "Guide_Wilds",
       "Amount": 1
     },
     {
       "Kind": "TALK_TO_NPC",
-      "Target": "quartermaster_wilds",
+      "Target": "Quartermaster_Wilds",
       "Amount": 1
     },
     {
       "Kind": "TALK_TO_NPC",
-      "Target": "guide_sands",
+      "Target": "Guide_Sands",
       "Amount": 1
     }
   ]

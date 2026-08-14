@@ -23,12 +23,12 @@
     "AutoAccept": true
   },
   "Npc": {
-    "ViewId": "guide_sands"
+    "ViewId": "Guide_Sands"
   },
   "Objectives": {
     "talk": {
       "Kind": "TALK_TO_NPC",
-      "Target": "guide_sands",
+      "Target": "Guide_Sands",
       "Amount": 1,
       "MatchMode": "EXACT"
     }

@@ -1,0 +1,9 @@
+{
+  "$Comment": "Dunewalker Ashkar, the Howling Sands quest giver. A thin variant: Template_Mmo_QuestGiver (shipped in the MMO Skill Tree jar) holds the entire body - the idle / watch / interact behaviour and the press-F action - and this file only says what makes Ashkar look and read as Ashkar. Point a placement's Identity.Role at \"Guide_Sands\" to stand him somewhere. Modify may name ONLY the parameters that template declares: Appearance, NameTranslationKey, Weapons, OffHand, DefaultOffHandSlot. Naming anything else makes the engine refuse the whole role, which shows up in game as an NPC that never appears. Appearance is a Model asset id, so any vanilla model works here - swap it and Ashkar looks like someone else with no other change. The press-F prompt is baked into the template and shared with every giver using it; to give one its own prompt, copy that template, edit the copy's Hint, and Reference the copy instead.",
+  "Type": "Variant",
+  "Reference": "Template_Mmo_QuestGiver",
+  "Modify": {
+    "Appearance": "Outlander_Hunter",
+    "NameTranslationKey": "npcs.Guide_Sands.name"
+  }
+}

@@ -31,23 +31,25 @@ Server/
     Achievements/MMOSkillTree/Zones/   8 files: 2 campaigns + orbis capstone + well_met + 2 hunt chains
     NpcPlacements/                 3 givers, all anchored to a worldgen SpawnMarker
                                 (Anchor.Structure, SpawnChance 1.0 + MaxPerWorld 1 = one
-                                unique each): guide_wilds @ Kweebec village
-                                (Feran_Windwalker), quartermaster_wilds @ Kweebec_Merchant
-                                (Klops_Merchant), guide_sands @ Outlander_Hunter camp
-                                (Outlander_Hunter). Each file authors Identity.BaseRole
-                                Template_Mmo_QuestGiver + Appearance + NameKey + HintKey (all
-                                explicit - the placement schema has no per-field defaults);
-                                the jar GENERATES the native role at runtime (NO
-                                hand-authored role JSON ships here - see below).
+                                unique each): Guide_Wilds @ Kweebec village,
+                                Quartermaster_Wilds @ Kweebec_Merchant, Guide_Sands @
+                                Outlander_Hunter camp. Each names only its role by
+                                Identity.Role, which IS its character id
+  NPC/Roles/Passive/             the 3 giver ROLES, one per character: Guide_Wilds
+                                (Feran_Windwalker), Quartermaster_Wilds (Klops_Merchant),
+                                Guide_Sands (Outlander_Hunter). Each is a native Variant of
+                                the jar's Template_Mmo_QuestGiver carrying only Appearance +
+                                NameTranslationKey - see below
   MMOSkillTree/                  the mod's OWN stores
     Control/MMOSkillQuestPack.json   add-mode for every MMOSkillTree type shipped here (NEVER
                                 omit one). Only Dialogues today.
     Dialogues/                  3 Payload-wrapped dialogue trees ({Name, Payload:{Start,
-                                Nodes}}): guide_wilds + guide_sands + quartermaster_wilds
+                                Nodes}}): Guide_Wilds + Guide_Sands + Quartermaster_Wilds
                                 (all standalone, explicit + sugar). A set of givers sharing a
                                 skeleton uses native "Parent":"<id>" inheritance.
   Languages/<bcp47>/          mmoskilltree.lang (quest/dialogue/achievement keys) +
-                                npcs.lang (giver names + shared questgiver.hint) x9
+                                npcs.lang (giver names + the shared MMO_QuestGiver.hint
+                                prompt the template role bakes) x9
 ```
 
 ## How it fits together
@@ -55,26 +57,33 @@ Server/
 - **Givers are NPC PLACEMENTS** (`Server/ZiggfreedCommon/NpcPlacements/*.json`), read by the
   placement engine in ziggfreed-common. Each uses `Anchor.Structure` so it stands beside a
   matching base-game worldgen SpawnMarker (`MarkerIds`, an exact case-insensitive allow-list
-  that is FAIL-CLOSED: no entry, or a typo, anchors to nothing). `Where` names the `primary`
-  world selector, so givers appear in the ordinary world and in no instance.
+  that is FAIL-CLOSED: no entry, or a typo, anchors to nothing). `Where` authors
+  `Match: ["default"]` (an exact world-name pattern), so givers appear in the ordinary world
+  and in no instance.
   `/mmonpc list` shows what targets a world and what is standing, `/mmonpc structures` lists
   seen markerIds to author `MarkerIds`, `/mmonpc reconcile [world]` forces a sweep, and
   `/mmonpc disable <id>` despawns one immediately.
-- **Who a giver IS is `Identity.NpcId`; where press F GOES is `Interact.Bindings`.** Each giver
-  authors `Identity.NpcId` (the id the pack's quests name as `Npc.ViewId` and turn in against, and
-  the id a talk step credits - leave it out and the placement answers to its own file id instead)
-  and binds `mmoskilltree:ui_target` to `dialogue:<dialogueId>:<npcId>`. **Use the `ui_target`
+- **Who a giver IS is its `Identity.Role`; where press F GOES is `Interact.Bindings`.** None of the
+  three placements authors an `Identity.NpcId`: with none, the character IS the role it names, so
+  `Guide_Wilds` / `Guide_Sands` / `Quartermaster_Wilds` are the ids the pack's quests name as
+  `Npc.ViewId`, turn in against, and a talk step credits. Author an `NpcId` only to make one
+  standing a character of its own that nothing else answers to. Each giver binds
+  `mmoskilltree:ui_target` to `dialogue:<DialogueId>:<npcId>`. **Use the `ui_target`
   form, NOT `Interact.Dialogue`**: only `ui_target` carries the npc id into the dialogue, which is
   what these trees' own `npcquests:@self` options resolve against and what puts the character's
   name in the header. Authoring both leaves the `ui_target` unused and is a validator finding.
-- **Giver appearance + nameplate ship in that one placement file, no role JSON.** `Identity`
-  authors `BaseRole: "Template_Mmo_QuestGiver"` (a native parameterized template role the jar ships)
-  + `Appearance` (a vanilla appearance id) + `NameKey` + `HintKey`. The placement schema carries NO
-  per-field defaults, so author all four explicitly; the shared hint is `npcs.questgiver.hint` and
-  the name convention is `npcs.<npcId>.name`, both shipped in npcs.lang. Omitting `Identity.Role` is
-  what opts into role generation. Set an explicit `Identity.Role` only to ship a custom
-  hand-authored role instead. A new giver = one placement file (+ the `npcs.<id>.name` it reuses for
-  objective text).
+- **Giver appearance + nameplate ship in a ROLE file this pack ships**, at
+  `Server/NPC/Roles/Passive/<RoleId>.json`, named from the placement by `Identity.Role`. Each of the
+  three is a three-line native `Variant` of `Template_Mmo_QuestGiver` (the jar's parameterized
+  template, which holds the whole idle/watch/press-F body), with a `Modify` block carrying just
+  `Appearance` (a vanilla Model id) and `NameTranslationKey`. **`Modify` may name ONLY the five
+  parameters that template declares** - `Appearance`, `NameTranslationKey`, `Weapons`, `OffHand`,
+  `DefaultOffHandSlot` - because the engine refuses the whole role over one undeclared key and the
+  symptom is a giver who is never anywhere. The press-F prompt is NOT one of them (a role's `Hint`
+  is read literally, so no variant can change it): every giver here shows the template's shared
+  prompt, `npcs.MMO_QuestGiver.hint`, which this pack translates in all nine locales. A giver
+  needing its own prompt needs a full role body instead. The name convention is
+  `npcs.<npcId>.name`. A new giver = one role file + one placement file + its two `.lang` lines.
 - **Quests are Pattern A assets with native `Parent` inheritance.** One file per quest, the
   FILENAME is the id, every leaf inherits, and `Objectives` merges per objective id. A `_`-marked
   ancestor folder contributes its name (sans `_`, lower-cased) as an id prefix, which is what keeps
@@ -131,10 +140,10 @@ Server/
   segment: it is what carries the NPC's name into the dialogue header and makes `@self`
   resolve, which the giver trees here rely on.
 - **Campaign flow**: wilds_meet_the_guide (AutoAccept, gated on the jar `gather_the_basics`
-  tutorial; one blank-target `TURN_IN` step locked to `guide_wilds`, which renders as "Go to Ranger
+  tutorial; one blank-target `TURN_IN` step locked to `Guide_Wilds`, which renders as "Go to Ranger
   Wren" and fires the map marker; Wren's `QuestState ACTIVE`-gated intro option `TurnIn`s it) ->
   camp/meal/combat arc (Wren) + supply arc (Bramble) -> proving_day -> call_of_the_dunes (offered by
-  guide_wilds, handed in at guide_sands => "Go to Dunewalker Ashkar" + marker; Ashkar spawns at the
+  Guide_Wilds, handed in at Guide_Sands => "Go to Dunewalker Ashkar" + marker; Ashkar spawns at the
   first Outlander camp loaded beside its Outlander_Hunter marker; his intro, gated on the AutoAccept
   sands_walker_of_the_wastes ACTIVE, credits sands_walker via `MarkTalked` AND `TurnIn`s
   call_of_the_dunes in the same option) -> the desert arc. "Go meet NPC X" handoffs are standardized

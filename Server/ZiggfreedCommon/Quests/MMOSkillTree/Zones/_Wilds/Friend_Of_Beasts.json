@@ -19,7 +19,7 @@
     "RequirePrerequisites": true
   },
   "Npc": {
-    "ViewId": "quartermaster_wilds"
+    "ViewId": "Quartermaster_Wilds"
   },
   "Requires": {
     "Quests": [

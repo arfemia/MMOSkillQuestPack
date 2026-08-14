@@ -1,0 +1,9 @@
+{
+  "$Comment": "Ranger Wren, the Emerald Wilds quest giver. A thin variant: Template_Mmo_QuestGiver (shipped in the MMO Skill Tree jar) holds the entire body - the idle / watch / interact behaviour and the press-F action - and this file only says what makes Wren look and read as Wren. Point a placement's Identity.Role at \"Guide_Wilds\" to stand her somewhere. Modify may name ONLY the parameters that template declares: Appearance, NameTranslationKey, Weapons, OffHand, DefaultOffHandSlot. Naming anything else makes the engine refuse the whole role, which shows up in game as an NPC that never appears. Appearance is a Model asset id, so any vanilla model works here - swap it and Wren looks like someone else with no other change. The press-F prompt is baked into the template and shared with every giver using it; to give one its own prompt, copy that template, edit the copy's Hint, and Reference the copy instead.",
+  "Type": "Variant",
+  "Reference": "Template_Mmo_QuestGiver",
+  "Modify": {
+    "Appearance": "Feran_Windwalker",
+    "NameTranslationKey": "npcs.Guide_Wilds.name"
+  }
+}

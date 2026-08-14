@@ -2,6 +2,10 @@
   "$Comment": [
     "Ranger Wren, the Emerald Wilds quest giver, standing beside a Kweebec village.",
     "",
+    "Where: the world named 'default', which is the persistent world players log into, never an",
+    "instance - a bare word under Match is an exact name. If your server's main world has another",
+    "name, change it here (or override this placement by id from your own pack).",
+    "",
     "Anchor.Structure attaches the placement to a worldgen spawn marker rather than to fixed",
     "coordinates, so Wren lands in a village the world actually generated instead of an arbitrary",
     "spot. MarkerIds is an exact, case-insensitive allow-list; run /mmonpc structures in game to see",
@@ -11,29 +15,26 @@
     "Limits: one per world, and every matching marker is used (SpawnChance 1 means never skipped).",
     "Raise MaxPerWorld to stand one at every matching village instead.",
     "",
-    "Identity has no Role, which is what opts this placement into a generated one: the base role is",
-    "cloned with the Appearance, the nameplate key and the press-F hint key below, so the pack ships",
-    "no role JSON of its own.",
+    "Identity.Role names the NPC role this placement spawns. Wren's look and nameplate live in that",
+    "role file (Server/NPC/Roles/Passive/Guide_Wilds.json), which this pack ships, so re-dress her",
+    "there rather than here. Point Role at a different role id to stand somebody else at the villages.",
     "",
-    "Identity.NpcId is the character id everything else binds to: the pack's quests name it as",
-    "their npcViewId, the dialogue destination below carries it, and a talk step credits against",
-    "it. Omit it and the placement answers to its own file id instead.",
+    "This placement authors no Identity.NpcId, so the character IS its role: the pack's quests",
+    "name Guide_Wilds as their npcViewId, the dialogue destination below carries it, and a talk step",
+    "credits against it. Author an NpcId to make this standing a character of its own that",
+    "nothing else answers to.",
     "",
     "Press F opens Wren's dialogue. It is authored as a ui_target rather than as Interact.Dialogue",
-    "because that form carries the npc id into the dialogue, which is what Wren's own",
+    "because that form carries the character id into the dialogue, which is what Wren's own",
     "'npcquests:@self' options resolve against and what puts the character's name in the header.",
     "Authoring Interact.Dialogue instead would open the same tree with no identity and those options",
-    "would go nowhere. The npc id is also what the pack's quests bind as their npcViewId."
+    "would go nowhere. That id is also what the pack's quests bind as their npcViewId."
   ],
   "Name": "Guide_Wilds",
   "Identity": {
-    "BaseRole": "Template_Mmo_QuestGiver",
-    "Appearance": "Feran_Windwalker",
-    "NameKey": "npcs.guide_wilds.name",
-    "HintKey": "npcs.questgiver.hint",
-    "NpcId": "guide_wilds"
+    "Role": "Guide_Wilds"
   },
-  "Where": { "Names": ["primary"] },
+  "Where": { "Match": ["default"] },
   "Anchor": {
     "Structure": {
       "MarkerIds": ["Kweebec"],
@@ -44,7 +45,7 @@
   "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
   "Interact": {
     "Bindings": {
-      "mmoskilltree:ui_target": { "Value": "dialogue:guide_wilds_dialogue:guide_wilds" }
+      "mmoskilltree:ui_target": { "Value": "dialogue:Guide_Wilds_Dialogue:Guide_Wilds" }
     }
   }
 }
