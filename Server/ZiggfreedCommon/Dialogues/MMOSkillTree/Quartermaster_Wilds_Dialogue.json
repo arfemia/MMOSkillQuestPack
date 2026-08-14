@@ -1,0 +1,58 @@
+{
+  "Name": "Quartermaster_Wilds_Dialogue",
+  "$Comment": [
+    "The Emerald Wilds quartermaster, and the character the ledger quest is handed in to.",
+    "",
+    "Start.First is tried in the order written and the first beat whose When conditions pass wins,",
+    "so greet_active greets a player mid-ledger with the hand-in line and everyone else falls",
+    "through to Fallback. Which greeting shows is derived from the quest's own state rather than",
+    "from anything remembered, so resetting the quest also resets the conversation instead of",
+    "soft-locking it.",
+    "",
+    "MarkTalked on the trade option is the only thing that credits a talk step or a met-the-giver",
+    "achievement here; nothing counts a character as spoken to on its own.",
+    "",
+    "A set of givers that share a skeleton can be written once as a file marked Abstract and inherited",
+    "by 'Parent': '<that id>', which merges node by node so a child restates only the beats it changes."
+  ],
+  "Start": {
+    "First": [
+      {
+        "Node": "greet_active",
+        "When": [
+          { "Type": "QuestState", "Quest": "wilds_quartermasters_ledger", "State": "ACTIVE" }
+        ]
+      }
+    ],
+    "Fallback": "greet"
+  },
+  "Nodes": {
+    "greet": {
+      "TextKey": "dialogue.quartermaster_wilds.greet.text",
+      "Options": [
+        { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "Quests" },
+        {
+          "LabelKey": "dialogue.quartermaster_wilds.greet.opt.trade",
+          "Actions": [ { "Type": "MarkTalked" } ],
+          "Goto": "trade_talk"
+        }
+      ]
+    },
+    "greet_active": {
+      "TextKey": "dialogue.quartermaster_wilds.greet_ledger.text",
+      "Options": [
+        {
+          "LabelKey": "dialogue.quartermaster_wilds.greet_ledger.opt.turnin",
+          "Do": [ { "TurnIn": "wilds_quartermasters_ledger" }, { "Open": "Quests" } ]
+        },
+        { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "trade_talk": {
+      "TextKey": "dialogue.quartermaster_wilds.trade_talk.text",
+      "Options": [
+        { "LabelKey": "dialogue.quartermaster_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    }
+  }
+}

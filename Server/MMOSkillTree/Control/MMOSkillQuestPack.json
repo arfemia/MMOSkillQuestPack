@@ -6,10 +6,10 @@
     "List every MMOSkillTree store the pack ships files into. A store that is shipped but not listed",
     "is a store whose files quietly do nothing.",
     "",
-    "Quests, achievements and NPC placements are NOT listed: those stores belong to the shared",
-    "framework rather than to the mod, and they merge by id on their own. To retune one somebody else",
-    "shipped, drop in a file of the same id, or ship a file naming theirs as its Parent."
+    "Quests, achievements, dialogues and NPC placements are NOT listed: those stores belong to the",
+    "shared framework rather than to the mod, and they merge by id on their own. To retune one",
+    "somebody else shipped, drop in a file of the same id, or ship a file naming theirs as its Parent.",
+    "This pack currently ships no content into a store the mod itself owns, so this file names none."
   ],
-  "Name": "MMOSkillQuestPack",
-  "Dialogues": "add"
+  "Name": "MMOSkillQuestPack"
 }

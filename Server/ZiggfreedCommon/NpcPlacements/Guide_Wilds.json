@@ -20,15 +20,14 @@
     "there rather than here. Point Role at a different role id to stand somebody else at the villages.",
     "",
     "This placement authors no Identity.NpcId, so the character IS its role: the pack's quests",
-    "name Guide_Wilds as their npcViewId, the dialogue destination below carries it, and a talk step",
-    "credits against it. Author an NpcId to make this standing a character of its own that",
+    "name Guide_Wilds as their npcViewId, the dialogue below is automatically with her, and a talk",
+    "step credits against it. Author an NpcId to make this standing a character of its own that",
     "nothing else answers to.",
     "",
-    "Press F opens Wren's dialogue. It is authored as a ui_target rather than as Interact.Dialogue",
-    "because that form carries the character id into the dialogue, which is what Wren's own",
-    "'npcquests:@self' options resolve against and what puts the character's name in the header.",
-    "Authoring Interact.Dialogue instead would open the same tree with no identity and those options",
-    "would go nowhere. That id is also what the pack's quests bind as their npcViewId."
+    "Press F opens Wren's own dialogue. The conversation is automatically WITH Wren: the header name,",
+    "@self, the talk credit and every quest-aware line in it all read this placement's own identity,",
+    "so nothing here restates her npc id. That same id is also what the pack's quests bind as their",
+    "npcViewId."
   ],
   "Name": "Guide_Wilds",
   "Identity": {
@@ -43,9 +42,5 @@
     }
   },
   "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
-  "Interact": {
-    "Bindings": {
-      "mmoskilltree:ui_target": { "Value": "dialogue:Guide_Wilds_Dialogue:Guide_Wilds" }
-    }
-  }
+  "Interact": { "Dialogue": "Guide_Wilds_Dialogue" }
 }

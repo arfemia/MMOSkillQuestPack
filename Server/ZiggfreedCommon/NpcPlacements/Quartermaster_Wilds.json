@@ -20,13 +20,13 @@
     "at the posts.",
     "",
     "This placement authors no Identity.NpcId, so the character IS its role: the pack's quests",
-    "name Quartermaster_Wilds as their npcViewId, the dialogue destination below carries it, and a talk step",
-    "credits against it. Author an NpcId to make this standing a character of its own that",
-    "nothing else answers to.",
+    "name Quartermaster_Wilds as their npcViewId, the dialogue below is automatically with him, and",
+    "a talk step credits against it. Author an NpcId to make this standing a character of its own",
+    "that nothing else answers to.",
     "",
-    "Press F opens Bramble's dialogue, authored as a ui_target rather than as Interact.Dialogue so",
-    "the character id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
-    "against and what puts the character's name in the header; it is also what the pack's quests bind",
+    "Press F opens Bramble's own dialogue. The conversation is automatically WITH Bramble: the header",
+    "name, @self, the talk credit and every quest-aware line in it all read this placement's own",
+    "identity, so nothing here restates his npc id. That same id is also what the pack's quests bind",
     "as their npcViewId."
   ],
   "Name": "Quartermaster_Wilds",
@@ -42,11 +42,5 @@
     }
   },
   "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
-  "Interact": {
-    "Bindings": {
-      "mmoskilltree:ui_target": {
-        "Value": "dialogue:Quartermaster_Wilds_Dialogue:Quartermaster_Wilds"
-      }
-    }
-  }
+  "Interact": { "Dialogue": "Quartermaster_Wilds_Dialogue" }
 }

@@ -20,14 +20,14 @@
     "there rather than here. Point Role at a different role id to stand somebody else at the camps.",
     "",
     "This placement authors no Identity.NpcId, so the character IS its role: the pack's quests",
-    "name Guide_Sands as their npcViewId, the dialogue destination below carries it, and a talk step",
-    "credits against it. Author an NpcId to make this standing a character of its own that",
+    "name Guide_Sands as their npcViewId, the dialogue below is automatically with him, and a talk",
+    "step credits against it. Author an NpcId to make this standing a character of its own that",
     "nothing else answers to.",
     "",
-    "Press F opens Ashkar's dialogue, authored as a ui_target rather than as Interact.Dialogue so the",
-    "npc id travels with it. That id is what the dialogue's own 'npcquests:@self' options resolve",
-    "against and what puts the character's name in the header; it is also what the pack's quests bind",
-    "as their npcViewId, and what the campaign's earlier 'go and meet Ashkar' step reports back to."
+    "Press F opens Ashkar's own dialogue. The conversation is automatically WITH Ashkar: the header",
+    "name, @self, the talk credit and every quest-aware line in it all read this placement's own",
+    "identity, so nothing here restates his npc id. That same id is what the pack's quests bind as",
+    "their npcViewId, and what the campaign's earlier 'go and meet Ashkar' step reports back to."
   ],
   "Name": "Guide_Sands",
   "Identity": {
@@ -42,9 +42,5 @@
     }
   },
   "Limits": { "SpawnChance": 1.0, "MaxPerWorld": 1 },
-  "Interact": {
-    "Bindings": {
-      "mmoskilltree:ui_target": { "Value": "dialogue:Guide_Sands_Dialogue:Guide_Sands" }
-    }
-  }
+  "Interact": { "Dialogue": "Guide_Sands_Dialogue" }
 }

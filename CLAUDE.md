@@ -35,6 +35,11 @@ Server/
                                 Quartermaster_Wilds @ Kweebec_Merchant, Guide_Sands @
                                 Outlander_Hunter camp. Each names only its role by
                                 Identity.Role, which IS its character id
+    Dialogues/MMOSkillTree/        3 structured dialogue trees (Pattern A, no Payload wrapper:
+                                Start/Nodes/Memories/Fragments are fields of the file itself):
+                                Guide_Wilds + Guide_Sands + Quartermaster_Wilds (all
+                                standalone, explicit + sugar). A set of givers sharing a
+                                skeleton uses native "Parent":"<id>" inheritance.
   NPC/Roles/Passive/             the 3 giver ROLES, one per character: Guide_Wilds
                                 (Feran_Windwalker), Quartermaster_Wilds (Klops_Merchant),
                                 Guide_Sands (Outlander_Hunter). Each is a native Variant of
@@ -42,11 +47,8 @@ Server/
                                 NameTranslationKey - see below
   MMOSkillTree/                  the mod's OWN stores
     Control/MMOSkillQuestPack.json   add-mode for every MMOSkillTree type shipped here (NEVER
-                                omit one). Only Dialogues today.
-    Dialogues/                  3 Payload-wrapped dialogue trees ({Name, Payload:{Start,
-                                Nodes}}): Guide_Wilds + Guide_Sands + Quartermaster_Wilds
-                                (all standalone, explicit + sugar). A set of givers sharing a
-                                skeleton uses native "Parent":"<id>" inheritance.
+                                omit one). This pack ships no content into a store the mod
+                                itself owns today, so the file names none.
   Languages/<bcp47>/          mmoskilltree.lang (quest/dialogue/achievement keys) +
                                 npcs.lang (giver names + the shared MMO_QuestGiver.hint
                                 prompt the template role bakes) x9
@@ -63,15 +65,16 @@ Server/
   `/mmonpc list` shows what targets a world and what is standing, `/mmonpc structures` lists
   seen markerIds to author `MarkerIds`, `/mmonpc reconcile [world]` forces a sweep, and
   `/mmonpc disable <id>` despawns one immediately.
-- **Who a giver IS is its `Identity.Role`; where press F GOES is `Interact.Bindings`.** None of the
+- **Who a giver IS is its `Identity.Role`; where press F GOES is `Interact.Dialogue`.** None of the
   three placements authors an `Identity.NpcId`: with none, the character IS the role it names, so
   `Guide_Wilds` / `Guide_Sands` / `Quartermaster_Wilds` are the ids the pack's quests name as
   `Npc.ViewId`, turn in against, and a talk step credits. Author an `NpcId` only to make one
-  standing a character of its own that nothing else answers to. Each giver binds
-  `mmoskilltree:ui_target` to `dialogue:<DialogueId>:<npcId>`. **Use the `ui_target`
-  form, NOT `Interact.Dialogue`**: only `ui_target` carries the npc id into the dialogue, which is
-  what these trees' own `npcquests:@self` options resolve against and what puts the character's
-  name in the header. Authoring both leaves the `ui_target` unused and is a validator finding.
+  standing a character of its own that nothing else answers to. Each giver's `Interact.Dialogue`
+  names its conversation by file id, and the conversation is AUTOMATICALLY with the character
+  standing there: the header name, `@self`, the talk credit and every quest-aware line all read
+  the placement's own identity, so nothing is ever restated. `Interact.Open` is the same value for
+  a press-F that opens something other than a conversation, naming any destination a mod on the
+  server registered; author one or the other, never both (`INTERACT_BOTH_FORMS`).
 - **Giver appearance + nameplate ship in a ROLE file this pack ships**, at
   `Server/NPC/Roles/Passive/<RoleId>.json`, named from the placement by `Identity.Role`. Each of the
   three is a three-line native `Variant` of `Template_Mmo_QuestGiver` (the jar's parameterized
@@ -123,22 +126,28 @@ Server/
 - **`Meta.mmoskilltree` is where a knob only this mod reads goes** (`ServerFirst` for a race,
   `Announce` for the winner's broadcast, `Feat`, `Feature`, `Class`, `LegacySince`). It is decoded
   through a real codec, so a mistyped key is named in the boot log and costs only that knob.
-- **Dialogues** are id-keyed standalone Payload-wrapped trees. `{"Type":"MarkTalked"}` is the ONE
-  way a conversation credits a talk step or a met-the-giver achievement - nothing credits implicitly,
-  so every giver needs at least one always-reachable option carrying it. Intro beats are
-  **gated on `QuestState <introQuest> ACTIVE`, NOT on remembered state** (self-heal: a memory that
-  outlives a quest reset soft-locks the intro - derive visibility from quest state, which resets with
-  the quest). The bread handout is a one-time option (`"Once": true`), so it is offered until it is
-  taken; the `Reward` keeps its own inner once-guard. Options use the sugar shorthand
-  (`Open`/`Goto`/`TurnIn`/`Reward`/`Do`); crediting is written out in full as an action, because it is
-  a deliberate statement about the story rather than a side effect of opening a menu. See
-  CONTENT_PACKS.md "Dialogue authoring".
+- **Dialogues** are id-keyed structured trees at `Server/ZiggfreedCommon/Dialogues/MMOSkillTree/`
+  (Pattern A: `Start`, `Nodes`, `Memories` and `Fragments` are top-level fields of the file, no
+  `Payload` wrapper). `Start` is declared sections (`First`/`Quests`/`Then`/`Fallback`); each of
+  these three trees writes its state-varied greetings as ordered `First` beats (each `When`-gated
+  on the relevant `QuestState`) plus one `Fallback` node for everyone else. `{"Type":"MarkTalked"}`
+  is the ONE way a conversation credits a talk step or a met-the-giver achievement - nothing
+  credits implicitly, so every giver needs at least one always-reachable option carrying it. Intro
+  beats are **gated on `QuestState <introQuest> ACTIVE`, NOT on remembered state** (self-heal: a
+  memory that outlives a quest reset soft-locks the intro - derive visibility from quest state,
+  which resets with the quest). The bread handout is a one-time option (`"Once": true`), so it is
+  offered until it is taken; the `Reward` keeps its own inner once-guard. Options use the sugar
+  shorthand (`Open`/`Goto`/`TurnIn`/`Reward`/`Do`); crediting is written out in full as an action,
+  because it is a deliberate statement about the story rather than a side effect of opening a menu.
+  `Open` names a registered destination - `"Quests"` is the bare word for the character the player
+  is standing at, which is what every "what work do you have" option in this pack writes; naming a
+  different character is `{"Type": "Quests", "Npc": "<id>"}`. See CONTENT_PACKS.md "Dialogue
+  authoring".
 - **Hub dialogue**: the jar owns it (`mmo_hub_intro`), and the hub placement points at it.
   To give the guide a different greeting, override the jar's hub placement by dropping your
   own `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
-  `mmoskilltree:ui_target` reads `dialogue:<your dialogue id>:mmo_hub`. Keep the third
-  segment: it is what carries the NPC's name into the dialogue header and makes `@self`
-  resolve, which the giver trees here rely on.
+  `Interact.Dialogue` names your own conversation. It is automatically with whichever character
+  the placement stands, so nothing here ever names an npc id.
 - **Campaign flow**: wilds_meet_the_guide (AutoAccept, gated on the jar `gather_the_basics`
   tutorial; one blank-target `TURN_IN` step locked to `Guide_Wilds`, which renders as "Go to Ranger
   Wren" and fires the map marker; Wren's `QuestState ACTIVE`-gated intro option `TurnIn`s it) ->
@@ -172,17 +181,17 @@ NpcPlacements merge, `/mmonpc list` shows the three givers targeting the world, 
 
 ## Conventions
 
-PascalCase filenames AND PascalCase codec keys. `Server/MMOSkillTree/Dialogues` files are raw
-types wrapped as `{"Name": ..., "Payload": {...}}` (node ids/map keys + sugar values stay
-lowercase). **Everything under `Server/ZiggfreedCommon/` is a Pattern A full structured asset:
-NO `Payload` wrapper, NESTED PascalCase groups, decoded directly by the engine (editor-native),
-every leaf inheriting through a top-level `"Parent": "<id>"`.** For placements those groups are
-`Identity`:{`Role`/`BaseRole`/`Appearance`/`NameKey`/`HintKey`/`NpcId`/`Aliases`}, `Where`,
-`Anchor`, `Limits`, `Lifecycle`, `Interact`:{`Dialogue`/`Bindings`}; for quests
+PascalCase filenames AND PascalCase codec keys. **Everything this pack ships lives under
+`Server/ZiggfreedCommon/` and is a Pattern A full structured asset: NO `Payload` wrapper, NESTED
+PascalCase groups, decoded directly by the engine (editor-native), every leaf inheriting through a
+top-level `"Parent": "<id>"`** (dialogue node ids/map keys + sugar values stay lowercase). For
+placements those groups are `Identity`:{`Role`/`NpcId`/`Aliases`} (the look and nameplate live on the ROLE file), `Where`,
+`Anchor`, `Limits`, `Lifecycle`, `Interact`:{`Dialogue`/`Open`}; for dialogues
+`Start`:{`First`/`Quests`/`Then`/`Fallback`}, `Nodes`, `Memories`, `Fragments`; for quests
 `Text`/`Listing`/`Flow`/`Repeat`/`Visibility`/`Npc`/`Requires`/`Objectives`/`Rewards`; for
 achievements `Text`/`Listing`/`Scoring`/`Requires`/`Criteria`/`MetaChildren`/`Rewards`/`ClaimRewards`.
-`Interact.Bindings` is a MAP keyed by channel that merges per key, so a child replaces one channel
-and keeps the rest. Quest-driven option visibility derives from `QuestState`, never a parallel
+`Interact.Dialogue` and `Interact.Open` are two spellings of one destination; author one or the
+other, never both. Quest-driven option visibility derives from `QuestState`, never a parallel
 remembered memory (self-heal convention). Lang values are data-free flavor (no digits, no reward
 restating) - a count belongs in `Text.TextArgs`, where the renderer supplies it from the content.
 `$Comment` is allowed anywhere (both the codec and the per-key merge skip `$`-prefixed keys) and is
