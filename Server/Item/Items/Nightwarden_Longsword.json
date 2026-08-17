@@ -1,0 +1,36 @@
+{
+  "$Comment": "The blade Ranger Wren hands over for facing down the nightmare on its own ground. Parent is the vanilla Weapon_Longsword_Cobalt, so the model, icon, texture, swing damage, animations, durability and sounds are all inherited and only the fields below are this item's own. No Recipe: a recipe is never inherited through Parent, so this sword can only be earned. STATS. A held weapon's stats live on the Weapon block, applied by the engine while the blade is in the active hotbar slot. MMO_Bonus_Void 8 is plus 8 percentage points of Void-school damage, which pays out on any hit whose damage cause resolves to Void - abilities and enchanted effects, not the sword's own physical swings, so pair it with a Void-school ability to feel it. MMO_Damage_SWORDS 5 is plus 5 percent damage on everything the Swords skill covers, which does include this blade's ordinary swings. Both are Additive on purpose: these channels carry a base of zero and additive folds before multiplicative, so a Multiplicative-only entry would compute zero and be silently inert. THE WEAPON BLOCK IS FULL-OBJECT-REPLACE. The vanilla cobalt longsword's own Weapon block is empty, so nothing is lost here; on a parent that fills it in, every field of it has to be copied across before adding a line, or the parent's mechanic silently disappears. Tags are restated for the same reason. MMO_Weapon_Type pins which skill a hit is credited to: the plugin otherwise guesses from the item id, and a flavour name that matches no skill's vocabulary falls all the way through to Unarmed, so any custom weapon is safer with the tag written out.",
+  "TranslationProperties": {
+    "Name": "server.items.Nightwarden_Longsword.name"
+  },
+  "Parent": "Weapon_Longsword_Cobalt",
+  "Quality": "Epic",
+  "ItemLevel": 40,
+  "Weapon": {
+    "StatModifiers": {
+      "MMO_Bonus_Void": [
+        {
+          "Amount": 8,
+          "CalculationType": "Additive"
+        }
+      ],
+      "MMO_Damage_SWORDS": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Longsword"
+    ],
+    "MMO_Weapon_Type": [
+      "SWORDS"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "$Comment": [
+    "One rung of the Night Owl ladder, counting Kweebec Nightmare rounds won on any preset.",
+    "",
+    "Target 'kweebec:' with MatchMode PREFIX matches every mode that mod runs, so a co-op clear and",
+    "a PvP win both count and a mode added later counts the day it ships. Leaving Qualifier out is",
+    "what keeps every difficulty preset eligible; write one to pin a rung to a single preset.",
+    "",
+    "The hytale:mod_installed factor reads 1 while the Kweebec Nightmare mod is loaded and 0 while it",
+    "is not, so the Min 1 bound is what keeps the ladder out of sight on a server without it. Keep the",
+    "bound - a condition with no bound at all is satisfied by the 0 too.",
+    "",
+    "Listing.Chains is what makes the three rungs read as one climb on the page rather than as three",
+    "near-identical entries. All three share ONE description line and differ only in how many wins",
+    "they ask for: Text.TextArgs.Flavor fills the number from the criterion's own Amount, so a",
+    "balance pass changes one number here and no translation at all.",
+    "",
+    "The armour piece is a ClaimReward, so it waits in the achievements menu to be collected instead",
+    "of arriving mid-round with a full bag."
+  ],
+  "Text": {
+    "TitleKey": "achievement.night_owl_t3.title",
+    "FlavorKey": "achievement.night_owl.desc",
+    "TextArgs": {
+      "Flavor": [
+        "@amount"
+      ]
+    }
+  },
+  "Listing": {
+    "Category": "combat",
+    "Subcategory": "bosses",
+    "SortOrder": 92,
+    "Chains": [
+      {
+        "Id": "night_owl",
+        "Tier": 3
+      }
+    ]
+  },
+  "Scoring": {
+    "Points": 50
+  },
+  "Requires": {
+    "Factors": [
+      {
+        "Factor": "hytale:mod_installed",
+        "Param": "Ziggfreed:KweebecNightmare",
+        "Min": 1
+      }
+    ]
+  },
+  "Criteria": [
+    {
+      "Kind": "INSTANCE_ROUND_WON",
+      "Target": "kweebec:",
+      "MatchMode": "PREFIX",
+      "Amount": 50
+    }
+  ],
+  "ClaimRewards": [
+    {
+      "Kind": "Item",
+      "Params": {
+        "Item": "Nightwarden_Greaves",
+        "Count": "1"
+      }
+    }
+  ]
+}

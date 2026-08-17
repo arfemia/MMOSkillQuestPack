@@ -1,7 +1,44 @@
 {
   "Name": "Guide_Wilds_Dialogue",
+  "$Comment": [
+    "Ranger Wren's conversation. Every beat is driven by quest state, so the player's quest log is",
+    "the whole state machine and no per-player flag is kept anywhere.",
+    "",
+    "HOW A BEAT IS PICKED. Start is declared in sections and the engine walks them in a fixed order:",
+    "First top to bottom, then a quest that is READY to hand in here, then one this character can",
+    "OFFER, then one that is ACTIVE, then Then top to bottom, then Fallback. So a screen belongs in",
+    "the section that matches when it should win, and the order takes care of itself. First is empty",
+    "here because nothing about Wren outranks the questline; the two steady-state greetings sit in",
+    "Then, underneath the quest rows, and the introduction is the Fallback so a brand new player is",
+    "never shown an empty conversation.",
+    "",
+    "QUESTS holds one row per quest that deserves a screen of its own, keyed by quest id, saying what",
+    "this conversation does at each of that quest's three moments. A quest with no row still works: it",
+    "is handed out and handed in through the 'Any work for me?' option, which opens Wren's quest list.",
+    "Add a row only for a beat worth writing in her voice.",
+    "",
+    "THE NIGHTMARE ARC only ever appears on a server that has the Kweebec Nightmare mod installed:",
+    "both of its quests require that mod, a quest whose requirement is unmet is never offered and",
+    "never active, and a screen whose quest can reach neither moment is simply never reached. Nothing",
+    "here needs a condition of its own for that.",
+    "",
+    "TO RETUNE. Override this file by id from your own pack to replace it wholesale, or point a file",
+    "of your own at it with Parent and restate only the screens you want to reword."
+  ],
   "Start": {
-    "First": [
+    "Quests": {
+      "wilds_whispers_after_dark": {
+        "Offerable": "nightmare_offer",
+        "Active": "nightmare_brief",
+        "Ready": "nightmare_ready"
+      },
+      "wilds_face_the_nightmare": {
+        "Offerable": "nightmare_deeper",
+        "Active": "nightmare_deeper_brief",
+        "Ready": "nightmare_deeper_ready"
+      }
+    },
+    "Then": [
       { "Node": "greet_done",
         "When": [ { "Type": "QuestState", "Quest": "wilds_call_of_the_dunes", "State": "COMPLETED" } ] },
       { "Node": "greet_midway",
@@ -53,6 +90,68 @@
     },
     "lore_wilds": {
       "TextKey": "dialogue.guide_wilds.lore_wilds.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_offer": {
+      "TextKey": "dialogue.guide_wilds.nightmare_offer.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_offer.opt.accept",
+          "Style": "accept",
+          "Do": [ { "Accept": "wilds_whispers_after_dark" }, { "Goto": "nightmare_brief" } ] },
+        { "LabelKey": "dialogue.guide_wilds.nightmare_offer.opt.ask", "Goto": "nightmare_lore" },
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_lore": {
+      "TextKey": "dialogue.guide_wilds.nightmare_lore.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_lore.opt.back", "Goto": "nightmare_offer" }
+      ]
+    },
+    "nightmare_brief": {
+      "TextKey": "dialogue.guide_wilds.nightmare_brief.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_brief.opt.where", "Goto": "nightmare_lore" },
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_ready": {
+      "TextKey": "dialogue.guide_wilds.nightmare_ready.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_ready.opt.turnin",
+          "Style": "turnin",
+          "Do": [ { "TurnIn": "wilds_whispers_after_dark" }, { "Goto": "nightmare_deeper" } ] },
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_deeper": {
+      "TextKey": "dialogue.guide_wilds.nightmare_deeper.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_deeper.opt.accept",
+          "Style": "accept",
+          "Do": [ { "Accept": "wilds_face_the_nightmare" }, { "Goto": "nightmare_deeper_brief" } ] },
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_deeper_brief": {
+      "TextKey": "dialogue.guide_wilds.nightmare_deeper_brief.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_deeper_ready": {
+      "TextKey": "dialogue.guide_wilds.nightmare_deeper_ready.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin",
+          "Style": "turnin",
+          "Do": [ { "TurnIn": "wilds_face_the_nightmare" }, { "Goto": "nightmare_vigil" } ] },
+        { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "nightmare_vigil": {
+      "TextKey": "dialogue.guide_wilds.nightmare_vigil.text",
       "Options": [
         { "LabelKey": "dialogue.guide_wilds.greet.opt.work", "Open": "Quests" }
       ]

@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Съешьте сытную трапезу
 
+# ---- Цели Kweebec Nightmare ----
+objective.text.quest.kweebec_round_any = Выиграйте раунд Kweebec Nightmare
+objective.text.quest.kweebec_round_amateur = Выиграйте раунд на пресете Amateur
+objective.text.quest.kweebec_round_nightmare = Выиграйте раунд на пресете Nightmare
+objective.text.quest.kweebec_round_hardcore = Выиграйте раунд на пресете Hardcore
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Слово со следопытом
-quest.wilds_meet_the_guide.flavor = Следопыт в зелёном плаще машет вам, приглашая к своему лагерю у костров возрождения.
+quest.wilds_meet_the_guide.title = Весть из Wilds
+quest.wilds_meet_the_guide.flavor = У проводника есть весть от следопыта с востока. Найдите её лагерь у костров возрождения.
 quest.wilds_first_camp.title = Первый лагерь
 quest.wilds_first_camp.flavor = Wren настаивает, чтобы каждый странник научился разбивать лагерь до наступления ночи.
 quest.wilds_hearty_meal.title = Сытная трапеза
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = День испытания
 quest.wilds_proving_day.flavor = Wren указывает дорогу на юг лишь тем, кто доказал свою готовность.
 quest.wilds_call_of_the_dunes.title = Зов дюн
 quest.wilds_call_of_the_dunes.flavor = За кромкой леса трава уступает место песку. Песчаный странник ждёт там, где начинается пустыня.
+quest.wilds_whispers_after_dark.title = Шёпот после заката
+quest.wilds_whispers_after_dark.flavor = С тех пор как раскрылся лунноцвет, из кввибекской рощи доносятся крики. Кввибеки не кричат.
+quest.wilds_face_the_nightmare.title = Встретить кошмар
+quest.wilds_face_the_nightmare.flavor = В той роще охотится нечто испорченное, и оно уже запомнило вас. Встретьте его в худшем виде.
+quest.wilds_amateur_night.title = Ночь новичка
+quest.wilds_amateur_night.flavor = Рен ведёт счёт тем, кто каждую ночь выходит из рощи. Начните осторожно.
+quest.wilds_nightmare_shift.title = Кошмарная смена
+quest.wilds_nightmare_shift.flavor = Роща хуже, чем была вчера. Рен теперь называет это обычной ночью.
+quest.wilds_hardcore_vigil.title = Беспощадное бдение
+quest.wilds_hardcore_vigil.flavor = Один фонарь, один выход и всё, что уже внутри. Отстойте вахту всё равно.
 quest.wilds_friend_of_beasts.title = Друг зверей
 quest.wilds_friend_of_beasts.flavor = Bramble считает, что сытое животное стоит трёх вьючных мулов.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = Не откажусь от кусоч
 dialogue.guide_wilds.camp_talk.opt.lore = Что это за место?
 dialogue.guide_wilds.lore_wilds.text = Emerald Wilds: рощи квибеков, боевые отряды трорков и больше зелени, чем ты когда-либо увидишь снова, стоит податься на юг. Научись охотиться, рыбачить и строить здесь, пустыня не прощает ничего.
 dialogue.guide_wilds.lore_wilds.opt.back = Полезно знать.
+dialogue.guide_wilds.nightmare_offer.text = Слышите? Каждую ночь с тех пор, как раскрылся лунноцвет, из кввибекской рощи доносятся крики. Кввибеки не кричат. Я дважды поднималась по той тропе и оба раза возвращалась ни с чем, кроме холодка по спине.
+dialogue.guide_wilds.nightmare_offer.opt.accept = Я пойду туда.
+dialogue.guide_wilds.nightmare_offer.opt.ask = Что там внутри?
+dialogue.guide_wilds.nightmare_lore.text = Нечто испорченное. Оно движется как кввибек и охотится как ничто из выросшего на этой земле. Путь внутрь есть, если вы и правда его ищете: у рощи свой привратник, и те, кто ищет дурную ночь, всегда его находили.
+dialogue.guide_wilds.nightmare_lore.opt.back = Расскажите остальное.
+dialogue.guide_wilds.nightmare_brief.text = Всё ещё на ногах, я вижу. Войдите, выйдите и вернитесь рассказать, что видели. Больше я сегодня не прошу.
+dialogue.guide_wilds.nightmare_brief.opt.where = Напомните, как туда попасть.
+dialogue.guide_wilds.nightmare_ready.text = Вы вернулись. Сядьте, пока не упали, и начните с начала.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Вот что я видел.
+dialogue.guide_wilds.nightmare_deeper.text = Значит, оно настоящее и уже взяло ваш след. Хорошо. Тогда оно придёт на зов, и пусть лучше придёт в ночь, которую выбрали вы.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = Я встречу его в худшем виде.
+dialogue.guide_wilds.nightmare_deeper_brief.text = Именно в худшем. Что-нибудь помягче, и к следующему лунноцвету оно просто вернётся за рощей.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Вы выглядите так, будто вас разжевали и выплюнули, и при этом улыбаетесь. Мне этого хватит.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = Дело сделано.
+dialogue.guide_wilds.nightmare_vigil.text = Роща не успокоится, поэтому я держу постоянный список: одна ночь полегче, одна дурная, одна ещё хуже. Берите из списка что подойдёт и возвращайтесь завтра за новым.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Запасы и снабжение, путник, если это можно сосчитать, я это сосчитал. Bramble, квартирмейстер лагеря. Ты приносишь мне материалы, я делаю так, чтобы это того стоило.
@@ -101,3 +132,9 @@ achievement.sands_hunter.desc = Победите {0} существ в Howling S
 # Achievement announcement toasts (orbis_campaigner)
 achievement.announce.orbis_campaigner.title = Покоритель Orbis!
 achievement.announce.orbis_campaigner.body = {0} завершил(а) кампанию всех зон
+
+# ---- Лестница Ночной совы ----
+achievement.night_owl_t1.title = Ночная сова
+achievement.night_owl_t2.title = Страж рощи
+achievement.night_owl_t3.title = Ночной страж
+achievement.night_owl.desc = Выиграйте {0} раундов Kweebec Nightmare.

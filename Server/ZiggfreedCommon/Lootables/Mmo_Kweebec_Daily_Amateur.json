@@ -1,0 +1,23 @@
+{
+  "$Comment": [
+    "The Amateur Night daily's own payout table, standalone (no other mod required): a modest",
+    "handful of life essence for finishing the round.",
+    "",
+    "Ingredient_Life_Essence is a common vanilla crafting reagent, so this reads as pocket change",
+    "next to the Nightmare/Hardcore tables below it. Retune the Count freely; add a Rewards entry",
+    "(e.g. an Mmo_Boost_Token) if a flat XP boost fits this tier better."
+  ],
+  "Name": "Mmo_Kweebec_Daily_Amateur",
+  "Rolls": [
+    {
+      "Grants": {
+        "Items": [
+          {
+            "Item": "Ingredient_Life_Essence",
+            "Count": 3
+          }
+        ]
+      }
+    }
+  ]
+}

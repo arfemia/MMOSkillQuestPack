@@ -1,0 +1,34 @@
+{
+  "$Comment": [
+    "The Nightmare Shift daily's own payout table, standalone (no other mod required): a bigger",
+    "essence handful than the Amateur table plus a short XP boost token.",
+    "",
+    "Mmo_Boost_Token is a consumable the player activates whenever suits them, not a boost that",
+    "starts ticking the moment it lands - see Server/ZiggfreedCommon/RewardKinds/Mmo_Boost_Token.json",
+    "for its full Params reference. Retune the essence Count or the token's Multiplier/DurationMinutes",
+    "freely; both scale independently."
+  ],
+  "Name": "Mmo_Kweebec_Daily_Nightmare",
+  "Rolls": [
+    {
+      "Grants": {
+        "Items": [
+          {
+            "Item": "Ingredient_Life_Essence",
+            "Count": 6
+          }
+        ],
+        "Rewards": [
+          {
+            "Kind": "Mmo_Boost_Token",
+            "Params": {
+              "Skill": "ALL",
+              "Multiplier": "1.5",
+              "DurationMinutes": "20"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

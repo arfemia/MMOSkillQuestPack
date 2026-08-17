@@ -1,0 +1,75 @@
+{
+  "$Comment": [
+    "The first beat of Ranger Wren's Kweebec Nightmares arc: survive one round of the co-op horror",
+    "minigame and come back to tell her about it.",
+    "",
+    "The hytale:mod_installed factor reads 1 while the Kweebec Nightmare mod is loaded and 0 while it",
+    "is not, so the Min 1 bound is what shuts this quest on a server without that mod: it is never",
+    "offered and never shows up in a list. Keep the bound - a condition with no bound at all is",
+    "satisfied by the 0 too. Param is the mod's Group:Name exactly as its manifest spells it.",
+    "",
+    "INSTANCE_ROUND_WON counts a round the player's side WON. Target is <modId>:<modeId> and",
+    "MatchMode PREFIX makes the bare 'kweebec:' prefix mean any of that mod's modes, co-op or PvP,",
+    "so a new mode counts the day it ships. Write the full 'kweebec:chase' with MatchMode EXACT to",
+    "pin one mode instead. Leaving Qualifier out accepts any difficulty preset.",
+    "",
+    "Hidden plus RequirePrerequisites keeps the whole arc out of sight until Proving Day is behind",
+    "the player, so the campaign does not spoil itself."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_whispers_after_dark.title",
+    "FlavorKey": "quest.wilds_whispers_after_dark.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 7,
+    "Tags": [
+      "Nightmare"
+    ]
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "Guide_Wilds"
+  },
+  "TurnInAt": "giver",
+  "Requires": {
+    "Quests": [
+      "wilds_proving_day"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:mod_installed",
+        "Param": "Ziggfreed:KweebecNightmare",
+        "Min": 1
+      }
+    ]
+  },
+  "Objectives": {
+    "survive_a_night": {
+      "Kind": "INSTANCE_ROUND_WON",
+      "Target": "kweebec:",
+      "MatchMode": "PREFIX",
+      "Amount": 1,
+      "TextKey": "objective.text.quest.kweebec_round_any"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "Mmo_Xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "800"
+      }
+    },
+    {
+      "Kind": "Mmo_Xp",
+      "Params": {
+        "Skill": "ACROBATICS",
+        "Amount": "800"
+      }
+    }
+  ]
+}

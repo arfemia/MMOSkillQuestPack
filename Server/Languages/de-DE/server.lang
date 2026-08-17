@@ -1,0 +1,10 @@
+# MMOSkillQuestPack - Anzeigenamen der Gegenstände, in Hytales eigener Konvention.
+# Hytale stellt den Dateinamen voran, also lädt jeder Schlüssel als
+# server.items.<ItemId>.name, genau das, worauf TranslationProperties.Name jedes
+# Gegenstands zeigt.
+
+items.Wilds_Prospectors_Pick.name = Wrens Schürfhacke
+items.Nightwarden_Longsword.name = Langschwert des Nachtwächters
+items.Nightwarden_Hood.name = Kapuze des Nachtwächters
+items.Nightwarden_Cuirass.name = Harnisch des Nachtwächters
+items.Nightwarden_Greaves.name = Beinschienen des Nachtwächters

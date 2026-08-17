@@ -1,0 +1,9 @@
+# MMOSkillQuestPack - nombres de objetos, con la convención nativa de Hytale.
+# Hytale antepone el nombre de este archivo, así que cada clave se carga como
+# server.items.<ItemId>.name, justo lo que apunta TranslationProperties.Name de cada objeto.
+
+items.Wilds_Prospectors_Pick.name = Pico prospector de Wren
+items.Nightwarden_Longsword.name = Espada larga del Guardián Nocturno
+items.Nightwarden_Hood.name = Capucha del Guardián Nocturno
+items.Nightwarden_Cuirass.name = Coraza del Guardián Nocturno
+items.Nightwarden_Greaves.name = Grebas del Guardián Nocturno

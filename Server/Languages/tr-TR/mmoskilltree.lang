@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Doyurucu bir öğün ye
 
+# ---- Kweebec Nightmare hedefleri ----
+objective.text.quest.kweebec_round_any = Bir Kweebec Nightmare turu kazan
+objective.text.quest.kweebec_round_amateur = Amateur ayarında bir tur kazan
+objective.text.quest.kweebec_round_nightmare = Nightmare ayarında bir tur kazan
+objective.text.quest.kweebec_round_hardcore = Hardcore ayarında bir tur kazan
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Korucu ile Bir Konuşma
-quest.wilds_meet_the_guide.flavor = Yeşil pelerinli bir korucu, başlangıç ateşlerinin yanındaki kampına seni çağırıyor.
+quest.wilds_meet_the_guide.title = Wilds'ten haber
+quest.wilds_meet_the_guide.flavor = Rehberin doğuda bir korucudan haberi var. Onun kampını doğuş ateşlerinin yanında bul.
 quest.wilds_first_camp.title = İlk Kamp
 quest.wilds_first_camp.flavor = Wren, her gezginin gece çökmeden önce bir kamp kurmayı öğrenmesinde ısrar ediyor.
 quest.wilds_hearty_meal.title = Doyurucu Bir Öğün
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = Kanıt Günü
 quest.wilds_proving_day.flavor = Wren, güney yolunu yalnızca hazır olduğunu kanıtlayanlara gösterir.
 quest.wilds_call_of_the_dunes.title = Kumulların Çağrısı
 quest.wilds_call_of_the_dunes.flavor = Ağaç sınırının ötesinde çimen yerini kuma bırakır. Çölün başladığı yerde bir kumgezer bekliyor.
+quest.wilds_whispers_after_dark.title = Karanlıktan sonraki fısıltılar
+quest.wilds_whispers_after_dark.flavor = Ayçiçeği açıldığından beri kweebec korusundan çığlıklar geliyor. Kweebecler çığlık atmaz.
+quest.wilds_face_the_nightmare.title = Kâbusla yüzleş
+quest.wilds_face_the_nightmare.flavor = O koruda bozulmuş bir şey avlanıyor ve artık yüzünü tanıyor. Onu en kötü halinde karşıla.
+quest.wilds_amateur_night.title = Acemi gecesi
+quest.wilds_amateur_night.flavor = Wren her gece koruda kimin geri çıktığını not eder. Yavaştan başla.
+quest.wilds_nightmare_shift.title = Kâbus vardiyası
+quest.wilds_nightmare_shift.flavor = Koru dünkünden daha kötü. Wren artık buna sıradan bir gece diyor.
+quest.wilds_hardcore_vigil.title = Amansız nöbet
+quest.wilds_hardcore_vigil.flavor = Bir fener, bir çıkış ve içeride zaten ne varsa. Nöbeti yine de tut.
 quest.wilds_friend_of_beasts.title = Hayvanların Dostu
 quest.wilds_friend_of_beasts.flavor = Bramble, iyi beslenmiş bir hayvanın üç yük katırına bedel olduğuna inanır.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = Bir lokmaya hayır demem.
 dialogue.guide_wilds.camp_talk.opt.lore = Burası neresi?
 dialogue.guide_wilds.lore_wilds.text = Emerald Wilds: kweebec koruları, trork savaş bölükleri ve güneye indiğinde bir daha asla göremeyeceğin kadar çok yeşil. Burada avlanmayı, balık tutmayı ve inşa etmeyi öğren - çöl hiçbir şeyi bağışlamaz.
 dialogue.guide_wilds.lore_wilds.opt.back = Bilmek iyi oldu.
+dialogue.guide_wilds.nightmare_offer.text = Duyuyor musun? Ayçiçeği açıldığından beri her gece kweebec korusundan çığlık geliyor. Kweebecler çığlık atmaz. O patikaya iki kez çıktım ve iki seferinde de ensemde soğuk bir ürpermeden başka bir şeyle dönmedim.
+dialogue.guide_wilds.nightmare_offer.opt.accept = Ben girerim.
+dialogue.guide_wilds.nightmare_offer.opt.ask = İçeride ne var?
+dialogue.guide_wilds.nightmare_lore.text = Bozulmuş bir şey. Bir kweebec gibi hareket ediyor ve bu topraklarda yetişmiş hiçbir şeye benzemeyen bir biçimde avlanıyor. Girmenin bir yolu var, gerçekten istiyorsan: korunun kendi kapıcısı vardır ve kötü bir gece arayanlar onu her zaman bulmuştur.
+dialogue.guide_wilds.nightmare_lore.opt.back = Gerisini anlat.
+dialogue.guide_wilds.nightmare_brief.text = Hâlâ ayaktasın, görebiliyorum. Gir, çık ve gelip ne gördüğünü anlat. Bu gece daha fazlasını istemiyorum.
+dialogue.guide_wilds.nightmare_brief.opt.where = Nasıl girildiğini bana tekrar söyle.
+dialogue.guide_wilds.nightmare_ready.text = Geri geldin. Düşmeden önce otur ve en baştan anlat.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Gördüğüm şey şu.
+dialogue.guide_wilds.nightmare_deeper.text = Demek gerçek ve artık kokunu aldı. İyi. O zaman çağırdığında gelir ve senin seçtiğin bir gecede gelmesini yeğlerim.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = Onu en kötü halinde karşılarım.
+dialogue.guide_wilds.nightmare_deeper_brief.text = En kötü halinde, dikkat et. Daha yumuşak bir şey olursa gelecek ayçiçeğinde koruyu almaya geri döner.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Çiğnenip tükürülmüş bir şeye benziyorsun ve sırıtıyorsun. Bu bana yeter.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = İş bitti.
+dialogue.guide_wilds.nightmare_vigil.text = Koru sessiz kalmayacak, o yüzden sürekli bir liste tutuyorum: bir yumuşak gece, bir kötü, bir de daha beter. Listemden sana uyanı al ve yarın yenisi için geri gel.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Stok ve ikmal, yolcu - sayılabiliyorsa onu saymışımdır. Bramble, kamp levazımcısı. Sen bana malzeme getir, ben de bunun karşılığını veririm.
@@ -101,3 +132,9 @@ achievement.sands_hunter.desc = Howling Sands'te {0} yaratık alt et.
 # ---- Başarı Duyuruları (sohbet bildirimleri) ----
 achievement.announce.orbis_campaigner.title = Orbis Seferberi!
 achievement.announce.orbis_campaigner.body = {0} tüm bölge seferlerini bitirdi
+
+# ---- Gece kuşu basamakları ----
+achievement.night_owl_t1.title = Gece kuşu
+achievement.night_owl_t2.title = Koru gözcüsü
+achievement.night_owl_t3.title = Gece bekçisi
+achievement.night_owl.desc = {0} Kweebec Nightmare turu kazan.

@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Iss eine herzhafte Mahlzeit
 
+# ---- Kweebec-Nightmare-Ziele ----
+objective.text.quest.kweebec_round_any = Gewinne eine Runde Kweebec Nightmare
+objective.text.quest.kweebec_round_amateur = Gewinne eine Runde auf der Stufe Amateur
+objective.text.quest.kweebec_round_nightmare = Gewinne eine Runde auf der Stufe Nightmare
+objective.text.quest.kweebec_round_hardcore = Gewinne eine Runde auf der Stufe Hardcore
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Ein Wort mit der Waldläuferin
-quest.wilds_meet_the_guide.flavor = Eine grün gekleidete Waldläuferin winkt dich zu ihrem Lager bei den Spawn-Feuern.
+quest.wilds_meet_the_guide.title = Nachricht aus den Wilds
+quest.wilds_meet_the_guide.flavor = Der Führer hat Nachricht von einer Waldläuferin im Osten. Suche ihr Lager bei den Spawn-Feuern.
 quest.wilds_first_camp.title = Erstes Lager
 quest.wilds_first_camp.flavor = Wren besteht darauf, dass jeder Wanderer lernt, vor Einbruch der Nacht ein Lager aufzuschlagen.
 quest.wilds_hearty_meal.title = Eine herzhafte Mahlzeit
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = Tag der Bewährung
 quest.wilds_proving_day.flavor = Wren weist nur jenen den Weg nach Süden, die sich als bereit erwiesen haben.
 quest.wilds_call_of_the_dunes.title = Der Ruf der Dünen
 quest.wilds_call_of_the_dunes.flavor = Jenseits des Waldrands weicht das Gras dem Sand. Ein Dünenwanderer wartet, wo die Wüste beginnt.
+quest.wilds_whispers_after_dark.title = Flüstern nach Einbruch der Nacht
+quest.wilds_whispers_after_dark.flavor = Seit die Mondblüte offen steht, dringen Schreie aus dem Kweebec-Hain. Kweebecs schreien nicht.
+quest.wilds_face_the_nightmare.title = Stell dich dem Albtraum
+quest.wilds_face_the_nightmare.flavor = Etwas Verdorbenes jagt in diesem Hain, und es kennt inzwischen dein Gesicht. Tritt ihm auf seiner schlimmsten Stufe entgegen.
+quest.wilds_amateur_night.title = Amateurnacht
+quest.wilds_amateur_night.flavor = Wren führt Buch darüber, wer jede Nacht wieder aus dem Hain kommt. Fang sanft an.
+quest.wilds_nightmare_shift.title = Albtraumschicht
+quest.wilds_nightmare_shift.flavor = Der Hain ist schlimmer als gestern. Wren nennt das inzwischen eine gewöhnliche Nacht.
+quest.wilds_hardcore_vigil.title = Hardcore-Wache
+quest.wilds_hardcore_vigil.flavor = Eine Lampe, ein Weg hinaus und alles, was schon drinnen ist. Halte die Wache trotzdem.
 quest.wilds_friend_of_beasts.title = Freund der Tiere
 quest.wilds_friend_of_beasts.flavor = Bramble ist überzeugt, dass ein gut gefüttertes Tier drei Packmaultiere wert ist.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = Zu einem Bissen sage ich nicht nein.
 dialogue.guide_wilds.camp_talk.opt.lore = Was ist das für ein Ort?
 dialogue.guide_wilds.lore_wilds.text = Die Emerald Wilds: Kweebec-Haine, Trork-Kriegsrotten und mehr Grün, als du je wieder sehen wirst, sobald du nach Süden ziehst. Lern hier zu jagen, zu fischen und zu bauen - die Wüste verzeiht nichts.
 dialogue.guide_wilds.lore_wilds.opt.back = Gut zu wissen.
+dialogue.guide_wilds.nightmare_offer.text = Hörst du das? Jede Nacht, seit die Mondblüte offen steht, dringt Geschrei aus dem Kweebec-Hain. Kweebecs schreien nicht. Ich bin den Pfad zweimal gegangen und beide Male nur mit einem kalten Nacken zurückgekommen.
+dialogue.guide_wilds.nightmare_offer.opt.accept = Ich gehe hinein.
+dialogue.guide_wilds.nightmare_offer.opt.ask = Was steckt da drin?
+dialogue.guide_wilds.nightmare_lore.text = Etwas Verdorbenes. Es bewegt sich wie ein Kweebec und jagt wie nichts, was je gewachsen ist. Es gibt einen Weg hinein, wenn du ihn wirklich willst: der Hain hat seinen eigenen Torwächter, und wer eine schlimme Nacht sucht, hat ihn bisher immer gefunden.
+dialogue.guide_wilds.nightmare_lore.opt.back = Erzähl mir den Rest.
+dialogue.guide_wilds.nightmare_brief.text = Du stehst noch, wie ich sehe. Rein, raus, und dann erzähl mir, was du gesehen hast. Mehr verlange ich heute Nacht nicht.
+dialogue.guide_wilds.nightmare_brief.opt.where = Sag mir noch einmal, wie ich hineinkomme.
+dialogue.guide_wilds.nightmare_ready.text = Du bist zurück. Setz dich, bevor du umfällst, und fang von vorne an.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Das habe ich gesehen.
+dialogue.guide_wilds.nightmare_deeper.text = Es ist also echt, und es hat deine Witterung. Gut. Dann kommt es, wenn du es rufst, und mir ist lieber, es kommt in einer Nacht deiner Wahl.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = Ich stelle mich ihm auf seiner schlimmsten Stufe.
+dialogue.guide_wilds.nightmare_deeper_brief.text = Auf der schlimmsten, wohlgemerkt. Alles Sanftere und es holt sich den Hain bei der nächsten Mondblüte einfach zurück.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Du siehst aus, als hätte dich etwas gekaut und wieder ausgespuckt, und dabei grinst du. Das genügt mir.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = Es ist erledigt.
+dialogue.guide_wilds.nightmare_vigil.text = Der Hain bleibt nicht still, also führe ich eine stehende Liste: eine sanfte Nacht, eine schlimme, eine noch schlimmere. Nimm dir von meiner Liste, was dir passt, und komm morgen für eine frische wieder.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Vorrat und Nachschub, Reisender - wenn es sich zählen lässt, habe ich es gezählt. Bramble, Lager-Quartiermeister. Du bringst mir Material, ich mach es dir lohnend.
@@ -101,3 +132,9 @@ achievement.sands_hunter.desc = Besiege {0} Kreaturen in den Howling Sands.
 # ---- Achievement announcements ----
 achievement.announce.orbis_campaigner.title = Feldzügler von Orbis!
 achievement.announce.orbis_campaigner.body = {0} hat alle Zonen-Feldzüge abgeschlossen
+
+# ---- Nachteulen-Leiter ----
+achievement.night_owl_t1.title = Nachteule
+achievement.night_owl_t2.title = Hainwächter
+achievement.night_owl_t3.title = Nachtwächter
+achievement.night_owl.desc = Gewinne {0} Runden Kweebec Nightmare.

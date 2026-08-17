@@ -1,0 +1,9 @@
+# MMOSkillQuestPack - eşya görünen adları, Hytale'in kendi kuralıyla.
+# Hytale bu dosyanın adını öne ekler, yani her anahtar server.items.<ItemId>.name
+# olarak yüklenir, eşyanın TranslationProperties.Name alanının işaret ettiği şeyin aynısı.
+
+items.Wilds_Prospectors_Pick.name = Wren'in araştırma kazması
+items.Nightwarden_Longsword.name = Gece Bekçisi'nin uzun kılıcı
+items.Nightwarden_Hood.name = Gece Bekçisi'nin başlığı
+items.Nightwarden_Cuirass.name = Gece Bekçisi'nin zırhı
+items.Nightwarden_Greaves.name = Gece Bekçisi'nin dizliği

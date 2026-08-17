@@ -1,0 +1,9 @@
+# MMOSkillQuestPack - отображаемые названия предметов, в родной конвенции Hytale.
+# Hytale подставляет имя этого файла, поэтому каждый ключ загружается как
+# server.items.<ItemId>.name, ровно то, на что ссылается TranslationProperties.Name предмета.
+
+items.Wilds_Prospectors_Pick.name = Разведочная кирка Рен
+items.Nightwarden_Longsword.name = Длинный меч Ночного стража
+items.Nightwarden_Hood.name = Капюшон Ночного стража
+items.Nightwarden_Cuirass.name = Кираса Ночного стража
+items.Nightwarden_Greaves.name = Поножи Ночного стража

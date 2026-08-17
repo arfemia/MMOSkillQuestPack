@@ -1,0 +1,9 @@
+# MMOSkillQuestPack - tárgyak megjelenített nevei, a Hytale saját konvenciójával.
+# A Hytale a fájlnevet elé illeszti, így minden kulcs server.items.<ItemId>.name
+# alakban töltődik be, pontosan úgy, ahogy a tárgy TranslationProperties.Name mezője hivatkozik rá.
+
+items.Wilds_Prospectors_Pick.name = Wren kutatócsákánya
+items.Nightwarden_Longsword.name = Éjszakai őrszem hosszúkardja
+items.Nightwarden_Hood.name = Éjszakai őrszem csuklyája
+items.Nightwarden_Cuirass.name = Éjszakai őrszem mellvértje
+items.Nightwarden_Greaves.name = Éjszakai őrszem lábvértje

@@ -1,18 +1,23 @@
 {
   "$Comment": [
-    "The Emerald Wilds campaign's front door, and the first quest a new player is handed.",
+    "The Emerald Wilds campaign's front door: handed out at the Adventurer's Guide hub and finished",
+    "in front of Ranger Wren, out in the Wilds.",
     "",
-    "AutoAccept starts it the moment the onboarding chain's gather_the_basics is finished, so a",
-    "player never has to find it. It has one step, the report-back hand-in below: a TURN_IN with a",
-    "blank Target asks for no items, only that the player stands in front of Ranger Wren and says",
-    "hello. Wren's own conversation completes it from her intro line.",
+    "Npc.ViewId and the hand-in are deliberately two different characters, which is what makes this",
+    "read as 'go and find her'. The single step is a TURN_IN with a blank Target, so nothing has to",
+    "be carried; arriving and speaking is the whole task, and Wren's own greeting closes it.",
+    "",
+    "Requires keeps it behind the plugin's own gather_the_basics tutorial, so a brand new player",
+    "learns the basics before the campaign picks up.",
     "",
     "The _Wilds folder is what puts the wilds_ in front of this file's id, so the file can be named",
     "for the beat rather than for the questline. Rename the folder and every id under it changes,",
     "which starts anyone mid-campaign over.",
     "",
     "The starter kit is granted as item rewards rather than as /give commands, so a full bag holds",
-    "the payout back instead of dropping it on the floor."
+    "the payout back instead of dropping it on the floor. The prospecting pick is this pack's own",
+    "item: retune or swap it by editing Server/Item/Items/Wilds_Prospectors_Pick.json, or drop the",
+    "reward row to hand out a vanilla tool instead."
   ],
   "Text": {
     "TitleKey": "quest.wilds_meet_the_guide.title",
@@ -26,10 +31,8 @@
       "Chapter_2"
     ]
   },
-  "Flow": {
-    "AutoAccept": true
-  },
   "Npc": {
+    "ViewId": "MMO_Hub",
     "TurnInId": "Guide_Wilds"
   },
   "Requires": {
@@ -58,6 +61,13 @@
       "Kind": "Item",
       "Params": {
         "Item": "Bench_Campfire",
+        "Count": "1"
+      }
+    },
+    {
+      "Kind": "Item",
+      "Params": {
+        "Item": "Wilds_Prospectors_Pick",
         "Count": "1"
       }
     }

@@ -1,0 +1,11 @@
+# MMOSkillQuestPack - item display names, using Hytale's NATIVE item-name convention.
+# Hytale's I18nModule prepends this file's own name, so every key below loads as
+# server.items.<ItemId>.name, which is exactly what each item's TranslationProperties.Name
+# points at. Every pack's server.lang merges additively, first writer wins per key, so these
+# new ids never touch a base-game item name.
+
+items.Wilds_Prospectors_Pick.name = Wren's Prospecting Pick
+items.Nightwarden_Longsword.name = Nightwarden's Longsword
+items.Nightwarden_Hood.name = Nightwarden's Hood
+items.Nightwarden_Cuirass.name = Nightwarden's Cuirass
+items.Nightwarden_Greaves.name = Nightwarden's Greaves

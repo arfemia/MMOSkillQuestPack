@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Mangez un repas copieux
 
+# ---- Objectifs Kweebec Nightmare ----
+objective.text.quest.kweebec_round_any = Remportez une manche de Kweebec Nightmare
+objective.text.quest.kweebec_round_amateur = Remportez une manche en réglage Amateur
+objective.text.quest.kweebec_round_nightmare = Remportez une manche en réglage Nightmare
+objective.text.quest.kweebec_round_hardcore = Remportez une manche en réglage Hardcore
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Un mot avec la patrouilleuse
-quest.wilds_meet_the_guide.flavor = Une patrouilleuse au manteau vert vous fait signe de rejoindre son camp près des feux d'apparition.
+quest.wilds_meet_the_guide.title = Des nouvelles des Wilds
+quest.wilds_meet_the_guide.flavor = Le guide a des nouvelles d'une rôdeuse à l'est. Trouvez son campement près des feux d'apparition.
 quest.wilds_first_camp.title = Premier camp
 quest.wilds_first_camp.flavor = Wren insiste pour que chaque vagabond apprenne à monter un camp avant la tombée de la nuit.
 quest.wilds_hearty_meal.title = Un repas copieux
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = Jour de l'épreuve
 quest.wilds_proving_day.flavor = Wren n'indique la route du sud qu'à ceux qui ont prouvé qu'ils étaient prêts.
 quest.wilds_call_of_the_dunes.title = L'appel des dunes
 quest.wilds_call_of_the_dunes.flavor = Au-delà de la lisière, l'herbe cède la place au sable. Un arpenteur des dunes attend là où commence le désert.
+quest.wilds_whispers_after_dark.title = Murmures après la nuit tombée
+quest.wilds_whispers_after_dark.flavor = Depuis que la fleur de lune s'est ouverte, des cris montent du bosquet kweebec. Les kweebecs ne crient pas.
+quest.wilds_face_the_nightmare.title = Affronter le cauchemar
+quest.wilds_face_the_nightmare.flavor = Quelque chose de corrompu chasse dans ce bosquet, et il connaît désormais votre visage. Affrontez-le au pire de sa forme.
+quest.wilds_amateur_night.title = Nuit des amateurs
+quest.wilds_amateur_night.flavor = Wren tient le compte de ceux qui ressortent du bosquet chaque nuit. Commencez doucement.
+quest.wilds_nightmare_shift.title = Garde de cauchemar
+quest.wilds_nightmare_shift.flavor = Le bosquet est pire qu'hier. Wren appelle déjà cela une nuit ordinaire.
+quest.wilds_hardcore_vigil.title = Veille impitoyable
+quest.wilds_hardcore_vigil.flavor = Une lampe, une sortie, et tout ce qui se trouve déjà à l'intérieur. Tenez la veille quand même.
 quest.wilds_friend_of_beasts.title = Ami des bêtes
 quest.wilds_friend_of_beasts.flavor = Bramble est convaincu qu'un animal bien nourri vaut trois mules de bât.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = Je ne dirais pas non à une bouchée.
 dialogue.guide_wilds.camp_talk.opt.lore = Qu'est-ce que cet endroit ?
 dialogue.guide_wilds.lore_wilds.text = Les Emerald Wilds : bosquets de kweebecs, hordes guerrières de trorks, et plus de verdure que tu n'en reverras jamais une fois parti vers le sud. Apprends à chasser, pêcher et construire ici - le désert ne pardonne rien.
 dialogue.guide_wilds.lore_wilds.opt.back = Bon à savoir.
+dialogue.guide_wilds.nightmare_offer.text = Vous entendez? Chaque nuit depuis l'ouverture de la fleur de lune, des cris sortent du bosquet kweebec. Les kweebecs ne crient pas. J'ai pris ce sentier deux fois et je suis revenue les deux fois avec rien d'autre qu'une nuque glacée.
+dialogue.guide_wilds.nightmare_offer.opt.accept = J'irai voir.
+dialogue.guide_wilds.nightmare_offer.opt.ask = Qu'y a-t-il là-dedans?
+dialogue.guide_wilds.nightmare_lore.text = Quelque chose de corrompu. Cela bouge comme un kweebec et cela chasse comme rien de ce qui a jamais poussé. Il existe un moyen d'entrer, si vous le voulez vraiment: le bosquet a son propre portier, et qui cherche une mauvaise nuit a toujours fini par le trouver.
+dialogue.guide_wilds.nightmare_lore.opt.back = Racontez-moi la suite.
+dialogue.guide_wilds.nightmare_brief.text = Toujours debout, à ce que je vois. Entrez, ressortez, et venez me dire ce que vous avez vu. Je ne demande rien de plus cette nuit.
+dialogue.guide_wilds.nightmare_brief.opt.where = Rappelez-moi comment on entre.
+dialogue.guide_wilds.nightmare_ready.text = Vous voilà revenu. Asseyez-vous avant de tomber, et reprenez depuis le début.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Voilà ce que j'ai vu.
+dialogue.guide_wilds.nightmare_deeper.text = Alors c'est bien réel, et il a votre odeur. Tant mieux. Il viendra quand vous l'appellerez, et je préfère qu'il vienne une nuit que vous aurez choisie.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = Je l'affronterai au pire de sa forme.
+dialogue.guide_wilds.nightmare_deeper_brief.text = Au pire, notez bien. Rien de plus doux, ou il reviendra prendre le bosquet à la prochaine fleur de lune.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Vous avez l'air d'avoir été mâché puis recraché, et vous souriez. Cela me suffit.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = C'est fait.
+dialogue.guide_wilds.nightmare_vigil.text = Le bosquet ne restera pas tranquille, alors je tiens une liste permanente: une nuit douce, une mauvaise, une pire encore. Prenez sur ma liste ce qui vous convient et revenez demain pour une nouvelle.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Stocks et fournitures, voyageur - si ça se compte, je l'ai compté. Bramble, quartier-maître du camp. Tu m'apportes des matériaux, je te le rends bien.
@@ -101,3 +132,9 @@ achievement.sands_hunter.desc = Vainquez {0} créatures dans les Howling Sands.
 # Achievement announcements
 achievement.announce.orbis_campaigner.title = Héros d'Orbis!
 achievement.announce.orbis_campaigner.body = {0} a terminé toutes les campagnes de zone
+
+# ---- Échelle Oiseau de nuit ----
+achievement.night_owl_t1.title = Oiseau de nuit
+achievement.night_owl_t2.title = Guetteur du bosquet
+achievement.night_owl_t3.title = Gardien de la nuit
+achievement.night_owl.desc = Remportez {0} manches de Kweebec Nightmare.

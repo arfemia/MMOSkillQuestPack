@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Come una comida abundante
 
+# ---- Objetivos de Kweebec Nightmare ----
+objective.text.quest.kweebec_round_any = Gana una ronda de Kweebec Nightmare
+objective.text.quest.kweebec_round_amateur = Gana una ronda en el ajuste Amateur
+objective.text.quest.kweebec_round_nightmare = Gana una ronda en el ajuste Nightmare
+objective.text.quest.kweebec_round_hardcore = Gana una ronda en el ajuste Hardcore
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Unas Palabras con la Montaraz
-quest.wilds_meet_the_guide.flavor = Una montaraz de capa verde te llama a su campamento junto a las hogueras de aparición.
+quest.wilds_meet_the_guide.title = Noticias de las Wilds
+quest.wilds_meet_the_guide.flavor = El guía trae noticias de una guardabosques del este. Busca su campamento junto a las hogueras de aparición.
 quest.wilds_first_camp.title = Primer Campamento
 quest.wilds_first_camp.flavor = Wren insiste en que todo viajero aprenda a montar un campamento antes del anochecer.
 quest.wilds_hearty_meal.title = Una Comida Abundante
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = Día de la Prueba
 quest.wilds_proving_day.flavor = Wren solo señala el camino al sur a quienes han demostrado estar preparados.
 quest.wilds_call_of_the_dunes.title = La Llamada de las Dunas
 quest.wilds_call_of_the_dunes.flavor = Más allá de la linde del bosque la hierba da paso a la arena. Un caminante de dunas aguarda donde empieza el desierto.
+quest.wilds_whispers_after_dark.title = Susurros tras el anochecer
+quest.wilds_whispers_after_dark.flavor = Desde que se abrió la florluna, llegan gritos desde el bosquecillo kweebec. Los kweebec no gritan.
+quest.wilds_face_the_nightmare.title = Enfrenta la pesadilla
+quest.wilds_face_the_nightmare.flavor = Algo corrompido caza en ese bosquecillo, y ya conoce tu cara. Enfréntalo en su peor versión.
+quest.wilds_amateur_night.title = Noche de aficionados
+quest.wilds_amateur_night.flavor = Wren lleva la cuenta de quién sale del bosquecillo cada noche. Empieza con calma.
+quest.wilds_nightmare_shift.title = Turno de pesadilla
+quest.wilds_nightmare_shift.flavor = El bosquecillo está peor que ayer. Wren ya llama a eso una noche corriente.
+quest.wilds_hardcore_vigil.title = Vigilia implacable
+quest.wilds_hardcore_vigil.flavor = Una lámpara, una salida y lo que ya esté dentro. Haz la guardia igualmente.
 quest.wilds_friend_of_beasts.title = Amigo de las Bestias
 quest.wilds_friend_of_beasts.flavor = Bramble cree que un animal bien alimentado vale por tres mulas de carga.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = No le diría que no a un bocado.
 dialogue.guide_wilds.camp_talk.opt.lore = ¿Qué es este lugar?
 dialogue.guide_wilds.lore_wilds.text = Las Emerald Wilds: arboledas de kweebec, hordas de trork y más verde del que volverás a ver una vez bajes al sur. Aprende a cazar, pescar y construir aquí - el desierto no perdona nada.
 dialogue.guide_wilds.lore_wilds.opt.back = Bueno es saberlo.
+dialogue.guide_wilds.nightmare_offer.text = ¿Lo oyes? Cada noche desde que se abrió la florluna, gritos desde el bosquecillo kweebec. Los kweebec no gritan. He subido ese sendero dos veces y las dos he vuelto solo con la nuca helada.
+dialogue.guide_wilds.nightmare_offer.opt.accept = Entraré yo.
+dialogue.guide_wilds.nightmare_offer.opt.ask = ¿Qué hay ahí dentro?
+dialogue.guide_wilds.nightmare_lore.text = Algo corrompido. Se mueve como un kweebec y caza como nada que haya crecido nunca. Hay una forma de entrar, si de verdad la quieres: el bosquecillo tiene su propio portero, y quien busca una mala noche siempre acaba encontrándolo.
+dialogue.guide_wilds.nightmare_lore.opt.back = Cuéntame el resto.
+dialogue.guide_wilds.nightmare_brief.text = Sigues en pie, ya veo. Entra, sal y ven a contarme lo que has visto. Esta noche no te pido más.
+dialogue.guide_wilds.nightmare_brief.opt.where = Recuérdame cómo se entra.
+dialogue.guide_wilds.nightmare_ready.text = Has vuelto. Siéntate antes de caerte y empieza por el principio.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Esto es lo que vi.
+dialogue.guide_wilds.nightmare_deeper.text = Así que es real, y ya tiene tu rastro. Bien. Entonces vendrá cuando lo llames, y prefiero que venga una noche que elijas tú.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = Lo enfrentaré en su peor versión.
+dialogue.guide_wilds.nightmare_deeper_brief.text = En la peor, ojo. Cualquier cosa más suave y volverá a por el bosquecillo en la siguiente florluna.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Pareces algo masticado y escupido, y encima vienes sonriendo. Con eso me basta.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = Está hecho.
+dialogue.guide_wilds.nightmare_vigil.text = El bosquecillo no se quedará callado, así que mantengo una lista fija: una noche suave, una mala y una peor. Coge de mi lista la que te venga bien y vuelve mañana a por otra.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Existencias y suministros, viajero - si se puede contar, yo lo he contado. Bramble, intendente del campamento. Tú me traes materiales y yo hago que te merezca la pena.
@@ -99,3 +130,9 @@ achievement.sands_hunter_t2.title = Cúspide de las Dunas
 achievement.sands_hunter.desc = Derrota a {0} criaturas en las Howling Sands.
 achievement.announce.orbis_campaigner.title = ¡Campeón de Orbis!
 achievement.announce.orbis_campaigner.body = {0} completó todas las campañas de zona
+
+# ---- Escala Ave nocturna ----
+achievement.night_owl_t1.title = Ave nocturna
+achievement.night_owl_t2.title = Vigía del bosquecillo
+achievement.night_owl_t3.title = Guardián nocturno
+achievement.night_owl.desc = Gana {0} rondas de Kweebec Nightmare.

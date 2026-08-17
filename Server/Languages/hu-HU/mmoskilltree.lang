@@ -7,9 +7,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Egyél meg egy kiadós ételt
 
+# ---- Kweebec Nightmare célok ----
+objective.text.quest.kweebec_round_any = Nyerj meg egy Kweebec Nightmare kört
+objective.text.quest.kweebec_round_amateur = Nyerj meg egy kört Amateur fokozaton
+objective.text.quest.kweebec_round_nightmare = Nyerj meg egy kört Nightmare fokozaton
+objective.text.quest.kweebec_round_hardcore = Nyerj meg egy kört Hardcore fokozaton
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = Pár szó a Vadőrrel
-quest.wilds_meet_the_guide.flavor = Egy zöld köpenyes ranger int feléd, hogy menj a táborához az újraéledési tüzeknél.
+quest.wilds_meet_the_guide.title = Hír a Wildsból
+quest.wilds_meet_the_guide.flavor = A kalauznak híre jött egy keleti erdészről. Keresd meg a táborát a kezdőtüzek mellett.
 quest.wilds_first_camp.title = Első tábor
 quest.wilds_first_camp.flavor = Wren ragaszkodik hozzá, hogy minden vándor megtanuljon tábort verni, mielőtt leszáll az éj.
 quest.wilds_hearty_meal.title = Egy kiadós étkezés
@@ -28,6 +34,16 @@ quest.wilds_proving_day.title = A megmérettetés napja
 quest.wilds_proving_day.flavor = Wren csak azoknak mutatja meg a délre vezető utat, akik bizonyították, hogy készen állnak.
 quest.wilds_call_of_the_dunes.title = A dűnék hívása
 quest.wilds_call_of_the_dunes.flavor = A fák szélén túl a fű homoknak adja át a helyét. Egy dűnejáró várakozik ott, ahol a sivatag kezdődik.
+quest.wilds_whispers_after_dark.title = Suttogás sötétedés után
+quest.wilds_whispers_after_dark.flavor = Amióta kinyílt a holdvirág, sikolyok szűrődnek ki a kweebec ligetből. A kweebecek nem sikoltanak.
+quest.wilds_face_the_nightmare.title = Nézz szembe a rémálommal
+quest.wilds_face_the_nightmare.flavor = Valami megromlott vadászik abban a ligetben, és már ismeri az arcodat. Álld ki a legrosszabb formájában.
+quest.wilds_amateur_night.title = Amatőr éjszaka
+quest.wilds_amateur_night.flavor = Wren számon tartja, ki jön ki a ligetből minden éjjel. Kezdd óvatosan.
+quest.wilds_nightmare_shift.title = Rémálom-műszak
+quest.wilds_nightmare_shift.flavor = A liget rosszabb, mint tegnap volt. Wren már ezt hívja hétköznapi éjszakának.
+quest.wilds_hardcore_vigil.title = Kemény virrasztás
+quest.wilds_hardcore_vigil.flavor = Egy lámpás, egy kijárat, és bármi, ami már bent van. Állj őrségben mégis.
 quest.wilds_friend_of_beasts.title = A vadak barátja
 quest.wilds_friend_of_beasts.flavor = Bramble szerint egy jól táplált állat felér három igásöszvérrel.
 
@@ -61,6 +77,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = Egy falatra nem mondanék nemet.
 dialogue.guide_wilds.camp_talk.opt.lore = Mi ez a hely?
 dialogue.guide_wilds.lore_wilds.text = Az Emerald Wilds: kweebec ligetek, trork hadinépek, és több zöld, mint amennyit valaha is látsz majd, ha egyszer délnek indulsz. Tanulj meg itt vadászni, horgászni és építeni - a sivatag semmit sem bocsát meg.
 dialogue.guide_wilds.lore_wilds.opt.back = Jó tudni.
+dialogue.guide_wilds.nightmare_offer.text = Hallod ezt? Amióta kinyílt a holdvirág, minden éjjel sikoltás jön a kweebec ligetből. A kweebecek nem sikoltanak. Kétszer indultam el azon az ösvényen, és mindkétszer csak hideg tarkóval tértem vissza.
+dialogue.guide_wilds.nightmare_offer.opt.accept = Bemegyek.
+dialogue.guide_wilds.nightmare_offer.opt.ask = Mi van odabent?
+dialogue.guide_wilds.nightmare_lore.text = Valami megromlott. Úgy mozog, mint egy kweebec, és úgy vadászik, mint semmi, ami valaha nőtt. Van bejárat, ha tényleg akarod: a ligetnek megvan a maga kapusa, és aki rossz éjszakát keres, eddig mindig megtalálta.
+dialogue.guide_wilds.nightmare_lore.opt.back = Mondd el a többit.
+dialogue.guide_wilds.nightmare_brief.text = Látom, még állsz. Be, ki, aztán gyere, és mondd el, mit láttál. Ma éjjel ennél többet nem kérek.
+dialogue.guide_wilds.nightmare_brief.opt.where = Emlékeztess, hogyan jutok be.
+dialogue.guide_wilds.nightmare_ready.text = Visszajöttél. Ülj le, mielőtt összeesnél, és kezdd az elején.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Ezt láttam.
+dialogue.guide_wilds.nightmare_deeper.text = Szóval valós, és már megjegyezte a szagodat. Jó. Akkor jönni fog, ha hívod, és jobb szeretem, ha olyan éjszakán jön, amit te választottál.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = A legrosszabb formájában állok ki ellene.
+dialogue.guide_wilds.nightmare_deeper_brief.text = A legrosszabban, jegyezd meg. Bármi enyhébb, és a következő holdvirágnál egyszerűen visszajön a ligetért.
+dialogue.guide_wilds.nightmare_deeper_ready.text = Úgy nézel ki, mint akit megrágtak és kiköptek, és közben vigyorogsz. Ez nekem elég.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = Kész van.
+dialogue.guide_wilds.nightmare_vigil.text = A liget nem marad csendben, ezért állandó listát vezetek: egy enyhe éjszaka, egy rossz, egy még rosszabb. Válassz a listámról, ami neked megfelel, és holnap gyere vissza egy frissért.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Készlet és ellátmány, utazó - ha meg lehet számolni, én már megszámoltam. Bramble vagyok, a tábor furérja. Te hozol nekem anyagot, én pedig gondoskodom róla, hogy megérje.
@@ -99,3 +130,9 @@ achievement.wilds_hunter.desc = Győzz le {0} lényt az Emerald Wilds területé
 achievement.sands_hunter_t1.title = A dűnék cserkésze
 achievement.sands_hunter_t2.title = A dűnék csúcsragadozója
 achievement.sands_hunter.desc = Győzz le {0} lényt a Howling Sands területén.
+
+# ---- Éjjeli bagoly létra ----
+achievement.night_owl_t1.title = Éjjeli bagoly
+achievement.night_owl_t2.title = Ligetőrző
+achievement.night_owl_t3.title = Éjszakai őrszem
+achievement.night_owl.desc = Nyerj meg {0} Kweebec Nightmare kört.

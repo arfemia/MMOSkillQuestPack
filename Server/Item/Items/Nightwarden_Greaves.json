@@ -1,0 +1,53 @@
+{
+  "$Comment": "One piece of the Nightwarden set, claimed from the Night Owl achievement ladder. Parent is the vanilla Armor_Cobalt_Legs, so the model, icon, texture, durability and sounds are all inherited and only the fields below are this item's own. No Recipe: a recipe is never inherited through Parent, so the set can only be earned. THE ARMOR BLOCK IS FULL-OBJECT-REPLACE. Authoring it at all means the WHOLE object has to be written out, so ArmorSlot, BaseDamageResistance, CosmeticsToHide, DamageResistance, StatModifiers and DamageClassEnhancement are all restated verbatim from the parent below; leave any one of them out and that behaviour silently disappears. Two lines are this piece's own addition. MMO_SchoolResist_Void 6 is 6 percentage points less damage taken from Void-school hits, a percent-family channel where the Amount IS the percent, Additive because the channel carries a base of zero and a Multiplicative-only entry there would compute zero. Note it is a different mechanism from the native DamageResistance map above it, which is authored in fractions (0.064 is 6.4 percent); the two stack. Health carries ONE Additive entry of 22, already summing this piece's own bonus with the vanilla parent's base amount, so the tooltip prints a single number instead of two lines a player would have to add up themselves. Wear all three and the set's Void resistance and health both add up across the pieces. Every number here is balance and safe to retune.",
+  "TranslationProperties": {
+    "Name": "server.items.Nightwarden_Greaves.name"
+  },
+  "Parent": "Armor_Cobalt_Legs",
+  "Quality": "Epic",
+  "ItemLevel": 40,
+  "Armor": {
+    "ArmorSlot": "Legs",
+    "BaseDamageResistance": 0,
+    "CosmeticsToHide": [
+      "Pants",
+      "Shoes"
+    ],
+    "DamageResistance": {
+      "Physical": [
+        {
+          "Amount": 0.0896,
+          "CalculationType": "Percent"
+        }
+      ],
+      "Projectile": [
+        {
+          "Amount": 0.0896,
+          "CalculationType": "Percent"
+        }
+      ]
+    },
+    "StatModifiers": {
+      "Health": [
+        {
+          "Amount": 22,
+          "CalculationType": "Additive"
+        }
+      ],
+      "MMO_SchoolResist_Void": [
+        {
+          "Amount": 6,
+          "CalculationType": "Additive"
+        }
+      ]
+    },
+    "DamageClassEnhancement": {
+      "Signature": [
+        {
+          "Amount": 0.04,
+          "CalculationType": "Multiplicative"
+        }
+      ]
+    }
+  }
+}

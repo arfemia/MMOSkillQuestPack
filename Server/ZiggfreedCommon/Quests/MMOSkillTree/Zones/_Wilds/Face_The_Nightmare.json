@@ -1,0 +1,77 @@
+{
+  "$Comment": [
+    "The arc's proving beat: a win on the Nightmare preset, not merely a win.",
+    "",
+    "Qualifier is the difficulty preset the round ran on, so this step ignores an Amateur clear no",
+    "matter how many of them a player stacks up. The preset names are the minigame's own (Amateur,",
+    "Nightmare, Hardcore, Blitz, Endless, Pitch, Swarm); drop the Qualifier line to accept any of",
+    "them.",
+    "",
+    "The reward blade is this pack's own item. Retune it, or swap the reward row for something else,",
+    "in Server/Item/Items/Nightwarden_Longsword.json."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_face_the_nightmare.title",
+    "FlavorKey": "quest.wilds_face_the_nightmare.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 8,
+    "Tags": [
+      "Nightmare"
+    ]
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "Guide_Wilds"
+  },
+  "TurnInAt": "giver",
+  "Requires": {
+    "Quests": [
+      "wilds_whispers_after_dark"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:mod_installed",
+        "Param": "Ziggfreed:KweebecNightmare",
+        "Min": 1
+      }
+    ]
+  },
+  "Objectives": {
+    "win_on_nightmare": {
+      "Kind": "INSTANCE_ROUND_WON",
+      "Target": "kweebec:",
+      "MatchMode": "PREFIX",
+      "Qualifier": "Nightmare",
+      "Amount": 1,
+      "TextKey": "objective.text.quest.kweebec_round_nightmare"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "Item",
+      "Params": {
+        "Item": "Nightwarden_Longsword",
+        "Count": "1"
+      }
+    },
+    {
+      "Kind": "Mmo_Xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "1500"
+      }
+    },
+    {
+      "Kind": "Mmo_Xp",
+      "Params": {
+        "Skill": "SWORDS",
+        "Amount": "1500"
+      }
+    }
+  ]
+}

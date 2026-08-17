@@ -40,6 +40,14 @@ Server/
                                 Guide_Wilds + Guide_Sands + Quartermaster_Wilds (all
                                 standalone, explicit + sugar). A set of givers sharing a
                                 skeleton uses native "Parent":"<id>" inheritance.
+  Item/Items/                    5 reward items, native Hytale assets (not an MMOSkillTree store,
+                                so nothing in Control/ names them): Wilds_Prospectors_Pick plus the
+                                Nightwarden Longsword/Hood/Cuirass/Greaves. Each Parents a vanilla
+                                item, carries NO Recipe (a recipe never inherits through Parent, so
+                                they stay earn-only) and adds MMO_* stats on the surface that owns
+                                them - Utility for a held tool, Weapon for a weapon, Armor for armor.
+                                Armor/Weapon/Utility/Tags are FULL-OBJECT-REPLACE: copy the parent's
+                                whole block before adding a line
   NPC/Roles/Passive/             the 3 giver ROLES, one per character: Guide_Wilds
                                 (Feran_Windwalker), Quartermaster_Wilds (Klops_Merchant),
                                 Guide_Sands (Outlander_Hunter). Each is a native Variant of
@@ -51,7 +59,9 @@ Server/
                                 itself owns today, so the file names none.
   Languages/<bcp47>/          mmoskilltree.lang (quest/dialogue/achievement keys) +
                                 npcs.lang (giver names + the shared MMO_QuestGiver.hint
-                                prompt the template role bakes) x9
+                                prompt the template role bakes) + server.lang (item display
+                                names, Hytale's native items.<ItemId>.name convention, which
+                                each item references as server.items.<ItemId>.name) x9
 ```
 
 ## How it fits together
@@ -148,15 +158,29 @@ Server/
   own `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
   `Interact.Dialogue` names your own conversation. It is automatically with whichever character
   the placement stands, so nothing here ever names an npc id.
-- **Campaign flow**: wilds_meet_the_guide (AutoAccept, gated on the jar `gather_the_basics`
-  tutorial; one blank-target `TURN_IN` step locked to `Guide_Wilds`, which renders as "Go to Ranger
-  Wren" and fires the map marker; Wren's `QuestState ACTIVE`-gated intro option `TurnIn`s it) ->
+- **Campaign flow**: wilds_meet_the_guide (offered at the jar hub, `Npc.ViewId: MMO_Hub`, gated on
+  the jar `gather_the_basics` tutorial; one blank-target `TURN_IN` step locked to `Guide_Wilds`,
+  which renders as "Go to Ranger Wren" and fires the map marker; Wren's `QuestState ACTIVE`-gated
+  intro option `TurnIn`s it) ->
   camp/meal/combat arc (Wren) + supply arc (Bramble) -> proving_day -> call_of_the_dunes (offered by
   Guide_Wilds, handed in at Guide_Sands => "Go to Dunewalker Ashkar" + marker; Ashkar spawns at the
   first Outlander camp loaded beside its Outlander_Hunter marker; his intro, gated on the AutoAccept
   sands_walker_of_the_wastes ACTIVE, credits sands_walker via `MarkTalked` AND `TurnIn`s
   call_of_the_dunes in the same option) -> the desert arc. "Go meet NPC X" handoffs are standardized
   on a blank-target `TURN_IN` step (nothing to carry, only somebody to find), never a TALK bridge.
+- **The Kweebec Nightmares arc** (`_Wilds/Whispers_After_Dark`, `Face_The_Nightmare`, and the three
+  dailies `Amateur_Night`/`Nightmare_Shift`/`Hardcore_Vigil`, plus `Zones/Night_Owl_T1..T3`) is
+  gated on ANOTHER MOD being present:
+  `{"Factor": "hytale:mod_installed", "Param": "<Group>:<Name>", "Min": 1}` reads 1 while that plugin
+  is loaded and 0 while it is not, so the `Min` bound is what keeps the whole arc invisible without
+  it. **A bounds-less `hytale:mod_installed` condition does NOT gate**: absence is a definite 0, not
+  an unanswerable null, and `FactorCondition.accepts` passes any finite value when neither bound is
+  authored. Always write `"Min": 1` for present, `"Max": 0` for absent. The manifest carries a
+  matching `OptionalDependencies` entry, never a hard `Dependencies` one. Rounds are counted by `INSTANCE_ROUND_WON`, whose Target is
+  `<modId>:<modeId>`; the bare `kweebec:` prefix with `MatchMode: PREFIX` means "any mode that mod
+  runs", and `Qualifier` pins one difficulty preset. The three dailies use `Repeat.Reset.Period
+  Daily` (a calendar window, so they all roll over together) plus `Flow.AutoClaim` so a win pays out
+  in the instance rather than back at Wren.
 - **Zone scoping**: `"Zone": "Howling_Sands"` on an objective or criterion matches the
   engine's zoneName OR region folder names case-insensitively. The Snake contract
   needs it (snakes spawn in zones 1, 2 and 3); the hunter achievement chains are

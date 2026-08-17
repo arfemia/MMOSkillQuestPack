@@ -1,0 +1,31 @@
+{
+  "$Comment": "Ranger Wren's parting gift for anyone who walks out to her camp: a copper pickaxe with a prospector's eye on it. Parent is the vanilla Tool_Pickaxe_Copper, so the whole tool - model, icon, texture, gather powers, durability, swing sounds - is inherited and only the fields below are this item's own. It ships with NO Recipe on purpose: a recipe is never inherited through Parent, so this pick can only ever be earned, never crafted, and no vanilla copper recipe leaks onto it. STATS. A held tool's stats live on the Utility block, never on Weapon: a Weapon block on a tool zeroes hard-block mining outright, with no way to author around it. Both channels are percent-family, so the Amount IS the percent: MMO_Luck_MINING 5 is plus 5 percentage points of Mining luck (it feeds bonus-drop rolls on ore and stone), and MMO_BonusXp_MINING 5 is plus 5 percent Mining experience on every award the plugin pays out. Both are Additive on purpose: these channels carry a base of zero and additive folds before multiplicative, so a Multiplicative-only entry would compute zero and be silently inert. Raise or lower either number freely, they are pure balance. THE UTILITY BLOCK IS FULL-OBJECT-REPLACE, so Compatible is restated here rather than left out: the vanilla pickaxe family authors Compatible true, and dropping it would quietly switch off an offhand accessory's stats whenever this pick is held. Tags are restated for the same reason - authoring the block at all replaces the inherited one whole.",
+  "TranslationProperties": {
+    "Name": "server.items.Wilds_Prospectors_Pick.name"
+  },
+  "Parent": "Tool_Pickaxe_Copper",
+  "Quality": "Rare",
+  "ItemLevel": 18,
+  "Utility": {
+    "Compatible": true,
+    "StatModifiers": {
+      "MMO_Luck_MINING": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ],
+      "MMO_BonusXp_MINING": [
+        {
+          "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ]
+    }
+  },
+  "Tags": {
+    "Type": [
+      "Tool"
+    ]
+  }
+}

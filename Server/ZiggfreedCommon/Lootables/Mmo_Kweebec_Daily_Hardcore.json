@@ -1,0 +1,40 @@
+{
+  "$Comment": [
+    "The Hardcore Vigil daily's own payout table, standalone (no other mod required): a rare",
+    "essence bundle (a couple of the Concentrated variant on top of a plain handful) plus the",
+    "strongest of the three XP boost tokens, matching the ALL/2.0/30 token this pack's own",
+    "Proving Day quest already pays out.",
+    "",
+    "Ingredient_Life_Essence_Concentrated is a Rare-quality vanilla reagent (100 plain essence",
+    "condense into 1), so a couple of these read as a genuine prize for the hardest preset. Retune",
+    "the Counts or the token's Multiplier/DurationMinutes freely; see",
+    "Server/ZiggfreedCommon/RewardKinds/Mmo_Boost_Token.json for the token's full Params reference."
+  ],
+  "Name": "Mmo_Kweebec_Daily_Hardcore",
+  "Rolls": [
+    {
+      "Grants": {
+        "Items": [
+          {
+            "Item": "Ingredient_Life_Essence_Concentrated",
+            "Count": 2
+          },
+          {
+            "Item": "Ingredient_Life_Essence",
+            "Count": 4
+          }
+        ],
+        "Rewards": [
+          {
+            "Kind": "Mmo_Boost_Token",
+            "Params": {
+              "Skill": "ALL",
+              "Multiplier": "2.0",
+              "DurationMinutes": "30"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

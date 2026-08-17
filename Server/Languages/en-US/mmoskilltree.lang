@@ -6,9 +6,15 @@
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Eat a hearty meal
 
+# ---- Kweebec Nightmare objective lines ----
+objective.text.quest.kweebec_round_any = Win a Kweebec Nightmare round
+objective.text.quest.kweebec_round_amateur = Win a round on the Amateur preset
+objective.text.quest.kweebec_round_nightmare = Win a round on the Nightmare preset
+objective.text.quest.kweebec_round_hardcore = Win a round on the Hardcore preset
+
 # ---- Emerald Wilds questline ----
-quest.wilds_meet_the_guide.title = A Word with the Ranger
-quest.wilds_meet_the_guide.flavor = A green-cloaked ranger waves you over to her camp by the spawn fires.
+quest.wilds_meet_the_guide.title = Word from the Wilds
+quest.wilds_meet_the_guide.flavor = The guide has word from a ranger out east. Go and find her camp by the spawn fires.
 quest.wilds_first_camp.title = First Camp
 quest.wilds_first_camp.flavor = Wren insists every wanderer learns to raise a camp before nightfall.
 quest.wilds_hearty_meal.title = A Hearty Meal
@@ -27,6 +33,16 @@ quest.wilds_proving_day.title = Proving Day
 quest.wilds_proving_day.flavor = Wren only points the road south for those who have proven themselves ready.
 quest.wilds_call_of_the_dunes.title = The Call of the Dunes
 quest.wilds_call_of_the_dunes.flavor = Beyond the treeline the grass gives way to sand. A dunewalker waits where the desert begins.
+quest.wilds_whispers_after_dark.title = Whispers After Dark
+quest.wilds_whispers_after_dark.flavor = Screams carry out of the kweebec grove once the moonbloom opens. Kweebecs do not scream.
+quest.wilds_face_the_nightmare.title = Face the Nightmare
+quest.wilds_face_the_nightmare.flavor = Something blighted hunts that grove, and it knows your face now. Meet it at its worst.
+quest.wilds_amateur_night.title = Amateur Night
+quest.wilds_amateur_night.flavor = Wren keeps a tally of who walks back out of the grove each night. Start gentle.
+quest.wilds_nightmare_shift.title = Nightmare Shift
+quest.wilds_nightmare_shift.flavor = The grove is worse than it was yesterday. Wren would call that an ordinary night now.
+quest.wilds_hardcore_vigil.title = Hardcore Vigil
+quest.wilds_hardcore_vigil.flavor = One lamp, one way out, and whatever is already inside. Stand the vigil anyway.
 quest.wilds_friend_of_beasts.title = Friend of Beasts
 quest.wilds_friend_of_beasts.flavor = Bramble believes a well-fed animal is worth three pack mules.
 
@@ -60,6 +76,21 @@ dialogue.guide_wilds.camp_talk.opt.bread = I would not say no to a bite.
 dialogue.guide_wilds.camp_talk.opt.lore = What is this place?
 dialogue.guide_wilds.lore_wilds.text = The Emerald Wilds: kweebec groves, trork warbands, and more green than you will ever see again once you head south. Learn to hunt, fish, and build here - the desert forgives nothing.
 dialogue.guide_wilds.lore_wilds.opt.back = Good to know.
+dialogue.guide_wilds.nightmare_offer.text = You hear that? Every night since the moonbloom opened, screaming out of the kweebec grove. Kweebecs do not scream. I have walked that path twice and come back both times with nothing but a cold neck.
+dialogue.guide_wilds.nightmare_offer.opt.accept = I will go in.
+dialogue.guide_wilds.nightmare_offer.opt.ask = What is in there?
+dialogue.guide_wilds.nightmare_lore.text = Something blighted. It moves like a kweebec and it hunts like nothing that ever grew. There is a way in, if you truly want one: the grove keeps its own doorkeeper, and folk looking for a bad night have never had trouble finding them.
+dialogue.guide_wilds.nightmare_lore.opt.back = Tell me the rest.
+dialogue.guide_wilds.nightmare_brief.text = Still standing, I see. Get in, get out, and come tell me what you saw. That is all I am asking of you tonight.
+dialogue.guide_wilds.nightmare_brief.opt.where = Remind me how to get in.
+dialogue.guide_wilds.nightmare_ready.text = You came back. Sit down before you fall down, and start at the beginning.
+dialogue.guide_wilds.nightmare_ready.opt.turnin = Here is what I saw.
+dialogue.guide_wilds.nightmare_deeper.text = So it is real, and it has your scent. Good. Then it will come when you call it, and I would rather it came on a night you chose.
+dialogue.guide_wilds.nightmare_deeper.opt.accept = I will meet it at its worst.
+dialogue.guide_wilds.nightmare_deeper_brief.text = The worst of it, mind. Anything softer and it simply comes back for the grove at the next moonbloom.
+dialogue.guide_wilds.nightmare_deeper_ready.text = You look like something chewed up and spat out, and you are grinning. That will do.
+dialogue.guide_wilds.nightmare_deeper_ready.opt.turnin = It is done.
+dialogue.guide_wilds.nightmare_vigil.text = The grove will not stay quiet, so I keep a standing tally: one night gentle, one night bad, one night worse. Take whichever suits you from my list and come back tomorrow for a fresh one.
 
 # ---- Dialogue: Quartermaster Bramble (quartermaster_wilds_dialogue) ----
 dialogue.quartermaster_wilds.greet.text = Stock and supply, traveler - if it can be counted, I have counted it. Bramble, camp quartermaster. You bring me materials, I make it worth your while.
@@ -98,3 +129,9 @@ achievement.wilds_hunter.desc = Defeat {0} creatures in the Emerald Wilds.
 achievement.sands_hunter_t1.title = Dune Stalker
 achievement.sands_hunter_t2.title = Dune Apex
 achievement.sands_hunter.desc = Defeat {0} creatures in the Howling Sands.
+
+# ---- Night Owl ladder ----
+achievement.night_owl_t1.title = Night Owl
+achievement.night_owl_t2.title = Grove Watcher
+achievement.night_owl_t3.title = Nightwarden
+achievement.night_owl.desc = Win {0} Kweebec Nightmare rounds.

@@ -18,6 +18,8 @@ Requires the MMO Skill Tree mod (1.6.0+). The pack supplies the content; the mod
 - **The Howling Sands campaign** - eight tougher quests in the desert. Dunewalker Ashkar appears the first time anyone discovers the Howling Sands and sets you quarrying sandstone, felling desert hardwood, fishing the hidden oases, culling Scarak hives, and finally hunting the apex predators of the dunes.
 - **Branching NPC dialogue** - every quest giver has a real conversation, not a single press of a button: progress-aware greetings, lore branches you can ask about, and a one-time bite of camp bread from Wren if you ask nicely.
 - **Quest-giver NPCs that come to you** - Wren and Bramble stand at your world spawn automatically; Ashkar appears at the desert's edge the first time it's found. No placing anything, no setup.
+- **A night arc for Kweebec Nightmare owners** - if you also run the Kweebec Nightmare minigame, Ranger Wren starts hearing screams out of the kweebec grove after dark. Two story quests and three daily contracts send you into the grove and back, and a three-rung Night Owl ladder hands over the Nightwarden armour set a piece at a time. Without that minigame installed, none of it appears anywhere.
+- **Gear you can only earn** - Wren's Prospecting Pick for finding her camp, and the Nightwarden's Longsword, Hood, Cuirass and Greaves from the night arc. No recipes, no shop: you get them by doing the work.
 - **Campaign achievements** - a capstone for each campaign, a server-first "Campaigner of Orbis" for finishing both, a "Well Met" for introducing yourself to every guide, and zone-scoped hunter ladders that count the creatures you fell in each region.
 - **Fully translated** - every quest name and blurb, dialogue line, NPC name, and achievement ships in 9 languages (English, German, Spanish, French, Hungarian, Italian, Brazilian Portuguese, Russian, Turkish); anything a translation misses falls back to English.
 
@@ -39,7 +41,7 @@ The quest givers place through the same system as the mod's Adventurer's Guide, 
 ## Install
 
 1. Install the MMO Skill Tree mod (1.6.0 or newer).
-2. Drop `MMOSkillQuestPack-1.1.0.zip` into your server's `Mods/` folder, alongside the mod.
+2. Drop `MMOSkillQuestPack-1.0.0.zip` into your server's `Mods/` folder, alongside the mod.
 3. Start the server. The questlines and their givers are on by default.
 
 ## Make your own quests and dialogue
@@ -50,7 +52,7 @@ The questlines are plain pack files. A new quest is one small file that names a 
 
 | Pack  | Plugin | Notes                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.1.0 | 1.6.0+ | First release. The Emerald Wilds (eleven quests) and Howling Sands (eight quests) campaigns with three quest-giver NPCs, branching dialogue for each, zone-scoped objectives and hunts, campaign and server-first achievements plus per-zone hunter ladders, and full 9-language translations. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at world spawn, Ashkar on first Howling Sands discovery); the Emerald Wilds campaign gates on finishing the plugin's own intro tutorial first. |
+| 1.0.0 | 1.6.0+ | First release. The Emerald Wilds (eleven quests) and Howling Sands (eight quests) campaigns with three quest-giver NPCs, branching dialogue for each, zone-scoped objectives and hunts, campaign and server-first achievements plus per-zone hunter ladders. The Emerald Wilds campaign is handed out at the Adventurer's Guide hub and points you east to Ranger Wren beside the kweebec village; it gates on finishing the plugin's own intro tutorial first. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at the kweebec village, Ashkar on first Howling Sands discovery). The Kweebec Nightmares arc, for servers that also run the Kweebec Nightmare minigame: two story quests from Ranger Wren, three daily grove contracts and a three-rung Night Owl achievement ladder, all invisible without that minigame. Five earned-only items (Wren's Prospecting Pick and the four-piece Nightwarden set). Full 9-language translations. |
 
 ---
 

@@ -1,0 +1,88 @@
+{
+  "$Comment": [
+    "A daily contract on the Hardcore preset: win one Kweebec Nightmare round, collect on the spot.",
+    "",
+    "Repeat.Reset is a calendar allowance rather than a rolling wait: the window rolls over at the",
+    "server day boundary, so all three dailies come back together and a player who finishes late in",
+    "the evening is not paid back at the same hour tomorrow. Author Times inside Reset to allow more",
+    "than one finish per window, or swap Reset for Cooldown to make it a rolling timer instead.",
+    "",
+    "Flow.AutoClaim pays the reward out the moment the round is won, so nobody has to trek back to",
+    "the Wilds between runs. It is the one difference from the story beats above, which are collected",
+    "in person.",
+    "",
+    "The lootable reward rolls this pack's own dedicated daily table (Mmo_Kweebec_Daily_Hardcore), so",
+    "retuning that table retunes this payout without touching the minigame's own chase rewards; the",
+    "flat Defense experience beside it is authored here."
+  ],
+  "Text": {
+    "TitleKey": "quest.wilds_hardcore_vigil.title",
+    "FlavorKey": "quest.wilds_hardcore_vigil.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 22,
+    "Tags": [
+      "Nightmare",
+      "Daily"
+    ],
+    "Chains": [
+      {
+        "Id": "wilds_nightmare_daily",
+        "Tier": 3
+      }
+    ]
+  },
+  "Flow": {
+    "AutoClaim": true
+  },
+  "Repeat": {
+    "Reset": {
+      "Period": "Daily"
+    }
+  },
+  "Visibility": {
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "Guide_Wilds"
+  },
+  "Requires": {
+    "Quests": [
+      "wilds_face_the_nightmare"
+    ],
+    "Factors": [
+      {
+        "Factor": "hytale:mod_installed",
+        "Param": "Ziggfreed:KweebecNightmare",
+        "Min": 1
+      }
+    ]
+  },
+  "Objectives": {
+    "win_a_round": {
+      "Kind": "INSTANCE_ROUND_WON",
+      "Target": "kweebec:",
+      "MatchMode": "PREFIX",
+      "Qualifier": "Hardcore",
+      "Amount": 1,
+      "TextKey": "objective.text.quest.kweebec_round_hardcore"
+    }
+  },
+  "Rewards": [
+    {
+      "Kind": "Lootable",
+      "Params": {
+        "Lootable": "Mmo_Kweebec_Daily_Hardcore"
+      }
+    },
+    {
+      "Kind": "Mmo_Xp",
+      "Params": {
+        "Skill": "DEFENSE",
+        "Amount": "1500"
+      }
+    }
+  ]
+}
