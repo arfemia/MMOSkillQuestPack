@@ -1,6 +1,6 @@
 # MMO Skill Quest Pack
 
-A free content pack for [MMO Skill Tree](https://www.curseforge.com/hytale/mods/mmo-skill-tree). It adds two hand-written **questlines** with their own quest-giver NPCs: a starter campaign in the **Emerald Wilds** and a tougher follow-up in the **Howling Sands**, tied together with branching dialogue, campaign achievements, and zone-scoped hunter chains.
+A free content pack for [MMO Skill Tree](https://www.curseforge.com/hytale/mods/mmo-skill-tree). It adds a hand-written **questline** with its own quest-giver NPCs: a starter campaign in the **Emerald Wilds**, tied together with branching dialogue, campaign achievements, and zone-scoped hunter chains. A tougher follow-up in the **Howling Sands** is written and coming in a later update.
 
 Requires the MMO Skill Tree mod (1.6.0+). The pack supplies the content; the mod supplies the quest-giver, dialogue, and zone-scoping engine, so install both.
 
@@ -14,22 +14,20 @@ Requires the MMO Skill Tree mod (1.6.0+). The pack supplies the content; the mod
 
 ## What it adds
 
-- **The Emerald Wilds campaign** - eleven quests that start the moment you spawn. Ranger Wren waves you over to her camp by the fires, teaches you to build, hunt, fish, and gather, then sends you against trork warbands and the restless dead before pointing you south. Quartermaster Bramble runs a supply side-arc alongside her.
-- **The Howling Sands campaign** - eight tougher quests in the desert. Dunewalker Ashkar appears the first time anyone discovers the Howling Sands and sets you quarrying sandstone, felling desert hardwood, fishing the hidden oases, culling Scarak hives, and finally hunting the apex predators of the dunes.
+- **The Emerald Wilds campaign** - eleven quests that start the moment you spawn. Ranger Wren waves you over to her camp by the fires, teaches you to build, hunt, fish, and gather, then sends you against trork warbands and the restless dead before pointing you south to the desert's edge.
 - **Branching NPC dialogue** - every quest giver has a real conversation, not a single press of a button: progress-aware greetings, lore branches you can ask about, and a one-time bite of camp bread from Wren if you ask nicely.
-- **Quest-giver NPCs that come to you** - Wren and Bramble stand at your world spawn automatically; Ashkar appears at the desert's edge the first time it's found. No placing anything, no setup.
+- **Quest-giver NPCs that come to you** - Wren and Bramble stand at your world spawn automatically. No placing anything, no setup.
 - **A night arc for Kweebec Nightmare owners** - if you also run the Kweebec Nightmare minigame, Ranger Wren starts hearing screams out of the kweebec grove after dark. Two story quests and three daily contracts send you into the grove and back, and a three-rung Night Owl ladder hands over the Nightwarden armour set a piece at a time. Without that minigame installed, none of it appears anywhere.
-- **Gear you can only earn** - Wren's Prospecting Pick for finding her camp, and the Nightwarden's Longsword, Hood, Cuirass and Greaves from the night arc. No recipes, no shop: you get them by doing the work.
-- **Campaign achievements** - a capstone for each campaign, a server-first "Campaigner of Orbis" for finishing both, a "Well Met" for introducing yourself to every guide, and zone-scoped hunter ladders that count the creatures you fell in each region.
+- **Gear you can only earn** - Wren's Prospecting Pick for finding her camp, and the Nightwarden's Longsword, Hood, Cuirass and Greaves from the night arc, reskinned onto a darker, void-touched look with damage, mana and a little stamina baked in. No recipes, no shop: you get them by doing the work.
+- **Campaign achievements** - a capstone for the Emerald Wilds campaign, a "Well Met" for introducing yourself to every guide, and zone-scoped hunter ladders that count the creatures you fell in each region, including the Howling Sands.
 - **Fully translated** - every quest name and blurb, dialogue line, NPC name, and achievement ships in 9 languages (English, German, Spanish, French, Hungarian, Italian, Brazilian Portuguese, Russian, Turkish); anything a translation misses falls back to English.
 
 ## How it works
 
 - **It just starts.** Join a world with the pack installed and Ranger Wren is already at spawn with your first quest. Follow the chain at your own pace - each quest tells you what it needs, tracks your progress live, and hands off to the next.
 - **Talk, don't just bump.** Press the interact key on a quest giver and a dialogue opens: pick what to say, accept or turn in quests, ask about the world. The conversation changes as you progress through their questline.
-- **The desert opens itself.** You don't have to find Ashkar on a map - the first time any player steps into the Howling Sands, he appears at the threshold, once per world, and never duplicates on restart.
-- **Quests scale with you.** The Wilds ease you in; the Sands quests ask for more skill levels before you can take them, so the desert stays aspirational until you've trained up. A few hunts only count in their own region.
-- **Shared world, personal progress.** The quest givers are placed once per world for everyone, but each player runs the campaigns on their own quest log.
+- **A finished quest waits for you.** Once you turn a quest in, its reward sits in your quest log until you collect it, so you never lose one to a full backpack at the wrong moment.
+- **Shared world, personal progress.** The quest givers are placed once per world for everyone, but each player runs the campaign on their own quest log.
 
 ## Don't want the spawn NPCs?
 
@@ -52,7 +50,7 @@ The questlines are plain pack files. A new quest is one small file that names a 
 
 | Pack  | Plugin | Notes                                                                                                                                                                                                                                                                                                                                                                                                       |
 | ----- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1.0.0 | 1.6.0+ | First release. The Emerald Wilds (eleven quests) and Howling Sands (eight quests) campaigns with three quest-giver NPCs, branching dialogue for each, zone-scoped objectives and hunts, campaign and server-first achievements plus per-zone hunter ladders. The Emerald Wilds campaign is handed out at the Adventurer's Guide hub and points you east to Ranger Wren beside the kweebec village; it gates on finishing the plugin's own intro tutorial first. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at the kweebec village, Ashkar on first Howling Sands discovery). The Kweebec Nightmares arc, for servers that also run the Kweebec Nightmare minigame: two story quests from Ranger Wren, three daily grove contracts and a three-rung Night Owl achievement ladder, all invisible without that minigame. Five earned-only items (Wren's Prospecting Pick and the four-piece Nightwarden set). Full 9-language translations. |
+| 1.0.0 | 1.6.0+ | First release. The Emerald Wilds campaign (eleven quests) with two quest-giver NPCs, branching dialogue, zone-scoped objectives and hunts, a campaign achievement, and hunter ladders across both regions. The Emerald Wilds campaign is handed out at the Adventurer's Guide hub and points you east to Ranger Wren beside the kweebec village; it gates on finishing the plugin's own intro tutorial first. Quest givers spawn automatically through generated NPC roles (Wren and Bramble at the kweebec village). The Kweebec Nightmares arc, for servers that also run the Kweebec Nightmare minigame: two story quests from Ranger Wren, three daily grove contracts and a three-rung Night Owl achievement ladder, all invisible without that minigame. Five earned-only items (Wren's Prospecting Pick and the four-piece Nightwarden set, reskinned onto a darker look with Void damage, mana and a touch of stamina). Full 9-language translations. The Howling Sands campaign (eight quests) is written and comes in a later update; Dunewalker Ashkar already stands at the desert's edge but has nothing to offer yet. |
 
 ---
 
