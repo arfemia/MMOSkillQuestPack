@@ -2,6 +2,10 @@
   "$Comment": [
     "The Howling Sands campaign's front door. AutoAccept arms it as soon as the player is eligible, so the dunewalker has something to say the first time they are spoken to.",
     "",
+    "Requires keeps it behind the Wilds finale: Call of the Dunes is the quest that sends the player",
+    "to the dunewalker, so this one unlocks the moment that hand-off completes and never shows an",
+    "Accept button in the quest log.",
+    "",
     "The single step is a TALK_TO_NPC credited by an explicit MarkTalked action in the dunewalker's",
     "conversation. Nothing credits a talk step implicitly: a character counts as spoken to only where",
     "a line of dialogue says so, which keeps 'we have met' a deliberate story beat.",
@@ -15,15 +19,17 @@
   "Listing": {
     "Category": "main",
     "SortOrder": 20,
-    "Tags": [
-      "Chapter_3"
-    ]
+    "Tags": ["Chapter_3"]
   },
   "Flow": {
-    "AutoAccept": true
+    "AutoAccept": true,
+    "AutoTrack": true
   },
   "Npc": {
     "ViewId": "Guide_Sands"
+  },
+  "Requires": {
+    "Quests": ["wilds_call_of_the_dunes"]
   },
   "Objectives": {
     "talk": {
