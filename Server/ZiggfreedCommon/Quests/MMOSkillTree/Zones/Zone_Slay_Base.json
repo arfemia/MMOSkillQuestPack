@@ -19,6 +19,9 @@
   "Listing": {
     "Category": "main"
   },
+  "Flow": {
+    "AutoClaim": false
+  },
   "Visibility": {
     "Hidden": true,
     "RequirePrerequisites": true

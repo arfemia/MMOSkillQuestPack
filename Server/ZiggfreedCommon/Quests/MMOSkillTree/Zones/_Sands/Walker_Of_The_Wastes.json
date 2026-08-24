@@ -23,7 +23,8 @@
   },
   "Flow": {
     "AutoAccept": true,
-    "AutoTrack": true
+    "AutoTrack": true,
+    "AutoClaim": false
   },
   "Npc": {
     "ViewId": "Guide_Sands"

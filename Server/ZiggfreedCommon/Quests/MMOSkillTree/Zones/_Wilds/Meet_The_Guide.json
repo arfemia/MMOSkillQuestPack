@@ -31,6 +31,9 @@
       "Chapter_2"
     ]
   },
+  "Flow": {
+    "AutoClaim": false
+  },
   "Npc": {
     "ViewId": "MMO_Hub",
     "TurnInId": "Guide_Wilds"

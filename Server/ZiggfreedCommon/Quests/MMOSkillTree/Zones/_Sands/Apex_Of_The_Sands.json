@@ -16,6 +16,9 @@
     "Category": "main",
     "SortOrder": 27
   },
+  "Flow": {
+    "AutoClaim": false
+  },
   "Visibility": {
     "Hidden": true,
     "RequirePrerequisites": true
