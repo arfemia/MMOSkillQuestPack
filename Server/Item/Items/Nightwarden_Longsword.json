@@ -1,11 +1,19 @@
 {
-  "$Comment": "The blade Ranger Wren hands over for facing down the nightmare on its own ground. Parent is the vanilla Weapon_Longsword_Cobalt, so the model, icon, texture, swing damage, animations, durability and sounds are all inherited and only the fields below are this item's own. No Recipe: a recipe is never inherited through Parent, so this sword can only be earned. STATS. A held weapon's stats live on the Weapon block, applied by the engine while the blade is in the active hotbar slot. MMO_Bonus_Void 8 is plus 8 percentage points of Void-school damage, which pays out on any hit whose damage cause resolves to Void - abilities and enchanted effects, not the sword's own physical swings, so pair it with a Void-school ability to feel it. MMO_Damage_SWORDS 5 is plus 5 percent damage on everything the Swords skill covers, which does include this blade's ordinary swings. Both are Additive on purpose: these channels carry a base of zero and additive folds before multiplicative, so a Multiplicative-only entry would compute zero and be silently inert. THE WEAPON BLOCK IS FULL-OBJECT-REPLACE. The vanilla cobalt longsword's own Weapon block is empty, so nothing is lost here; on a parent that fills it in, every field of it has to be copied across before adding a line, or the parent's mechanic silently disappears. Tags are restated for the same reason. MMO_Weapon_Type pins which skill a hit is credited to: the plugin otherwise guesses from the item id, and a flavour name that matches no skill's vocabulary falls all the way through to Unarmed, so any custom weapon is safer with the tag written out.",
+  "$Comment": "The blade Ranger Wren hands over for facing down the nightmare on its own ground. Parent is the vanilla Weapon_Longsword_Cobalt, so the swing damage, animations, durability and sounds are all inherited and only the fields below are this item's own. No Recipe: a recipe is never inherited through Parent, so this sword can only be earned. LOOK. Icon/Model/Texture/IconProperties are overridden onto the vanilla Onyxium longsword's own values in place of the inherited Cobalt look, a dark obsidian-flavored reskin borrowed whole from an existing vanilla art set rather than new art; the swing damage and durability numbers stay Cobalt's own, only the appearance changes. Each of these four is an ordinary top-level field, not a full-object-replace block, so overriding one leaves the rest exactly as authored. STATS. A held weapon's stats live on the Weapon block, applied by the engine while the blade is in the active hotbar slot. MMO_Bonus_Void 8 is plus 8 percentage points of Void-school damage, which pays out on any hit whose damage cause resolves to Void - abilities and enchanted effects, not the sword's own physical swings, so pair it with a Void-school ability to feel it. MMO_BonusFlat_Void 2 adds a flat 2 more Void damage on top of that, composing into the base before the percentage multiplies in, so it still registers even against a low-damage Void ability. MMO_Damage_SWORDS 5 is plus 5 percent damage on everything the Swords skill covers, which does include this blade's ordinary swings. Mana 2 raises the wielder's mana pool by 2 while the blade is held; Mana's own base Max is 0, so this is real usable mana rather than a bonus on an existing pool, and it re-clamps the moment the blade is swapped away. All four are Additive on purpose: these channels carry a base of zero and additive folds before multiplicative, so a Multiplicative-only entry would compute zero and be silently inert. THE WEAPON BLOCK IS FULL-OBJECT-REPLACE. The vanilla cobalt longsword's own Weapon block is empty, so nothing is lost here; on a parent that fills it in, every field of it has to be copied across before adding a line, or the parent's mechanic silently disappears. Tags are restated for the same reason. MMO_Weapon_Type pins which skill a hit is credited to: the plugin otherwise guesses from the item id, and a flavour name that matches no skill's vocabulary falls all the way through to Unarmed, so any custom weapon is safer with the tag written out.",
   "TranslationProperties": {
     "Name": "server.items.Nightwarden_Longsword.name"
   },
   "Parent": "Weapon_Longsword_Cobalt",
   "Quality": "Epic",
   "ItemLevel": 40,
+  "Icon": "Icons/ItemsGenerated/Weapon_Longsword_Onyxium.png",
+  "IconProperties": {
+    "Scale": 0.35,
+    "Translation": [-42, -42],
+    "Rotation": [45, 90, 0]
+  },
+  "Model": "Items/Weapons/Longsword/Onyxium.blockymodel",
+  "Texture": "Items/Weapons/Longsword/Onyxium_Texture.png",
   "Weapon": {
     "StatModifiers": {
       "MMO_Bonus_Void": [
@@ -14,9 +22,21 @@
           "CalculationType": "Additive"
         }
       ],
+      "MMO_BonusFlat_Void": [
+        {
+          "Amount": 2,
+          "CalculationType": "Additive"
+        }
+      ],
       "MMO_Damage_SWORDS": [
         {
           "Amount": 5,
+          "CalculationType": "Additive"
+        }
+      ],
+      "Mana": [
+        {
+          "Amount": 2,
           "CalculationType": "Additive"
         }
       ]
