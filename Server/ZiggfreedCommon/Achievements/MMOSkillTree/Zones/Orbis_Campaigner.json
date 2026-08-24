@@ -8,8 +8,12 @@
     "progress and is told, once, that they were beaten, and Announce is the broadcast the winner",
     "sets off - which is why it is safe here and would be noise on an achievement everyone earns.",
     "",
-    "The payout waits in the achievements menu to be collected."
+    "The payout waits in the achievements menu to be collected.",
+    "",
+    "Enabled is false: one of its two MetaChildren, howling_sands_campaign, is disabled too, so this",
+    "capstone could never be earned. Flip all three back on together once the desert campaign ships."
   ],
+  "Enabled": false,
   "Text": {
     "TitleKey": "achievement.orbis_campaigner.title",
     "FlavorKey": "achievement.orbis_campaigner.desc"

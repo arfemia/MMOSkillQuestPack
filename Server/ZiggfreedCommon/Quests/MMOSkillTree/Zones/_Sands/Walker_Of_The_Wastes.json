@@ -10,8 +10,14 @@
     "conversation. Nothing credits a talk step implicitly: a character counts as spoken to only where",
     "a line of dialogue says so, which keeps 'we have met' a deliberate story beat.",
     "",
-    "It is not hidden, so it shows in the log from the moment it is taken."
+    "It is not hidden, so it shows in the log from the moment it is taken.",
+    "",
+    "Enabled is false, which keeps the whole campaign's front door out of circulation without",
+    "deleting it: nothing downstream can auto-accept or be requested if this never starts. A player",
+    "who already holds it (none can, pre-release) could still finish it. Flip it to true, or drop",
+    "the line, once the desert campaign is ready to ship."
   ],
+  "Enabled": false,
   "Text": {
     "TitleKey": "quest.sands_walker_of_the_wastes.title",
     "FlavorKey": "quest.sands_walker_of_the_wastes.flavor"

@@ -4,8 +4,13 @@
     "the factor reads the MMO_Level_FISHING stat channel, and every skill has a channel of that",
     "shape. Swap the skill name to gate on a different one.",
     "",
-    "Fish targets are CONTAINS on the bare name, which matches the fish and its item alike."
+    "Fish targets are CONTAINS on the bare name, which matches the fish and its item alike.",
+    "",
+    "Enabled is false, which keeps this quest out of circulation without deleting it; a player who",
+    "already holds it (none can, pre-release) could still finish it. Flip it to true, or drop the",
+    "line, once the desert campaign is ready to ship."
   ],
+  "Enabled": false,
   "Text": {
     "TitleKey": "quest.sands_oasis_angler.title",
     "FlavorKey": "quest.sands_oasis_angler.flavor"

@@ -7,8 +7,13 @@
     "count here. A Zone is matched against the engine's own zone name or the region folder it came",
     "from, case-insensitively.",
     "",
-    "The floor is on the summed total of every skill, not on any single one."
+    "The floor is on the summed total of every skill, not on any single one.",
+    "",
+    "Enabled is false, which keeps this quest out of circulation without deleting it; a player who",
+    "already holds it (none can, pre-release) could still finish it. Flip it to true, or drop the",
+    "line, once the desert campaign is ready to ship."
   ],
+  "Enabled": false,
   "Text": {
     "TitleKey": "quest.sands_thorns_and_stings.title",
     "FlavorKey": "quest.sands_thorns_and_stings.flavor"
