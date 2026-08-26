@@ -32,7 +32,7 @@
     ]
   },
   "Npc": {
-    "ViewId": "MMO_Hub",
+    "ViewId": "Mmo_Hub",
     "TurnInId": "Guide_Wilds"
   },
   "Requires": {

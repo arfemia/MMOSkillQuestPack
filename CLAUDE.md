@@ -1,9 +1,10 @@
 # CLAUDE.md - MMOSkillQuestPack
 
 Zone questlines for MMO Skill Tree **1.6.0+** (hard dependency in `manifest.json`).
-The jar ships only the engine (quest givers, dialogues, zone scoping) plus the five-quest
-onboarding chain (getting_started -> craft_starter_tools -> gather_the_basics ->
-into_the_fray -> climbing_the_ranks); this pack ships the actual Orbis campaign content.
+The jar ships only the engine (quest givers, dialogues, zone scoping) plus a small onboarding set - the
+five-quest chain (getting_started -> craft_starter_tools -> gather_the_basics -> into_the_fray ->
+climbing_the_ranks), the repeatable forgot_something, and four side quests under Onboarding/SideQuests/;
+this pack ships the actual Orbis campaign content.
 Without it the quest log is minimal by design (the bounty-pack philosophy).
 
 **This pack is the reference model for the new-shape content layout**: quests, quest
@@ -15,7 +16,8 @@ generators and achievements are ziggfreed-common Pattern A assets under
 ## Layout
 
 ```
-manifest.json                  Group Ziggfreed, hard-dep Ziggfreed:MMOSkillTree ^1.6.0
+manifest.json                  Group Ziggfreed, hard-deps Ziggfreed:MMOSkillTree ^1.6.0 and
+                               Ziggfreed:ZiggfreedCommon >=2.0.0 (every store here is a zc store)
 build.ps1                      zips MMOSkillQuestPack-<Version>.zip (fwd-slash + dir entries)
 Server/
   ZiggfreedCommon/             the shared framework's own stores: they merge BY ID and have no
@@ -23,12 +25,16 @@ Server/
     Quests/MMOSkillTree/Zones/
         Zone_Gather_Base.json      Abstract skeletons the two generators write children against
         Zone_Slay_Base.json        (unmarked folder => plain filename ids)
-        _Wilds/  (8 files)         a _-marked folder prefixes every id beneath it, so
+        _Wilds/  (13 files)        a _-marked folder prefixes every id beneath it, so
         _Sands/  (5 files)         _Wilds/Trork_Trouble.json is wilds_trork_trouble
     QuestGenerators/
         Zone_Gather.json           writes the 3 harvest contracts, one row each
         Zone_Slay.json             writes the 3 hunting contracts, one row each
-    Achievements/MMOSkillTree/Zones/   8 files: 2 campaigns + orbis capstone + well_met + 2 hunt chains
+    Achievements/MMOSkillTree/Zones/   11 files: 2 campaigns + orbis capstone + well_met + 2 hunt
+                                chains + the 3-rung night-owl chain
+    Lootables/                     3 loot tables, one per Kweebec daily (Mmo_Kweebec_Daily_Amateur /
+                                _Nightmare / _Hardcore); each daily's Auto reward is a Lootable
+                                entry naming one, so a win pays out in the instance
     NpcPlacements/                 3 givers, all anchored to a worldgen SpawnMarker
                                 (Anchor.Structure, SpawnChance 1.0 + MaxPerWorld 1 = one
                                 unique each): Guide_Wilds @ Kweebec village,
@@ -58,7 +64,7 @@ Server/
                                 omit one). This pack ships no content into a store the mod
                                 itself owns today, so the file names none.
   Languages/<bcp47>/          mmoskilltree.lang (quest/dialogue/achievement keys) +
-                                npcs.lang (giver names + the shared MMO_QuestGiver.hint
+                                npcs.lang (giver names + the shared Mmo_QuestGiver.hint
                                 prompt the template role bakes) + server.lang (item display
                                 names, Hytale's native items.<ItemId>.name convention, which
                                 each item references as server.items.<ItemId>.name) x9
@@ -73,8 +79,8 @@ Server/
   `Match: ["default"]` (an exact world-name pattern), so givers appear in the ordinary world
   and in no instance.
   `/mmonpc list` shows what targets a world and what is standing, `/mmonpc structures` lists
-  seen markerIds to author `MarkerIds`, `/mmonpc reconcile [world]` forces a sweep, and
-  `/mmonpc disable <id>` despawns one immediately.
+  seen markerIds to author `MarkerIds`, `/mmonpc reconcile [--arg1=<world>]` forces a sweep,
+  and `/mmonpc disable --arg1=<id>` despawns one immediately.
 - **Who a giver IS is its `Identity.Role`; where press F GOES is `Interact.Dialogue`.** None of the
   three placements authors an `Identity.NpcId`: with none, the character IS the role it names, so
   `Guide_Wilds` / `Guide_Sands` / `Quartermaster_Wilds` are the ids the pack's quests name as
@@ -94,7 +100,7 @@ Server/
   `DefaultOffHandSlot` - because the engine refuses the whole role over one undeclared key and the
   symptom is a giver who is never anywhere. The press-F prompt is NOT one of them (a role's `Hint`
   is read literally, so no variant can change it): every giver here shows the template's shared
-  prompt, `npcs.MMO_QuestGiver.hint`, which this pack translates in all nine locales. A giver
+  prompt, `npcs.Mmo_QuestGiver.hint`, which this pack translates in all nine locales. A giver
   needing its own prompt needs a full role body instead. The name convention is
   `npcs.<npcId>.name`. A new giver = one role file + one placement file + its two `.lang` lines.
 - **Quests are Pattern A assets with native `Parent` inheritance.** One file per quest, the
@@ -116,15 +122,18 @@ Server/
   `MMO_Level_<SKILL>` (one skill), `MMO_CombatLevel` (best combat skill), `MMO_HighestSkillLevel`
   (best single skill). A feature switch is `{"Factor":"mmoskilltree:feature","Param":"<feature>"}`.
   Everything fails CLOSED, so content gated on something nothing can answer stays locked.
-- **Rewards are `{Kind, Params}` entries.** `xp` (Skill/Amount), `item` (Item/Count),
-  `boost_token` (Skill/Multiplier/DurationMinutes), plus `command`, `currency`, `ability_mod`,
-  `lootable`, `stamped_item`, `effect`. **Prefer `item` over a `/give` command**: an item reward is
-  room-checked, so a full bag holds the payout back instead of losing it. `Params` values are
-  strings. An entry with a BLANK `Kind` pays nothing out, which is how a generator row skips a
-  reward slot the rest of its family uses.
-- **Achievements are the peer Pattern A asset.** `Criteria` is an ORDERED array and the order is
-  keyed by criterion id (the KEY is what progress is filed under, so renaming one starts that
-  criterion over while reordering never moves anyone's tally), a `Parent` child retunes one
+- **Rewards are `{Kind, Params}` entries.** `Mmo_Xp` (Skill/Amount), `Item` (Item/Count),
+  `Mmo_Boost_Token` (Skill/Multiplier/DurationMinutes), plus `Command`, `Currency`,
+  `Mmo_Ability_Mod`, `Lootable`, `Stamped_Item`, `Effect`, `Droplist`. Kind ids are native-asset
+  style, PascalCase with underscores, mod-prefixed for a consumer's own; the old lowercase
+  spellings still parse but nothing in this pack writes them. **Prefer `Item` over a `/give`
+  command**: an item reward is room-checked, so a full bag holds the payout back instead of losing
+  it. `Params` values are strings. An entry with a BLANK `Kind` pays nothing out, which is how a
+  generator row skips a reward slot the rest of its family uses.
+- **Achievements are the peer Pattern A asset.** `Criteria` is an id-keyed map
+  (`{"<criterion-id>": {...}}`), and the KEY is what progress is filed under, so renaming one
+  starts that criterion over while adding, removing or reordering entries never moves anyone's
+  tally, a `Parent` child retunes one
   criterion by key and keeps the rest, `MetaChildren` makes a capstone over other achievements,
   and the `Rewards` group's `Auto` bucket lands on earning while `Claim` waits to be collected.
 - **A description key with a `{0}` in it gets its number from `Text.TextArgs.Flavor: ["@amount"]`**,
@@ -139,15 +148,19 @@ Server/
   through a real codec, so a mistyped key is named in the boot log and costs only that knob.
 - **Dialogues** are id-keyed structured trees at `Server/ZiggfreedCommon/Dialogues/MMOSkillTree/`
   (Pattern A: `Start`, `Nodes`, `Memories` and `Fragments` are top-level fields of the file, no
-  `Payload` wrapper). `Start` is declared sections (`First`/`Quests`/`Then`/`Fallback`); each of
-  these three trees writes its state-varied greetings as ordered `First` beats (each `When`-gated
-  on the relevant `QuestState`) plus one `Fallback` node for everyone else. `{"Type":"MarkTalked"}`
+  `Payload` wrapper). `Start` is declared sections (`First`/`Quests`/`Then`/`Fallback`); Guide_Sands
+  and Quartermaster_Wilds write their state-varied greeting as one `When`-gated `First` beat plus a
+  `Fallback` node for everyone else; Guide_Wilds uses the other two sections instead - a `Quests`
+  map routing the two Kweebec quests to their Offerable/Active/Ready nodes, then `Then` beats for
+  the mid- and post-campaign greetings, over the same `Fallback`. `{"Type":"MarkTalked"}`
   is the ONE way a conversation credits a talk step or a met-the-giver achievement - nothing
   credits implicitly, so every giver needs at least one always-reachable option carrying it. Intro
   beats are **gated on `QuestState <introQuest> ACTIVE`, NOT on remembered state** (self-heal: a
   memory that outlives a quest reset soft-locks the intro - derive visibility from quest state,
   which resets with the quest). The bread handout is a one-time option (`"Once": true`), so it is
-  offered until it is taken; the `Reward` keeps its own inner once-guard. Options use the sugar
+  offered until it is taken; the `Reward`'s own inner guard is switched off with
+  `"RewardOnce": false`, because the option-level `Once` already covers it (`RewardOnce` defaults
+  to true when unauthored). Options use the sugar
   shorthand (`Open`/`Goto`/`TurnIn`/`Reward`/`Do`); crediting is written out in full as an action,
   because it is a deliberate statement about the story rather than a side effect of opening a menu.
   `Open` names a registered destination - `"Quests"` is the bare word for the character the player
@@ -169,6 +182,11 @@ Server/
   sands_walker_of_the_wastes ACTIVE, credits sands_walker via `MarkTalked` AND `TurnIn`s
   call_of_the_dunes in the same option) -> the desert arc. "Go meet NPC X" handoffs are standardized
   on a blank-target `TURN_IN` step (nothing to carry, only somebody to find), never a TALK bridge.
+  The desert arc is authored but held: every `_Sands` quest plus the `howling_sands_campaign` and
+  `orbis_campaigner` achievements ship `"Enabled": false`, so call_of_the_dunes is the last
+  reachable beat today. The three generated sands quests carry no such leaf, they simply chain off
+  disabled prerequisites, so flipping those seven leaves to true is the whole edit that opens the
+  arc.
 - **The Kweebec Nightmares arc** (`_Wilds/Whispers_After_Dark`, `Face_The_Nightmare`, and the three
   dailies `Amateur_Night`/`Nightmare_Shift`/`Hardcore_Vigil`, plus `Zones/Night_Owl_T1..T3`) is
   gated on ANOTHER MOD being present:

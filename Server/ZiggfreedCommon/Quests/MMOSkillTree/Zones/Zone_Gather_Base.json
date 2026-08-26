@@ -8,7 +8,7 @@
     "step's default matching - and every member that did not state its own value follows.",
     "",
     "Members add a second harvest step of their own on top of this one. An inherited step can be",
-    "retuned by id but never removed, so keep anything optional out of this file."
+    "re-tuned by id but never removed, so keep anything optional out of this file."
   ],
   "Abstract": true,
   "Listing": {

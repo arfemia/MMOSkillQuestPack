@@ -2,11 +2,11 @@
 # Hytale's I18nModule prepends the filename, so each key here loads as npcs.<key>. The giver
 # roles this pack ships under Server/NPC/Roles/Passive/ name the prefixed form on their
 # NameTranslationKey, and their shared press-F prompt is the one baked into the template role
-# they vary, npcs.MMO_QuestGiver.hint.
+# they vary, npcs.Mmo_QuestGiver.hint.
 
 # The press-F prompt shown by every giver built on Template_Mmo_QuestGiver. {key} is filled in
 # by the client with whatever the player has bound to interact.
-MMO_QuestGiver.hint = Нажмите [{key}], чтобы поговорить
+Mmo_QuestGiver.hint = Нажмите [{key}], чтобы поговорить
 
 # Quest-giver display names. Each one is both a role's nameplate and the npcs.<id>.name a
 # "Go to {NPC}" objective reads, so the map marker and the nameplate say the same name.
