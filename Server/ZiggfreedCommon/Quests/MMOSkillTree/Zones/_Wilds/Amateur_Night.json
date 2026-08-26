@@ -7,7 +7,7 @@
     "the evening is not paid back at the same hour tomorrow. Author Times inside Reset to allow more",
     "than one finish per window, or swap Reset for Cooldown to make it a rolling timer instead.",
     "",
-    "Flow.AutoClaim pays the reward out the moment the round is won, so nobody has to trek back to",
+    "The reward rides the Auto bucket, paying out the moment the round is won, so nobody has to trek back to",
     "the Wilds between runs. It is the one difference from the story beats above, which are collected",
     "in person.",
     "",
@@ -31,19 +31,14 @@
         "Id": "wilds_nightmare_daily",
         "Tier": 1
       }
-    ]
-  },
-  "Flow": {
-    "AutoClaim": true
+    ],
+    "Hidden": true,
+    "RequirePrerequisites": true
   },
   "Repeat": {
     "Reset": {
       "Period": "Daily"
     }
-  },
-  "Visibility": {
-    "Hidden": true,
-    "RequirePrerequisites": true
   },
   "Npc": {
     "ViewId": "Guide_Wilds"
@@ -70,19 +65,21 @@
       "TextKey": "objective.text.quest.kweebec_round_amateur"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Lootable",
-      "Params": {
-        "Lootable": "Mmo_Kweebec_Daily_Amateur"
+  "Rewards": {
+    "Auto": [
+      {
+        "Kind": "Lootable",
+        "Params": {
+          "Lootable": "Mmo_Kweebec_Daily_Amateur"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "500"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "500"
-      }
-    }
-  ]
+    ]
+  }
 }

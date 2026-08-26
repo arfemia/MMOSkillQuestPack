@@ -36,22 +36,24 @@
   "Scoring": {
     "Points": 40
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "kill-entity": {
       "Kind": "KILL_ENTITY",
       "Target": "",
       "MatchMode": "CONTAINS",
       "Zone": "Howling_Sands",
       "Amount": 500
     }
-  ],
-  "ClaimRewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "SWORDS",
-        "Amount": "5000"
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "SWORDS",
+          "Amount": "5000"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

@@ -14,12 +14,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 1
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 1,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -52,20 +47,22 @@
       "Order": 2
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "WOODCUTTING",
-        "Amount": "400"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "WOODCUTTING",
+          "Amount": "400"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "BUILDING",
+          "Amount": "400"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "BUILDING",
-        "Amount": "400"
-      }
-    }
-  ]
+    ]
+  }
 }

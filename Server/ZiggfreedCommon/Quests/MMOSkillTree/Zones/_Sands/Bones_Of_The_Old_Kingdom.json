@@ -19,12 +19,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 26
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 26,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -76,20 +71,22 @@
       "Order": 2
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "MAGIC",
-        "Amount": "3000"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "MAGIC",
+          "Amount": "3000"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "3000"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "3000"
-      }
-    }
-  ]
+    ]
+  }
 }

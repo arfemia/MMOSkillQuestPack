@@ -13,12 +13,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 6
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 6,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -40,13 +35,15 @@
       "TextKey": "objective.text.turn_in.find"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "ACROBATICS",
-        "Amount": "1000"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "ACROBATICS",
+          "Amount": "1000"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

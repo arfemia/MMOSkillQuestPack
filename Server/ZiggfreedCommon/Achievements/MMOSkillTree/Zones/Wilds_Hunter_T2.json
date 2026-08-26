@@ -36,22 +36,24 @@
   "Scoring": {
     "Points": 30
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "kill-entity": {
       "Kind": "KILL_ENTITY",
       "Target": "",
       "MatchMode": "CONTAINS",
       "Zone": "Emerald_Wilds",
       "Amount": 500
     }
-  ],
-  "ClaimRewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "SWORDS",
-        "Amount": "2500"
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "SWORDS",
+          "Amount": "2500"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

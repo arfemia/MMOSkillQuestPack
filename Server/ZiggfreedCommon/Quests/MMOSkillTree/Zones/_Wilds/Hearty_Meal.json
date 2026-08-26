@@ -15,12 +15,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 2
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 2,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -54,13 +49,15 @@
       "TextKey": "objective.text.quest.eat_food"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "500"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "500"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

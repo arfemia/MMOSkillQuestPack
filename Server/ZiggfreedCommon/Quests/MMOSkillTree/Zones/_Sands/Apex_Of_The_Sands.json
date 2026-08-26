@@ -19,12 +19,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 27
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 27,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -63,21 +58,23 @@
       "MatchMode": "EXACT"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Boost_Token",
-      "Params": {
-        "Skill": "ALL",
-        "Multiplier": "2.5",
-        "DurationMinutes": "60"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Boost_Token",
+        "Params": {
+          "Skill": "ALL",
+          "Multiplier": "2.5",
+          "DurationMinutes": "60"
+        }
+      },
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Potion_Health_Greater",
+          "Count": "3"
+        }
       }
-    },
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Potion_Health_Greater",
-        "Count": "3"
-      }
-    }
-  ]
+    ]
+  }
 }

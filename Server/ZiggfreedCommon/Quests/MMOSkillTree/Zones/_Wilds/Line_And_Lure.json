@@ -14,12 +14,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 11
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 11,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -45,13 +40,15 @@
       "Order": 1
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "FISHING",
-        "Amount": "700"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "FISHING",
+          "Amount": "700"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

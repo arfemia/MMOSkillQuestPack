@@ -13,12 +13,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 12
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 12,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -40,20 +35,22 @@
       "TextKey": "objective.text.turn_in"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "600"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "600"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "HARVESTING",
+          "Amount": "600"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "HARVESTING",
-        "Amount": "600"
-      }
-    }
-  ]
+    ]
+  }
 }

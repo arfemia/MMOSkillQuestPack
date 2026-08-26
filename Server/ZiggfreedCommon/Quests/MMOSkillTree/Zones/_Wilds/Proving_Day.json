@@ -16,12 +16,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 5
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 5,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -53,14 +48,16 @@
       "Amount": 15
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Boost_Token",
-      "Params": {
-        "Skill": "ALL",
-        "Multiplier": "2.0",
-        "DurationMinutes": "30"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Boost_Token",
+        "Params": {
+          "Skill": "ALL",
+          "Multiplier": "2.0",
+          "DurationMinutes": "30"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

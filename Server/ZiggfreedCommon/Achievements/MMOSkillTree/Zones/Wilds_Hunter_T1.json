@@ -36,13 +36,13 @@
   "Scoring": {
     "Points": 10
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "kill-entity": {
       "Kind": "KILL_ENTITY",
       "Target": "",
       "MatchMode": "CONTAINS",
       "Zone": "Emerald_Wilds",
       "Amount": 50
     }
-  ]
+  }
 }

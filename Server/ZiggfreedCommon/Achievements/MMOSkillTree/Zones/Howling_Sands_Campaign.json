@@ -4,7 +4,7 @@
     "counterpart because it sits at the end of a much longer road.",
     "",
     "The payout waits in the achievements menu to be collected.",
-    "Criteria is an ORDERED list and the order is permanent: progress is filed per criterion by its",
+    "Criteria is keyed by criterion id, and the KEY is what progress is filed under: renaming a key",
     "POSITION, so adding one to the end is safe while inserting, removing or reordering moves every",
     "player's progress onto a different line.",
     "",
@@ -25,20 +25,22 @@
   "Scoring": {
     "Points": 75
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "complete-quest-sands-apex-of-the-sands": {
       "Kind": "COMPLETE_QUEST",
       "Target": "sands_apex_of_the_sands",
       "Amount": 1
     }
-  ],
-  "ClaimRewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "ALL",
-        "Amount": "5000"
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "ALL",
+          "Amount": "5000"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

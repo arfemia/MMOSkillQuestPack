@@ -20,12 +20,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 21
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 21,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -64,20 +59,22 @@
       "Zone": "Howling_Sands"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "SWORDS",
-        "Amount": "1200"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "SWORDS",
+          "Amount": "1200"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "1200"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "1200"
-      }
-    }
-  ]
+    ]
+  }
 }

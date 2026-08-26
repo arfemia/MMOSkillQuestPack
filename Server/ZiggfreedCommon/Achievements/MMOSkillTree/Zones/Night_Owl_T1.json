@@ -50,21 +50,23 @@
       }
     ]
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "instance-round-won-kweebec": {
       "Kind": "INSTANCE_ROUND_WON",
       "Target": "kweebec:",
       "MatchMode": "PREFIX",
       "Amount": 7
     }
-  ],
-  "ClaimRewards": [
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Nightwarden_Hood",
-        "Count": "1"
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Nightwarden_Hood",
+          "Count": "1"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

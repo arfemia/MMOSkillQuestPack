@@ -17,12 +17,7 @@
   ],
   "Abstract": true,
   "Listing": {
-    "Category": "main"
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "Category": "main",
     "Hidden": true,
     "RequirePrerequisites": true
   },

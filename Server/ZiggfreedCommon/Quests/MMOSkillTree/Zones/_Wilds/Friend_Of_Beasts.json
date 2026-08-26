@@ -12,12 +12,7 @@
   },
   "Listing": {
     "Category": "main",
-    "SortOrder": 13
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    "SortOrder": 13,
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -48,13 +43,15 @@
       "Amount": 1
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "TAMING",
-        "Amount": "800"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "TAMING",
+          "Amount": "800"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

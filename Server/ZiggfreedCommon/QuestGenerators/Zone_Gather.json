@@ -127,21 +127,23 @@
         "MatchMode": "{extra_match}"
       }
     },
-    "Rewards": [
-      {
-        "Kind": "{gift}",
-        "Params": {
-          "Item": "{gift_item}",
-          "Count": "{gift_count}"
+    "Rewards": {
+      "Claim": [
+        {
+          "Kind": "{gift}",
+          "Params": {
+            "Item": "{gift_item}",
+            "Count": "{gift_count}"
+          }
+        },
+        {
+          "Kind": "Mmo_Xp",
+          "Params": {
+            "Skill": "{xp_skill}",
+            "Amount": "{xp_amount}"
+          }
         }
-      },
-      {
-        "Kind": "Mmo_Xp",
-        "Params": {
-          "Skill": "{xp_skill}",
-          "Amount": "{xp_amount}"
-        }
-      }
-    ]
+      ]
+    }
   }
 }

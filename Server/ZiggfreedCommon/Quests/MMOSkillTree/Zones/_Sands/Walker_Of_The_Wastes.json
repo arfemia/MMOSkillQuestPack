@@ -25,18 +25,21 @@
   "Listing": {
     "Category": "main",
     "SortOrder": 20,
-    "Tags": ["Chapter_3"]
+    "Tags": [
+      "Chapter_3"
+    ]
   },
   "Flow": {
     "AutoAccept": true,
-    "AutoTrack": true,
-    "AutoClaim": false
+    "AutoTrack": true
   },
   "Npc": {
     "ViewId": "Guide_Sands"
   },
   "Requires": {
-    "Quests": ["wilds_call_of_the_dunes"]
+    "Quests": [
+      "wilds_call_of_the_dunes"
+    ]
   },
   "Objectives": {
     "talk": {
@@ -46,13 +49,15 @@
       "MatchMode": "EXACT"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Potion_Health_Small",
-        "Count": "2"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Potion_Health_Small",
+          "Count": "2"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

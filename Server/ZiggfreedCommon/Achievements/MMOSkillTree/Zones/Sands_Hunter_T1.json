@@ -36,13 +36,13 @@
   "Scoring": {
     "Points": 15
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "kill-entity": {
       "Kind": "KILL_ENTITY",
       "Target": "",
       "MatchMode": "CONTAINS",
       "Zone": "Howling_Sands",
       "Amount": 50
     }
-  ]
+  }
 }

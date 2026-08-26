@@ -117,28 +117,30 @@
         "Amount": "{amount}"
       }
     },
-    "Rewards": [
-      {
-        "Kind": "{gift}",
-        "Params": {
-          "Item": "{gift_item}",
-          "Count": "{gift_count}"
+    "Rewards": {
+      "Claim": [
+        {
+          "Kind": "{gift}",
+          "Params": {
+            "Item": "{gift_item}",
+            "Count": "{gift_count}"
+          }
+        },
+        {
+          "Kind": "Mmo_Xp",
+          "Params": {
+            "Skill": "{xp1_skill}",
+            "Amount": "{xp1_amount}"
+          }
+        },
+        {
+          "Kind": "{xp2}",
+          "Params": {
+            "Skill": "{xp2_skill}",
+            "Amount": "{xp2_amount}"
+          }
         }
-      },
-      {
-        "Kind": "Mmo_Xp",
-        "Params": {
-          "Skill": "{xp1_skill}",
-          "Amount": "{xp1_amount}"
-        }
-      },
-      {
-        "Kind": "{xp2}",
-        "Params": {
-          "Skill": "{xp2_skill}",
-          "Amount": "{xp2_amount}"
-        }
-      }
-    ]
+      ]
+    }
   }
 }

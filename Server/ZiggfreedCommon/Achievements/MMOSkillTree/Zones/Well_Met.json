@@ -4,9 +4,9 @@
     "id, credited only where that character's own conversation says so with a MarkTalked action -",
     "walking past somebody never counts.",
     "",
-    "Criteria is an ORDERED list and the order is permanent: progress is filed per criterion by its",
-    "POSITION, so adding a fourth giver to the END is safe while reordering these three would move",
-    "every player's progress onto a different character."
+    "Criteria is keyed by criterion id, and the KEY is what progress is filed under: renaming a key",
+    "starts that criterion over for everybody, while adding, removing or reordering entries never",
+    "moves anyone's progress."
   ],
   "Text": {
     "TitleKey": "achievement.well_met.title",
@@ -20,21 +20,21 @@
   "Scoring": {
     "Points": 15
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "talk-to-npc-guide-wilds": {
       "Kind": "TALK_TO_NPC",
       "Target": "Guide_Wilds",
       "Amount": 1
     },
-    {
+    "talk-to-npc-quartermaster-wilds": {
       "Kind": "TALK_TO_NPC",
       "Target": "Quartermaster_Wilds",
       "Amount": 1
     },
-    {
+    "talk-to-npc-guide-sands": {
       "Kind": "TALK_TO_NPC",
       "Target": "Guide_Sands",
       "Amount": 1
     }
-  ]
+  }
 }

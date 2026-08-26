@@ -31,9 +31,6 @@
       "Chapter_2"
     ]
   },
-  "Flow": {
-    "AutoClaim": false
-  },
   "Npc": {
     "ViewId": "MMO_Hub",
     "TurnInId": "Guide_Wilds"
@@ -52,27 +49,29 @@
       "TextKey": "objective.text.turn_in.find"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Food_Bread",
-        "Count": "3"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Food_Bread",
+          "Count": "3"
+        }
+      },
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Bench_Campfire",
+          "Count": "1"
+        }
+      },
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Wilds_Prospectors_Pick",
+          "Count": "1"
+        }
       }
-    },
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Bench_Campfire",
-        "Count": "1"
-      }
-    },
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Wilds_Prospectors_Pick",
-        "Count": "1"
-      }
-    }
-  ]
+    ]
+  }
 }

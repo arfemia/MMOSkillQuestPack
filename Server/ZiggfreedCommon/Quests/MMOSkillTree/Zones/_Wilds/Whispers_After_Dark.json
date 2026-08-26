@@ -25,12 +25,7 @@
     "SortOrder": 7,
     "Tags": [
       "Nightmare"
-    ]
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    ],
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -59,20 +54,22 @@
       "TextKey": "objective.text.quest.kweebec_round_any"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "800"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "800"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "ACROBATICS",
+          "Amount": "800"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "ACROBATICS",
-        "Amount": "800"
-      }
-    }
-  ]
+    ]
+  }
 }

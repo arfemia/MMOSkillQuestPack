@@ -123,9 +123,10 @@ Server/
   strings. An entry with a BLANK `Kind` pays nothing out, which is how a generator row skips a
   reward slot the rest of its family uses.
 - **Achievements are the peer Pattern A asset.** `Criteria` is an ORDERED array and the order is
-  PERMANENT (progress is filed per criterion by POSITION), a child that authors `Criteria` replaces
-  the parent's list whole, `MetaChildren` makes a capstone over other achievements, and `Rewards`
-  land on earning while `ClaimRewards` wait to be collected.
+  keyed by criterion id (the KEY is what progress is filed under, so renaming one starts that
+  criterion over while reordering never moves anyone's tally), a `Parent` child retunes one
+  criterion by key and keeps the rest, `MetaChildren` makes a capstone over other achievements,
+  and the `Rewards` group's `Auto` bucket lands on earning while `Claim` waits to be collected.
 - **A description key with a `{0}` in it gets its number from `Text.TextArgs.Flavor: ["@amount"]`**,
   which the renderer fills from the criterion's own Amount. That is how the two hunter rungs share
   ONE translated line and a balance pass changes a number without touching any locale. `@skill`
@@ -179,7 +180,7 @@ Server/
   matching `OptionalDependencies` entry, never a hard `Dependencies` one. Rounds are counted by `INSTANCE_ROUND_WON`, whose Target is
   `<modId>:<modeId>`; the bare `kweebec:` prefix with `MatchMode: PREFIX` means "any mode that mod
   runs", and `Qualifier` pins one difficulty preset. The three dailies use `Repeat.Reset.Period
-  Daily` (a calendar window, so they all roll over together) plus `Flow.AutoClaim` so a win pays out
+  Daily` (a calendar window, so they all roll over together) plus an `Auto`-bucket reward so a win pays out
   in the instance rather than back at Wren.
 - **Zone scoping**: `"Zone": "Howling_Sands"` on an objective or criterion matches the
   engine's zoneName OR region folder names case-insensitively. The Snake contract
@@ -212,8 +213,10 @@ top-level `"Parent": "<id>"`** (dialogue node ids/map keys + sugar values stay l
 placements those groups are `Identity`:{`Role`/`NpcId`/`Aliases`} (the look and nameplate live on the ROLE file), `Where`,
 `Anchor`, `Limits`, `Lifecycle`, `Interact`:{`Dialogue`/`Open`}; for dialogues
 `Start`:{`First`/`Quests`/`Then`/`Fallback`}, `Nodes`, `Memories`, `Fragments`; for quests
-`Text`/`Listing`/`Flow`/`Repeat`/`Visibility`/`Npc`/`Requires`/`Objectives`/`Rewards`; for
-achievements `Text`/`Listing`/`Scoring`/`Requires`/`Criteria`/`MetaChildren`/`Rewards`/`ClaimRewards`.
+`Text`/`Listing`/`Flow`/`Repeat`/`Npc`/`Requires`/`Objectives`/`Rewards`; for
+achievements `Text`/`Listing`/`Scoring`/`Requires`/`Criteria`/`MetaChildren`/`Rewards`
+(`Hidden`/`RequirePrerequisites`/`Icon` live on `Listing` for both, and `Rewards` is the shared
+`{Auto, Claim}` group).
 `Interact.Dialogue` and `Interact.Open` are two spellings of one destination; author one or the
 other, never both. Quest-driven option visibility derives from `QuestState`, never a parallel
 remembered memory (self-heal convention). Lang values are data-free flavor (no digits, no reward

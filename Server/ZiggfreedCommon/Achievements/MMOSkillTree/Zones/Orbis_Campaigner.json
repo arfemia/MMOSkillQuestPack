@@ -31,16 +31,18 @@
     "emerald_wilds_campaign",
     "howling_sands_campaign"
   ],
-  "ClaimRewards": [
-    {
-      "Kind": "Mmo_Boost_Token",
-      "Params": {
-        "Skill": "ALL",
-        "Multiplier": "3.0",
-        "DurationMinutes": "60"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Boost_Token",
+        "Params": {
+          "Skill": "ALL",
+          "Multiplier": "3.0",
+          "DurationMinutes": "60"
+        }
       }
-    }
-  ],
+    ]
+  },
   "Meta": {
     "mmoskilltree": {
       "ServerFirst": true,

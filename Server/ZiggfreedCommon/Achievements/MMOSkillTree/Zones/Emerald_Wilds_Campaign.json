@@ -4,7 +4,7 @@
     "",
     "The payout is a ClaimReward rather than a Reward, so it waits in the achievements menu to be",
     "collected instead of landing silently at the moment the last quest is turned in.",
-    "Criteria is an ORDERED list and the order is permanent: progress is filed per criterion by its",
+    "Criteria is keyed by criterion id, and the KEY is what progress is filed under: renaming a key",
     "POSITION, so adding one to the end is safe while inserting, removing or reordering moves every",
     "player's progress onto a different line."
   ],
@@ -21,20 +21,22 @@
   "Scoring": {
     "Points": 50
   },
-  "Criteria": [
-    {
+  "Criteria": {
+    "complete-quest-wilds-call-of-the-dunes": {
       "Kind": "COMPLETE_QUEST",
       "Target": "wilds_call_of_the_dunes",
       "Amount": 1
     }
-  ],
-  "ClaimRewards": [
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "ALL",
-        "Amount": "2500"
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "ALL",
+          "Amount": "2500"
+        }
       }
-    }
-  ]
+    ]
+  }
 }

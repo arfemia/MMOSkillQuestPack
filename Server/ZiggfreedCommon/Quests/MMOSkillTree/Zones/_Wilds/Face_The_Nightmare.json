@@ -19,12 +19,7 @@
     "SortOrder": 8,
     "Tags": [
       "Nightmare"
-    ]
-  },
-  "Flow": {
-    "AutoClaim": false
-  },
-  "Visibility": {
+    ],
     "Hidden": true,
     "RequirePrerequisites": true
   },
@@ -54,27 +49,29 @@
       "TextKey": "objective.text.quest.kweebec_round_nightmare"
     }
   },
-  "Rewards": [
-    {
-      "Kind": "Item",
-      "Params": {
-        "Item": "Nightwarden_Longsword",
-        "Count": "1"
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Nightwarden_Longsword",
+          "Count": "1"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "DEFENSE",
+          "Amount": "1500"
+        }
+      },
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "SWORDS",
+          "Amount": "1500"
+        }
       }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "DEFENSE",
-        "Amount": "1500"
-      }
-    },
-    {
-      "Kind": "Mmo_Xp",
-      "Params": {
-        "Skill": "SWORDS",
-        "Amount": "1500"
-      }
-    }
-  ]
+    ]
+  }
 }
