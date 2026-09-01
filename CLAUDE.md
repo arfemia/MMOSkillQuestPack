@@ -1,10 +1,12 @@
 # CLAUDE.md - MMOSkillQuestPack
 
 Zone questlines for MMO Skill Tree **1.6.0+** (hard dependency in `manifest.json`).
-The jar ships only the engine (quest givers, dialogues, zone scoping) plus a small onboarding set - the
-five-quest chain (getting_started -> craft_starter_tools -> gather_the_basics -> into_the_fray ->
-climbing_the_ranks), the repeatable forgot_something, and four side quests under Onboarding/SideQuests/;
-this pack ships the actual Orbis campaign content.
+The jar ships only the engine (quest givers, dialogues, zone scoping) plus a small starter set - the
+five-quest onboarding chain (getting_started -> craft_starter_tools -> gather_the_basics ->
+into_the_fray -> climbing_the_ranks), the repeatable forgot_something, four side quests under
+Onboarding/SideQuests/, and the Forgotten Temple arc under Temple/ (what_the_stones_remember ->
+the_watch_below -> keeper_of_the_deep, plus the temple_tribute daily) at a second standing of the
+guide inside the temple; this pack ships the actual Orbis campaign content.
 Without it the quest log is minimal by design (the bounty-pack philosophy).
 
 **This pack is the reference model for the new-shape content layout**: quests, quest
@@ -78,9 +80,11 @@ Server/
   that is FAIL-CLOSED: no entry, or a typo, anchors to nothing). `Where` authors
   `Match: ["default"]` (an exact world-name pattern), so givers appear in the ordinary world
   and in no instance.
-  `/mmonpc list` shows what targets a world and what is standing, `/mmonpc structures` lists
-  seen markerIds to author `MarkerIds`, `/mmonpc reconcile [--arg1=<world>]` forces a sweep,
-  and `/mmonpc disable --arg1=<id>` despawns one immediately.
+  `/mmonpc list` shows what targets a world and what is standing, `/mmonpc list --arg1=structures`
+  lists the marker ids the anchor engine has SEEN to author `MarkerIds` (`--arg1=markers` scans the
+  live entity store instead, so the two disagreeing localizes a sighting problem),
+  `/mmonpc reconcile [--arg1=<world>]` forces a sweep, and `/mmonpc disable --arg1=<id>` despawns
+  one immediately.
 - **Who a giver IS is its `Identity.Role`; where press F GOES is `Interact.Dialogue`.** None of the
   three placements authors an `Identity.NpcId`: with none, the character IS the role it names, so
   `Guide_Wilds` / `Guide_Sands` / `Quartermaster_Wilds` are the ids the pack's quests name as
@@ -167,12 +171,12 @@ Server/
   is standing at, which is what every "what work do you have" option in this pack writes; naming a
   different character is `{"Type": "Quests", "Npc": "<id>"}`. See CONTENT_PACKS.md "Dialogue
   authoring".
-- **Hub dialogue**: the jar owns it (`mmo_hub_intro`), and the hub placement points at it.
+- **Hub dialogue**: the jar owns it (`Mmo_Hub_Intro`), and the hub placement points at it.
   To give the guide a different greeting, override the jar's hub placement by dropping your
   own `Server/ZiggfreedCommon/NpcPlacements/Mmo_Hub.json` (same id wins) whose
   `Interact.Dialogue` names your own conversation. It is automatically with whichever character
   the placement stands, so nothing here ever names an npc id.
-- **Campaign flow**: wilds_meet_the_guide (offered at the jar hub, `Npc.ViewId: MMO_Hub`, gated on
+- **Campaign flow**: wilds_meet_the_guide (offered at the jar hub, `Npc.ViewId: Mmo_Hub`, gated on
   the jar `gather_the_basics` tutorial; one blank-target `TURN_IN` step locked to `Guide_Wilds`,
   which renders as "Go to Ranger Wren" and fires the map marker; Wren's `QuestState ACTIVE`-gated
   intro option `TurnIn`s it) ->
@@ -201,13 +205,13 @@ Server/
   Daily` (a calendar window, so they all roll over together) plus an `Auto`-bucket reward so a win pays out
   in the instance rather than back at Wren.
 - **Zone scoping**: `"Zone": "Howling_Sands"` on an objective or criterion matches the
-  engine's zoneName OR region folder names case-insensitively. The Snake contract
-  needs it (snakes spawn in zones 1, 2 and 3); the hunter achievement chains are
-  fully zone-scoped kill counters.
+  engine's zoneName OR region folder names case-insensitively. The snakes step in
+  sands_thorns_and_stings needs it (snakes spawn in zones 1, 2 and 3); the hunter
+  achievement chains are fully zone-scoped kill counters.
 - **Level floors on the campaign ramp are the SUMMED total of all skill levels**
-  (`MMO_TotalLevel`), not the highest skill. Ramp: wilds 10/20 -> sands 40/60/80/100. The two
+  (`MMO_TotalLevel`), not the highest skill. Ramp: wilds 10/20 -> sands 40/60/80/100. The three
   desert trade quests gate on their own skill instead (`MMO_Level_MINING` /
-  `MMO_Level_WOODCUTTING`, 15 each).
+  `MMO_Level_WOODCUTTING` / `MMO_Level_FISHING`, 15 each).
 - **Verified-id notes** (ids re-verify against `hytale-shared-source/HytaleAssets/Server/**`, id = filename; `hytale-resources/{items,mobs}-index.json` for a fast id->name lookup): wood targets are CONTAINS substrings
   (`Wood_Gumboab`, `Wood_Palm` - the items are `Wood_<Species>_Trunk*`); fish are
   CONTAINS bare names (matches both the role id and `Fish_<Name>_Item`); Salmon
