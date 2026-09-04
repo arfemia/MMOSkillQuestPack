@@ -31,8 +31,7 @@
       "Target": "Ingredient_Hide_Light",
       "Amount": 10,
       "MatchMode": "EXACT",
-      "TurnInNpcId": "giver",
-      "TextKey": "objective.text.turn_in"
+      "TurnInNpcId": "giver"
     }
   },
   "Rewards": {
