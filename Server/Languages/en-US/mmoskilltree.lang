@@ -5,6 +5,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Eat a hearty meal
+objective.text.quest.brood_queen = Bring down {1} under the old kingdom
 
 # ---- Kweebec Nightmare objective lines ----
 objective.text.quest.kweebec_round_any = Win a Kweebec Nightmare round
@@ -63,6 +64,8 @@ quest.sands_bones_of_the_old_kingdom.title = Bones of the Old Kingdom
 quest.sands_bones_of_the_old_kingdom.flavor = Sand-bleached soldiers still patrol the ruins. Bring Ashkar the essence they guard.
 quest.sands_apex_of_the_sands.title = Apex of the Sands
 quest.sands_apex_of_the_sands.flavor = Sabertooth, crocodile, hyena. Prove there is no fiercer hunter in the Howling Sands than you.
+quest.sands_brood_below.title = The Brood Below
+quest.sands_brood_below.flavor = Every raider you culled crawled up from one hive, and a hive has a queen. She sleeps under the old kingdom, Ashkar says, and she is done sleeping.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Easy there, wanderer. You have the look of someone fresh off the road. I am Wren - I keep watch over this stretch of the Wilds. Stay close to the fires until you find your feet.
@@ -110,6 +113,18 @@ dialogue.guide_sands.desert_lore.text = The Howling Sands earn the name when the
 dialogue.guide_sands.desert_lore.opt.more = What happened to the old kingdom?
 dialogue.guide_sands.desert_lore_deep.text = Kings raised quarries and armies, and the sand took both. Their soldiers still walk the ruins with empty eyes. Whatever held them together, I want it OFF my dunes.
 dialogue.guide_sands.desert_lore_deep.opt.back = I will see to it.
+dialogue.guide_sands.greet_known.opt.queen = What is stirring under the ruins?
+dialogue.guide_sands.brood_queen.text = You have thinned the hives. Good. It was not enough. Every raider you cut down crawled up from one clutch, and something down there lays them faster than you kill them. A <b>brood queen</b>, older than the ruins she nests under. The sabertooths give her a wide berth. So did I, until now.
+dialogue.guide_sands.brood_queen.opt.where = Where do I find her?
+dialogue.guide_sands.brood_queen_where.text = Under the <color is="#ffd97a">old kingdom</color>, where the sand hums if you stand still long enough. I cannot mark it for you; the dunes move and the maps do not. Walk the ruins until the ground sings, and she will come up to meet you. Bring friends. She will.
+dialogue.guide_sands.brood_queen_where.opt.back = I will find her.
+
+# ---- Howling Sands boss: the Scarak Brood Queen (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = The Brood Queen Rises
+boss.sands_brood_queen.rises.sub = The sand under the old kingdom is moving
+boss.sands_brood_queen.phase = The queen shrieks and the brood comes up
+boss.sands_brood_queen.defeated = The Brood Queen is dead. The hive goes quiet.
+boss.sands_brood_queen.wiped = The Brood Queen keeps her hive.
 
 
 # ---- Pack achievements ----

@@ -1,0 +1,57 @@
+{
+  "$Comment": "A Scarak egg clutch that keeps one brood spawn marker alive: the SpawnMarkerBlock component below stands the Sands_Brood_Marker entity two blocks above wherever this block is placed, and the Brood Queen encounter script fires those markers with each phase's wave of brood. The pack's MMOSkillQuestPack/Sands_Brood_Queen_Spawners prefab stamps five of these around the queen's clutch; stamp more to raise the cap on live brood, or place them by hand to shape where the brood rises. The marker floats two blocks up rather than one so a clutch that landed a step below the rolling sand still puts its marker in open air. The look is the game's own Scarak egg sack, a little smaller than the queen's. No Gathering group and no Support rule, so nobody can harvest it away and it never pops off uneven ground.",
+  "TranslationProperties": {
+    "Name": "server.items.Sands_Brood_Spawner.name"
+  },
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "Interactions": {
+    "Primary": "Block_Primary",
+    "Secondary": "Block_Secondary"
+  },
+  "BlockType": {
+    "BlockEntity": {
+      "Components": {
+        "SpawnMarkerBlock": {
+          "Config": {
+            "SpawnMarker": "Sands_Brood_Marker",
+            "MarkerOffset": {
+              "X": 0,
+              "Y": 2,
+              "Z": 0
+            }
+          }
+        }
+      }
+    },
+    "DrawType": "Model",
+    "CustomModel": "Blocks/Dungeons/EggSacks_Scarak_Medium.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Texture": "Blocks/Dungeons/EggSacks_Scarak_Medium_Texture.png",
+        "Weight": 1
+      }
+    ],
+    "CustomModelAnimation": "Blocks/Dungeons/EggSacks_Scarak_Medium_Idle.blockyanim",
+    "CustomModelScale": 0.8,
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "HitboxType": "Block_Half",
+    "Flags": {},
+    "RandomRotation": "YawStep1",
+    "BlockParticleSetId": "Stone",
+    "ParticleColor": "#6eb3d5",
+    "BlockSoundSetId": "Cocoon",
+    "PhysicalMaterialId": "Foliage",
+    "TextureComputedColor": "#3F4853"
+  },
+  "PlayerAnimationsId": "Block",
+  "Icon": "Icons/ItemsGenerated/Container_Scarak_Eggsacks.png",
+  "Tags": {
+    "Type": [
+      "Deco"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood"
+}

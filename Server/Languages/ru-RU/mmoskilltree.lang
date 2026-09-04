@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Съешьте сытную трапезу
+objective.text.quest.brood_queen = Сразите под древним королевством: {1}
 
 # ---- Цели Kweebec Nightmare ----
 objective.text.quest.kweebec_round_any = Выиграйте раунд Kweebec Nightmare
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Кости древнего кор�
 quest.sands_bones_of_the_old_kingdom.flavor = Выбеленные песком солдаты всё ещё патрулируют руины. Принесите Ashkar эссенцию, которую они стерегут.
 quest.sands_apex_of_the_sands.title = Вершина песков
 quest.sands_apex_of_the_sands.flavor = Саблезуб, крокодил, гиена. Докажите, что нет в Howling Sands охотника свирепее вас.
+quest.sands_brood_below.title = Выводок внизу
+quest.sands_brood_below.flavor = Каждый налётчик, которого вы извели, выполз из одного и того же улья, а у улья есть матка. Она спит под древним королевством, говорит Ashkar, и спать она закончила.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Полегче, странник. У тебя вид того, кто только-только сошёл с дороги. Я Wren, приглядываю за этим уголком диких земель. Держись поближе к кострам, пока не освоишься.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Howling Sands оправдывают с�
 dialogue.guide_sands.desert_lore.opt.more = Что случилось с древним королевством?
 dialogue.guide_sands.desert_lore_deep.text = Короли возводили каменоломни и армии, а песок забрал и то, и другое. Их солдаты всё ещё бродят по руинам с пустыми глазами. Что бы ни держало их вместе, я хочу, чтобы этого НЕ БЫЛО на моих дюнах.
 dialogue.guide_sands.desert_lore_deep.opt.back = Я этим займусь.
+dialogue.guide_sands.greet_known.opt.queen = Что шевелится под руинами?
+dialogue.guide_sands.brood_queen.text = Ты проредил ульи. Хорошо. Этого мало. Каждый налётчик, которого ты срубил, выполз из одной кладки, и там внизу что-то кладёт их быстрее, чем ты убиваешь. <b>Матка выводка</b>, старше руин, под которыми гнездится. Саблезубы обходят её стороной. И я обходил, до сих пор.
+dialogue.guide_sands.brood_queen.opt.where = Где мне её искать?
+dialogue.guide_sands.brood_queen_where.text = Под <color is="#ffd97a">древним королевством</color>, там, где песок гудит, если постоять неподвижно достаточно долго. Отметить на карте не могу; дюны движутся, а карты нет. Ходи по руинам, пока земля не запоёт, и она поднимется тебе навстречу. Приводи друзей. Она приведёт своих.
+dialogue.guide_sands.brood_queen_where.opt.back = Я её найду.
+
+# ---- Босс Howling Sands: матка выводка скараков (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = Матка выводка поднимается
+boss.sands_brood_queen.rises.sub = Песок под древним королевством пришёл в движение
+boss.sands_brood_queen.phase = Матка визжит, и выводок лезет наверх
+boss.sands_brood_queen.defeated = Матка выводка мертва. Улей затихает.
+boss.sands_brood_queen.wiped = Матка выводка сохранила свой улей.
 
 
 # ---- Pack achievements ----

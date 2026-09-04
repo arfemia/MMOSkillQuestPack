@@ -1,0 +1,22 @@
+{
+  "$Comment": "The spawn marker the Scarak Brood Queen's brood rises from: a Scarak fighter or a louse, picked by weight each time the marker fires. ManualTrigger means it never spawns on its own: the Brood Queen encounter script fires these with each phase's wave, and a marker whose spawn is still alive does not fire again, so how many of these stand around the queen is the cap on live brood (the pack's prefab stamps five, as Sands_Brood_Spawner blocks). Respawn is real time here rather than the world clock, so a clutch whose spawn died is free to fire again a few seconds later on the next wave however the day is running; RealtimeRespawnTime is that pause. Raise the fighter's Weight for a harder brood, the louse's for a swarmier one. DeactivationDistance and DeactivationTime match the queen's own marker so nothing is packed away under a fight. MaxDropHeight is generous because the marker floats two blocks over its clutch, on ground that rolls.",
+  "Model": "NPC_Spawn_Marker",
+  "NPCs": [
+    {
+      "Name": "Scarak_Fighter",
+      "Weight": 60,
+      "RealtimeRespawnTime": 20
+    },
+    {
+      "Name": "Scarak_Louse",
+      "Weight": 40,
+      "RealtimeRespawnTime": 20
+    }
+  ],
+  "ExclusionRadius": 0,
+  "RealtimeRespawn": true,
+  "MaxDropHeight": 8,
+  "DeactivationDistance": 512,
+  "DeactivationTime": 150,
+  "ManualTrigger": true
+}

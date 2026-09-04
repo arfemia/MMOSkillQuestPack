@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Pressione [{key}] para conversar
 Guide_Wilds.name = Patrulheira Wren
 Quartermaster_Wilds.name = Intendente Bramble
 Guide_Sands.name = Andarilho das Dunas Ashkar
+
+# O chefe de Howling Sands. Um só nome para seus três papéis de fase (Sands_Brood_Queen, _Phase2,
+# _Phase3), para que a placa e a barra de chefe leiam o mesmo a cada troca.
+Sands_Brood_Queen.name = Rainha da Ninhada scarak

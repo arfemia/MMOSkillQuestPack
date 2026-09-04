@@ -1,0 +1,19 @@
+{
+  "$Comment": [
+    "What a member of the Brood Queen fight sees as she changes and the brood comes up: one quiet",
+    "line in the notice feed, in the plain tone, because a phase is a beat inside the fight and not",
+    "a payout. The queen's binding row points its PhaseChanged beat here (Feedback.PhaseChanged),",
+    "so the words belong to this fight alone.",
+    "",
+    "The moment fires once per live member at each phase and carries 'phase' (the script's state",
+    "name, Phase_2 or Phase_3) should a line want to name it; this one keeps the same words for",
+    "both changes on purpose, since the brood rising says which is which. Set Tone to Error for a",
+    "red line, or add a Sound for a hiss."
+  ],
+  "Toast": {
+    "Title": {
+      "Key": "mmoskilltree.boss.sands_brood_queen.phase"
+    },
+    "Tone": "Info"
+  }
+}

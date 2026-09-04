@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Iss eine herzhafte Mahlzeit
+objective.text.quest.brood_queen = Bring {1} unter dem alten Königreich zu Fall
 
 # ---- Kweebec-Nightmare-Ziele ----
 objective.text.quest.kweebec_round_any = Gewinne eine Runde Kweebec Nightmare
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Knochen des alten Königreichs
 quest.sands_bones_of_the_old_kingdom.flavor = Sandgebleichte Soldaten patrouillieren noch immer die Ruinen. Bring Ashkar die Essenz, die sie bewachen.
 quest.sands_apex_of_the_sands.title = Spitze der Sande
 quest.sands_apex_of_the_sands.flavor = Säbelzahn, Krokodil, Hyäne. Beweise, dass es in den Howling Sands keinen wilderen Jäger gibt als dich.
+quest.sands_brood_below.title = Die Brut in der Tiefe
+quest.sands_brood_below.flavor = Jeder Räuber, den du erlegt hast, ist aus ein und demselben Bau gekrochen, und ein Bau hat eine Königin. Sie schläft unter dem alten Königreich, sagt Ashkar, und mit dem Schlafen ist sie fertig.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Ganz ruhig, Wanderer. Du siehst aus wie jemand, der frisch von der Strasse kommt. Ich bin Wren - ich halte über diesen Teil der Wildnis Wache. Bleib nah bei den Feuern, bis du Fuss gefasst hast.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Die Howling Sands machen ihrem Namen all
 dialogue.guide_sands.desert_lore.opt.more = Was geschah mit dem alten Königreich?
 dialogue.guide_sands.desert_lore_deep.text = Könige hoben Steinbrüche und Heere aus, und der Sand nahm beide. Ihre Soldaten gehen noch immer mit leeren Augen durch die Ruinen. Was auch immer sie zusammenhält, ich will es WEG von meinen Dünen.
 dialogue.guide_sands.desert_lore_deep.opt.back = Ich kümmere mich darum.
+dialogue.guide_sands.greet_known.opt.queen = Was regt sich unter den Ruinen?
+dialogue.guide_sands.brood_queen.text = Du hast die Baue ausgedünnt. Gut. Es hat nicht gereicht. Jeder Räuber, den du niedergemacht hast, ist aus einem einzigen Gelege gekrochen, und dort unten legt etwas schneller nach, als du töten kannst. Eine <b>Brutkönigin</b>, älter als die Ruinen, unter denen sie nistet. Die Säbelzähne machen einen weiten Bogen um sie. Ich auch, bis jetzt.
+dialogue.guide_sands.brood_queen.opt.where = Wo finde ich sie?
+dialogue.guide_sands.brood_queen_where.text = Unter dem <color is="#ffd97a">alten Königreich</color>, wo der Sand summt, wenn du lange genug still stehst. Ich kann es dir nicht auf der Karte markieren; die Dünen wandern, die Karten nicht. Geh durch die Ruinen, bis der Boden singt, und sie kommt herauf, um dich zu empfangen. Bring Freunde mit. Sie tut es auch.
+dialogue.guide_sands.brood_queen_where.opt.back = Ich werde sie finden.
+
+# ---- Howling-Sands-Boss: die Scarak-Brutkönigin (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = Die Brutkönigin erhebt sich
+boss.sands_brood_queen.rises.sub = Der Sand unter dem alten Königreich bewegt sich
+boss.sands_brood_queen.phase = Die Königin kreischt, und die Brut kommt herauf
+boss.sands_brood_queen.defeated = Die Brutkönigin ist tot. Der Bau wird still.
+boss.sands_brood_queen.wiped = Die Brutkönigin behält ihren Bau.
 
 
 # ---- Pack achievements ----

@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Egyél meg egy kiadós ételt
+objective.text.quest.brood_queen = Végezz vele a régi királyság alatt: {1}
 
 # ---- Kweebec Nightmare célok ----
 objective.text.quest.kweebec_round_any = Nyerj meg egy Kweebec Nightmare kört
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = A régi királyság csontjai
 quest.sands_bones_of_the_old_kingdom.flavor = Homokfehérre fakult katonák még mindig járőröznek a romok között. Vidd el Ashkarnak az eszenciát, amit őriznek.
 quest.sands_apex_of_the_sands.title = A homok csúcsragadozója
 quest.sands_apex_of_the_sands.flavor = Kardfogú, krokodil, hiéna. Bizonyítsd be, hogy nincs nálad vadabb vadász a Howling Sands területén.
+quest.sands_brood_below.title = A mélység fészekalja
+quest.sands_brood_below.flavor = Minden portyázó, amit levágtál, ugyanabból a kaptárból mászott elő, és a kaptárnak királynője van. A régi királyság alatt alszik, mondja Ashkar, és az alvást befejezte.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Nyugalom, vándor. Olyan a tekinteted, mint aki épp most jött az útról. Wren vagyok - én vigyázok a Vadon eme szakaszára. Maradj a tüzek közelében, amíg lábra nem kapsz.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = A Howling Sands akkor szolgál rá a nev
 dialogue.guide_sands.desert_lore.opt.more = Mi történt a régi királysággal?
 dialogue.guide_sands.desert_lore_deep.text = A királyok bányákat és hadseregeket emeltek, és a homok mindkettőt elnyelte. A katonáik még mindig a romok közt járnak, üres szemekkel. Bármi is tartja össze őket, azt akarom, hogy ELTŰNJÖN a dűnéimről.
 dialogue.guide_sands.desert_lore_deep.opt.back = Gondoskodom róla.
+dialogue.guide_sands.greet_known.opt.queen = Mi mozgolódik a romok alatt?
+dialogue.guide_sands.brood_queen.text = Megritkítottad a kaptárakat. Jó. Nem volt elég. Minden portyázó, amit levágtál, egyetlen fészekaljból mászott elő, és odalent valami gyorsabban rakja őket, mint ahogy te ölöd. Egy <b>fészekkirálynő</b>, vénebb a romoknál, amelyek alatt fészkel. A kardfogúak messzire elkerülik. Én is, mostanáig.
+dialogue.guide_sands.brood_queen.opt.where = Hol találom meg?
+dialogue.guide_sands.brood_queen_where.text = A <color is="#ffd97a">régi királyság</color> alatt, ahol a homok zúg, ha elég sokáig állsz mozdulatlanul. Nem tudom megjelölni neked; a dűnék vándorolnak, a térképek nem. Járd a romokat, míg a föld énekelni nem kezd, és feljön, hogy fogadjon. Hozz barátokat. Ő is hoz.
+dialogue.guide_sands.brood_queen_where.opt.back = Megtalálom.
+
+# ---- A Howling Sands főellensége: a Scarak fészekkirálynő (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = A Fészekkirálynő felemelkedik
+boss.sands_brood_queen.rises.sub = Mozog a homok a régi királyság alatt
+boss.sands_brood_queen.phase = A királynő rikolt, és feljön a fészekalj
+boss.sands_brood_queen.defeated = A Fészekkirálynő halott. A kaptár elcsendesedik.
+boss.sands_brood_queen.wiped = A Fészekkirálynő megtartja a kaptárát.
 
 
 # ---- Pack achievements ----

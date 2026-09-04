@@ -1,0 +1,414 @@
+{
+  "$Comment": [
+    "The Scarak Brood Queen's fight, run by the game's own encounter scripts, at a site a server owner",
+    "chooses once. The pack ships the arena as the MMOSkillQuestPack/Sands_Brood_Queen_Spawners prefab",
+    "(the queen's clutch and five brood clutches, each a block that keeps a spawn marker alive) and",
+    "this script; the owner pastes the prefab where the fight belongs and stands this script up on it",
+    "with /zigencounter spawn Sands_Brood_Queen_Encounter, once per world. The encounter entity is",
+    "saved with the world and wakes on its own from then on. The script raises the queen, runs her",
+    "three phases and her brood, and tells the Ziggfreed Common library every beat through the zc:",
+    "signals, which is how the party's health scale and credit work, how the loot is paid, and how the",
+    "notices in Server/ZiggfreedCommon/FeedbackMoments/Sands_Brood_Queen_*.json fire. What the server",
+    "owes for the fight (the party scale, the loot, the leaderboard, the map marker, the notices) is",
+    "the binding row Server/ZiggfreedCommon/Encounters/Sands_Brood_Queen_Encounter.json; nothing about",
+    "the fight itself is written anywhere but here and in the three Sands_Brood_Queen roles.",
+    "",
+    "The shape follows Ziggfreed Common's Zc_Encounter_Base and adds the phase states the base leaves",
+    "to a script of its own. The first two instructions run every tick beside whatever state the",
+    "fight is in: the Player sensor keeps the roster the boss bar, the scale and the credit read",
+    "(eighty blocks around the site, so a bow at the edge of the arena still counts), and",
+    "TriggerSpawners raises the queen from the Sands_Brood_Queen_Marker while the fight is in Intro",
+    "and no boss is bound yet. Nothing here runs while nobody is near: the site's chunk sleeps with",
+    "the rest of the world, and the script picks up where it was when a player walks back in. The",
+    "release, on the Target sensor alone, makes the queen vulnerable, puts the bar up under her name,",
+    "sends zc:engaged and moves into Phase_1; it keys on the bound boss and never on a beacon.",
+    "",
+    "Intro also carries the fight's safety net: if no queen has bound within the Timeout below (her",
+    "marker still resting after the last kill, a missing clutch, a role that failed to load), the",
+    "script sends zc:mmoquestpack:no_show and retires to Complete, and a listener can notice a boss",
+    "that never rose. The countdown stops the instant a boss binds. A player who waits at a resting",
+    "site sees this loop: no_show, Complete's wait, another try.",
+    "",
+    "The phases. Phase_1 is the queen as spawned. At half her health the role changes in place to",
+    "Sands_Brood_Queen_Phase2 (the engine keeps her aggro, her target slot and her current health",
+    "across the change; only the maximum re-rolls), zc:phase:Phase_2 goes out, and the first brood",
+    "of three rises from the Sands_Brood_Marker clutches. At half of what she carried into Phase_2",
+    "she changes to Sands_Brood_Queen_Phase3, with a brood of four. Each phase role's MaxHealth is",
+    "authored as the health she carries into that phase, so the bar reads full at every phase start",
+    "and the three phases together add up to the first role's 1200: the party deals 600 in Phase_1,",
+    "300 in Phase_2 and 300 in Phase_3, before the binding row's party scale. Retune the first role to",
+    "lengthen the whole fight, retune HealthRange here to move where the phases begin. Count on the",
+    "broods is how many clutches fire; a clutch whose spawn is still alive does not fire again, so",
+    "five stamped clutches cap the live brood at five however the waves fall. She also calls two",
+    "fighters of her own the moment she is alerted and hatches lice through the fight, which is the",
+    "template's doing and not this script's.",
+    "",
+    "The defeat beat sits in every phase, because the queen can fall in any of them: when the Target",
+    "sensor loses the boss the bar comes down, the slot is released, zc:defeated goes out and the",
+    "script retires to Complete. The library settles the credit the instant the death lands, so the",
+    "beat here is the authoritative place the bar comes down. Every Target sensor reaches 256 blocks",
+    "from the encounter entity, far past anywhere the queen will follow a party (she holds her ground",
+    "and throws), because a boss beyond the range would read as a defeat and pay out.",
+    "",
+    "A party that dies or walks off leaves her standing, and that is the other half of an open-world",
+    "fight. The library settles the run as a wipe once nobody has been in the roster for the binding",
+    "row's WipeGraceSeconds; a little after that, each phase's last instruction (no player within",
+    "eighty blocks for the Timeout there) takes the bar down and moves to Standing, where the queen",
+    "waits, wounded, with her slot still bound. The next player to come within eighty blocks sends",
+    "zc:reset, which opens a fresh run, and Intro's release puts the bar back up and re-engages her",
+    "at the health she was left with. Keep that Timeout at or above WipeGraceSeconds so the library",
+    "has settled the wipe before the script stands down. Should the queen be gone while Standing, the",
+    "defeat beat there retires the script to Complete the same way a kill does.",
+    "",
+    "Complete is the site's rest: the Timeout there is how long after the fight ends the script",
+    "waits before it sends zc:reset and returns to Intro to try the marker again. It is one of two",
+    "gates on the next fight, and the smaller one; the queen's own marker keeps its own cadence (one",
+    "in-game day after she dies, SpawnAfterGameTime in Sands_Brood_Queen_Marker), and both must pass",
+    "before she rises again. Turn the marker to change how often she comes back; turn this Timeout",
+    "only to change how long the site rests right after a kill. There is no fight music here; the",
+    "pack ships no music of its own.",
+    "",
+    "Override this file by id from your own pack to change the fight for every server, or retune the",
+    "queen's roles under Server/NPC/Roles/MMOSkillQuestPack for the numbers alone. Keep the file name",
+    "distinct from every NPC role's: an encounter script and a role share one id namespace, and a",
+    "script named after a role replaces that role at load."
+  ],
+  "Class": "EncounterManager",
+  "Type": "Generic",
+  "StartState": "Intro",
+  "CleanupOnRemove": true,
+  "Instructions": [
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "Player",
+        "Range": 80,
+        "Collector": {
+          "Type": "EncounterMembers"
+        }
+      },
+      "Actions": [
+        {
+          "Type": "Nothing"
+        }
+      ]
+    },
+    {
+      "Continue": true,
+      "Sensor": {
+        "Type": "And",
+        "Sensors": [
+          {
+            "Type": "State",
+            "State": "Intro"
+          },
+          {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "Boss",
+              "Range": 256
+            }
+          }
+        ]
+      },
+      "Actions": [
+        {
+          "Type": "TriggerSpawners",
+          "Count": 1,
+          "Range": 30,
+          "SpawnMarker": "Sands_Brood_Queen_Marker",
+          "TargetSlot": "Boss",
+          "Rebind": true
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Intro"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Target",
+            "TargetSlot": "Boss",
+            "Range": 256
+          },
+          "Actions": [
+            {
+              "Type": "SetTargetNPCInvulnerable",
+              "Invulnerable": false
+            },
+            {
+              "Type": "SetEncounterBossBar",
+              "Name": "npcs.Sands_Brood_Queen.name"
+            },
+            {
+              "Type": "SignalWorldEvent",
+              "SignalId": "zc:engaged"
+            },
+            {
+              "Type": "State",
+              "State": "Phase_1"
+            }
+          ]
+        },
+        {
+          "Sensor": {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Target",
+              "TargetSlot": "Boss",
+              "Range": 256
+            }
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 30, 30 ]
+            },
+            {
+              "Type": "SignalWorldEvent",
+              "SignalId": "zc:mmoquestpack:no_show"
+            },
+            {
+              "Type": "State",
+              "State": "Complete"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Phase_1"
+      },
+      "Instructions": [
+        {
+          "Reference": "Zc_Phase_At_Health",
+          "Modify": {
+            "_ExportStates": [ "Phase_2" ],
+            "Slot": "Boss",
+            "Range": 256,
+            "HealthRange": [ 0, 0.5 ],
+            "Signal": "zc:phase:Phase_2",
+            "SwapRole": true,
+            "Role": "Sands_Brood_Queen_Phase2"
+          }
+        },
+        {
+          "Reference": "Zc_Defeat_Beat",
+          "Modify": {
+            "_ExportStates": [ "Complete" ],
+            "Slot": "Boss",
+            "Range": 256
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Player",
+              "Range": 80
+            }
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 60, 60 ]
+            },
+            {
+              "Type": "ClearEncounterBossBar"
+            },
+            {
+              "Type": "State",
+              "State": "Standing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Phase_2"
+      },
+      "Instructions": [
+        {
+          "Reference": "Zc_Adds_Wave",
+          "Modify": {
+            "Spawner": "Sands_Brood_Marker",
+            "Count": 3,
+            "Range": 30,
+            "Signal": "zc:wave:Phase_2"
+          }
+        },
+        {
+          "Reference": "Zc_Phase_At_Health",
+          "Modify": {
+            "_ExportStates": [ "Phase_3" ],
+            "Slot": "Boss",
+            "Range": 256,
+            "HealthRange": [ 0, 0.5 ],
+            "Signal": "zc:phase:Phase_3",
+            "SwapRole": true,
+            "Role": "Sands_Brood_Queen_Phase3"
+          }
+        },
+        {
+          "Reference": "Zc_Defeat_Beat",
+          "Modify": {
+            "_ExportStates": [ "Complete" ],
+            "Slot": "Boss",
+            "Range": 256
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Player",
+              "Range": 80
+            }
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 60, 60 ]
+            },
+            {
+              "Type": "ClearEncounterBossBar"
+            },
+            {
+              "Type": "State",
+              "State": "Standing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Phase_3"
+      },
+      "Instructions": [
+        {
+          "Reference": "Zc_Adds_Wave",
+          "Modify": {
+            "Spawner": "Sands_Brood_Marker",
+            "Count": 4,
+            "Range": 30,
+            "Signal": "zc:wave:Phase_3"
+          }
+        },
+        {
+          "Reference": "Zc_Defeat_Beat",
+          "Modify": {
+            "_ExportStates": [ "Complete" ],
+            "Slot": "Boss",
+            "Range": 256
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "Not",
+            "Sensor": {
+              "Type": "Player",
+              "Range": 80
+            }
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 60, 60 ]
+            },
+            {
+              "Type": "ClearEncounterBossBar"
+            },
+            {
+              "Type": "State",
+              "State": "Standing"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Standing"
+      },
+      "Instructions": [
+        {
+          "Reference": "Zc_Defeat_Beat",
+          "Modify": {
+            "_ExportStates": [ "Complete" ],
+            "Slot": "Boss",
+            "Range": 256
+          }
+        },
+        {
+          "Sensor": {
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Target",
+                "TargetSlot": "Boss",
+                "Range": 256
+              },
+              {
+                "Type": "Player",
+                "Range": 80
+              }
+            ]
+          },
+          "Actions": [
+            {
+              "Type": "SignalWorldEvent",
+              "SignalId": "zc:reset"
+            },
+            {
+              "Type": "State",
+              "State": "Intro"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Sensor": {
+        "Type": "State",
+        "State": "Complete"
+      },
+      "Instructions": [
+        {
+          "Sensor": {
+            "Type": "Any"
+          },
+          "ActionsBlocking": true,
+          "Actions": [
+            {
+              "Type": "Timeout",
+              "Delay": [ 300, 300 ]
+            },
+            {
+              "Type": "SignalWorldEvent",
+              "SignalId": "zc:reset"
+            },
+            {
+              "Type": "State",
+              "State": "Intro"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

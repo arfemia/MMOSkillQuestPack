@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Drücke [{key}], um zu reden
 Guide_Wilds.name = Waldläufer Wren
 Quartermaster_Wilds.name = Quartiermeister Bramble
 Guide_Sands.name = Dünenwanderer Ashkar
+
+# Der Boss der Howling Sands. Ein Name für alle drei Phasenrollen (Sands_Brood_Queen, _Phase2,
+# _Phase3), damit Namensschild und Bossleiste bei jedem Wechsel dasselbe zeigen.
+Sands_Brood_Queen.name = Scarak-Brutkönigin

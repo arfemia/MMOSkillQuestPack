@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Premi [{key}] per parlare
 Guide_Wilds.name = Ranger Wren
 Quartermaster_Wilds.name = Quartiermastro Bramble
 Guide_Sands.name = Camminatrice delle Dune Ashkar
+
+# Il boss delle Howling Sands. Un solo nome per i suoi tre ruoli di fase (Sands_Brood_Queen,
+# _Phase2, _Phase3), così la targhetta e la barra del boss leggono lo stesso a ogni cambio.
+Sands_Brood_Queen.name = Regina della covata Scarak

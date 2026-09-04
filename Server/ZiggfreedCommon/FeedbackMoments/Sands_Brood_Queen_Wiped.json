@@ -1,0 +1,18 @@
+{
+  "$Comment": [
+    "What a participant sees when the Scarak Brood Queen is left standing: the last of the party",
+    "died or walked off and stayed away past the fight's WipeGraceSeconds, and the library settled",
+    "the run as lost. The queen's binding row points its Wiped beat here (Feedback.Wiped), so the",
+    "words belong to this fight alone.",
+    "",
+    "A quiet line in the plain tone, on purpose: the screen already went grey, and this only says",
+    "who kept the hive. She stays where she was left, at the health she was left with, for the next",
+    "party. It fires once per participant and carries 'share' and 'seconds' should a line want them."
+  ],
+  "Toast": {
+    "Title": {
+      "Key": "mmoskilltree.boss.sands_brood_queen.wiped"
+    },
+    "Tone": "Info"
+  }
+}

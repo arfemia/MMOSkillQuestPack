@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Pulsa [{key}] para hablar
 Guide_Wilds.name = Montaraz Wren
 Quartermaster_Wilds.name = Intendente Bramble
 Guide_Sands.name = Caminante de Dunas Ashkar
+
+# El jefe de las Howling Sands. Un solo nombre para sus tres roles de fase (Sands_Brood_Queen,
+# _Phase2, _Phase3), para que la placa y la barra de jefe lean lo mismo en cada cambio.
+Sands_Brood_Queen.name = Reina de la Nidada scarak

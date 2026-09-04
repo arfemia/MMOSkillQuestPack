@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Consuma un pasto sostanzioso
+objective.text.quest.brood_queen = Abbatti {1} sotto l'antico regno
 
 # ---- Obiettivi di Kweebec Nightmare ----
 objective.text.quest.kweebec_round_any = Vinci un round di Kweebec Nightmare
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Ossa dell'Antico Regno
 quest.sands_bones_of_the_old_kingdom.flavor = Soldati sbiancati dalla sabbia pattugliano ancora le rovine. Porta ad Ashkar l'essenza che custodiscono.
 quest.sands_apex_of_the_sands.title = Apice delle Sabbie
 quest.sands_apex_of_the_sands.flavor = Tigre dai denti a sciabola, coccodrillo, iena. Dimostra che non c'è cacciatore più feroce di te nelle Howling Sands.
+quest.sands_brood_below.title = La Covata di sotto
+quest.sands_brood_below.flavor = Ogni razziatore che hai abbattuto è strisciato fuori da un unico alveare, e un alveare ha una regina. Dorme sotto l'antico regno, dice Ashkar, e ha finito di dormire.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Calma, viandante. Hai l'aria di chi è appena arrivato dalla strada. Sono Wren - sorveglio questo tratto delle Terre Selvagge. Resta vicino ai fuochi finché non avrai trovato la tua strada.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Le Howling Sands si meritano il nome qua
 dialogue.guide_sands.desert_lore.opt.more = Cos'è successo all'antico regno?
 dialogue.guide_sands.desert_lore_deep.text = I re innalzarono cave ed eserciti, e la sabbia si prese entrambi. I loro soldati camminano ancora tra le rovine con occhi vuoti. Qualunque cosa li tenga insieme, la voglio LONTANA dalle mie dune.
 dialogue.guide_sands.desert_lore_deep.opt.back = Me ne occuperò.
+dialogue.guide_sands.greet_known.opt.queen = Cosa si agita sotto le rovine?
+dialogue.guide_sands.brood_queen.text = Hai sfoltito gli alveari. Bene. Non è bastato. Ogni razziatore che hai abbattuto è strisciato fuori da un'unica covata, e laggiù qualcosa li depone più in fretta di quanto tu li uccida. Una <b>regina della covata</b>, più vecchia delle rovine sotto cui nidifica. Le tigri dai denti a sciabola le girano alla larga. Anch'io, fino a oggi.
+dialogue.guide_sands.brood_queen.opt.where = Dove la trovo?
+dialogue.guide_sands.brood_queen_where.text = Sotto l'<color is="#ffd97a">antico regno</color>, dove la sabbia ronza se resti fermo abbastanza a lungo. Non posso segnartelo; le dune si spostano, le mappe no. Percorri le rovine finché il terreno non canta, e lei salirà a riceverti. Porta degli amici. Lei li porterà.
+dialogue.guide_sands.brood_queen_where.opt.back = La troverò.
+
+# ---- Boss delle Howling Sands: la Regina della covata Scarak (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = La Regina della covata si leva
+boss.sands_brood_queen.rises.sub = La sabbia sotto l'antico regno si muove
+boss.sands_brood_queen.phase = La regina stride e la covata risale
+boss.sands_brood_queen.defeated = La Regina della covata è morta. L'alveare tace.
+boss.sands_brood_queen.wiped = La Regina della covata si tiene il suo alveare.
 
 
 # ---- Pack achievements ----

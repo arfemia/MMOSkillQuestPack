@@ -1,8 +1,8 @@
 {
   "Group": "Ziggfreed",
   "Name": "MMOSkillQuestPack",
-  "Version": "1.0.0",
-  "Description": "MMO Skill Tree - zone questlines for Orbis: quest-giver NPCs at world spawn and in the Howling Sands hand out two campaign arcs (Emerald Wilds 1-15, Howling Sands 18-35) with branching NPC dialogue, turn-ins, zone-scoped hunts, campaign achievements, and a Kweebec Nightmares arc with its own reward gear when that minigame is installed.",
+  "Version": "1.1.0",
+  "Description": "MMO Skill Tree - zone questlines for Orbis: quest-giver NPCs at world spawn and in the Howling Sands hand out two campaign arcs (Emerald Wilds 1-15, Howling Sands 18-35) with branching NPC dialogue, turn-ins, zone-scoped hunts, campaign achievements, a Kweebec Nightmares arc with its own reward gear when that minigame is installed, and the Scarak Brood Queen, a world boss a server owner places once under the desert.",
   "Authors": [
     {
       "Name": "ZiggFreed"
@@ -12,8 +12,8 @@
   "ServerVersion": ">=0.6.0-pre.13 <0.7.0",
   "IncludesAssetPack": true,
   "Dependencies": {
-    "Ziggfreed:MMOSkillTree": "^1.6.0",
-    "Ziggfreed:ZiggfreedCommon": ">=2.0.0"
+    "Ziggfreed:MMOSkillTree": "^1.6.1",
+    "Ziggfreed:ZiggfreedCommon": ">=2.1.0"
   },
   "OptionalDependencies": {
     "Ziggfreed:KweebecNightmare": "*"

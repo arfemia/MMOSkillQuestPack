@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Konuşmak için [{key}] tuşuna bas
 Guide_Wilds.name = Korucu Wren
 Quartermaster_Wilds.name = Levazımcı Bramble
 Guide_Sands.name = Kumgezer Ashkar
+
+# Howling Sands'in patronu. Üç evre rolünün (Sands_Brood_Queen, _Phase2, _Phase3) tümü için tek
+# bir ad, böylece isim levhası ve patron çubuğu her değişimde aynı şeyi okur.
+Sands_Brood_Queen.name = Scarak Kuluçka Kraliçesi

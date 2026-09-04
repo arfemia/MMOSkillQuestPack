@@ -23,7 +23,24 @@
       "Options": [
         { "LabelKey": "dialogue.guide_sands.greet.opt.work",
           "Do": [ { "TurnIn": "wilds_call_of_the_dunes" }, { "Open": "Quests" } ] },
+        { "LabelKey": "dialogue.guide_sands.greet_known.opt.queen",
+          "Conditions": [ { "Type": "QuestState", "Quest": "sands_apex_of_the_sands", "State": "COMPLETED" } ],
+          "Goto": "brood_queen" },
         { "LabelKey": "dialogue.guide_sands.greet_known.opt.lore", "Goto": "desert_lore" }
+      ]
+    },
+    "brood_queen": {
+      "TextKey": "dialogue.guide_sands.brood_queen.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_sands.brood_queen.opt.where", "Goto": "brood_queen_where" },
+        { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "Quests" }
+      ]
+    },
+    "brood_queen_where": {
+      "TextKey": "dialogue.guide_sands.brood_queen_where.text",
+      "Options": [
+        { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "Quests" },
+        { "LabelKey": "dialogue.guide_sands.brood_queen_where.opt.back", "Close": true }
       ]
     },
     "desert_lore": {

@@ -1,0 +1,28 @@
+{
+  "$Comment": [
+    "What a participant sees the instant the Scarak Brood Queen falls: the hive is quiet, and",
+    "beneath it their own share of the fight. The queen's binding row points its Defeated beat here",
+    "(Feedback.Defeated), so the words belong to this fight alone.",
+    "",
+    "The moment fires once per participant the fight credited and carries 'share' (that reader's",
+    "credited share of the fight as whole percent points, the top contributor reading 100, which is",
+    "what their loot rolls were scaled by) and 'seconds' (how long she stood). The second line is",
+    "the library's own share line, which ships translated in every language the library does, and",
+    "it is the answer to why each player got what they got: the fight pays its table per share, and",
+    "the rewards land as rows under this headline on the in-page toast. Gold Reward tone and the",
+    "game's own discovery sting, because a world boss falling is a payout."
+  ],
+  "Toast": {
+    "Title": {
+      "Key": "mmoskilltree.boss.sands_brood_queen.defeated"
+    },
+    "Secondary": {
+      "Key": "ziggfreedcommon.feedback.encounter.defeated.share",
+      "Args": ["share", "seconds"]
+    },
+    "Tone": "Reward"
+  },
+  "Sound": {
+    "Id": "SFX_Discovery_Z2_Short"
+  }
+}

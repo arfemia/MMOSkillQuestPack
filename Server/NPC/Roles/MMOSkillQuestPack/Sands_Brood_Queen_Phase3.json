@@ -1,0 +1,15 @@
+{
+  "$Comment": "The Scarak Brood Queen's last phase: the Brood Queen encounter script changes her role to this one, in place, when the second phase's health falls to half. Keep MaxHealth at exactly half the second role's, for the same reason as there: she carries her current health across the change, so this maximum is the health she arrives with and the bar reads full as the phase begins. A larger brood rises with this phase, and the fighters she calls herself keep coming, so the last quarter of the fight is the crowded one.",
+  "Type": "Variant",
+  "Reference": "Template_Scarak_Broodmother",
+  "Modify": {
+    "MaxHealth": 300,
+    "_CombatConfig": {
+      "EntityEffects": [
+        "Immunity_Environmental",
+        "Immunity_Poison"
+      ]
+    },
+    "NameTranslationKey": "npcs.Sands_Brood_Queen.name"
+  }
+}

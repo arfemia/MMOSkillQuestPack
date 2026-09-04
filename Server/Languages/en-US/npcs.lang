@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Press [{key}] to talk
 Guide_Wilds.name = Ranger Wren
 Quartermaster_Wilds.name = Quartermaster Bramble
 Guide_Sands.name = Dunewalker Ashkar
+
+# The Howling Sands boss. One name for all three of her phase roles (Sands_Brood_Queen,
+# _Phase2, _Phase3), so the nameplate and the boss bar keep reading the same through every change.
+Sands_Brood_Queen.name = Scarak Brood Queen

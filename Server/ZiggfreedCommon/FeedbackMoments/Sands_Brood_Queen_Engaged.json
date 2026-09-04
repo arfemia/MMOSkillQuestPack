@@ -1,0 +1,29 @@
+{
+  "$Comment": [
+    "What players see the moment the Scarak Brood Queen rises: the big banner, its title and its",
+    "line underneath. The queen's binding row points its Engaged beat here",
+    "(Server/ZiggfreedCommon/Encounters/Sands_Brood_Queen_Encounter.json, Feedback.Engaged), so",
+    "these words belong to this one fight and no other encounter borrows them.",
+    "",
+    "The moment fires once per member of the fight. The banner always reaches the members",
+    "themselves (ToParticipants), is kept to the world the fight is in (SameWorldOnly, so a player in",
+    "another world hears nothing), and shows once a minute per fight however many members fire it",
+    "(MinSecondsBetween), so every member sees it exactly once and the rest of the world hears that",
+    "the queen is up once a minute at most. This is the one beat that speaks to players who did not",
+    "ask, on purpose: a world boss is news. Add RadiusBlocks to keep the news to the dunes around",
+    "her, or drop the Broadcast group for a Toast that reaches the members alone. There is no Sound",
+    "here; the site keeps whatever music the world is playing."
+  ],
+  "Broadcast": {
+    "Title": {
+      "Key": "mmoskilltree.boss.sands_brood_queen.rises"
+    },
+    "Secondary": {
+      "Key": "mmoskilltree.boss.sands_brood_queen.rises.sub"
+    },
+    "Major": true,
+    "ToParticipants": true,
+    "SameWorldOnly": true,
+    "MinSecondsBetween": 60
+  }
+}

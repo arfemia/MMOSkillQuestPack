@@ -80,7 +80,6 @@
       "Options": [
         { "LabelKey": "dialogue.guide_wilds.camp_talk.opt.bread",
           "Once": true,
-          "RewardOnce": false,
           "Do": [
             { "Reward": { "Type": "ITEM", "Params": { "Item": "Food_Bread", "Count": "3" } } },
             { "Close": true }

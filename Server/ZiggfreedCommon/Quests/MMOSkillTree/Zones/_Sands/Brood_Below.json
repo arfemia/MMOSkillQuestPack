@@ -1,0 +1,74 @@
+{
+  "$Comment": [
+    "The capstone of the Howling Sands campaign: the Scarak Brood Queen, a boss fight run by the",
+    "game's own encounter scripts at a site the server owner places once (see",
+    "Server/EncounterManager/Sands_Brood_Queen_Encounter.json for the fight and the install).",
+    "",
+    "The step counts a defeat of that fight. Target is the encounter SCRIPT id, never the queen's",
+    "creature id: the fight changes her role between phases, so a step naming the script holds",
+    "through every phase where a creature id would not. There is no Qualifier, because nothing hands",
+    "an open-world fight a difficulty label. Every participant the fight credited gets the step at",
+    "once, however many shared the kill, and the fight pays its own loot on top of what this quest",
+    "hands over.",
+    "",
+    "Requires keeps it behind the campaign finale, so it is offered only once the apex hunts are",
+    "done; Hidden with RequirePrerequisites keeps it out of the log until then. The reward is the",
+    "arc's own, on hand-in at the dunewalker; the queen's spoils are the encounter's and land as she",
+    "falls.",
+    "",
+    "Enabled is false, matching every other quest of the desert campaign, so the whole arc opens",
+    "with one sweep of these leaves. A player who already holds it (none can, pre-release) could",
+    "still finish it. Flip it to true, or drop the line, together with the rest once the desert",
+    "campaign is ready to ship."
+  ],
+  "Enabled": false,
+  "Text": {
+    "TitleKey": "quest.sands_brood_below.title",
+    "FlavorKey": "quest.sands_brood_below.flavor"
+  },
+  "Listing": {
+    "Category": "main",
+    "SortOrder": 28,
+    "Tags": [
+      "Boss"
+    ],
+    "Hidden": true,
+    "RequirePrerequisites": true
+  },
+  "Npc": {
+    "ViewId": "Guide_Sands"
+  },
+  "TurnInAt": "giver",
+  "Requires": {
+    "Quests": [
+      "sands_apex_of_the_sands"
+    ]
+  },
+  "Objectives": {
+    "queen": {
+      "Kind": "ENCOUNTER_DEFEATED",
+      "Target": "Sands_Brood_Queen_Encounter",
+      "MatchMode": "EXACT",
+      "Amount": 1,
+      "TextKey": "objective.text.quest.brood_queen"
+    }
+  },
+  "Rewards": {
+    "Claim": [
+      {
+        "Kind": "Mmo_Xp",
+        "Params": {
+          "Skill": "ALL",
+          "Amount": "3000"
+        }
+      },
+      {
+        "Kind": "Item",
+        "Params": {
+          "Item": "Potion_Health_Greater",
+          "Count": "5"
+        }
+      }
+    ]
+  }
+}

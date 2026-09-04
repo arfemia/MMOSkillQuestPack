@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Mangez un repas copieux
+objective.text.quest.brood_queen = Abattez {1} sous l'ancien royaume
 
 # ---- Objectifs Kweebec Nightmare ----
 objective.text.quest.kweebec_round_any = Remportez une manche de Kweebec Nightmare
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Ossements de l'ancien royaume
 quest.sands_bones_of_the_old_kingdom.flavor = Des soldats blanchis par le sable patrouillent encore dans les ruines. Apportez à Ashkar l'essence qu'ils gardent.
 quest.sands_apex_of_the_sands.title = Le prédateur suprême des sables
 quest.sands_apex_of_the_sands.flavor = Smilodon, crocodile, hyène. Prouvez qu'aucun chasseur des Howling Sands n'est plus féroce que vous.
+quest.sands_brood_below.title = La Couvée d'en bas
+quest.sands_brood_below.flavor = Chaque pillard que vous avez abattu est sorti d'une seule et même ruche, et une ruche a une reine. Elle dort sous l'ancien royaume, dit Ashkar, et elle a fini de dormir.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Doucement, vagabond. Tu as l'allure de quelqu'un tout juste arrivé sur la route. Je suis Wren - je veille sur cette portion des Wilds. Reste près des feux jusqu'à ce que tu trouves tes marques.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Les Howling Sands méritent leur nom qua
 dialogue.guide_sands.desert_lore.opt.more = Qu'est-il arrivé à l'ancien royaume ?
 dialogue.guide_sands.desert_lore_deep.text = Les rois ont creusé des carrières et levé des armées, et le sable a pris les deux. Leurs soldats arpentent encore les ruines, les yeux vides. Quoi qui les retienne ensemble, je le veux LOIN de mes dunes.
 dialogue.guide_sands.desert_lore_deep.opt.back = Je m'en occupe.
+dialogue.guide_sands.greet_known.opt.queen = Qu'est-ce qui remue sous les ruines ?
+dialogue.guide_sands.brood_queen.text = Tu as éclairci les ruches. Bien. Ce n'était pas assez. Chaque pillard que tu as abattu est sorti d'une seule couvée, et quelque chose là-dessous en pond plus vite que tu ne les tues. Une <b>reine de la couvée</b>, plus vieille que les ruines sous lesquelles elle niche. Les smilodons la contournent de loin. Moi aussi, jusqu'à maintenant.
+dialogue.guide_sands.brood_queen.opt.where = Où est-ce que je la trouve ?
+dialogue.guide_sands.brood_queen_where.text = Sous l'<color is="#ffd97a">ancien royaume</color>, là où le sable bourdonne si tu restes immobile assez longtemps. Je ne peux pas te le marquer ; les dunes bougent, les cartes non. Parcours les ruines jusqu'à ce que le sol chante, et elle montera à ta rencontre. Amène des amis. Elle en amènera aussi.
+dialogue.guide_sands.brood_queen_where.opt.back = Je la trouverai.
+
+# ---- Boss des Howling Sands : la Reine de la couvée Scarak (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = La Reine de la couvée se lève
+boss.sands_brood_queen.rises.sub = Le sable sous l'ancien royaume bouge
+boss.sands_brood_queen.phase = La reine hurle et la couvée remonte
+boss.sands_brood_queen.defeated = La Reine de la couvée est morte. La ruche se tait.
+boss.sands_brood_queen.wiped = La Reine de la couvée garde sa ruche.
 
 
 # ---- Pack achievements ----

@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Nyomd meg a(z) [{key}] gombot a beszélgetéshez
 Guide_Wilds.name = Vadőr Wren
 Quartermaster_Wilds.name = Furér Bramble
 Guide_Sands.name = Dűnejáró Ashkar
+
+# A Howling Sands főellensége. Egy név mind a három fázisszerepéhez (Sands_Brood_Queen, _Phase2,
+# _Phase3), hogy a névtábla és a főellenség-sáv minden váltásnál ugyanazt mutassa.
+Sands_Brood_Queen.name = Scarak fészekkirálynő

@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Doyurucu bir öğün ye
+objective.text.quest.brood_queen = Eski krallığın altında şunu alt et: {1}
 
 # ---- Kweebec Nightmare hedefleri ----
 objective.text.quest.kweebec_round_any = Bir Kweebec Nightmare turu kazan
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Eski Krallığın Kemikleri
 quest.sands_bones_of_the_old_kingdom.flavor = Kumdan ağarmış askerler hâlâ harabelerde devriye geziyor. Koruduğu özü Ashkar'a getir.
 quest.sands_apex_of_the_sands.title = Kumların Zirvesi
 quest.sands_apex_of_the_sands.flavor = Kılıç dişli, timsah, sırtlan. Howling Sands'te senden daha vahşi bir avcı olmadığını kanıtla.
+quest.sands_brood_below.title = Aşağıdaki Kuluçka
+quest.sands_brood_below.flavor = Kırdığın her akıncı aynı kovandan sürünerek çıktı ve her kovanın bir kraliçesi vardır. Ashkar'a göre eski krallığın altında uyuyor, ve uykusu bitti.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Sakin ol, gezgin. Yola yeni düşmüş birinin hali var üstünde. Ben Wren - Yabanların bu kesimine göz kulak olurum. Ayaklarının üstünde durmayı öğrenene kadar ateşlerin yakınında kal.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Howling Sands adını gece rüzgârı ka
 dialogue.guide_sands.desert_lore.opt.more = Eski krallığa ne oldu?
 dialogue.guide_sands.desert_lore_deep.text = Krallar ocaklar ve ordular kurdu, kum ikisini de aldı. Askerleri hâlâ boş gözlerle harabelerde dolaşıyor. Onları bir arada tutan her ne ise, onu kumullarımdan UZAK istiyorum.
 dialogue.guide_sands.desert_lore_deep.opt.back = İcabına bakacağım.
+dialogue.guide_sands.greet_known.opt.queen = Harabelerin altında kıpırdanan ne?
+dialogue.guide_sands.brood_queen.text = Kovanları seyrelttin. İyi. Yetmedi. Devirdiğin her akıncı tek bir kuluçkadan sürünerek çıktı ve aşağıda bir şey onları sen öldürdüğünden daha hızlı yumurtluyor. Bir <b>kuluçka kraliçesi</b>, altında yuvalandığı harabelerden daha yaşlı. Kılıç dişliler ondan uzak durur. Ben de öyle yaptım, şimdiye dek.
+dialogue.guide_sands.brood_queen.opt.where = Onu nerede bulurum?
+dialogue.guide_sands.brood_queen_where.text = <color is="#ffd97a">Eski krallığın</color> altında, yeterince uzun kıpırdamadan durursan kumun uğuldadığı yerde. Sana işaretleyemem; kumullar yer değiştirir, haritalar değiştirmez. Zemin şarkı söyleyene dek harabelerde yürü, o seni karşılamaya çıkar. Yanına dost al. O da alacak.
+dialogue.guide_sands.brood_queen_where.opt.back = Onu bulacağım.
+
+# ---- Howling Sands'in patronu: Scarak Kuluçka Kraliçesi (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = Kuluçka Kraliçesi yükseliyor
+boss.sands_brood_queen.rises.sub = Eski krallığın altındaki kum kıpırdıyor
+boss.sands_brood_queen.phase = Kraliçe çığlık atıyor ve kuluçka yukarı çıkıyor
+boss.sands_brood_queen.defeated = Kuluçka Kraliçesi öldü. Kovan sessizleşiyor.
+boss.sands_brood_queen.wiped = Kuluçka Kraliçesi kovanını koruyor.
 
 
 # ---- Pack achievements ----

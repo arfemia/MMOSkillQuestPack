@@ -13,3 +13,7 @@ Mmo_QuestGiver.hint = Нажмите [{key}], чтобы поговорить
 Guide_Wilds.name = Следопыт Wren
 Quartermaster_Wilds.name = Квартирмейстер Bramble
 Guide_Sands.name = Песчаный странник Ashkar
+
+# Босс Howling Sands. Одно имя на все три её фазовые роли (Sands_Brood_Queen, _Phase2, _Phase3),
+# чтобы табличка и полоса босса читались одинаково при каждой смене.
+Sands_Brood_Queen.name = Матка выводка скараков

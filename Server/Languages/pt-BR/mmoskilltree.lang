@@ -6,6 +6,7 @@
 
 # ---- Quest-family objective templates ({0} = amount, {1} = localized target) ----
 objective.text.quest.eat_food = Coma uma refeição reforçada
+objective.text.quest.brood_queen = Derrube {1} sob o velho reino
 
 # ---- Objetivos de Kweebec Nightmare ----
 objective.text.quest.kweebec_round_any = Vença uma rodada de Kweebec Nightmare
@@ -64,6 +65,8 @@ quest.sands_bones_of_the_old_kingdom.title = Ossos do Antigo Reino
 quest.sands_bones_of_the_old_kingdom.flavor = Soldados branqueados pela areia ainda patrulham as ruínas. Traga a Ashkar a essência que eles guardam.
 quest.sands_apex_of_the_sands.title = Ápice das Areias
 quest.sands_apex_of_the_sands.flavor = Dente-de-sabre, crocodilo, hiena. Prove que não há caçador mais feroz em Howling Sands do que você.
+quest.sands_brood_below.title = A Ninhada de Baixo
+quest.sands_brood_below.flavor = Cada saqueador que você abateu rastejou para fora de uma mesma colmeia, e colmeia tem rainha. Ela dorme sob o velho reino, diz Ashkar, e já terminou de dormir.
 
 # ---- Dialogue: Ranger Wren (guide_wilds_dialogue) ----
 dialogue.guide_wilds.greet.text = Calma aí, andarilho. Você tem a cara de quem acabou de chegar da estrada. Eu sou a Wren - faço a vigia deste trecho das Matas. Fique perto das fogueiras até se firmar.
@@ -111,6 +114,18 @@ dialogue.guide_sands.desert_lore.text = Howling Sands merece o nome quando o ven
 dialogue.guide_sands.desert_lore.opt.more = O que aconteceu com o antigo reino?
 dialogue.guide_sands.desert_lore_deep.text = Reis ergueram pedreiras e exércitos, e a areia levou ambos. Seus soldados ainda andam pelas ruínas com olhos vazios. Seja lá o que os mantém unidos, eu quero isso FORA das minhas dunas.
 dialogue.guide_sands.desert_lore_deep.opt.back = Vou cuidar disso.
+dialogue.guide_sands.greet_known.opt.queen = O que está se mexendo sob as ruínas?
+dialogue.guide_sands.brood_queen.text = Você desbastou as colmeias. Bom. Não foi o bastante. Cada saqueador que você derrubou rastejou para fora de uma única ninhada, e lá embaixo alguma coisa os põe mais depressa do que você mata. Uma <b>rainha da ninhada</b>, mais velha que as ruínas sob as quais ela faz ninho. Os dentes-de-sabre passam longe dela. Eu também, até agora.
+dialogue.guide_sands.brood_queen.opt.where = Onde eu a encontro?
+dialogue.guide_sands.brood_queen_where.text = Sob o <color is="#ffd97a">velho reino</color>, onde a areia zumbe se você ficar parado tempo suficiente. Não posso marcar para você; as dunas se movem, os mapas não. Ande pelas ruínas até o chão cantar, e ela vai subir para recebê-lo. Traga amigos. Ela vai trazer.
+dialogue.guide_sands.brood_queen_where.opt.back = Vou encontrá-la.
+
+# ---- Chefe de Howling Sands: a Rainha da Ninhada scarak (sands_brood_queen_encounter) ----
+boss.sands_brood_queen.rises = A Rainha da Ninhada se ergue
+boss.sands_brood_queen.rises.sub = A areia sob o velho reino está se mexendo
+boss.sands_brood_queen.phase = A rainha guincha e a ninhada sobe
+boss.sands_brood_queen.defeated = A Rainha da Ninhada está morta. A colmeia se cala.
+boss.sands_brood_queen.wiped = A Rainha da Ninhada fica com sua colmeia.
 
 
 # ---- Pack achievements ----

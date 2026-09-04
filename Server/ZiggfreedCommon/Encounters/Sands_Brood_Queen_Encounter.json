@@ -1,0 +1,81 @@
+{
+  "$Comment": [
+    "What the server owes for the Scarak Brood Queen fight, which the fight's own script,",
+    "Server/EncounterManager/Sands_Brood_Queen_Encounter.json, never describes. Phases, thresholds,",
+    "the role changes, the brood and the boss bar all live in that script and in the three",
+    "Sands_Brood_Queen roles; nothing here restates them.",
+    "",
+    "NameKey is the queen's own name, the same key her nameplate and her boss bar show, and it is",
+    "what a quest step naming this fight prints as its target. Subject names the script's Boss slot,",
+    "the one it binds her into.",
+    "",
+    "Scale grows her maximum health with everyone in the fight: HealthPerMember 0.3 makes a party",
+    "of four fight a queen with 1.9 times the health of a solo one, and MaxHealthMultiplier 4 is",
+    "the ceiling however many pile on, so a crowd of twelve fights four times the pool and not",
+    "more. An open-world roster has no upper bound, which is why the ceiling is here.",
+    "",
+    "Timing: a wipe is nobody in the roster (dead or walked off) for WipeGraceSeconds, and on an",
+    "open site that is a real wipe rather than a party three rooms away, so it is short. The script",
+    "stands the fight down a little after this and re-engages the wounded queen for the next party;",
+    "keep its stand-down Timeout at or above this number. MaxRunSeconds is left at the library's",
+    "default, an hour, which no party will reach.",
+    "",
+    "Loot.OnDefeat is the fight's own payout, rolled once per credited participant with each roll",
+    "kept at a chance equal to that participant's share, so the player who carried the fight keeps",
+    "everything they win and a latecomer keeps a little. The table is",
+    "Server/ZiggfreedCommon/Lootables/Mmo_Sands_Brood_Queen.json; retune it there. QueueIfOffline",
+    "holds a participant's payout for their next connect if they dropped before she fell. The quest",
+    "that names this fight pays its own reward on top when it is handed in.",
+    "",
+    "Leaderboard writes every participant a row under the bucket, split by party size, with their",
+    "share as the score and the fight's length as the time. Feedback names the queen's own notices,",
+    "the four Sands_Brood_Queen_* files under Server/ZiggfreedCommon/FeedbackMoments, so she speaks",
+    "in her own words and no other encounter on the server borrows them. Discovery puts a world-map",
+    "marker over her from the moment she rises until the run resets, moving to her position every",
+    "FollowSeconds and still following while nobody is close (CompassUpdating), so a player across",
+    "the dunes can find the fight, and a quest step naming it shows the same glyph.",
+    "",
+    "Participation is not authored: the library's own Zc_Default rule (damage dealt, damage taken",
+    "and time present, weighted) is the server rule and applies here as everywhere.",
+    "",
+    "Switch the fight off with Enabled false, or from mods/ziggfreedcommon/encounters.json under",
+    "the key sands_brood_queen_encounter, and the library neither binds, scales nor pays this",
+    "script; /zigencounter reload re-reads that file live."
+  ],
+  "EncounterAsset": "Sands_Brood_Queen_Encounter",
+  "NameKey": "npcs.Sands_Brood_Queen.name",
+  "Enabled": true,
+  "Subject": {
+    "TargetSlot": "Boss"
+  },
+  "Scale": {
+    "HealthPerMember": 0.3,
+    "MaxHealthMultiplier": 4.0
+  },
+  "Timing": {
+    "WipeGraceSeconds": 45
+  },
+  "Loot": {
+    "OnDefeat": {
+      "Lootables": [ "Mmo_Sands_Brood_Queen" ]
+    },
+    "QueueIfOffline": true
+  },
+  "Leaderboard": {
+    "Bucket": "sands_brood_queen",
+    "ByPartySize": true,
+    "ByDifficulty": false
+  },
+  "Feedback": {
+    "Engaged": "Sands_Brood_Queen_Engaged",
+    "PhaseChanged": "Sands_Brood_Queen_Phase_Changed",
+    "Defeated": "Sands_Brood_Queen_Defeated",
+    "Wiped": "Sands_Brood_Queen_Wiped"
+  },
+  "Discovery": {
+    "MapMarker": true,
+    "MarkerIcon": "PortalInvasion.png",
+    "FollowSeconds": 3,
+    "CompassUpdating": true
+  }
+}

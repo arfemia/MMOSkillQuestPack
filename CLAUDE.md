@@ -1,6 +1,8 @@
 # CLAUDE.md - MMOSkillQuestPack
 
-Zone questlines for MMO Skill Tree **1.6.0+** (hard dependency in `manifest.json`).
+Zone questlines for MMO Skill Tree **1.6.1+** on ZiggfreedCommon **2.1.0+** (both hard
+dependencies in `manifest.json`), plus the Scarak Brood Queen, the family's exemplar OVERWORLD boss
+(a native encounter script the server owner stands up once; see "The Brood Queen" below).
 The jar ships only the engine (quest givers, dialogues, zone scoping) plus a small starter set - the
 five-quest onboarding chain (getting_started -> craft_starter_tools -> gather_the_basics ->
 into_the_fray -> climbing_the_ranks), the repeatable forgot_something, four side quests under
@@ -18,8 +20,9 @@ generators and achievements are ziggfreed-common Pattern A assets under
 ## Layout
 
 ```
-manifest.json                  Group Ziggfreed, hard-deps Ziggfreed:MMOSkillTree ^1.6.0 and
-                               Ziggfreed:ZiggfreedCommon >=2.0.0 (every store here is a zc store)
+manifest.json                  Group Ziggfreed, hard-deps Ziggfreed:MMOSkillTree ^1.6.1 (the
+                               ENCOUNTER_DEFEATED kind the boss quest names is 1.6.1's) and
+                               Ziggfreed:ZiggfreedCommon >=2.1.0 (the encounter stores are 2.1.0's)
 build.ps1                      zips MMOSkillQuestPack-<Version>.zip (fwd-slash + dir entries)
 Server/
   ZiggfreedCommon/             the shared framework's own stores: they merge BY ID and have no
@@ -28,15 +31,29 @@ Server/
         Zone_Gather_Base.json      Abstract skeletons the two generators write children against
         Zone_Slay_Base.json        (unmarked folder => plain filename ids)
         _Wilds/  (13 files)        a _-marked folder prefixes every id beneath it, so
-        _Sands/  (5 files)         _Wilds/Trork_Trouble.json is wilds_trork_trouble
+        _Sands/  (6 files)         _Wilds/Trork_Trouble.json is wilds_trork_trouble;
+                                _Sands/Brood_Below.json (sands_brood_below) is the boss quest,
+                                the only ENCOUNTER_DEFEATED step in the pack
     QuestGenerators/
         Zone_Gather.json           writes the 3 harvest contracts, one row each
         Zone_Slay.json             writes the 3 hunting contracts, one row each
     Achievements/MMOSkillTree/Zones/   11 files: 2 campaigns + orbis capstone + well_met + 2 hunt
                                 chains + the 3-rung night-owl chain
-    Lootables/                     3 loot tables, one per Kweebec daily (Mmo_Kweebec_Daily_Amateur /
-                                _Nightmare / _Hardcore); each daily's Auto reward is a Lootable
-                                entry naming one, so a win pays out in the instance
+    Lootables/                     4 loot tables: one per Kweebec daily (Mmo_Kweebec_Daily_Amateur /
+                                _Nightmare / _Hardcore; each daily's Auto reward is a Lootable
+                                entry naming one, so a win pays out in the instance) and
+                                Mmo_Sands_Brood_Queen, the boss's own per-participant payout,
+                                named by the binding row's Loot.OnDefeat
+    Encounters/                    the boss's BINDING ROW (Sands_Brood_Queen_Encounter.json, a zc
+                                EncounterBindingAsset named for its script): NameKey, Enabled,
+                                Subject slot, party Scale, Timing, Loot, Leaderboard, Feedback,
+                                Discovery. It re-states NOTHING the script says (no phase, no
+                                threshold, no count); owner layer mods/ziggfreedcommon/encounters.json
+    FeedbackMoments/               the boss's OWN four notices (Sands_Brood_Queen_Engaged /
+                                _Phase_Changed / _Defeated / _Wiped), named from the row's
+                                Feedback group. NEVER override a zc Encounter_* moment by id: a
+                                moment id is process-global and the words would land on every
+                                fight on the server
     NpcPlacements/                 3 givers, all anchored to a worldgen SpawnMarker
                                 (Anchor.Structure, SpawnChance 1.0 + MaxPerWorld 1 = one
                                 unique each): Guide_Wilds @ Kweebec village,
@@ -56,11 +73,39 @@ Server/
                                 them - Utility for a held tool, Weapon for a weapon, Armor for armor.
                                 Armor/Weapon/Utility/Tags are FULL-OBJECT-REPLACE: copy the parent's
                                 whole block before adding a line
+    MMOSkillQuestPack/           the boss's 2 SPAWNER BLOCKS (Sands_Brood_Queen_Spawner,
+                                Sands_Brood_Spawner): a BlockType whose BlockEntity carries a
+                                SpawnMarkerBlock component naming a marker + a MarkerOffset, the
+                                vanilla Scarak egg-sack look, NO Gathering group and NO Support
+                                rule (unharvestable, never pops off uneven ground). Names are
+                                native server.items.<Id>.name in server.lang
+  Prefabs/MMOSkillQuestPack/     Sands_Brood_Queen_Spawners.prefab.json, the arena: a bare blocks
+                                array (version 8, blockIdVersion 11, anchors 0) of one queen
+                                clutch at the origin and five brood clutches around it, within a
+                                9x7 footprint so a paste stays inside one chunk. The owner
+                                pastes it once: /prefab load MMOSkillQuestPack/Sands_Brood_Queen_Spawners
+  EncounterManager/              Sands_Brood_Queen_Encounter.json, the boss's native encounter
+                                SCRIPT (Type Generic on Zc_Encounter_Base's shape; the id is the
+                                FIGHT's, never a role's, because scripts and roles share one id
+                                namespace and a script named after a role replaces it at load)
   NPC/Roles/Passive/             the 3 giver ROLES, one per character: Guide_Wilds
                                 (Feran_Windwalker), Quartermaster_Wilds (Klops_Merchant),
                                 Guide_Sands (Outlander_Hunter). Each is a native Variant of
                                 the jar's Template_Mmo_QuestGiver carrying only Appearance +
                                 NameTranslationKey - see below
+  NPC/Roles/MMOSkillQuestPack/   the boss's 3 PHASE ROLES (Sands_Brood_Queen, _Phase2, _Phase3):
+                                native Variants of the vanilla Template_Scarak_Broodmother
+                                carrying only MaxHealth (1200 / 600 / 300, each later one the
+                                health she CARRIES in, so the bar reads full per phase and the
+                                three total the first), the shared NameTranslationKey and the
+                                vanilla _CombatConfig immunities. Modify may name only the
+                                template's declared parameters plus _CombatConfig
+  NPC/Spawn/Markers/MMOSkillQuestPack/  2 ManualTrigger SpawnMarkers: Sands_Brood_Queen_Marker
+                                (the queen, SpawnAfterGameTime P1D on the world clock) and
+                                Sands_Brood_Marker (a weighted Scarak_Fighter / Scarak_Louse
+                                brood, real-time respawn). DeactivationDistance 512 and
+                                DeactivationTime 150 keep the engine from packing a spawn away
+                                while the fight's chunk is still awake after a wipe
   MMOSkillTree/                  the mod's OWN stores
     Control/MMOSkillQuestPack.json   add-mode for every MMOSkillTree type shipped here (NEVER
                                 omit one). This pack ships no content into a store the mod
@@ -162,9 +207,10 @@ Server/
   beats are **gated on `QuestState <introQuest> ACTIVE`, NOT on remembered state** (self-heal: a
   memory that outlives a quest reset soft-locks the intro - derive visibility from quest state,
   which resets with the quest). The bread handout is a one-time option (`"Once": true`), so it is
-  offered until it is taken; the `Reward`'s own inner guard is switched off with
-  `"RewardOnce": false`, because the option-level `Once` already covers it (`RewardOnce` defaults
-  to true when unauthored). Options use the sugar
+  offered until it is taken, and nothing else guards it: the `Reward`'s own once-guard
+  (`RewardOnce`, on when unauthored) never gets a second chance to matter under an option-level
+  `Once`, so authoring it beside a `Do` array only earns the audit's `SUGAR_SHADOWED_BY_DO` warning
+  (a bare sugar key next to `Do`). Options use the sugar
   shorthand (`Open`/`Goto`/`TurnIn`/`Reward`/`Do`); crediting is written out in full as an action,
   because it is a deliberate statement about the story rather than a side effect of opening a menu.
   `Open` names a registered destination - `"Quests"` is the bare word for the character the player
@@ -186,11 +232,12 @@ Server/
   sands_walker_of_the_wastes ACTIVE, credits sands_walker via `MarkTalked` AND `TurnIn`s
   call_of_the_dunes in the same option) -> the desert arc. "Go meet NPC X" handoffs are standardized
   on a blank-target `TURN_IN` step (nothing to carry, only somebody to find), never a TALK bridge.
-  The desert arc is authored but held: every `_Sands` quest plus the `howling_sands_campaign` and
-  `orbis_campaigner` achievements ship `"Enabled": false`, so call_of_the_dunes is the last
-  reachable beat today. The three generated sands quests carry no such leaf, they simply chain off
-  disabled prerequisites, so flipping those seven leaves to true is the whole edit that opens the
-  arc.
+  The desert arc is authored but held: every `_Sands` quest (the boss quest `sands_brood_below`
+  included) plus the `howling_sands_campaign` and `orbis_campaigner` achievements ship
+  `"Enabled": false`, so call_of_the_dunes is the last reachable beat today. The three generated
+  sands quests carry no such leaf, they simply chain off disabled prerequisites, so flipping those
+  eight leaves to true is the whole edit that opens the arc. The Brood Queen FIGHT is live
+  regardless: the quest is the only piece of her that waits on the arc.
 - **The Kweebec Nightmares arc** (`_Wilds/Whispers_After_Dark`, `Face_The_Nightmare`, and the three
   dailies `Amateur_Night`/`Nightmare_Shift`/`Hardcore_Vigil`, plus `Zones/Night_Owl_T1..T3`) is
   gated on ANOTHER MOD being present:
@@ -204,6 +251,27 @@ Server/
   runs", and `Qualifier` pins one difficulty preset. The three dailies use `Repeat.Reset.Period
   Daily` (a calendar window, so they all roll over together) plus an `Auto`-bucket reward so a win pays out
   in the instance rather than back at Wren.
+- **The Brood Queen** is the family's exemplar overworld boss and is SIX native files plus a quest,
+  no Java: the script (`Server/EncounterManager/Sands_Brood_Queen_Encounter.json`), the three phase
+  roles, the two markers with their two spawner blocks and the arena prefab, the binding row
+  (`Server/ZiggfreedCommon/Encounters/`, named for the SCRIPT), the four moment files, the loot
+  table, and `_Sands/Brood_Below.json`. The script follows zc's `Zc_Encounter_Base` shape (the
+  Player sensor + `EncounterMembers` collector as a `Continue` sibling, `TriggerSpawners` from the
+  pack's `ManualTrigger` markers, the release on the Target sensor alone, `Zc_Phase_At_Health` with
+  in-place role changes at `[0, 0.5]`, `Zc_Adds_Wave`, `Zc_Defeat_Beat` in every phase with its
+  `ClearEncounterBossBar`, `CleanupOnRemove`) and adds what an OVERWORLD site needs and a round
+  never does: a `Complete` that RE-ARMS (`Any` sensor, `ActionsBlocking`, `[Timeout, zc:reset,
+  State Intro]`; never `Once` over a blocking list), a no-show beat under the pack's own signal
+  id (`zc:mmoquestpack:no_show`), and a `Standing` state a phase falls into when no player has
+  been within eighty blocks for a minute (after the library has settled the wipe), from which the
+  next arriving player's presence sends `zc:reset` and Intro re-engages the wounded queen at the
+  health she was left with. Two independent gates decide when she comes back after a kill: the
+  marker's `SpawnAfterGameTime` (the one to tune) and Complete's `Timeout`. The quest step names
+  the SCRIPT id (`Target: Sands_Brood_Queen_Encounter`, `Kind: ENCOUNTER_DEFEATED`, `Amount`), never
+  a role id, because the phase swap changes the creature id under the player. The install is the
+  owner's, once per world: paste the prefab, `/zigencounter spawn Sands_Brood_Queen_Encounter` on
+  it; the entity persists. `/zigencounter validate` audits every one of these files
+  (`ENCOUNTER_*` findings), and a `$Comment` in any of them is a public-facing tip.
 - **Zone scoping**: `"Zone": "Howling_Sands"` on an objective or criterion matches the
   engine's zoneName OR region folder names case-insensitively. The snakes step in
   sands_thorns_and_stings needs it (snakes spawn in zones 1, 2 and 3); the hunter
@@ -223,8 +291,10 @@ Server/
 
 `.\build.ps1` inside the pack (auto-installs when `HYTALE_MODS_DIR` is set).
 Verify: server log shows the Dialogue/Quest/Achievement layer-applied lines plus the
-NpcPlacements merge, `/mmonpc list` shows the three givers targeting the world, and
-`/mmoconfig validate` reports the quest, achievement, dialogue + placement domains clean.
+NpcPlacements merge, zero `BuilderManager` `FAIL:` lines (the encounter script and the three
+Scarak roles resolve by index), `/mmonpc list` shows the three givers targeting the world,
+`/mmoconfig validate` reports the quest, achievement, dialogue + placement domains clean, and
+`/zigencounter validate` reports the boss's script, binding row and loot table clean.
 
 ## Conventions
 

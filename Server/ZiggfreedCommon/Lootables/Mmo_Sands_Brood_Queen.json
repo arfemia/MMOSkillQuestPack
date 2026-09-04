@@ -1,0 +1,64 @@
+{
+  "$Comment": [
+    "What the Scarak Brood Queen pays when she falls, rolled once for every participant the fight",
+    "credited: the binding row Server/ZiggfreedCommon/Encounters/Sands_Brood_Queen_Encounter.json",
+    "names this table under Loot.OnDefeat. Each roll a player wins is then kept with a chance equal",
+    "to their share of the fight, so the player who carried it keeps all three when they fire and a",
+    "latecomer keeps a little of what they rolled.",
+    "",
+    "The first roll always fires: a handful of essence and something to drink on the walk home. The",
+    "second is a bar of the desert's own metal, better than even odds. The third is the rare one, a",
+    "skill boost token the player pockets and cracks whenever suits them (see",
+    "Server/ZiggfreedCommon/RewardKinds/Mmo_Boost_Token.json for its Params). Chance is a",
+    "percentage; retune the Counts and the Chances freely, each roll stands on its own. The quest",
+    "that sends a player after her pays separately, on hand-in."
+  ],
+  "Name": "Mmo_Sands_Brood_Queen",
+  "Rolls": [
+    {
+      "Grants": {
+        "Items": [
+          {
+            "Item": "Ingredient_Life_Essence",
+            "Count": 10
+          },
+          {
+            "Item": "Potion_Health_Greater",
+            "Count": 2
+          }
+        ]
+      }
+    },
+    {
+      "Chance": {
+        "Base": 60
+      },
+      "Grants": {
+        "Items": [
+          {
+            "Item": "Ingredient_Bar_Thorium",
+            "Count": 1,
+            "CountMax": 2
+          }
+        ]
+      }
+    },
+    {
+      "Chance": {
+        "Base": 20
+      },
+      "Grants": {
+        "Rewards": [
+          {
+            "Kind": "Mmo_Boost_Token",
+            "Params": {
+              "Skill": "ALL",
+              "Multiplier": "2.0",
+              "DurationMinutes": "30"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

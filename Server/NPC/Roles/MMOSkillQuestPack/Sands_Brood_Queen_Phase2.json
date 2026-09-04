@@ -1,0 +1,15 @@
+{
+  "$Comment": "The Scarak Brood Queen's second phase: the Brood Queen encounter script changes her role to this one, in place, when the first role's health falls to half (the script's own HealthRange). Keep MaxHealth at exactly half the first role's: the engine carries her current health across the change and only re-rolls the maximum, so a maximum equal to the health she arrives with reads as a full bar at the phase's start and costs her nothing; lower and she loses the difference the moment the phase begins, higher and the bar reads part-empty from the first tick. The brood rises with this phase: the script fires the Sands_Brood_Marker clutches as she changes.",
+  "Type": "Variant",
+  "Reference": "Template_Scarak_Broodmother",
+  "Modify": {
+    "MaxHealth": 600,
+    "_CombatConfig": {
+      "EntityEffects": [
+        "Immunity_Environmental",
+        "Immunity_Poison"
+      ]
+    },
+    "NameTranslationKey": "npcs.Sands_Brood_Queen.name"
+  }
+}
