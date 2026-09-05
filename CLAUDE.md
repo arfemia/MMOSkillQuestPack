@@ -79,11 +79,15 @@ Server/
                                 vanilla Scarak egg-sack look, NO Gathering group and NO Support
                                 rule (unharvestable, never pops off uneven ground). Names are
                                 native server.items.<Id>.name in server.lang
-  Prefabs/MMOSkillQuestPack/     Sands_Brood_Queen_Spawners.prefab.json, the arena: a bare blocks
+  Prefabs/MMOSkillQuestPack/     Sands_Brood_Queen_Spawners.prefab.json, the arena: a blocks
                                 array (version 8, blockIdVersion 11, anchors 0) of one queen
                                 clutch at the origin and five brood clutches around it, within a
-                                9x9 footprint so a paste stays inside one chunk. The owner
-                                pastes it once: /prefab load MMOSkillQuestPack/Sands_Brood_Queen_Spawners
+                                9x9 footprint so a paste stays inside one chunk, EVERY entry
+                                carrying its own components.Components.SpawnMarkerBlock.Config
+                                (the builder's prefab page and /paste write only the state the
+                                file carries, so a bare entry is an egg sack with no marker; the
+                                encounter audit warns ENCOUNTER_PREFAB_SPAWNER_WITHOUT_STATE).
+                                The owner pastes it once: /prefab load MMOSkillQuestPack/Sands_Brood_Queen_Spawners
   EncounterManager/              Sands_Brood_Queen_Encounter.json, the boss's native encounter
                                 SCRIPT (Type Generic on Zc_Encounter_Base's shape; the id is the
                                 FIGHT's, never a role's, because scripts and roles share one id
@@ -101,9 +105,13 @@ Server/
                                 vanilla _CombatConfig immunities. Modify may name only the
                                 template's declared parameters plus _CombatConfig
   NPC/Spawn/Markers/MMOSkillQuestPack/  2 ManualTrigger SpawnMarkers: Sands_Brood_Queen_Marker
-                                (the queen, SpawnAfterGameTime P1D on the world clock) and
-                                Sands_Brood_Marker (a weighted Scarak_Fighter / Scarak_Louse
-                                brood, real-time respawn). DeactivationDistance 512 and
+                                (the queen) and Sands_Brood_Marker (a weighted Scarak_Fighter /
+                                Scarak_Louse brood), both in the vanilla manual shape:
+                                RealtimeRespawn + a short RealtimeRespawnTime satisfy the marker
+                                validator and are read only by a marker that spawns on its own; a
+                                manual marker fires whenever the script asks and its spawn is dead,
+                                never reads SpawnAfterGameTime, and frees the instant the spawn
+                                dies, so the rest is the binding row's. DeactivationDistance 512 and
                                 DeactivationTime 150 keep the engine from packing a spawn away
                                 while the fight's chunk is still awake after a wipe
   MMOSkillTree/                  the mod's OWN stores
@@ -266,7 +274,11 @@ Server/
   been within eighty blocks for a minute (after the library has settled the wipe), from which the
   next arriving player's presence sends `zc:reset` and Intro re-engages the wounded queen at the
   health she was left with. Two independent gates decide when she comes back after a kill: the
-  marker's `SpawnAfterGameTime` (the one to tune) and Complete's `Timeout`. The quest step names
+  binding row's `Timing.Rest` (`P1D`, the one to tune; the library stamps the rest-until on the
+  encounter entity at the defeat as the persisted `ZigEncounterRest`, and the script's summon leaf
+  and no-show timeout are both gated on the library's `ZigRested` sensor, so a resting site sits
+  quietly in Intro) and Complete's `Timeout` (the short rest right after a kill). The marker holds
+  none of it: a manual marker never reads `SpawnAfterGameTime`. The quest step names
   the SCRIPT id (`Target: Sands_Brood_Queen_Encounter`, `Kind: ENCOUNTER_DEFEATED`, `Amount`), never
   a role id, because the phase swap changes the creature id under the player. The install is the
   owner's, once per world: paste the prefab, `/zigencounter spawn Sands_Brood_Queen_Encounter` on

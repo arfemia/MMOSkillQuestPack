@@ -17,8 +17,14 @@
     "Timing: a wipe is nobody in the roster (dead or walked off) for WipeGraceSeconds, and on an",
     "open site that is a real wipe rather than a party three rooms away, so it is short. The script",
     "stands the fight down a little after this and re-engages the wounded queen for the next party;",
-    "keep its stand-down Timeout at or above this number. MaxRunSeconds is left at the library's",
-    "default, an hour, which no party will reach.",
+    "keep its stand-down Timeout at or above this number. Rest is how long the site rests after she",
+    "dies before the script may raise her again, an ISO duration on the world's clock: P1D is one",
+    "game day, the cadence the game gives its own named bosses. The library stamps the instant that",
+    "rest ends on the encounter entity at the kill and saves it with the world, and the script's",
+    "ZigRested sensor holds its summon and its no-show timeout until the clock is past it, so the",
+    "site waits quietly. This is the number to turn for how often she comes back (PT8H for three",
+    "times a day; leave it out and only the script's own Complete timeout stands between fights).",
+    "MaxRunSeconds is left at the library's default, an hour, which no party will reach.",
     "",
     "Loot.OnDefeat is the fight's own payout, rolled once per credited participant with each roll",
     "kept at a chance equal to that participant's share, so the player who carried the fight keeps",
@@ -53,7 +59,8 @@
     "MaxHealthMultiplier": 4.0
   },
   "Timing": {
-    "WipeGraceSeconds": 45
+    "WipeGraceSeconds": 45,
+    "Rest": "P1D"
   },
   "Loot": {
     "OnDefeat": {

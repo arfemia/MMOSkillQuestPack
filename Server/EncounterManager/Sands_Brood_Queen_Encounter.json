@@ -17,17 +17,19 @@
     "to a script of its own. The first two instructions run every tick beside whatever state the",
     "fight is in: the Player sensor keeps the roster the boss bar, the scale and the credit read",
     "(eighty blocks around the site, so a bow at the edge of the arena still counts), and",
-    "TriggerSpawners raises the queen from the Sands_Brood_Queen_Marker while the fight is in Intro",
-    "and no boss is bound yet. Nothing here runs while nobody is near: the site's chunk sleeps with",
+    "TriggerSpawners raises the queen from the Sands_Brood_Queen_Marker while the fight is in Intro,",
+    "no boss is bound yet and the site has rested (ZigRested, below). Nothing here runs while nobody",
+    "is near: the site's chunk sleeps with",
     "the rest of the world, and the script picks up where it was when a player walks back in. The",
     "release, on the Target sensor alone, makes the queen vulnerable, puts the bar up under her name,",
     "sends zc:engaged and moves into Phase_1; it keys on the bound boss and never on a beacon.",
     "",
-    "Intro also carries the fight's safety net: if no queen has bound within the Timeout below (her",
-    "marker still resting after the last kill, a missing clutch, a role that failed to load), the",
-    "script sends zc:mmoquestpack:no_show and retires to Complete, and a listener can notice a boss",
-    "that never rose. The countdown stops the instant a boss binds. A player who waits at a resting",
-    "site sees this loop: no_show, Complete's wait, another try.",
+    "Intro also carries the fight's safety net: if the site has rested and still no queen has bound",
+    "within the Timeout below (a missing clutch, a clutch pasted without its marker, a role that",
+    "failed to load), the script sends zc:mmoquestpack:no_show and retires to Complete, and a",
+    "listener can notice a boss that never rose. The countdown stops the instant a boss binds, and",
+    "it never starts on a resting site: both this leaf and the summon above are gated on ZigRested,",
+    "so a site in its rest sits quietly in Intro until the world's clock is past it.",
     "",
     "The phases. Phase_1 is the queen as spawned. At half her health the role changes in place to",
     "Sands_Brood_Queen_Phase2 (the engine keeps her aggro, her target slot and her current health",
@@ -60,11 +62,16 @@
     "has settled the wipe before the script stands down. Should the queen be gone while Standing, the",
     "defeat beat there retires the script to Complete the same way a kill does.",
     "",
-    "Complete is the site's rest: the Timeout there is how long after the fight ends the script",
-    "waits before it sends zc:reset and returns to Intro to try the marker again. It is one of two",
-    "gates on the next fight, and the smaller one; the queen's own marker keeps its own cadence (one",
-    "in-game day after she dies, SpawnAfterGameTime in Sands_Brood_Queen_Marker), and both must pass",
-    "before she rises again. Turn the marker to change how often she comes back; turn this Timeout",
+    "Two gates decide when she rises again after a kill, and both must pass. Complete's Timeout is",
+    "the short one: how long after the fight ends the script waits before it sends zc:reset and",
+    "returns to Intro. The long one is the binding row's Timing.Rest, one game day as shipped: the",
+    "Ziggfreed Common library stamps the world-clock instant that rest ends on this encounter",
+    "entity when she dies and saves it with the world, and ZigRested, the library's own sensor,",
+    "answers false until the clock is past it. The rest lives there and nowhere else: a manual",
+    "spawn marker fires whenever this script asks and its spawn is dead, and the engine keeps",
+    "nothing of a script across a chunk load but its id and its rebound slot, so a longer Timeout",
+    "here would start over on every load. Turn Timing.Rest in the binding row (or its owner layer,",
+    "mods/ziggfreedcommon/encounters.json) to change how often she comes back; turn this Timeout",
     "only to change how long the site rests right after a kill. There is no fight music here; the",
     "pack ships no music of its own.",
     "",
@@ -109,6 +116,9 @@
               "TargetSlot": "Boss",
               "Range": 256
             }
+          },
+          {
+            "Type": "ZigRested"
           }
         ]
       },
@@ -156,12 +166,20 @@
         },
         {
           "Sensor": {
-            "Type": "Not",
-            "Sensor": {
-              "Type": "Target",
-              "TargetSlot": "Boss",
-              "Range": 256
-            }
+            "Type": "And",
+            "Sensors": [
+              {
+                "Type": "Not",
+                "Sensor": {
+                  "Type": "Target",
+                  "TargetSlot": "Boss",
+                  "Range": 256
+                }
+              },
+              {
+                "Type": "ZigRested"
+              }
+            ]
           },
           "ActionsBlocking": true,
           "Actions": [

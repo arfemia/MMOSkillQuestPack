@@ -1,14 +1,15 @@
 {
-  "$Comment": "The spawn marker the Scarak Brood Queen rises from. ManualTrigger means it never spawns on its own: only the Brood Queen encounter script's TriggerSpawners fires it, once, when a player comes near and the fight begins. It stands in the world as the Sands_Brood_Queen_Spawner block (the pack's MMOSkillQuestPack/Sands_Brood_Queen_Spawners prefab carries one), whose SpawnMarkerBlock component keeps this marker alive one block above it. SpawnAfterGameTime is how long after the queen dies the marker will raise her again, on the world's own clock: one in-game day, the same cadence the game gives its own named bosses. It is one of two gates on the next fight, the other being the script's own Complete timeout, and this is the one to turn: a shorter duration here brings her back sooner, and the script's timeout only decides how long the site rests right after a kill. DeactivationDistance and DeactivationTime are wide on purpose: the marker stores its spawn away when no player is inside that distance for that long, and the fight's own chunk stays awake for a while after a party wipes or walks off, so the pair is set so the queen is never packed away mid-fight (keep DeactivationTime well above the WipeGraceSeconds in her binding row). MaxDropHeight is generous because desert ground rolls and the block may sit a step below the sand around it.",
+  "$Comment": "The spawn marker the Scarak Brood Queen rises from. ManualTrigger means it never spawns on its own: only the Brood Queen encounter script's TriggerSpawners fires it, and a manual marker fires whenever the script asks so long as its last spawn is dead. Her slot here frees the instant she dies (a phase change keeps her on it), so nothing on this marker decides when she comes back: the rest between fights is Timing.Rest in the binding row Server/ZiggfreedCommon/Encounters/Sands_Brood_Queen_Encounter.json, held by the Ziggfreed Common library on the encounter entity and read by the script's ZigRested sensor; turn that to change how often she returns. RealtimeRespawn and RealtimeRespawnTime are the respawn form every marker must carry to pass the marker validator, and they are read only by a marker that spawns on its own, which this one never does. It stands in the world as the Sands_Brood_Queen_Spawner block (the pack's MMOSkillQuestPack/Sands_Brood_Queen_Spawners prefab carries one, with the marker written on the block entry itself so a paste from the builder's prefab page keeps it), whose SpawnMarkerBlock component keeps this marker alive one block above it. DeactivationDistance and DeactivationTime are wide on purpose: the marker stores its spawn away when no player is inside that distance for that long, and the fight's own chunk stays awake for a while after a party wipes or walks off, so the pair is set so the queen is never packed away mid-fight (keep DeactivationTime well above the WipeGraceSeconds in her binding row). MaxDropHeight is generous because desert ground rolls and the block may sit a step below the sand around it.",
   "Model": "NPC_Spawn_Marker",
   "NPCs": [
     {
       "Name": "Sands_Brood_Queen",
       "Weight": 100,
-      "SpawnAfterGameTime": "P1D"
+      "RealtimeRespawnTime": 20
     }
   ],
   "ExclusionRadius": 0,
+  "RealtimeRespawn": true,
   "MaxDropHeight": 8,
   "DeactivationDistance": 512,
   "DeactivationTime": 150,

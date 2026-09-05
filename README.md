@@ -33,7 +33,9 @@ The pack ships the fight and the arena; you pick the spot, once per world, ever.
    `/prefab load MMOSkillQuestPack/Sands_Brood_Queen_Spawners` to put the arena (her
    clutch and five brood clutches, each a block that keeps a spawn marker alive) in your
    clipboard, and place it where the fight belongs. Flat sand under the old kingdom's
-   ruins reads best; keep the whole paste inside one chunk.
+   ruins reads best; keep the whole paste inside one chunk. A spawn-marker figure stands over
+   each clutch as soon as the paste lands (creative players see them, adventure players do
+   not); if none appears, `/zigencounter validate` says why.
 2. Stand on the clutch and run `/zigencounter spawn Sands_Brood_Queen_Encounter`.
 
 The encounter entity is saved with the world, wakes when a player comes near, raises the
@@ -42,6 +44,8 @@ hand? The two clutch blocks are ordinary items (`Sands_Brood_Queen_Spawner`,
 `Sands_Brood_Spawner`): give yourself some and set them down instead of pasting.
 
 To switch her off, set `"Enabled": false` under `sands_brood_queen_encounter` in
-`mods/ziggfreedcommon/encounters.json` and run `/zigencounter reload`. To tune how often
-she returns, edit the `SpawnAfterGameTime` on `Sands_Brood_Queen_Marker` (one in-game day
-as shipped); `/zigencounter validate` audits the fight's files.
+`mods/ziggfreedcommon/encounters.json` and run `/zigencounter reload`. To tune how long she
+rests after a kill, set `"Timing": {"Rest": "PT8H"}` under the same key (one game day, `P1D`,
+as shipped; the library keeps the rest on the fight itself, so it survives a restart);
+`/zigencounter validate` audits the fight's files. Fight her in adventure mode: a creative
+player is not counted as part of the fight.
