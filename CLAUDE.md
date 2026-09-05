@@ -31,7 +31,7 @@ Server/
         Zone_Gather_Base.json      Abstract skeletons the two generators write children against
         Zone_Slay_Base.json        (unmarked folder => plain filename ids)
         _Wilds/  (13 files)        a _-marked folder prefixes every id beneath it, so
-        _Sands/  (6 files)         _Wilds/Trork_Trouble.json is wilds_trork_trouble;
+        _Sands/  (6 files)         _Wilds/First_Camp.json is wilds_first_camp;
                                 _Sands/Brood_Below.json (sands_brood_below) is the boss quest,
                                 the only ENCOUNTER_DEFEATED step in the pack
     QuestGenerators/
@@ -82,7 +82,7 @@ Server/
   Prefabs/MMOSkillQuestPack/     Sands_Brood_Queen_Spawners.prefab.json, the arena: a bare blocks
                                 array (version 8, blockIdVersion 11, anchors 0) of one queen
                                 clutch at the origin and five brood clutches around it, within a
-                                9x7 footprint so a paste stays inside one chunk. The owner
+                                9x9 footprint so a paste stays inside one chunk. The owner
                                 pastes it once: /prefab load MMOSkillQuestPack/Sands_Brood_Queen_Spawners
   EncounterManager/              Sands_Brood_Queen_Encounter.json, the boss's native encounter
                                 SCRIPT (Type Generic on Zc_Encounter_Base's shape; the id is the
@@ -251,8 +251,8 @@ Server/
   runs", and `Qualifier` pins one difficulty preset. The three dailies use `Repeat.Reset.Period
   Daily` (a calendar window, so they all roll over together) plus an `Auto`-bucket reward so a win pays out
   in the instance rather than back at Wren.
-- **The Brood Queen** is the family's exemplar overworld boss and is SIX native files plus a quest,
-  no Java: the script (`Server/EncounterManager/Sands_Brood_Queen_Encounter.json`), the three phase
+- **The Brood Queen** is the family's exemplar overworld boss and is fifteen authored files plus a
+  quest, no Java: the script (`Server/EncounterManager/Sands_Brood_Queen_Encounter.json`), the three phase
   roles, the two markers with their two spawner blocks and the arena prefab, the binding row
   (`Server/ZiggfreedCommon/Encounters/`, named for the SCRIPT), the four moment files, the loot
   table, and `_Sands/Brood_Below.json`. The script follows zc's `Zc_Encounter_Base` shape (the
