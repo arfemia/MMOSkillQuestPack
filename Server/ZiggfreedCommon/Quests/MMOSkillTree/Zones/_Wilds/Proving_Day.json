@@ -15,6 +15,7 @@
     "FlavorKey": "quest.wilds_proving_day.flavor"
   },
   "Listing": {
+    "Icon": "Deco_Book_Pile_Small",
     "Category": "main",
     "SortOrder": 5,
     "Hidden": true,

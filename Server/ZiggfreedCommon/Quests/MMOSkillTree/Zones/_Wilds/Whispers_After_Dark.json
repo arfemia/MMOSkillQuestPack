@@ -21,6 +21,7 @@
     "FlavorKey": "quest.wilds_whispers_after_dark.flavor"
   },
   "Listing": {
+    "Icon": "Furniture_Kweebec_Painting",
     "Category": "main",
     "SortOrder": 7,
     "Tags": [

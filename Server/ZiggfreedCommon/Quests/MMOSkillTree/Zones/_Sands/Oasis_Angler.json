@@ -16,6 +16,7 @@
     "FlavorKey": "quest.sands_oasis_angler.flavor"
   },
   "Listing": {
+    "Icon": "Fish_Catfish_Item",
     "Category": "main",
     "SortOrder": 24,
     "Hidden": true,

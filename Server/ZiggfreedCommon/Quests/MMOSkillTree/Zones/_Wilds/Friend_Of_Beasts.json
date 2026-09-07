@@ -11,6 +11,7 @@
     "FlavorKey": "quest.wilds_friend_of_beasts.flavor"
   },
   "Listing": {
+    "Icon": "Farming_Collar",
     "Category": "main",
     "SortOrder": 13,
     "Hidden": true,

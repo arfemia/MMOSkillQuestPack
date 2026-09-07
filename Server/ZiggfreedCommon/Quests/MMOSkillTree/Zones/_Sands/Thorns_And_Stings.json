@@ -19,6 +19,7 @@
     "FlavorKey": "quest.sands_thorns_and_stings.flavor"
   },
   "Listing": {
+    "Icon": "Ingredient_Sac_Venom",
     "Category": "main",
     "SortOrder": 21,
     "Hidden": true,

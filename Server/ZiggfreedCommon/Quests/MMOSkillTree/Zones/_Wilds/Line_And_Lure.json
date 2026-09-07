@@ -13,6 +13,7 @@
     "FlavorKey": "quest.wilds_line_and_lure.flavor"
   },
   "Listing": {
+    "Icon": "Fish_Bluegill_Item",
     "Category": "main",
     "SortOrder": 11,
     "Hidden": true,

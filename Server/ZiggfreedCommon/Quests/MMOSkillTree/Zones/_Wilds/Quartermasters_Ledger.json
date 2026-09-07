@@ -12,6 +12,7 @@
     "FlavorKey": "quest.wilds_quartermasters_ledger.flavor"
   },
   "Listing": {
+    "Icon": "Ingredient_Hide_Light",
     "Category": "main",
     "SortOrder": 12,
     "Hidden": true,

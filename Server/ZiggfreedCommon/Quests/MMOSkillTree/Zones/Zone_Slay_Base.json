@@ -17,6 +17,7 @@
   ],
   "Abstract": true,
   "Listing": {
+    "Icon": "Weapon_Sword_Crude",
     "Category": "main",
     "Hidden": true,
     "RequirePrerequisites": true

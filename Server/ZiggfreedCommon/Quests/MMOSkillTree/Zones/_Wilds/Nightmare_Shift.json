@@ -20,6 +20,7 @@
     "FlavorKey": "quest.wilds_nightmare_shift.flavor"
   },
   "Listing": {
+    "Icon": "Furniture_Kweebec_Candle",
     "Category": "main",
     "SortOrder": 21,
     "Tags": [

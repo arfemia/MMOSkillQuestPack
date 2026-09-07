@@ -24,6 +24,7 @@
     "FlavorKey": "quest.wilds_meet_the_guide.flavor"
   },
   "Listing": {
+    "Icon": "Deco_Scroll",
     "Category": "main",
     "SortOrder": 0,
     "Tags": [

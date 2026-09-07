@@ -18,6 +18,7 @@
     "FlavorKey": "quest.sands_bones_of_the_old_kingdom.flavor"
   },
   "Listing": {
+    "Icon": "Deco_Bone_Skulls",
     "Category": "main",
     "SortOrder": 26,
     "Hidden": true,

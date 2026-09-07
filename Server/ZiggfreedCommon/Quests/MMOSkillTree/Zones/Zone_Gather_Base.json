@@ -12,6 +12,7 @@
   ],
   "Abstract": true,
   "Listing": {
+    "Icon": "Tool_Pickaxe_Crude",
     "Category": "main",
     "Hidden": true,
     "RequirePrerequisites": true

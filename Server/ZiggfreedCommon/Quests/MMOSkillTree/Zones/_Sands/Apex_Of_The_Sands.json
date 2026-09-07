@@ -18,6 +18,7 @@
     "FlavorKey": "quest.sands_apex_of_the_sands.flavor"
   },
   "Listing": {
+    "Icon": "Ingredient_Hide_Scaled",
     "Category": "main",
     "SortOrder": 27,
     "Hidden": true,

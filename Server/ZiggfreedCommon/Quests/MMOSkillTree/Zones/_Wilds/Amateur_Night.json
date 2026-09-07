@@ -20,6 +20,7 @@
     "FlavorKey": "quest.wilds_amateur_night.flavor"
   },
   "Listing": {
+    "Icon": "Furniture_Kweebec_Lantern",
     "Category": "main",
     "SortOrder": 20,
     "Tags": [

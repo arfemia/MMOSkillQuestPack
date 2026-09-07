@@ -13,6 +13,7 @@
     "FlavorKey": "quest.wilds_first_camp.flavor"
   },
   "Listing": {
+    "Icon": "Bench_Campfire",
     "Category": "main",
     "SortOrder": 1,
     "Hidden": true,

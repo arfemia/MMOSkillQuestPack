@@ -23,6 +23,7 @@
     "FlavorKey": "quest.sands_walker_of_the_wastes.flavor"
   },
   "Listing": {
+    "Icon": "Furniture_Desert_Torch",
     "Category": "main",
     "SortOrder": 20,
     "Tags": [
