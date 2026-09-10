@@ -13,8 +13,7 @@
       "Options": [
         { "LabelKey": "dialogue.guide_sands.greet.opt.intro",
           "Conditions": [ { "Type": "QuestState", "Quest": "sands_walker_of_the_wastes", "State": "ACTIVE" } ],
-          "Actions": [ { "Type": "MarkTalked" } ],
-          "Do": [ { "TurnIn": "wilds_call_of_the_dunes" }, { "Goto": "desert_lore" } ] },
+          "Do": [ { "Action": { "Type": "MarkTalked" } }, { "TurnIn": "wilds_call_of_the_dunes" }, { "Goto": "desert_lore" } ] },
         { "LabelKey": "dialogue.guide_sands.greet.opt.work", "Open": "Quests" }
       ]
     },
