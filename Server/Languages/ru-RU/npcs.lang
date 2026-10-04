@@ -1,11 +1,13 @@
 # MMOSkillQuestPack - quest-giver NPC display names + F-interact prompts.
 # Hytale's I18nModule prepends the filename, so each key here loads as npcs.<key>. The giver
 # roles this pack ships under Server/NPC/Roles/Passive/ name the prefixed form on their
-# NameTranslationKey, and their shared press-F prompt is the one baked into the template role
-# they vary, npcs.Mmo_QuestGiver.hint.
+# NameTranslationKey. Their shared press-F prompt is ziggfreed-common's npcs.Zig_QuestGiver.hint,
+# which the role body in its Template_Zig_QuestGiver names (Template_Mmo_QuestGiver passes
+# through to it), and ziggfreed-common ships that line in every language.
 
-# The press-F prompt shown by every giver built on Template_Mmo_QuestGiver. {key} is filled in
-# by the client with whatever the player has bound to interact.
+# A press-F prompt for a giver whose own full role body names npcs.Mmo_QuestGiver.hint on its
+# Hint; the givers built on Template_Mmo_QuestGiver show npcs.Zig_QuestGiver.hint instead. {key}
+# is filled in by the client with whatever the player has bound to interact.
 Mmo_QuestGiver.hint = Нажмите [{key}], чтобы поговорить
 
 # Quest-giver display names. Each one is both a role's nameplate and the npcs.<id>.name a
