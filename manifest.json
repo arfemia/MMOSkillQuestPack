@@ -9,11 +9,11 @@
     }
   ],
   "Website": "https://mmo-skill-tree-docs.ziggfreed.com/",
-  "ServerVersion": ">=0.6.0-pre.13 <0.7.0",
+  "ServerVersion": ">=0.7.0-pre.0 <0.8.0",
   "IncludesAssetPack": true,
   "Dependencies": {
-    "Ziggfreed:MMOSkillTree": "^1.6.1",
-    "Ziggfreed:ZiggfreedCommon": ">=2.1.0"
+    "Ziggfreed:MMOSkillTree": "^1.7.1",
+    "Ziggfreed:ZiggfreedCommon": ">=2.3.0"
   },
   "OptionalDependencies": {
     "Ziggfreed:KweebecNightmare": "*"
