@@ -7,5 +7,5 @@ Zone campaigns (Wilds, Sands) and the Brood Queen encounter. The family-wide rul
 - Generated quests take no folder prefix: each generator row spells the full `wilds_`/`sands_` id.
 - The Kweebec arc gates on `hytale:mod_installed` with `Min` 1, and `KweebecNightmare` sits under manifest `OptionalDependencies`, never `Dependencies`.
 - Campaign level gates read `MMO_TotalLevel` (all skills summed), not the highest skill; the desert trade quests gate on their own skill.
-- Pick `MatchMode` against the real id family: `CONTAINS` for families (`Wood_<Species>`, a bare fish name; wood targets are `Wood_<Species>_Trunk*` substrings), `EXACT` where crafted variants share the stem (`Rock_Sandstone`). Re-verify ids against `hytale-shared-source/HytaleAssets/Server/**` (id = filename).
+- Pick `MatchMode` against the real id family: `CONTAINS` for families (`Wood_<Species>`, a bare fish name; wood targets are `Wood_<Species>_Trunk*` substrings), `EXACT` where crafted variants share the stem (`Rock_Sandstone`). Re-verify ids against `shared-source/release/HytaleAssets/Server/**` (id = filename).
 - The Brood Queen is `CONTENT_PACKS.md`'s worked encounter example; an owner installs it once per world by pasting the prefab and running `/zigencounter spawn Sands_Brood_Queen_Encounter`.
