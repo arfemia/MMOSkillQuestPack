@@ -15,7 +15,7 @@ objective.text.quest.kweebec_round_hardcore = Win a round on the Hardcore preset
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Word from the Wilds
-quest.wilds_meet_the_guide.flavor = The guide has word from a ranger out east. Go and find her camp by the spawn fires.
+quest.wilds_meet_the_guide.flavor = The guide has word from a ranger out in the Wilds. Go and find her camp beside a kweebec village.
 quest.wilds_first_camp.title = First Camp
 quest.wilds_first_camp.flavor = Wren insists every wanderer learns to raise a camp before nightfall.
 quest.wilds_hearty_meal.title = A Hearty Meal

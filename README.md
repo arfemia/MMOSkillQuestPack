@@ -1,11 +1,12 @@
 # MMOSkillQuestPack
 
-Zone questlines for [MMO Skill Tree](https://mmo-skill-tree-docs.ziggfreed.com/) (1.6.1+) and
-its ZiggfreedCommon library (2.1.0+).
+Zone questlines for [MMO Skill Tree](https://mmo-skill-tree-docs.ziggfreed.com/) (1.7.1+) and
+its ZiggfreedCommon library (2.3.0+), on a Hytale Update 7 server.
 
 Two campaign arcs handed out by quest-giver NPCs, and a world boss:
 
-- **Emerald Wilds** (Ranger Wren + Quartermaster Bramble at world spawn): survival,
+- **Emerald Wilds** (Ranger Wren at a kweebec village, Quartermaster Bramble at a Kweebec
+  merchant post): survival,
   gathering, and combat quests easing new players from their first camp to the
   edge of the desert.
 - **Howling Sands** (Dunewalker Ashkar, who appears where the desert is first
@@ -22,7 +23,7 @@ Plus branching NPC dialogue, campaign achievements, and zone-scoped hunter chain
 ## Install
 
 Drop `MMOSkillQuestPack-<version>.zip` into your server `Mods/` folder next to
-`MMOSkillTree-1.6.1+.jar` and `ZiggfreedCommon-2.1.0+.jar`. Build from source with
+`MMOSkillTree-1.7.1+.jar` and `ZiggfreedCommon-2.3.0+.jar`. Build from source with
 `.\build.ps1`.
 
 ## Placing the Brood Queen

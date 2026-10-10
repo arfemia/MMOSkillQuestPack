@@ -1,15 +1,16 @@
 {
   "$Comment": [
-    "A daily contract on the Hardcore preset: win one Kweebec Nightmare round, collect on the spot.",
+    "A daily contract on the Hardcore preset: win one Kweebec Nightmare round, then collect the pay.",
     "",
     "Repeat.Reset is a calendar allowance rather than a rolling wait: the window rolls over at the",
     "server day boundary, so all three dailies come back together and a player who finishes late in",
     "the evening is not paid back at the same hour tomorrow. Author Times inside Reset to allow more",
     "than one finish per window, or swap Reset for Cooldown to make it a rolling timer instead.",
     "",
-    "The reward rides the Auto bucket, paying out the moment the round is won, so nobody has to trek back to",
-    "the Wilds between runs. It is the one difference from the story beats above, which are collected",
-    "in person.",
+    "The reward rides the Claim bucket and the quest names no TurnInAt, so once the round is won the",
+    "pay waits in the player's quest log and they press Collect there, wherever they stand: nobody has",
+    "to trek back to the Wilds between runs. It is the one difference from the story beats above,",
+    "which are handed in to Wren in person.",
     "",
     "The lootable reward rolls this pack's own dedicated daily table (Mmo_Kweebec_Daily_Hardcore), so",
     "retuning that table retunes this payout without touching the minigame's own chase rewards; the",
@@ -66,7 +67,7 @@
     }
   },
   "Rewards": {
-    "Auto": [
+    "Claim": [
       {
         "Kind": "Lootable",
         "Params": {
