@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Hardcore ayarında bir tur kazan
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Wilds'ten haber
-quest.wilds_meet_the_guide.flavor = Rehberin doğuda bir korucudan haberi var. Onun kampını doğuş ateşlerinin yanında bul.
+quest.wilds_meet_the_guide.flavor = Rehberin Yabanlar'daki bir korucudan haberi var. Onun kampını bir kweebec köyünün yanında bul.
 quest.wilds_first_camp.title = İlk Kamp
 quest.wilds_first_camp.flavor = Wren, her gezginin gece çökmeden önce bir kamp kurmayı öğrenmesinde ısrar ediyor.
 quest.wilds_hearty_meal.title = Doyurucu Bir Öğün

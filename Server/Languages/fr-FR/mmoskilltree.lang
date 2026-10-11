@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Remportez une manche en réglage H
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Des nouvelles des Wilds
-quest.wilds_meet_the_guide.flavor = Le guide a des nouvelles d'une rôdeuse à l'est. Trouvez son campement près des feux d'apparition.
+quest.wilds_meet_the_guide.flavor = Le guide a des nouvelles d'une rôdeuse des Wilds. Trouvez son campement à côté d'un village kweebec.
 quest.wilds_first_camp.title = Premier camp
 quest.wilds_first_camp.flavor = Wren insiste pour que chaque vagabond apprenne à monter un camp avant la tombée de la nuit.
 quest.wilds_hearty_meal.title = Un repas copieux

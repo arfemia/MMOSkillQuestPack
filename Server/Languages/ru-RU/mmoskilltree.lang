@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Выиграйте раунд на
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Весть из Wilds
-quest.wilds_meet_the_guide.flavor = У проводника есть весть от следопыта с востока. Найдите её лагерь у костров возрождения.
+quest.wilds_meet_the_guide.flavor = У проводника есть весть от следопыта из Wilds. Найдите её лагерь рядом с деревней квибеков.
 quest.wilds_first_camp.title = Первый лагерь
 quest.wilds_first_camp.flavor = Wren настаивает, чтобы каждый странник научился разбивать лагерь до наступления ночи.
 quest.wilds_hearty_meal.title = Сытная трапеза

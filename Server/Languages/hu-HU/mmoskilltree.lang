@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Nyerj meg egy kört Hardcore fokoz
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Hír a Wildsból
-quest.wilds_meet_the_guide.flavor = A kalauznak híre jött egy keleti erdészről. Keresd meg a táborát a kezdőtüzek mellett.
+quest.wilds_meet_the_guide.flavor = A kalauznak híre jött egy erdészről a Vadonban. Keresd meg a táborát egy kweebec falu mellett.
 quest.wilds_first_camp.title = Első tábor
 quest.wilds_first_camp.flavor = Wren ragaszkodik hozzá, hogy minden vándor megtanuljon tábort verni, mielőtt leszáll az éj.
 quest.wilds_hearty_meal.title = Egy kiadós étkezés

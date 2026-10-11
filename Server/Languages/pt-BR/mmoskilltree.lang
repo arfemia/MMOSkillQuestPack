@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Vença uma rodada na predefiniçã
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Notícias das Wilds
-quest.wilds_meet_the_guide.flavor = O guia recebeu notícias de uma patrulheira a leste. Encontre o acampamento dela junto às fogueiras de surgimento.
+quest.wilds_meet_the_guide.flavor = O guia recebeu notícias de uma patrulheira nas Matas. Encontre o acampamento dela ao lado de uma vila kweebec.
 quest.wilds_first_camp.title = Primeiro Acampamento
 quest.wilds_first_camp.flavor = Wren faz questão de que todo andarilho aprenda a montar um acampamento antes de anoitecer.
 quest.wilds_hearty_meal.title = Uma Refeição Reforçada

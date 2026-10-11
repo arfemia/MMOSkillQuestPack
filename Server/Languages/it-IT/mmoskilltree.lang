@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Vinci un round sul preset Hardcore
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Notizie dalle Wilds
-quest.wilds_meet_the_guide.flavor = La guida ha notizie di una ranger a est. Trova il suo accampamento presso i fuochi di comparsa.
+quest.wilds_meet_the_guide.flavor = La guida ha notizie di una ranger nelle Wilds. Trova il suo accampamento accanto a un villaggio kweebec.
 quest.wilds_first_camp.title = Primo Accampamento
 quest.wilds_first_camp.flavor = Wren insiste che ogni viandante impari a montare un accampamento prima del calar della notte.
 quest.wilds_hearty_meal.title = Un Pasto Sostanzioso

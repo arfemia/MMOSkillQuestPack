@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Gewinne eine Runde auf der Stufe H
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Nachricht aus den Wilds
-quest.wilds_meet_the_guide.flavor = Der Führer hat Nachricht von einer Waldläuferin im Osten. Suche ihr Lager bei den Spawn-Feuern.
+quest.wilds_meet_the_guide.flavor = Der Führer hat Nachricht von einer Waldläuferin draußen in den Wilds. Such ihr Lager neben einem Kweebec-Dorf.
 quest.wilds_first_camp.title = Erstes Lager
 quest.wilds_first_camp.flavor = Wren besteht darauf, dass jeder Wanderer lernt, vor Einbruch der Nacht ein Lager aufzuschlagen.
 quest.wilds_hearty_meal.title = Eine herzhafte Mahlzeit

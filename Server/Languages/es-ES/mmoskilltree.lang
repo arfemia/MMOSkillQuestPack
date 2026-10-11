@@ -16,7 +16,7 @@ objective.text.quest.kweebec_round_hardcore = Gana una ronda en el ajuste Hardco
 
 # ---- Emerald Wilds questline ----
 quest.wilds_meet_the_guide.title = Noticias de las Wilds
-quest.wilds_meet_the_guide.flavor = El guía trae noticias de una guardabosques del este. Busca su campamento junto a las hogueras de aparición.
+quest.wilds_meet_the_guide.flavor = El guía trae noticias de una guardabosques de las Wilds. Busca su campamento junto a una aldea kweebec.
 quest.wilds_first_camp.title = Primer Campamento
 quest.wilds_first_camp.flavor = Wren insiste en que todo viajero aprenda a montar un campamento antes del anochecer.
 quest.wilds_hearty_meal.title = Una Comida Abundante
