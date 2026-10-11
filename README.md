@@ -5,14 +5,15 @@ its ZiggfreedCommon library (2.3.0+), on a Hytale Update 7 server.
 
 Two campaign arcs handed out by quest-giver NPCs, and a world boss:
 
-- **Emerald Wilds** (Ranger Wren at a kweebec village, Quartermaster Bramble at a Kweebec
+- **Emerald Wilds** (Ranger Wren at a Kweebec village, Quartermaster Bramble at a Kweebec
   merchant post): survival,
   gathering, and combat quests easing new players from their first camp to the
   edge of the desert.
-- **Howling Sands** (Dunewalker Ashkar, who appears where the desert is first
-  discovered): a tougher desert arc with zone-scoped hunts, turn-ins, and a
-  branching finale, capped by a boss fight. The arc is written and ships held; it
-  opens in a later update.
+- **Howling Sands** (Dunewalker Ashkar, at an Outlander hunter camp): a tougher desert
+  arc with zone-scoped hunts, turn-ins, and a branching finale, capped by a boss fight.
+  The arc is written and ships held; it opens in a later update. In 1.0.0 Ashkar already
+  takes the hand-in of The Call of the Dunes, the Emerald Wilds' last quest, and a word
+  with him counts toward Well Met.
 - **The Scarak Brood Queen**: a three-phase world boss run by the game's own encounter
   scripts, with shared credit for everyone in the fight, loot scaled by each player's
   share, a boss bar, a world-map marker, a leaderboard and her own notices. She comes
