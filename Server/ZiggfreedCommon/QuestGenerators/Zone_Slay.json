@@ -23,7 +23,10 @@
     "  amount       how many",
     "  gift/gift_item/gift_count   an item handed over on completion; a contract that gives no",
     "               item leaves gift empty, and an empty Kind pays nothing out at all",
-    "  xp1_*/xp2_*  up to two skill XP payouts, the second left empty when only one is wanted"
+    "  xp1_amount   the XP on the Skill Lamp every contract pays (Picks 1, Skills COMBAT in Child):",
+    "               the player rubs it and puts the XP into one combat skill of their choice",
+    "  xp2/xp2_skill/xp2_amount   an optional fixed skill XP payout beside the lamp; a contract",
+    "               that wants none leaves xp2 empty"
   ],
   "Base": "zone_slay_base",
   "IdPattern": "{quest}",
@@ -43,7 +46,6 @@
           "gift": "Item",
           "gift_item": "Weapon_Longsword_Iron",
           "gift_count": "1",
-          "xp1_skill": "SWORDS",
           "xp1_amount": "800",
           "xp2": "",
           "xp2_skill": "",
@@ -61,7 +63,6 @@
           "gift": "",
           "gift_item": "",
           "gift_count": "0",
-          "xp1_skill": "ARCHERY",
           "xp1_amount": "700",
           "xp2": "Mmo_Xp",
           "xp2_skill": "DEFENSE",
@@ -79,7 +80,6 @@
           "gift": "Item",
           "gift_item": "Potion_Health",
           "gift_count": "3",
-          "xp1_skill": "SWORDS",
           "xp1_amount": "2500",
           "xp2": "",
           "xp2_skill": "",
@@ -127,10 +127,11 @@
           }
         },
         {
-          "Kind": "Mmo_Xp",
+          "Kind": "Mmo_Lamp",
           "Params": {
-            "Skill": "{xp1_skill}",
-            "Amount": "{xp1_amount}"
+            "Amount": "{xp1_amount}",
+            "Picks": "1",
+            "Skills": "COMBAT"
           }
         },
         {

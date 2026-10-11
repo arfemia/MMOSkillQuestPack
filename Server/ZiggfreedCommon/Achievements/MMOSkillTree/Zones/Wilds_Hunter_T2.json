@@ -48,10 +48,11 @@
   "Rewards": {
     "Claim": [
       {
-        "Kind": "Mmo_Xp",
+        "Kind": "Mmo_Lamp",
         "Params": {
-          "Skill": "SWORDS",
-          "Amount": "2500"
+          "Amount": "2500",
+          "Picks": "1",
+          "Skills": "COMBAT"
         }
       }
     ]
