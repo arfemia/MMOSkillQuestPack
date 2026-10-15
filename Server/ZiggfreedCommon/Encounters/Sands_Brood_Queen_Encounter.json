@@ -33,8 +33,8 @@
     "holds a participant's payout for their next connect if they dropped before she fell. The quest",
     "that names this fight pays its own reward on top when it is handed in.",
     "",
-    "Leaderboard writes every participant a row under the bucket, split by party size, with their",
-    "share as the score and the fight's length as the time. Feedback names the queen's own notices,",
+    "Leaderboard keeps every participant's records under the bucket, split by party size, a boss on",
+    "Records' Bosses tab in the World group (Group). Feedback names the queen's own notices,",
     "the four Sands_Brood_Queen_* files under Server/ZiggfreedCommon/FeedbackMoments, so she speaks",
     "in her own words and no other encounter on the server borrows them. Discovery puts a world-map",
     "marker over her from the moment she rises until the run resets, moving to her position every",
@@ -71,7 +71,8 @@
   "Leaderboard": {
     "Bucket": "sands_brood_queen",
     "ByPartySize": true,
-    "ByDifficulty": false
+    "ByDifficulty": false,
+    "Group": "World"
   },
   "Feedback": {
     "Engaged": "Sands_Brood_Queen_Engaged",
