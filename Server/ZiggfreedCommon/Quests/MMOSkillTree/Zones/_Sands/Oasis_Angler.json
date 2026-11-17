@@ -1,7 +1,7 @@
 {
   "$Comment": [
     "The desert fishing beat, gated on the Fishing skill itself rather than on overall progress:",
-    "the factor reads the MMO_Level_FISHING stat channel, and every skill has a channel of that",
+    "the factor reads the Level_Fishing stat channel, and every skill has a channel of that",
     "shape. Swap the skill name to gate on a different one.",
     "",
     "Fish targets are CONTAINS on the bare name, which matches the fish and its item alike.",
@@ -32,7 +32,7 @@
     "Factors": [
       {
         "Factor": "hytale:stat",
-        "Param": "MMO_Level_FISHING",
+        "Param": "Level_Fishing",
         "Min": 15
       }
     ]

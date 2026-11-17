@@ -34,7 +34,7 @@
     "Factors": [
       {
         "Factor": "hytale:stat",
-        "Param": "MMO_TotalLevel",
+        "Param": "TotalLevel",
         "Min": 80
       }
     ],
